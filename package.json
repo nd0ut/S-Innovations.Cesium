@@ -1,0 +1,16 @@
+{
+  "name": "cesium-typings-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cesium.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dts-generator": "^1.5.0",
+    "grunt": "^0.4.5",
+    "typescript": "^1.6.0"
+  }
+}
