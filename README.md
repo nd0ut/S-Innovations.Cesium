@@ -12,9 +12,7 @@ It has been adopted to use with mono via command line.
 ## How to use
 How to get up-to-date typings:
 ```
-cd src && sh run.sh
-cd ..
 npm i
-grunt
+npm run build
 ```
 

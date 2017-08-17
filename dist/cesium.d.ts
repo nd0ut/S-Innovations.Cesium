@@ -5979,7 +5979,7 @@ declare module 'cesium/Source/DataSources/Property' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : any) : Object
 
 	}
@@ -5990,25 +5990,25 @@ declare module 'cesium/Source/DataSources/BillboardGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface BillboardGraphicsOptions
 	{
-		image?: Property|string;
-		show?: Property|string;
-		scale?: Property|string;
-		horizontalOrigin?: Property|string;
-		verticalOrigin?: Property|string;
-		eyeOffset?: Property|string;
-		pixelOffset?: Property|string;
-		rotation?: Property|string;
-		alignedAxis?: Property|string;
-		width?: Property|string;
-		height?: Property|string;
-		color?: Property|string;
-		scaleByDistance?: Property|string;
-		translucencyByDistance?: Property|string;
-		pixelOffsetScaleByDistance?: Property|string;
-		imageSubRegion?: Property|string;
-		sizeInMeters?: Property|string;
-		heightReference?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		image?: Property|string|any;
+		show?: Property|string|any;
+		scale?: Property|string|any;
+		horizontalOrigin?: Property|string|any;
+		verticalOrigin?: Property|string|any;
+		eyeOffset?: Property|string|any;
+		pixelOffset?: Property|string|any;
+		rotation?: Property|string|any;
+		alignedAxis?: Property|string|any;
+		width?: Property|string|any;
+		height?: Property|string|any;
+		color?: Property|string|any;
+		scaleByDistance?: Property|string|any;
+		translucencyByDistance?: Property|string|any;
+		pixelOffsetScaleByDistance?: Property|string|any;
+		imageSubRegion?: Property|string|any;
+		sizeInMeters?: Property|string|any;
+		heightReference?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = BillboardGraphicsOptions
 
@@ -6021,27 +6021,27 @@ declare module 'cesium/Source/DataSources/BillboardGraphics' {
 	{
 		constructor(options? : BillboardGraphicsOptions);
 		//Members
-		alignedAxis: Property|string
-		color: Property|string
+		alignedAxis: Property|string|any
+		color: Property|string|any
 		definitionChanged: Event
-		disableDepthTestDistance: Property|string
-		distanceDisplayCondition: Property|string
-		eyeOffset: Property|string
-		height: Property|string
-		heightReference: Property|string
-		horizontalOrigin: Property|string
-		image: Property|string
-		imageSubRegion: Property|string
-		pixelOffset: Property|string
-		pixelOffsetScaleByDistance: Property|string
-		rotation: Property|string
-		scale: Property|string
-		scaleByDistance: Property|string
-		show: Property|string
-		sizeInMeters: Property|string
-		translucencyByDistance: Property|string
-		verticalOrigin: Property|string
-		width: Property|string
+		disableDepthTestDistance: Property|string|any
+		distanceDisplayCondition: Property|string|any
+		eyeOffset: Property|string|any
+		height: Property|string|any
+		heightReference: Property|string|any
+		horizontalOrigin: Property|string|any
+		image: Property|string|any
+		imageSubRegion: Property|string|any
+		pixelOffset: Property|string|any
+		pixelOffsetScaleByDistance: Property|string|any
+		rotation: Property|string|any
+		scale: Property|string|any
+		scaleByDistance: Property|string|any
+		show: Property|string|any
+		sizeInMeters: Property|string|any
+		translucencyByDistance: Property|string|any
+		verticalOrigin: Property|string|any
+		width: Property|string|any
 
 
 		//Methods
@@ -6161,7 +6161,7 @@ declare module 'cesium/Source/DataSources/PositionProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : Cartesian3) : Cartesian3
 		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 
@@ -6182,7 +6182,7 @@ declare module 'cesium/Source/DataSources/MaterialProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -6195,15 +6195,15 @@ declare module 'cesium/Source/DataSources/BoxGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface BoxGraphicsOptions
 	{
-		dimensions?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		dimensions?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = BoxGraphicsOptions
 
@@ -6218,15 +6218,15 @@ declare module 'cesium/Source/DataSources/BoxGraphics' {
 		constructor(options? : BoxGraphicsOptions);
 		//Members
 		definitionChanged: Event
-		dimensions: Property|string
-		distanceDisplayCondition: Property|string
-		fill: Property|string
+		dimensions: Property|string|any
+		distanceDisplayCondition: Property|string|any
+		fill: Property|string|any
 		material: MaterialProperty
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		shadows: Property|string
-		show: Property|string
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
 
 
 		//Methods
@@ -6242,20 +6242,20 @@ declare module 'cesium/Source/DataSources/CorridorGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface CorridorGraphicsOptions
 	{
-		positions?: Property|string;
-		width?: Property|string;
-		cornerType?: Property|string;
-		height?: Property|string;
-		extrudedHeight?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		positions?: Property|string|any;
+		width?: Property|string|any;
+		cornerType?: Property|string|any;
+		height?: Property|string|any;
+		extrudedHeight?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		granularity?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		granularity?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = CorridorGraphicsOptions
 
@@ -6269,21 +6269,21 @@ declare module 'cesium/Source/DataSources/CorridorGraphics' {
 	{
 		constructor(options? : CorridorGraphicsOptions);
 		//Members
-		cornerType: Property|string
+		cornerType: Property|string|any
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		extrudedHeight: Property|string
-		fill: Property|string
-		granularity: Property|string
-		height: Property|string
+		distanceDisplayCondition: Property|string|any
+		extrudedHeight: Property|string|any
+		fill: Property|string|any
+		granularity: Property|string|any
+		height: Property|string|any
 		material: MaterialProperty
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		positions: Property|string
-		shadows: Property|string
-		show: Property|string
-		width: Property|string
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		positions: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
+		width: Property|string|any
 
 
 		//Methods
@@ -6299,19 +6299,19 @@ declare module 'cesium/Source/DataSources/CylinderGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface CylinderGraphicsOptions
 	{
-		length?: Property|string;
-		topRadius?: Property|string;
-		bottomRadius?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		length?: Property|string|any;
+		topRadius?: Property|string|any;
+		bottomRadius?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		numberOfVerticalLines?: Property|string;
-		slices?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		numberOfVerticalLines?: Property|string|any;
+		slices?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = CylinderGraphicsOptions
 
@@ -6325,20 +6325,20 @@ declare module 'cesium/Source/DataSources/CylinderGraphics' {
 	{
 		constructor(options? : CylinderGraphicsOptions);
 		//Members
-		bottomRadius: Property|string
+		bottomRadius: Property|string|any
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		fill: Property|string
-		length: Property|string
+		distanceDisplayCondition: Property|string|any
+		fill: Property|string|any
+		length: Property|string|any
 		material: MaterialProperty
-		numberOfVerticalLines: Property|string
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		shadows: Property|string
-		show: Property|string
-		slices: Property|string
-		topRadius: Property|string
+		numberOfVerticalLines: Property|string|any
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
+		slices: Property|string|any
+		topRadius: Property|string|any
 
 
 		//Methods
@@ -6354,22 +6354,22 @@ declare module 'cesium/Source/DataSources/EllipseGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface EllipseGraphicsOptions
 	{
-		semiMajorAxis?: Property|string;
-		semiMinorAxis?: Property|string;
-		height?: Property|string;
-		extrudedHeight?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		semiMajorAxis?: Property|string|any;
+		semiMinorAxis?: Property|string|any;
+		height?: Property|string|any;
+		extrudedHeight?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		numberOfVerticalLines?: Property|string;
-		rotation?: Property|string;
-		stRotation?: Property|string;
-		granularity?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		numberOfVerticalLines?: Property|string|any;
+		rotation?: Property|string|any;
+		stRotation?: Property|string|any;
+		granularity?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = EllipseGraphicsOptions
 
@@ -6384,22 +6384,22 @@ declare module 'cesium/Source/DataSources/EllipseGraphics' {
 		constructor(options? : EllipseGraphicsOptions);
 		//Members
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		extrudedHeight: Property|string
-		fill: Property|string
-		granularity: Property|string
-		height: Property|string
+		distanceDisplayCondition: Property|string|any
+		extrudedHeight: Property|string|any
+		fill: Property|string|any
+		granularity: Property|string|any
+		height: Property|string|any
 		material: MaterialProperty
-		numberOfVerticalLines: Property|string
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		rotation: Property|string
-		semiMajorAxis: Property|string
-		semiMinorAxis: Property|string
-		shadows: Property|string
-		show: Property|string
-		stRotation: Property|string
+		numberOfVerticalLines: Property|string|any
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		rotation: Property|string|any
+		semiMajorAxis: Property|string|any
+		semiMinorAxis: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
+		stRotation: Property|string|any
 
 
 		//Methods
@@ -6415,18 +6415,18 @@ declare module 'cesium/Source/DataSources/EllipsoidGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface EllipsoidGraphicsOptions
 	{
-		radii?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		radii?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		subdivisions?: Property|string;
-		stackPartitions?: Property|string;
-		slicePartitions?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		subdivisions?: Property|string|any;
+		stackPartitions?: Property|string|any;
+		slicePartitions?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = EllipsoidGraphicsOptions
 
@@ -6441,18 +6441,18 @@ declare module 'cesium/Source/DataSources/EllipsoidGraphics' {
 		constructor(options? : EllipsoidGraphicsOptions);
 		//Members
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		fill: Property|string
+		distanceDisplayCondition: Property|string|any
+		fill: Property|string|any
 		material: MaterialProperty
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		radii: Property|string
-		shadows: Property|string
-		show: Property|string
-		slicePartitions: Property|string
-		stackPartitions: Property|string
-		subdivisions: Property|string
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		radii: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
+		slicePartitions: Property|string|any
+		stackPartitions: Property|string|any
+		subdivisions: Property|string|any
 
 
 		//Methods
@@ -6467,26 +6467,26 @@ declare module 'cesium/Source/DataSources/LabelGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface LabelGraphicsOptions
 	{
-		text?: Property|string;
-		font?: Property|string;
-		style?: Property|string;
-		fillColor?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		show?: Property|string;
-		showBackground?: Property|string;
-		backgroundColor?: Property|string;
-		backgroundPadding?: Property|string;
-		scale?: Property|string;
-		horizontalOrigin?: Property|string;
-		verticalOrigin?: Property|string;
-		eyeOffset?: Property|string;
-		pixelOffset?: Property|string;
-		translucencyByDistance?: Property|string;
-		pixelOffsetScaleByDistance?: Property|string;
-		scaleByDistance?: Property|string;
-		heightReference?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		text?: Property|string|any;
+		font?: Property|string|any;
+		style?: Property|string|any;
+		fillColor?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		show?: Property|string|any;
+		showBackground?: Property|string|any;
+		backgroundColor?: Property|string|any;
+		backgroundPadding?: Property|string|any;
+		scale?: Property|string|any;
+		horizontalOrigin?: Property|string|any;
+		verticalOrigin?: Property|string|any;
+		eyeOffset?: Property|string|any;
+		pixelOffset?: Property|string|any;
+		translucencyByDistance?: Property|string|any;
+		pixelOffsetScaleByDistance?: Property|string|any;
+		scaleByDistance?: Property|string|any;
+		heightReference?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = LabelGraphicsOptions
 
@@ -6499,28 +6499,28 @@ declare module 'cesium/Source/DataSources/LabelGraphics' {
 	{
 		constructor(options? : LabelGraphicsOptions);
 		//Members
-		backgroundColor: Property|string
-		backgroundPadding: Property|string
+		backgroundColor: Property|string|any
+		backgroundPadding: Property|string|any
 		definitionChanged: Event
-		disableDepthTestDistance: Property|string
-		distanceDisplayCondition: Property|string
-		eyeOffset: Property|string
-		fillColor: Property|string
-		font: Property|string
-		heightReference: Property|string
-		horizontalOrigin: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		pixelOffset: Property|string
-		pixelOffsetScaleByDistance: Property|string
-		scale: Property|string
-		scaleByDistance: Property|string
-		show: Property|string
-		showBackground: Property|string
-		style: Property|string
-		text: Property|string
-		translucencyByDistance: Property|string
-		verticalOrigin: Property|string
+		disableDepthTestDistance: Property|string|any
+		distanceDisplayCondition: Property|string|any
+		eyeOffset: Property|string|any
+		fillColor: Property|string|any
+		font: Property|string|any
+		heightReference: Property|string|any
+		horizontalOrigin: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		pixelOffset: Property|string|any
+		pixelOffsetScaleByDistance: Property|string|any
+		scale: Property|string|any
+		scaleByDistance: Property|string|any
+		show: Property|string|any
+		showBackground: Property|string|any
+		style: Property|string|any
+		text: Property|string|any
+		translucencyByDistance: Property|string|any
+		verticalOrigin: Property|string|any
 
 
 		//Methods
@@ -6535,22 +6535,22 @@ declare module 'cesium/Source/DataSources/ModelGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface ModelGraphicsOptions
 	{
-		uri?: Property|string;
-		show?: Property|string;
-		scale?: Property|string;
-		minimumPixelSize?: Property|string;
-		maximumScale?: Property|string;
-		incrementallyLoadTextures?: Property|string;
-		runAnimations?: Property|string;
-		nodeTransformations?: Property|string;
-		shadows?: Property|string;
-		heightReference?: Property|string;
-		distanceDisplayCondition?: Property|string;
-		silhouetteColor?: Property|string;
-		silhouetteSize?: Property|string;
-		color?: Property|string;
-		colorBlendMode?: Property|string;
-		colorBlendAmount?: Property|string;
+		uri?: Property|string|any;
+		show?: Property|string|any;
+		scale?: Property|string|any;
+		minimumPixelSize?: Property|string|any;
+		maximumScale?: Property|string|any;
+		incrementallyLoadTextures?: Property|string|any;
+		runAnimations?: Property|string|any;
+		nodeTransformations?: Property|string|any;
+		shadows?: Property|string|any;
+		heightReference?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
+		silhouetteColor?: Property|string|any;
+		silhouetteSize?: Property|string|any;
+		color?: Property|string|any;
+		colorBlendMode?: Property|string|any;
+		colorBlendAmount?: Property|string|any;
 	}
 	export = ModelGraphicsOptions
 
@@ -6570,7 +6570,7 @@ declare module 'cesium/Source/DataSources/PropertyBag' {
 
 		//Methods
 		addProperty(propertyName? : string, value? : any, createPropertyCallback? : (()=>void)) : void
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : any) : Object
 		hasProperty(propertyName? : string) : boolean
 		merge(source? : any, createPropertyCallback? : (()=>void)) : void
@@ -6589,23 +6589,23 @@ declare module 'cesium/Source/DataSources/ModelGraphics' {
 	{
 		constructor(options? : ModelGraphicsOptions);
 		//Members
-		color: Property|string
-		colorBlendAmount: Property|string
-		colorBlendMode: Property|string
+		color: Property|string|any
+		colorBlendAmount: Property|string|any
+		colorBlendMode: Property|string|any
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		heightReference: Property|string
-		incrementallyLoadTextures: Property|string
-		maximumScale: Property|string
-		minimumPixelSize: Property|string
+		distanceDisplayCondition: Property|string|any
+		heightReference: Property|string|any
+		incrementallyLoadTextures: Property|string|any
+		maximumScale: Property|string|any
+		minimumPixelSize: Property|string|any
 		nodeTransformations: PropertyBag
-		runAnimations: Property|string
-		scale: Property|string
-		shadows: Property|string
-		show: Property|string
-		silhouetteColor: Property|string
-		silhouetteSize: Property|string
-		uri: Property|string
+		runAnimations: Property|string|any
+		scale: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
+		silhouetteColor: Property|string|any
+		silhouetteSize: Property|string|any
+		uri: Property|string|any
 
 
 		//Methods
@@ -6621,13 +6621,13 @@ declare module 'cesium/Source/DataSources/PathGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface PathGraphicsOptions
 	{
-		leadTime?: Property|string;
-		trailTime?: Property|string;
-		show?: Property|string;
-		width?: Property|string;
+		leadTime?: Property|string|any;
+		trailTime?: Property|string|any;
+		show?: Property|string|any;
+		width?: Property|string|any;
 		material?: MaterialProperty;
-		resolution?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		resolution?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = PathGraphicsOptions
 
@@ -6642,13 +6642,13 @@ declare module 'cesium/Source/DataSources/PathGraphics' {
 		constructor(options? : PathGraphicsOptions);
 		//Members
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		leadTime: Property|string
+		distanceDisplayCondition: Property|string|any
+		leadTime: Property|string|any
 		material: MaterialProperty
-		resolution: Property|string
-		show: Property|string
-		trailTime: Property|string
-		width: Property|string
+		resolution: Property|string|any
+		show: Property|string|any
+		trailTime: Property|string|any
+		width: Property|string|any
 
 
 		//Methods
@@ -6663,15 +6663,15 @@ declare module 'cesium/Source/DataSources/PointGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface PointGraphicsOptions
 	{
-		color?: Property|string;
-		pixelSize?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		show?: Property|string;
-		scaleByDistance?: Property|string;
-		translucencyByDistance?: Property|string;
-		heightReference?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		color?: Property|string|any;
+		pixelSize?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		show?: Property|string|any;
+		scaleByDistance?: Property|string|any;
+		translucencyByDistance?: Property|string|any;
+		heightReference?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = PointGraphicsOptions
 
@@ -6684,17 +6684,17 @@ declare module 'cesium/Source/DataSources/PointGraphics' {
 	{
 		constructor(options? : PointGraphicsOptions);
 		//Members
-		color: Property|string
+		color: Property|string|any
 		definitionChanged: Event
-		disableDepthTestDistance: Property|string
-		distanceDisplayCondition: Property|string
-		heightReference: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		pixelSize: Property|string
-		scaleByDistance: Property|string
-		show: Property|string
-		translucencyByDistance: Property|string
+		disableDepthTestDistance: Property|string|any
+		distanceDisplayCondition: Property|string|any
+		heightReference: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		pixelSize: Property|string|any
+		scaleByDistance: Property|string|any
+		show: Property|string|any
+		translucencyByDistance: Property|string|any
 
 
 		//Methods
@@ -6710,22 +6710,22 @@ declare module 'cesium/Source/DataSources/PolygonGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface PolygonGraphicsOptions
 	{
-		hierarchy?: Property|string;
-		height?: Property|string;
-		extrudedHeight?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		hierarchy?: Property|string|any;
+		height?: Property|string|any;
+		extrudedHeight?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		stRotation?: Property|string;
-		granularity?: Property|string;
-		perPositionHeight?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		stRotation?: Property|string|any;
+		granularity?: Property|string|any;
+		perPositionHeight?: Property|string|any;
 		closeTop?: boolean;
 		closeBottom?: boolean;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = PolygonGraphicsOptions
 
@@ -6739,23 +6739,23 @@ declare module 'cesium/Source/DataSources/PolygonGraphics' {
 	{
 		constructor(options? : PolygonGraphicsOptions);
 		//Members
-		closeBottom: Property|string
-		closeTop: Property|string
+		closeBottom: Property|string|any
+		closeTop: Property|string|any
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		extrudedHeight: Property|string
-		fill: Property|string
-		granularity: Property|string
-		height: Property|string
-		hierarchy: Property|string
+		distanceDisplayCondition: Property|string|any
+		extrudedHeight: Property|string|any
+		fill: Property|string|any
+		granularity: Property|string|any
+		height: Property|string|any
+		hierarchy: Property|string|any
 		material: MaterialProperty
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		perPositionHeight: Property|string
-		shadows: Property|string
-		show: Property|string
-		stRotation: Property|string
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		perPositionHeight: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
+		stRotation: Property|string|any
 
 
 		//Methods
@@ -6771,14 +6771,14 @@ declare module 'cesium/Source/DataSources/PolylineGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface PolylineGraphicsOptions
 	{
-		positions?: Property|string;
-		followSurface?: Property|string;
-		width?: Property|string;
-		show?: Property|string;
+		positions?: Property|string|any;
+		followSurface?: Property|string|any;
+		width?: Property|string|any;
+		show?: Property|string|any;
 		material?: MaterialProperty;
-		granularity?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		granularity?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = PolylineGraphicsOptions
 
@@ -6793,14 +6793,14 @@ declare module 'cesium/Source/DataSources/PolylineGraphics' {
 		constructor(options? : PolylineGraphicsOptions);
 		//Members
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		followSurface: Property|string
-		granularity: Property|string
+		distanceDisplayCondition: Property|string|any
+		followSurface: Property|string|any
+		granularity: Property|string|any
 		material: MaterialProperty
-		positions: Property|string
-		shadows: Property|string
-		show: Property|string
-		width: Property|string
+		positions: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
+		width: Property|string|any
 
 
 		//Methods
@@ -6816,18 +6816,18 @@ declare module 'cesium/Source/DataSources/PolylineVolumeGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface PolylineVolumeGraphicsOptions
 	{
-		positions?: Property|string;
-		shape?: Property|string;
-		cornerType?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		positions?: Property|string|any;
+		shape?: Property|string|any;
+		cornerType?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		granularity?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		granularity?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = PolylineVolumeGraphicsOptions
 
@@ -6841,19 +6841,19 @@ declare module 'cesium/Source/DataSources/PolylineVolumeGraphics' {
 	{
 		constructor(options? : PolylineVolumeGraphicsOptions);
 		//Members
-		cornerType: Property|string
+		cornerType: Property|string|any
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		fill: Property|string
-		granularity: Property|string
+		distanceDisplayCondition: Property|string|any
+		fill: Property|string|any
+		granularity: Property|string|any
 		material: MaterialProperty
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		positions: Property|string
-		shadows: Property|string
-		shape: Property|string
-		show: Property|string
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		positions: Property|string|any
+		shadows: Property|string|any
+		shape: Property|string|any
+		show: Property|string|any
 
 
 		//Methods
@@ -6869,22 +6869,22 @@ declare module 'cesium/Source/DataSources/RectangleGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface RectangleGraphicsOptions
 	{
-		coordinates?: Property|string;
-		height?: Property|string;
-		extrudedHeight?: Property|string;
-		closeTop?: Property|string;
-		closeBottom?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		coordinates?: Property|string|any;
+		height?: Property|string|any;
+		extrudedHeight?: Property|string|any;
+		closeTop?: Property|string|any;
+		closeBottom?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		rotation?: Property|string;
-		stRotation?: Property|string;
-		granularity?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		rotation?: Property|string|any;
+		stRotation?: Property|string|any;
+		granularity?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = RectangleGraphicsOptions
 
@@ -6898,23 +6898,23 @@ declare module 'cesium/Source/DataSources/RectangleGraphics' {
 	{
 		constructor(options? : RectangleGraphicsOptions);
 		//Members
-		closeBottom: Property|string
-		closeTop: Property|string
-		coordinates: Property|string
+		closeBottom: Property|string|any
+		closeTop: Property|string|any
+		coordinates: Property|string|any
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		extrudedHeight: Property|string
-		fill: Property|string
-		granularity: Property|string
-		height: Property|string
+		distanceDisplayCondition: Property|string|any
+		extrudedHeight: Property|string|any
+		fill: Property|string|any
+		granularity: Property|string|any
+		height: Property|string|any
 		material: MaterialProperty
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		rotation: Property|string
-		shadows: Property|string
-		show: Property|string
-		stRotation: Property|string
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		rotation: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
+		stRotation: Property|string|any
 
 
 		//Methods
@@ -6930,18 +6930,18 @@ declare module 'cesium/Source/DataSources/WallGraphicsOptions' {
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	interface WallGraphicsOptions
 	{
-		positions?: Property|string;
-		maximumHeights?: Property|string;
-		minimumHeights?: Property|string;
-		show?: Property|string;
-		fill?: Property|string;
+		positions?: Property|string|any;
+		maximumHeights?: Property|string|any;
+		minimumHeights?: Property|string|any;
+		show?: Property|string|any;
+		fill?: Property|string|any;
 		material?: MaterialProperty;
-		outline?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
-		granularity?: Property|string;
-		shadows?: Property|string;
-		distanceDisplayCondition?: Property|string;
+		outline?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+		granularity?: Property|string|any;
+		shadows?: Property|string|any;
+		distanceDisplayCondition?: Property|string|any;
 	}
 	export = WallGraphicsOptions
 
@@ -6956,18 +6956,18 @@ declare module 'cesium/Source/DataSources/WallGraphics' {
 		constructor(options? : WallGraphicsOptions);
 		//Members
 		definitionChanged: Event
-		distanceDisplayCondition: Property|string
-		fill: Property|string
-		granularity: Property|string
+		distanceDisplayCondition: Property|string|any
+		fill: Property|string|any
+		granularity: Property|string|any
 		material: MaterialProperty
-		maximumHeights: Property|string
-		minimumHeights: Property|string
-		outline: Property|string
-		outlineColor: Property|string
-		outlineWidth: Property|string
-		positions: Property|string
-		shadows: Property|string
-		show: Property|string
+		maximumHeights: Property|string|any
+		minimumHeights: Property|string|any
+		outline: Property|string|any
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+		positions: Property|string|any
+		shadows: Property|string|any
+		show: Property|string|any
 
 
 		//Methods
@@ -7005,10 +7005,10 @@ declare module 'cesium/Source/DataSources/EntityOptions' {
 		name?: string;
 		availability?: TimeIntervalCollection;
 		show?: boolean;
-		description?: Property|string;
+		description?: Property|string|any;
 		position?: PositionProperty;
-		orientation?: Property|string;
-		viewFrom?: Property|string;
+		orientation?: Property|string|any;
+		viewFrom?: Property|string|any;
 		parent?: Entity;
 		billboard?: BillboardGraphics;
 		box?: BoxGraphics;
@@ -7065,7 +7065,7 @@ declare module 'cesium/Source/DataSources/Entity' {
 		corridor: CorridorGraphics
 		cylinder: CylinderGraphics
 		definitionChanged: Event
-		description: Property|string
+		description: Property|string|any
 		ellipse: EllipseGraphics
 		ellipsoid: EllipsoidGraphics
 		entityCollection: EntityCollection
@@ -7074,7 +7074,7 @@ declare module 'cesium/Source/DataSources/Entity' {
 		label: LabelGraphics
 		model: ModelGraphics
 		name: string
-		orientation: Property|string
+		orientation: Property|string|any
 		parent: Entity
 		path: PathGraphics
 		point: PointGraphics
@@ -7086,7 +7086,7 @@ declare module 'cesium/Source/DataSources/Entity' {
 		propertyNames: Array<any>
 		rectangle: RectangleGraphics
 		show: boolean
-		viewFrom: Property|string
+		viewFrom: Property|string|any
 		wall: WallGraphics
 
 
@@ -7317,7 +7317,7 @@ declare module 'cesium/Source/DataSources/BoxGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -7326,10 +7326,10 @@ declare module 'cesium/Source/DataSources/BoxGeometryUpdater' {
 		hasConstantOutline: boolean
 		isClosed: boolean
 		isDynamic: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -7358,7 +7358,7 @@ declare module 'cesium/Source/DataSources/CallbackProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time : JulianDate, result : any) : Object
 		setCallback(callback? : any, isConstant? : boolean) : void
 
@@ -7370,9 +7370,9 @@ declare module 'cesium/Source/DataSources/CheckerboardMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface CheckerboardMaterialPropertyOptions
 	{
-		evenColor?: Property|string;
-		oddColor?: Property|string;
-		repeat?: Property|string;
+		evenColor?: Property|string|any;
+		oddColor?: Property|string|any;
+		repeat?: Property|string|any;
 	}
 	export = CheckerboardMaterialPropertyOptions
 
@@ -7387,14 +7387,14 @@ declare module 'cesium/Source/DataSources/CheckerboardMaterialProperty' {
 		constructor(options? : CheckerboardMaterialPropertyOptions);
 		//Members
 		definitionChanged: Event
-		evenColor: Property|string
+		evenColor: Property|string|any
 		isConstant: boolean
-		oddColor: Property|string
-		repeat: Property|string
+		oddColor: Property|string|any
+		repeat: Property|string|any
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -7408,15 +7408,15 @@ declare module 'cesium/Source/DataSources/ColorMaterialProperty' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class ColorMaterialProperty 
 	{
-		constructor(color? : Property|string);
+		constructor(color? : Property|string|any);
 		//Members
-		color: Property|string
+		color: Property|string|any
 		definitionChanged: Event
 		isConstant: boolean
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -7439,7 +7439,7 @@ declare module 'cesium/Source/DataSources/CompositeMaterialProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -7465,7 +7465,7 @@ declare module 'cesium/Source/DataSources/CompositePositionProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : any) : Object
 		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 
@@ -7488,7 +7488,7 @@ declare module 'cesium/Source/DataSources/CompositeProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : any) : Object
 
 	}
@@ -7511,7 +7511,7 @@ declare module 'cesium/Source/DataSources/ConstantPositionProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : any) : Object
 		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 		setValue(value? : Cartesian3, referenceFrame? : ReferenceFrame) : void
@@ -7533,7 +7533,7 @@ declare module 'cesium/Source/DataSources/ConstantProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time : JulianDate, result : any) : Object
 		setValue(value? : any) : void
 		toString() : string
@@ -7559,7 +7559,7 @@ declare module 'cesium/Source/DataSources/CorridorGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -7569,10 +7569,10 @@ declare module 'cesium/Source/DataSources/CorridorGeometryUpdater' {
 		isClosed: boolean
 		isDynamic: boolean
 		onTerrain: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -7630,7 +7630,7 @@ declare module 'cesium/Source/DataSources/CylinderGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -7639,10 +7639,10 @@ declare module 'cesium/Source/DataSources/CylinderGeometryUpdater' {
 		hasConstantOutline: boolean
 		isClosed: boolean
 		isDynamic: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -7795,7 +7795,7 @@ declare module 'cesium/Source/DataSources/EllipseGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -7805,10 +7805,10 @@ declare module 'cesium/Source/DataSources/EllipseGeometryUpdater' {
 		isClosed: boolean
 		isDynamic: boolean
 		onTerrain: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -7840,7 +7840,7 @@ declare module 'cesium/Source/DataSources/EllipsoidGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -7849,10 +7849,10 @@ declare module 'cesium/Source/DataSources/EllipsoidGeometryUpdater' {
 		hasConstantOutline: boolean
 		isClosed: boolean
 		isDynamic: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -7958,7 +7958,7 @@ declare module 'cesium/Source/DataSources/GeometryUpdater' {
 		hasConstantOutline: boolean
 		isClosed: boolean
 		isDynamic: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
 
@@ -8000,11 +8000,11 @@ declare module 'cesium/Source/DataSources/GridMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface GridMaterialPropertyOptions
 	{
-		color?: Property|string;
-		cellAlpha?: Property|string;
-		lineCount?: Property|string;
-		lineThickness?: Property|string;
-		lineOffset?: Property|string;
+		color?: Property|string|any;
+		cellAlpha?: Property|string|any;
+		lineCount?: Property|string|any;
+		lineThickness?: Property|string|any;
+		lineOffset?: Property|string|any;
 	}
 	export = GridMaterialPropertyOptions
 
@@ -8018,17 +8018,17 @@ declare module 'cesium/Source/DataSources/GridMaterialProperty' {
 	{
 		constructor(options? : GridMaterialPropertyOptions);
 		//Members
-		cellAlpha: Property|string
-		color: Property|string
+		cellAlpha: Property|string|any
+		color: Property|string|any
 		definitionChanged: Event
 		isConstant: boolean
-		lineCount: Property|string
-		lineOffset: Property|string
-		lineThickness: Property|string
+		lineCount: Property|string|any
+		lineOffset: Property|string|any
+		lineThickness: Property|string|any
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -8040,10 +8040,10 @@ declare module 'cesium/Source/DataSources/ImageMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface ImageMaterialPropertyOptions
 	{
-		image?: Property|string;
-		repeat?: Property|string;
-		color?: Property|string;
-		transparent?: Property|string;
+		image?: Property|string|any;
+		repeat?: Property|string|any;
+		color?: Property|string|any;
+		transparent?: Property|string|any;
 	}
 	export = ImageMaterialPropertyOptions
 
@@ -8057,16 +8057,16 @@ declare module 'cesium/Source/DataSources/ImageMaterialProperty' {
 	{
 		constructor(options? : ImageMaterialPropertyOptions);
 		//Members
-		color: Property|string
+		color: Property|string|any
 		definitionChanged: Event
-		image: Property|string
+		image: Property|string|any
 		isConstant: boolean
-		repeat: Property|string
-		transparent: Property|string
+		repeat: Property|string|any
+		transparent: Property|string|any
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -8152,9 +8152,9 @@ declare module 'cesium/Source/DataSources/NodeTransformationPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface NodeTransformationPropertyOptions
 	{
-		translation?: Property|string;
-		rotation?: Property|string;
-		scale?: Property|string;
+		translation?: Property|string|any;
+		rotation?: Property|string|any;
+		scale?: Property|string|any;
 	}
 	export = NodeTransformationPropertyOptions
 
@@ -8171,13 +8171,13 @@ declare module 'cesium/Source/DataSources/NodeTransformationProperty' {
 		//Members
 		definitionChanged: Event
 		isConstant: boolean
-		rotation: Property|string
-		scale: Property|string
-		translation: Property|string
+		rotation: Property|string|any
+		scale: Property|string|any
+		translation: Property|string|any
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : TranslationRotationScale) : TranslationRotationScale
 
 	}
@@ -8238,7 +8238,7 @@ declare module 'cesium/Source/DataSources/PolygonGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -8248,10 +8248,10 @@ declare module 'cesium/Source/DataSources/PolygonGeometryUpdater' {
 		isClosed: boolean
 		isDynamic: boolean
 		onTerrain: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -8273,15 +8273,15 @@ declare module 'cesium/Source/DataSources/PolylineArrowMaterialProperty' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class PolylineArrowMaterialProperty 
 	{
-		constructor(color? : Property|string);
+		constructor(color? : Property|string|any);
 		//Members
-		color: Property|string
+		color: Property|string|any
 		definitionChanged: Event
 		isConstant: boolean
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -8293,10 +8293,10 @@ declare module 'cesium/Source/DataSources/PolylineDashMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface PolylineDashMaterialPropertyOptions
 	{
-		color?: Property|string;
-		gapColor?: Property|string;
-		dashLength?: Property|string;
-		dashPattern?: Property|string;
+		color?: Property|string|any;
+		gapColor?: Property|string|any;
+		dashLength?: Property|string|any;
+		dashPattern?: Property|string|any;
 	}
 	export = PolylineDashMaterialPropertyOptions
 
@@ -8310,16 +8310,16 @@ declare module 'cesium/Source/DataSources/PolylineDashMaterialProperty' {
 	{
 		constructor(options? : PolylineDashMaterialPropertyOptions);
 		//Members
-		color: Property|string
-		dashLength: Property|string
-		dashPattern: Property|string
+		color: Property|string|any
+		dashLength: Property|string|any
+		dashPattern: Property|string|any
 		definitionChanged: Event
-		gapColor: Property|string
+		gapColor: Property|string|any
 		isConstant: boolean
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -8344,7 +8344,7 @@ declare module 'cesium/Source/DataSources/PolylineGeometryUpdater' {
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
 		depthFailMaterialProperty: MaterialProperty
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -8353,9 +8353,9 @@ declare module 'cesium/Source/DataSources/PolylineGeometryUpdater' {
 		hasConstantOutline: boolean
 		isClosed: boolean
 		isDynamic: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -8375,8 +8375,8 @@ declare module 'cesium/Source/DataSources/PolylineGlowMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface PolylineGlowMaterialPropertyOptions
 	{
-		color?: Property|string;
-		glowPower?: Property|string;
+		color?: Property|string|any;
+		glowPower?: Property|string|any;
 	}
 	export = PolylineGlowMaterialPropertyOptions
 
@@ -8390,14 +8390,14 @@ declare module 'cesium/Source/DataSources/PolylineGlowMaterialProperty' {
 	{
 		constructor(options? : PolylineGlowMaterialPropertyOptions);
 		//Members
-		color: Property|string
+		color: Property|string|any
 		definitionChanged: Event
-		glowPower: Property|string
+		glowPower: Property|string|any
 		isConstant: boolean
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -8409,9 +8409,9 @@ declare module 'cesium/Source/DataSources/PolylineOutlineMaterialPropertyOptions
 	import Property = require('cesium/Source/DataSources/Property')
 	interface PolylineOutlineMaterialPropertyOptions
 	{
-		color?: Property|string;
-		outlineColor?: Property|string;
-		outlineWidth?: Property|string;
+		color?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
 	}
 	export = PolylineOutlineMaterialPropertyOptions
 
@@ -8425,15 +8425,15 @@ declare module 'cesium/Source/DataSources/PolylineOutlineMaterialProperty' {
 	{
 		constructor(options? : PolylineOutlineMaterialPropertyOptions);
 		//Members
-		color: Property|string
+		color: Property|string|any
 		definitionChanged: Event
 		isConstant: boolean
-		outlineColor: Property|string
-		outlineWidth: Property|string
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -8457,7 +8457,7 @@ declare module 'cesium/Source/DataSources/PolylineVolumeGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -8466,10 +8466,10 @@ declare module 'cesium/Source/DataSources/PolylineVolumeGeometryUpdater' {
 		hasConstantOutline: boolean
 		isClosed: boolean
 		isDynamic: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -8501,7 +8501,7 @@ declare module 'cesium/Source/DataSources/PositionPropertyArray' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time : JulianDate, result : Array<Cartesian3>) : Array<Cartesian3>
 		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 		setValue(value? : Array<Property>) : void
@@ -8523,7 +8523,7 @@ declare module 'cesium/Source/DataSources/PropertyArray' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : Array<any>) : Array<Object>
 		setValue(value? : Array<Property>) : void
 
@@ -8547,7 +8547,7 @@ declare module 'cesium/Source/DataSources/RectangleGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -8557,10 +8557,10 @@ declare module 'cesium/Source/DataSources/RectangleGeometryUpdater' {
 		isClosed: boolean
 		isDynamic: boolean
 		onTerrain: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods
@@ -8590,7 +8590,7 @@ declare module 'cesium/Source/DataSources/ReferenceProperty' {
 		definitionChanged: Event
 		isConstant: boolean
 		referenceFrame: ReferenceFrame
-		resolvedProperty: Property|string
+		resolvedProperty: Property|string|any
 		targetCollection: EntityCollection
 		targetId: string
 		targetPropertyNames: Array<string>
@@ -8598,7 +8598,7 @@ declare module 'cesium/Source/DataSources/ReferenceProperty' {
 
 		//Methods
 		static fromString(targetCollection? : EntityCollection, referenceString? : string) : ReferenceProperty
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
@@ -8664,7 +8664,7 @@ declare module 'cesium/Source/DataSources/SampledPositionProperty' {
 		addSample(time? : JulianDate, position? : Cartesian3, derivatives? : Array<Cartesian3>) : void
 		addSamples(times? : Array<JulianDate>, positions? : Array<Cartesian3>, derivatives? : Array<Array<any>>) : void
 		addSamplesPackedArray(packedSamples? : Array<number>, epoch? : JulianDate) : void
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : Cartesian3) : Cartesian3
 		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 		setInterpolationOptions(options : setInterpolationOptionsOptions) : void
@@ -8701,7 +8701,7 @@ declare module 'cesium/Source/DataSources/SampledProperty' {
 		addSample(time? : JulianDate, value? : Packable, derivatives? : Array<Packable>) : void
 		addSamples(times? : Array<JulianDate>, values? : Array<Packable>, derivativeValues? : Array<Array<any>>) : void
 		addSamplesPackedArray(packedSamples? : Array<number>, epoch? : JulianDate) : void
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : any) : Object
 		setInterpolationOptions(options : setInterpolationOptionsOptions) : void
 
@@ -8713,11 +8713,11 @@ declare module 'cesium/Source/DataSources/StripeMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	interface StripeMaterialPropertyOptions
 	{
-		evenColor?: Property|string;
-		oddColor?: Property|string;
-		repeat?: Property|string;
-		offset?: Property|string;
-		orientation?: Property|string;
+		evenColor?: Property|string|any;
+		oddColor?: Property|string|any;
+		repeat?: Property|string|any;
+		offset?: Property|string|any;
+		orientation?: Property|string|any;
 	}
 	export = StripeMaterialPropertyOptions
 
@@ -8732,16 +8732,16 @@ declare module 'cesium/Source/DataSources/StripeMaterialProperty' {
 		constructor(options? : StripeMaterialPropertyOptions);
 		//Members
 		definitionChanged: Event
-		evenColor: Property|string
+		evenColor: Property|string|any
 		isConstant: boolean
-		oddColor: Property|string
-		offset: Property|string
-		orientation: Property|string
-		repeat: Property|string
+		oddColor: Property|string|any
+		offset: Property|string|any
+		orientation: Property|string|any
+		repeat: Property|string|any
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getType(time? : JulianDate) : string
 		getValue(time? : JulianDate, result? : any) : Object
 
@@ -8782,7 +8782,7 @@ declare module 'cesium/Source/DataSources/TimeIntervalCollectionPositionProperty
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : any) : Object
 		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 
@@ -8805,7 +8805,7 @@ declare module 'cesium/Source/DataSources/TimeIntervalCollectionProperty' {
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time? : JulianDate, result? : any) : Object
 
 	}
@@ -8820,16 +8820,16 @@ declare module 'cesium/Source/DataSources/VelocityOrientationProperty' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class VelocityOrientationProperty extends Property
 	{
-		constructor(position? : Property|string, ellipsoid? : Ellipsoid);
+		constructor(position? : Property|string|any, ellipsoid? : Ellipsoid);
 		//Members
 		definitionChanged: Event
-		ellipsoid: Property|string
+		ellipsoid: Property|string|any
 		isConstant: boolean
-		position: Property|string
+		position: Property|string|any
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time : JulianDate, result : Quaternion) : Quaternion
 
 	}
@@ -8843,16 +8843,16 @@ declare module 'cesium/Source/DataSources/VelocityVectorProperty' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class VelocityVectorProperty 
 	{
-		constructor(position? : Property|string, normalize? : boolean);
+		constructor(position? : Property|string|any, normalize? : boolean);
 		//Members
 		definitionChanged: Event
 		isConstant: boolean
 		normalize: boolean
-		position: Property|string
+		position: Property|string|any
 
 
 		//Methods
-		equals(other : Property|string) : boolean
+		equals(other : Property|string|any) : boolean
 		getValue(time : JulianDate, result : Cartesian3) : Cartesian3
 
 	}
@@ -8892,7 +8892,7 @@ declare module 'cesium/Source/DataSources/WallGeometryUpdater' {
 		//Members
 		static materialAppearanceType: Appearance
 		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string
+		distanceDisplayConditionProperty: Property|string|any
 		entity: Entity
 		fillEnabled: boolean
 		fillMaterialProperty: MaterialProperty
@@ -8901,10 +8901,10 @@ declare module 'cesium/Source/DataSources/WallGeometryUpdater' {
 		hasConstantOutline: boolean
 		isClosed: boolean
 		isDynamic: boolean
-		outlineColorProperty: Property|string
+		outlineColorProperty: Property|string|any
 		outlineEnabled: boolean
 		outlineWidth: number
-		shadowsProperty: Property|string
+		shadowsProperty: Property|string|any
 
 
 		//Methods

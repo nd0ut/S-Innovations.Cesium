@@ -82,7 +82,6 @@ namespace SInnovations.Cesium.TypescriptGenerator
                     if (writer != null)
                     {
                        
-
                         props = props.ToDictionary(k => k.Key, v => Program.extractDependencies(dependencies, v.Value));
 
                         Program.WriteDependencies(type, dependencies, writer, null, null, _source);
@@ -488,6 +487,7 @@ namespace SInnovations.Cesium.TypescriptGenerator
             if(type.Contains("Promise"))
                 dependencies.Add("Promise");
 
+            type = Regex.Replace(type, @"Property\|string", "Property|string|any");
 
             return type;
          
