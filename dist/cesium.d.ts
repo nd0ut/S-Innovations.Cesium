@@ -1,3 +1,20 @@
+type Image = HTMLImageElement
+type Canvas = HTMLCanvasElement
+type TypedArray = any[]
+type HMDVRDevice = any
+type CanvasPixelArray = any[]
+type PerformanceContainer = any
+type RenderState = any
+type CompressedTextureBuffer = any
+
+declare module 'cesium/FrameState' {
+	class FrameState
+	{
+	constructor();
+	}
+	export = FrameState
+
+}
 declare module 'cesium/Promise' {
 	class Promise<T>
 	{
@@ -23,11 +40,11 @@ declare module 'cesium/Source/Core/AssociativeArray' {
 
 
 		//Methods
-		contains(key : string|number) : boolean
-		get(key : string|number) : Object
-		remove(key : string|number) : boolean
+		contains(key? : string|number) : boolean
+		get(key? : string|number) : Object
+		remove(key? : string|number) : boolean
 		removeAll() : void
-		set(key : string|number, value : any) : void
+		set(key? : string|number, value? : any) : void
 
 	}
 	export = AssociativeArray
@@ -214,36 +231,36 @@ declare module 'cesium/Source/Core/Color' {
 
 
 		//Methods
-		static add(left : Color, right : Color, result : Color) : Color
-		static byteToFloat(number : number) : number
-		static clone(color : Color, result : Color) : Color
-		static divide(left : Color, right : Color, result : Color) : Color
-		static divideByScalar(color : Color, scalar : number, result : Color) : Color
-		static equals(left : Color, right : Color) : boolean
-		static floatToByte(number : number) : number
-		static fromAlpha(color : Color, alpha : number, result : Color) : Color
+		static add(left? : Color, right? : Color, result? : Color) : Color
+		static byteToFloat(number? : number) : number
+		static clone(color? : Color, result? : Color) : Color
+		static divide(left? : Color, right? : Color, result? : Color) : Color
+		static divideByScalar(color? : Color, scalar? : number, result? : Color) : Color
+		static equals(left? : Color, right? : Color) : boolean
+		static floatToByte(number? : number) : number
+		static fromAlpha(color? : Color, alpha? : number, result? : Color) : Color
 		static fromBytes(red : number, green : number, blue : number, alpha : number, result : Color) : Color
-		static fromCartesian4(cartesian : Cartesian4, result : Color) : Color
-		static fromCssColorString(color : string, result : Color) : Color
+		static fromCartesian4(cartesian? : Cartesian4, result? : Color) : Color
+		static fromCssColorString(color? : string, result? : Color) : Color
 		static fromHsl(hue : number, saturation : number, lightness : number, alpha : number, result : Color) : Color
 		static fromRandom(options : fromRandomOptions, result : Color) : Color
-		static fromRgba(rgba : number, result : Color) : Color
-		static mod(left : Color, right : Color, result : Color) : Color
-		static multiply(left : Color, right : Color, result : Color) : Color
-		static multiplyByScalar(color : Color, scalar : number, result : Color) : Color
-		static pack(value : Color, array : Array<number>, startingIndex : number) : Array<number>
-		static subtract(left : Color, right : Color, result : Color) : Color
-		static unpack(array : Array<number>, startingIndex : number, result : Color) : Color
-		brighten(magnitude : number, result : Color) : Color
+		static fromRgba(rgba? : number, result? : Color) : Color
+		static mod(left? : Color, right? : Color, result? : Color) : Color
+		static multiply(left? : Color, right? : Color, result? : Color) : Color
+		static multiplyByScalar(color? : Color, scalar? : number, result? : Color) : Color
+		static pack(value? : Color, array? : Array<number>, startingIndex? : number) : Array<number>
+		static subtract(left? : Color, right? : Color, result? : Color) : Color
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Color) : Color
+		brighten(magnitude? : number, result? : Color) : Color
 		clone(result : Color) : Color
-		darken(magnitude : number, result : Color) : Color
-		equals(other : Color) : boolean
-		equalsEpsilon(other : Color, epsilon : number) : boolean
+		darken(magnitude? : number, result? : Color) : Color
+		equals(other? : Color) : boolean
+		equalsEpsilon(other? : Color, epsilon? : number) : boolean
 		toBytes(result : Array<number>) : Array<number>
 		toCssColorString() : string
 		toRgba() : number
 		toString() : string
-		withAlpha(alpha : number, result : Color) : Color
+		withAlpha(alpha? : number, result? : Color) : Color
 
 	}
 	export = Color
@@ -270,38 +287,38 @@ declare module 'cesium/Source/Core/Cartesian4' {
 		//Methods
 		clone(result : Cartesian4) : Cartesian4
 		equals(right : Cartesian4) : boolean
-		equalsEpsilon(right : Cartesian4, relativeEpsilon? : number, absoluteEpsilon : number) : boolean
+		equalsEpsilon(right : Cartesian4, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
 		toString() : string
-		static abs(cartesian : Cartesian4, result : Cartesian4) : Cartesian4
-		static add(left : Cartesian4, right : Cartesian4, result : Cartesian4) : Cartesian4
-		static clone(cartesian : Cartesian4, result : Cartesian4) : Cartesian4
-		static distance(left : Cartesian4, right : Cartesian4) : number
-		static distanceSquared(left : Cartesian4, right : Cartesian4) : number
-		static divideByScalar(cartesian : Cartesian4, scalar : number, result : Cartesian4) : Cartesian4
-		static divideComponents(left : Cartesian4, right : Cartesian4, result : Cartesian4) : Cartesian4
-		static dot(left : Cartesian4, right : Cartesian4) : number
+		static abs(cartesian? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static add(left? : Cartesian4, right? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static clone(cartesian? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static distance(left? : Cartesian4, right? : Cartesian4) : number
+		static distanceSquared(left? : Cartesian4, right? : Cartesian4) : number
+		static divideByScalar(cartesian? : Cartesian4, scalar? : number, result? : Cartesian4) : Cartesian4
+		static divideComponents(left? : Cartesian4, right? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static dot(left? : Cartesian4, right? : Cartesian4) : number
 		static equals(left : Cartesian4, right : Cartesian4) : boolean
-		static equalsEpsilon(left : Cartesian4, right : Cartesian4, relativeEpsilon? : number, absoluteEpsilon : number) : boolean
-		static fromArray(array : Array<number>, startingIndex : number, result : Cartesian4) : Cartesian4
-		static fromColor(color : Color, result : Cartesian4) : Cartesian4
-		static fromElements(x : number, y : number, z : number, w : number, result : Cartesian4) : Cartesian4
-		static lerp(start : Cartesian4, end : Cartesian4, t : number, result : Cartesian4) : Cartesian4
-		static magnitude(cartesian : Cartesian4) : number
-		static magnitudeSquared(cartesian : Cartesian4) : number
-		static maximumByComponent(first : Cartesian4, second : Cartesian4, result : Cartesian4) : Cartesian4
-		static maximumComponent(cartesian : Cartesian4) : number
-		static minimumByComponent(first : Cartesian4, second : Cartesian4, result : Cartesian4) : Cartesian4
-		static minimumComponent(cartesian : Cartesian4) : number
-		static mostOrthogonalAxis(cartesian : Cartesian4, result : Cartesian4) : Cartesian4
-		static multiplyByScalar(cartesian : Cartesian4, scalar : number, result : Cartesian4) : Cartesian4
-		static multiplyComponents(left : Cartesian4, right : Cartesian4, result : Cartesian4) : Cartesian4
-		static negate(cartesian : Cartesian4, result : Cartesian4) : Cartesian4
-		static normalize(cartesian : Cartesian4, result : Cartesian4) : Cartesian4
-		static pack(value : Cartesian4, array : Array<number>, startingIndex : number) : Array<number>
-		static packArray(array : Array<Cartesian4>, result : Array<number>) : Array<number>
-		static subtract(left : Cartesian4, right : Cartesian4, result : Cartesian4) : Cartesian4
-		static unpack(array : Array<number>, startingIndex : number, result : Cartesian4) : Cartesian4
-		static unpackArray(array : Array<number>, result : Array<Cartesian4>) : Array<Cartesian4>
+		static equalsEpsilon(left : Cartesian4, right : Cartesian4, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
+		static fromArray(array? : Array<number>, startingIndex? : number, result? : Cartesian4) : Cartesian4
+		static fromColor(color? : Color, result? : Cartesian4) : Cartesian4
+		static fromElements(x? : number, y? : number, z? : number, w? : number, result? : Cartesian4) : Cartesian4
+		static lerp(start? : Cartesian4, end? : Cartesian4, t? : number, result? : Cartesian4) : Cartesian4
+		static magnitude(cartesian? : Cartesian4) : number
+		static magnitudeSquared(cartesian? : Cartesian4) : number
+		static maximumByComponent(first? : Cartesian4, second? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static maximumComponent(cartesian? : Cartesian4) : number
+		static minimumByComponent(first? : Cartesian4, second? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static minimumComponent(cartesian? : Cartesian4) : number
+		static mostOrthogonalAxis(cartesian? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static multiplyByScalar(cartesian? : Cartesian4, scalar? : number, result? : Cartesian4) : Cartesian4
+		static multiplyComponents(left? : Cartesian4, right? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static negate(cartesian? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static normalize(cartesian? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static pack(value? : Cartesian4, array? : Array<number>, startingIndex? : number) : Array<number>
+		static packArray(array? : Array<Cartesian4>, result? : Array<number>) : Array<number>
+		static subtract(left? : Cartesian4, right? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Cartesian4) : Cartesian4
+		static unpackArray(array? : Array<number>, result? : Array<Cartesian4>) : Array<Cartesian4>
 
 	}
 	export = Cartesian4
@@ -321,12 +338,12 @@ declare module 'cesium/Source/Core/Cartographic' {
 
 
 		//Methods
-		static clone(cartographic : Cartographic, result : Cartographic) : Cartographic
+		static clone(cartographic? : Cartographic, result? : Cartographic) : Cartographic
 		static equals(left : Cartographic, right : Cartographic) : boolean
 		static equalsEpsilon(left : Cartographic, right : Cartographic, epsilon? : number) : boolean
-		static fromCartesian(cartesian : Cartesian3, ellipsoid : Ellipsoid, result : Cartographic) : Cartographic
-		static fromDegrees(longitude : number, latitude : number, height : number, result : Cartographic) : Cartographic
-		static fromRadians(longitude : number, latitude : number, height : number, result : Cartographic) : Cartographic
+		static fromCartesian(cartesian? : Cartesian3, ellipsoid? : Ellipsoid, result? : Cartographic) : Cartographic
+		static fromDegrees(longitude? : number, latitude? : number, height? : number, result? : Cartographic) : Cartographic
+		static fromRadians(longitude? : number, latitude? : number, height? : number, result? : Cartographic) : Cartographic
 		clone(result : Cartographic) : Cartographic
 		equals(right : Cartographic) : boolean
 		equalsEpsilon(right : Cartographic, epsilon? : number) : boolean
@@ -357,25 +374,25 @@ declare module 'cesium/Source/Core/Ellipsoid' {
 
 
 		//Methods
-		static clone(ellipsoid : Ellipsoid, result : Ellipsoid) : Ellipsoid
+		static clone(ellipsoid? : Ellipsoid, result? : Ellipsoid) : Ellipsoid
 		static fromCartesian3(cartesian : Cartesian3, result : Ellipsoid) : Ellipsoid
-		static pack(value : Ellipsoid, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : Ellipsoid) : Ellipsoid
-		cartesianArrayToCartographicArray(cartesians : Array<Cartesian3>, result : Array<Cartographic>) : Array<Cartographic>
-		cartesianToCartographic(cartesian : Cartesian3, result : Cartographic) : Cartographic
-		cartographicArrayToCartesianArray(cartographics : Array<Cartographic>, result : Array<Cartesian3>) : Array<Cartesian3>
-		cartographicToCartesian(cartographic : Cartographic, result : Cartesian3) : Cartesian3
+		static pack(value? : Ellipsoid, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Ellipsoid) : Ellipsoid
+		cartesianArrayToCartographicArray(cartesians? : Array<Cartesian3>, result? : Array<Cartographic>) : Array<Cartographic>
+		cartesianToCartographic(cartesian? : Cartesian3, result? : Cartographic) : Cartographic
+		cartographicArrayToCartesianArray(cartographics? : Array<Cartographic>, result? : Array<Cartesian3>) : Array<Cartesian3>
+		cartographicToCartesian(cartographic? : Cartographic, result? : Cartesian3) : Cartesian3
 		clone(result : Ellipsoid) : Ellipsoid
 		equals(right : Ellipsoid) : boolean
-		geocentricSurfaceNormal(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		geodeticSurfaceNormal(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		geodeticSurfaceNormalCartographic(cartographic : Cartographic, result : Cartesian3) : Cartesian3
-		getSurfaceNormalIntersectionWithZAxis(position : Cartesian3, buffer : number, result : Cartesian3) : Cartesian3|void
-		scaleToGeocentricSurface(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		scaleToGeodeticSurface(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
+		geocentricSurfaceNormal(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		geodeticSurfaceNormal(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		geodeticSurfaceNormalCartographic(cartographic? : Cartographic, result? : Cartesian3) : Cartesian3
+		getSurfaceNormalIntersectionWithZAxis(position? : Cartesian3, buffer? : number, result? : Cartesian3) : Cartesian3|void
+		scaleToGeocentricSurface(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		scaleToGeodeticSurface(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
 		toString() : string
-		transformPositionFromScaledSpace(position : Cartesian3, result : Cartesian3) : Cartesian3
-		transformPositionToScaledSpace(position : Cartesian3, result : Cartesian3) : Cartesian3
+		transformPositionFromScaledSpace(position? : Cartesian3, result? : Cartesian3) : Cartesian3
+		transformPositionToScaledSpace(position? : Cartesian3, result? : Cartesian3) : Cartesian3
 
 	}
 	export = Ellipsoid
@@ -390,14 +407,14 @@ declare module 'cesium/Source/Core/Spherical' {
 
 
 		//Methods
-		static clone(spherical : Spherical, result : Spherical) : Spherical
-		static equals(left : Spherical, right : Spherical) : boolean
-		static equalsEpsilon(left : Spherical, right : Spherical, epsilon : number) : boolean
-		static fromCartesian3(cartesian3 : Cartesian3, result : Spherical) : Spherical
-		static normalize(spherical : Spherical, result : Spherical) : Spherical
+		static clone(spherical? : Spherical, result? : Spherical) : Spherical
+		static equals(left? : Spherical, right? : Spherical) : boolean
+		static equalsEpsilon(left? : Spherical, right? : Spherical, epsilon? : number) : boolean
+		static fromCartesian3(cartesian3? : Cartesian3, result? : Spherical) : Spherical
+		static normalize(spherical? : Spherical, result? : Spherical) : Spherical
 		clone(result : Spherical) : Spherical
-		equals(other : Spherical) : boolean
-		equalsEpsilon(other : Spherical, epsilon : number) : boolean
+		equals(other? : Spherical) : boolean
+		equalsEpsilon(other? : Spherical, epsilon? : number) : boolean
 		toString() : string
 
 	}
@@ -425,47 +442,47 @@ declare module 'cesium/Source/Core/Cartesian3' {
 		//Methods
 		clone(result : Cartesian3) : Cartesian3
 		equals(right : Cartesian3) : boolean
-		equalsEpsilon(right : Cartesian3, relativeEpsilon? : number, absoluteEpsilon : number) : boolean
+		equalsEpsilon(right : Cartesian3, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
 		toString() : string
-		static abs(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		static add(left : Cartesian3, right : Cartesian3, result : Cartesian3) : Cartesian3
-		static angleBetween(left : Cartesian3, right : Cartesian3) : number
-		static clone(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		static cross(left : Cartesian3, right : Cartesian3, result : Cartesian3) : Cartesian3
-		static distance(left : Cartesian3, right : Cartesian3) : number
-		static distanceSquared(left : Cartesian3, right : Cartesian3) : number
-		static divideByScalar(cartesian : Cartesian3, scalar : number, result : Cartesian3) : Cartesian3
-		static divideComponents(left : Cartesian3, right : Cartesian3, result : Cartesian3) : Cartesian3
-		static dot(left : Cartesian3, right : Cartesian3) : number
+		static abs(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static add(left? : Cartesian3, right? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static angleBetween(left? : Cartesian3, right? : Cartesian3) : number
+		static clone(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static cross(left? : Cartesian3, right? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static distance(left? : Cartesian3, right? : Cartesian3) : number
+		static distanceSquared(left? : Cartesian3, right? : Cartesian3) : number
+		static divideByScalar(cartesian? : Cartesian3, scalar? : number, result? : Cartesian3) : Cartesian3
+		static divideComponents(left? : Cartesian3, right? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static dot(left? : Cartesian3, right? : Cartesian3) : number
 		static equals(left : Cartesian3, right : Cartesian3) : boolean
-		static equalsEpsilon(left : Cartesian3, right : Cartesian3, relativeEpsilon? : number, absoluteEpsilon : number) : boolean
-		static fromArray(array : Array<number>, startingIndex : number, result : Cartesian3) : Cartesian3
-		static fromCartesian4(cartesian : Cartesian4, result : Cartesian3) : Cartesian3
-		static fromDegrees(longitude : number, latitude : number, height : number, ellipsoid : Ellipsoid, result : Cartesian3) : Cartesian3
-		static fromDegreesArray(coordinates : Array<number>, ellipsoid : Ellipsoid, result : Array<Cartesian3>) : Array<Cartesian3>
-		static fromDegreesArrayHeights(coordinates : Array<number>, ellipsoid : Ellipsoid, result : Array<Cartesian3>) : Array<Cartesian3>
-		static fromElements(x : number, y : number, z : number, result : Cartesian3) : Cartesian3
-		static fromRadians(longitude : number, latitude : number, height : number, ellipsoid : Ellipsoid, result : Cartesian3) : Cartesian3
-		static fromRadiansArray(coordinates : Array<number>, ellipsoid : Ellipsoid, result : Array<Cartesian3>) : Array<Cartesian3>
-		static fromRadiansArrayHeights(coordinates : Array<number>, ellipsoid : Ellipsoid, result : Array<Cartesian3>) : Array<Cartesian3>
-		static fromSpherical(spherical : Spherical, result : Cartesian3) : Cartesian3
-		static lerp(start : Cartesian3, end : Cartesian3, t : number, result : Cartesian3) : Cartesian3
-		static magnitude(cartesian : Cartesian3) : number
-		static magnitudeSquared(cartesian : Cartesian3) : number
-		static maximumByComponent(first : Cartesian3, second : Cartesian3, result : Cartesian3) : Cartesian3
-		static maximumComponent(cartesian : Cartesian3) : number
-		static minimumByComponent(first : Cartesian3, second : Cartesian3, result : Cartesian3) : Cartesian3
-		static minimumComponent(cartesian : Cartesian3) : number
-		static mostOrthogonalAxis(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		static multiplyByScalar(cartesian : Cartesian3, scalar : number, result : Cartesian3) : Cartesian3
-		static multiplyComponents(left : Cartesian3, right : Cartesian3, result : Cartesian3) : Cartesian3
-		static negate(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		static normalize(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		static pack(value : Cartesian3, array : Array<number>, startingIndex : number) : Array<number>
-		static packArray(array : Array<Cartesian3>, result : Array<number>) : Array<number>
-		static subtract(left : Cartesian3, right : Cartesian3, result : Cartesian3) : Cartesian3
-		static unpack(array : Array<number>, startingIndex : number, result : Cartesian3) : Cartesian3
-		static unpackArray(array : Array<number>, result : Array<Cartesian3>) : Array<Cartesian3>
+		static equalsEpsilon(left : Cartesian3, right : Cartesian3, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
+		static fromArray(array? : Array<number>, startingIndex? : number, result? : Cartesian3) : Cartesian3
+		static fromCartesian4(cartesian? : Cartesian4, result? : Cartesian3) : Cartesian3
+		static fromDegrees(longitude? : number, latitude? : number, height? : number, ellipsoid? : Ellipsoid, result? : Cartesian3) : Cartesian3
+		static fromDegreesArray(coordinates? : Array<number>, ellipsoid? : Ellipsoid, result? : Array<Cartesian3>) : Array<Cartesian3>
+		static fromDegreesArrayHeights(coordinates? : Array<number>, ellipsoid? : Ellipsoid, result? : Array<Cartesian3>) : Array<Cartesian3>
+		static fromElements(x? : number, y? : number, z? : number, result? : Cartesian3) : Cartesian3
+		static fromRadians(longitude? : number, latitude? : number, height? : number, ellipsoid? : Ellipsoid, result? : Cartesian3) : Cartesian3
+		static fromRadiansArray(coordinates? : Array<number>, ellipsoid? : Ellipsoid, result? : Array<Cartesian3>) : Array<Cartesian3>
+		static fromRadiansArrayHeights(coordinates? : Array<number>, ellipsoid? : Ellipsoid, result? : Array<Cartesian3>) : Array<Cartesian3>
+		static fromSpherical(spherical? : Spherical, result? : Cartesian3) : Cartesian3
+		static lerp(start? : Cartesian3, end? : Cartesian3, t? : number, result? : Cartesian3) : Cartesian3
+		static magnitude(cartesian? : Cartesian3) : number
+		static magnitudeSquared(cartesian? : Cartesian3) : number
+		static maximumByComponent(first? : Cartesian3, second? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static maximumComponent(cartesian? : Cartesian3) : number
+		static minimumByComponent(first? : Cartesian3, second? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static minimumComponent(cartesian? : Cartesian3) : number
+		static mostOrthogonalAxis(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static multiplyByScalar(cartesian? : Cartesian3, scalar? : number, result? : Cartesian3) : Cartesian3
+		static multiplyComponents(left? : Cartesian3, right? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static negate(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static normalize(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static pack(value? : Cartesian3, array? : Array<number>, startingIndex? : number) : Array<number>
+		static packArray(array? : Array<Cartesian3>, result? : Array<number>) : Array<number>
+		static subtract(left? : Cartesian3, right? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Cartesian3) : Cartesian3
+		static unpackArray(array? : Array<number>, result? : Array<Cartesian3>) : Array<Cartesian3>
 
 	}
 	export = Cartesian3
@@ -502,9 +519,9 @@ declare module 'cesium/Source/Core/Plane' {
 
 
 		//Methods
-		static fromCartesian4(coefficients : Cartesian4, result : Plane) : Plane
-		static fromPointNormal(point : Cartesian3, normal : Cartesian3, result : Plane) : Plane
-		static getPointDistance(plane : Plane, point : Cartesian3) : number
+		static fromCartesian4(coefficients? : Cartesian4, result? : Plane) : Plane
+		static fromPointNormal(point? : Cartesian3, normal? : Cartesian3, result? : Plane) : Plane
+		static getPointDistance(plane? : Plane, point? : Cartesian3) : number
 
 	}
 	export = Plane
@@ -524,13 +541,13 @@ declare module 'cesium/Source/Core/AxisAlignedBoundingBox' {
 
 
 		//Methods
-		static clone(box : AxisAlignedBoundingBox, result : AxisAlignedBoundingBox) : AxisAlignedBoundingBox
+		static clone(box? : AxisAlignedBoundingBox, result? : AxisAlignedBoundingBox) : AxisAlignedBoundingBox
 		static equals(left : AxisAlignedBoundingBox, right : AxisAlignedBoundingBox) : boolean
-		static fromPoints(positions : Array<Cartesian3>, result : AxisAlignedBoundingBox) : AxisAlignedBoundingBox
-		static intersectPlane(box : AxisAlignedBoundingBox, plane : Plane) : Intersect
+		static fromPoints(positions? : Array<Cartesian3>, result? : AxisAlignedBoundingBox) : AxisAlignedBoundingBox
+		static intersectPlane(box? : AxisAlignedBoundingBox, plane? : Plane) : Intersect
 		clone(result : AxisAlignedBoundingBox) : AxisAlignedBoundingBox
 		equals(right : AxisAlignedBoundingBox) : boolean
-		intersectPlane(plane : Plane) : Intersect
+		intersectPlane(plane? : Plane) : Intersect
 
 	}
 	export = AxisAlignedBoundingBox
@@ -562,8 +579,8 @@ declare module 'cesium/Source/Core/MapProjection' {
 
 
 		//Methods
-		project(cartographic : Cartographic, result : Cartesian3) : Cartesian3
-		unproject(cartesian : Cartesian3, result : Cartographic) : Cartographic
+		project(cartographic? : Cartographic, result? : Cartesian3) : Cartesian3
+		unproject(cartesian? : Cartesian3, result? : Cartographic) : Cartographic
 
 	}
 	export = MapProjection
@@ -613,7 +630,7 @@ declare module 'cesium/Source/Core/HeadingPitchRange' {
 
 
 		//Methods
-		static clone(hpr : HeadingPitchRange, result : HeadingPitchRange) : HeadingPitchRange
+		static clone(hpr? : HeadingPitchRange, result? : HeadingPitchRange) : HeadingPitchRange
 
 	}
 	export = HeadingPitchRange
@@ -638,28 +655,28 @@ declare module 'cesium/Source/Core/Rectangle' {
 
 
 		//Methods
-		static center(rectangle : Rectangle, result : Cartographic) : Cartographic
-		static clone(rectangle : Rectangle, result : Rectangle) : Rectangle
-		static computeHeight(rectangle : Rectangle) : number
-		static computeWidth(rectangle : Rectangle) : number
-		static contains(rectangle : Rectangle, cartographic : Cartographic) : boolean
+		static center(rectangle? : Rectangle, result? : Cartographic) : Cartographic
+		static clone(rectangle? : Rectangle, result? : Rectangle) : Rectangle
+		static computeHeight(rectangle? : Rectangle) : number
+		static computeWidth(rectangle? : Rectangle) : number
+		static contains(rectangle? : Rectangle, cartographic? : Cartographic) : boolean
 		static equals(left : Rectangle, right : Rectangle) : boolean
-		static expand(rectangle : Rectangle, cartographic : Cartographic, result : Rectangle) : Rectangle
-		static fromCartesianArray(cartesians : Array<Cartesian3>, ellipsoid : Ellipsoid, result : Rectangle) : Rectangle
-		static fromCartographicArray(cartographics : Array<Cartographic>, result : Rectangle) : Rectangle
+		static expand(rectangle? : Rectangle, cartographic? : Cartographic, result? : Rectangle) : Rectangle
+		static fromCartesianArray(cartesians? : Array<Cartesian3>, ellipsoid? : Ellipsoid, result? : Rectangle) : Rectangle
+		static fromCartographicArray(cartographics? : Array<Cartographic>, result? : Rectangle) : Rectangle
 		static fromDegrees(west : number, south : number, east : number, north : number, result : Rectangle) : Rectangle
 		static fromRadians(west : number, south : number, east : number, north : number, result : Rectangle) : Rectangle
-		static intersection(rectangle : Rectangle, otherRectangle : Rectangle, result : Rectangle) : Rectangle|void
-		static northeast(rectangle : Rectangle, result : Cartographic) : Cartographic
-		static northwest(rectangle : Rectangle, result : Cartographic) : Cartographic
-		static pack(value : Rectangle, array : Array<number>, startingIndex : number) : Array<number>
-		static simpleIntersection(rectangle : Rectangle, otherRectangle : Rectangle, result : Rectangle) : Rectangle|void
-		static southeast(rectangle : Rectangle, result : Cartographic) : Cartographic
-		static southwest(rectangle : Rectangle, result : Cartographic) : Cartographic
-		static subsample(rectangle : Rectangle, ellipsoid : Ellipsoid, surfaceHeight : number, result : Array<Cartesian3>) : Array<Cartesian3>
-		static union(rectangle : Rectangle, otherRectangle : Rectangle, result : Rectangle) : Rectangle
-		static unpack(array : Array<number>, startingIndex : number, result : Rectangle) : Rectangle
-		static validate(rectangle : Rectangle) : void
+		static intersection(rectangle? : Rectangle, otherRectangle? : Rectangle, result? : Rectangle) : Rectangle|void
+		static northeast(rectangle? : Rectangle, result? : Cartographic) : Cartographic
+		static northwest(rectangle? : Rectangle, result? : Cartographic) : Cartographic
+		static pack(value? : Rectangle, array? : Array<number>, startingIndex? : number) : Array<number>
+		static simpleIntersection(rectangle? : Rectangle, otherRectangle? : Rectangle, result? : Rectangle) : Rectangle|void
+		static southeast(rectangle? : Rectangle, result? : Cartographic) : Cartographic
+		static southwest(rectangle? : Rectangle, result? : Cartographic) : Cartographic
+		static subsample(rectangle? : Rectangle, ellipsoid? : Ellipsoid, surfaceHeight? : number, result? : Array<Cartesian3>) : Array<Cartesian3>
+		static union(rectangle? : Rectangle, otherRectangle? : Rectangle, result? : Rectangle) : Rectangle
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Rectangle) : Rectangle
+		static validate(rectangle? : Rectangle) : void
 		clone(result : Rectangle) : Rectangle
 		equals(other : Rectangle) : boolean
 		equalsEpsilon(other : Rectangle, epsilon? : number) : boolean
@@ -677,9 +694,9 @@ declare module 'cesium/Source/Core/Event' {
 
 
 		//Methods
-		addEventListener(listener : (()=>void), scope : any) : any
-		raiseEvent(args : any) : void
-		removeEventListener(listener : (()=>void), scope : any) : boolean
+		addEventListener(listener? : (()=>void), scope? : any) : any
+		raiseEvent(args? : any) : void
+		removeEventListener(listener? : (()=>void), scope? : any) : boolean
 
 	}
 	export = Event
@@ -717,38 +734,38 @@ declare module 'cesium/Source/Core/Quaternion' {
 
 
 		//Methods
-		static add(left : Quaternion, right : Quaternion, result : Quaternion) : Quaternion
-		static clone(quaternion : Quaternion, result : Quaternion) : Quaternion
-		static computeAngle(quaternion : Quaternion) : number
-		static computeAxis(quaternion : Quaternion, result : Cartesian3) : Cartesian3
-		static computeInnerQuadrangle(q0 : Quaternion, q1 : Quaternion, q2 : Quaternion, result : Quaternion) : Quaternion
-		static conjugate(quaternion : Quaternion, result : Quaternion) : Quaternion
-		static convertPackedArrayForInterpolation(packedArray : Array<number>, startingIndex : number, lastIndex : number, result? : Array<number>) : void
-		static divideByScalar(quaternion : Quaternion, scalar : number, result : Quaternion) : Quaternion
-		static dot(left : Quaternion, right : Quaternion) : number
+		static add(left? : Quaternion, right? : Quaternion, result? : Quaternion) : Quaternion
+		static clone(quaternion? : Quaternion, result? : Quaternion) : Quaternion
+		static computeAngle(quaternion? : Quaternion) : number
+		static computeAxis(quaternion? : Quaternion, result? : Cartesian3) : Cartesian3
+		static computeInnerQuadrangle(q0? : Quaternion, q1? : Quaternion, q2? : Quaternion, result? : Quaternion) : Quaternion
+		static conjugate(quaternion? : Quaternion, result? : Quaternion) : Quaternion
+		static convertPackedArrayForInterpolation(packedArray? : Array<number>, startingIndex? : number, lastIndex? : number, result? : Array<number>) : void
+		static divideByScalar(quaternion? : Quaternion, scalar? : number, result? : Quaternion) : Quaternion
+		static dot(left? : Quaternion, right? : Quaternion) : number
 		static equals(left : Quaternion, right : Quaternion) : boolean
 		static equalsEpsilon(left : Quaternion, right : Quaternion, epsilon? : number) : boolean
-		static exp(cartesian : Cartesian3, result : Quaternion) : Quaternion
-		static fastSlerp(start : Quaternion, end : Quaternion, t : number, result : Quaternion) : Quaternion
-		static fastSquad(q0 : Quaternion, q1 : Quaternion, s0 : Quaternion, s1 : Quaternion, t : number, result : Quaternion) : Quaternion
-		static fromAxisAngle(axis : Cartesian3, angle : number, result : Quaternion) : Quaternion
-		static fromHeadingPitchRoll(headingPitchRoll : HeadingPitchRoll, result : Quaternion) : Quaternion
-		static fromRotationMatrix(matrix : Matrix3, result : Quaternion) : Quaternion
-		static inverse(quaternion : Quaternion, result : Quaternion) : Quaternion
-		static lerp(start : Quaternion, end : Quaternion, t : number, result : Quaternion) : Quaternion
-		static log(quaternion : Quaternion, result : Cartesian3) : Cartesian3
-		static magnitude(quaternion : Quaternion) : number
-		static magnitudeSquared(quaternion : Quaternion) : number
-		static multiply(left : Quaternion, right : Quaternion, result : Quaternion) : Quaternion
-		static multiplyByScalar(quaternion : Quaternion, scalar : number, result : Quaternion) : Quaternion
-		static negate(quaternion : Quaternion, result : Quaternion) : Quaternion
-		static normalize(quaternion : Quaternion, result : Quaternion) : Quaternion
-		static pack(value : Quaternion, array : Array<number>, startingIndex : number) : Array<number>
-		static slerp(start : Quaternion, end : Quaternion, t : number, result : Quaternion) : Quaternion
-		static squad(q0 : Quaternion, q1 : Quaternion, s0 : Quaternion, s1 : Quaternion, t : number, result : Quaternion) : Quaternion
-		static subtract(left : Quaternion, right : Quaternion, result : Quaternion) : Quaternion
-		static unpack(array : Array<number>, startingIndex : number, result : Quaternion) : Quaternion
-		static unpackInterpolationResult(array : Array<number>, sourceArray : Array<number>, firstIndex : number, lastIndex : number, result : Quaternion) : Quaternion
+		static exp(cartesian? : Cartesian3, result? : Quaternion) : Quaternion
+		static fastSlerp(start? : Quaternion, end? : Quaternion, t? : number, result? : Quaternion) : Quaternion
+		static fastSquad(q0? : Quaternion, q1? : Quaternion, s0? : Quaternion, s1? : Quaternion, t? : number, result? : Quaternion) : Quaternion
+		static fromAxisAngle(axis? : Cartesian3, angle? : number, result? : Quaternion) : Quaternion
+		static fromHeadingPitchRoll(headingPitchRoll? : HeadingPitchRoll, result? : Quaternion) : Quaternion
+		static fromRotationMatrix(matrix? : Matrix3, result? : Quaternion) : Quaternion
+		static inverse(quaternion? : Quaternion, result? : Quaternion) : Quaternion
+		static lerp(start? : Quaternion, end? : Quaternion, t? : number, result? : Quaternion) : Quaternion
+		static log(quaternion? : Quaternion, result? : Cartesian3) : Cartesian3
+		static magnitude(quaternion? : Quaternion) : number
+		static magnitudeSquared(quaternion? : Quaternion) : number
+		static multiply(left? : Quaternion, right? : Quaternion, result? : Quaternion) : Quaternion
+		static multiplyByScalar(quaternion? : Quaternion, scalar? : number, result? : Quaternion) : Quaternion
+		static negate(quaternion? : Quaternion, result? : Quaternion) : Quaternion
+		static normalize(quaternion? : Quaternion, result? : Quaternion) : Quaternion
+		static pack(value? : Quaternion, array? : Array<number>, startingIndex? : number) : Array<number>
+		static slerp(start? : Quaternion, end? : Quaternion, t? : number, result? : Quaternion) : Quaternion
+		static squad(q0? : Quaternion, q1? : Quaternion, s0? : Quaternion, s1? : Quaternion, t? : number, result? : Quaternion) : Quaternion
+		static subtract(left? : Quaternion, right? : Quaternion, result? : Quaternion) : Quaternion
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Quaternion) : Quaternion
+		static unpackInterpolationResult(array? : Array<number>, sourceArray? : Array<number>, firstIndex? : number, lastIndex? : number, result? : Quaternion) : Quaternion
 		clone(result : Quaternion) : Quaternion
 		equals(right : Quaternion) : boolean
 		equalsEpsilon(right : Quaternion, epsilon? : number) : boolean
@@ -767,14 +784,14 @@ declare module 'cesium/Source/Core/HeadingPitchRoll' {
 
 
 		//Methods
-		static clone(headingPitchRoll : HeadingPitchRoll, result : HeadingPitchRoll) : HeadingPitchRoll
+		static clone(headingPitchRoll? : HeadingPitchRoll, result? : HeadingPitchRoll) : HeadingPitchRoll
 		static equals(left : HeadingPitchRoll, right : HeadingPitchRoll) : boolean
-		static equalsEpsilon(left : HeadingPitchRoll, right : HeadingPitchRoll, relativeEpsilon? : number, absoluteEpsilon : number) : boolean
-		static fromDegrees(heading : number, pitch : number, roll : number, result : HeadingPitchRoll) : HeadingPitchRoll
-		static fromQuaternion(quaternion : Quaternion, result : HeadingPitchRoll) : HeadingPitchRoll
+		static equalsEpsilon(left : HeadingPitchRoll, right : HeadingPitchRoll, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
+		static fromDegrees(heading? : number, pitch? : number, roll? : number, result? : HeadingPitchRoll) : HeadingPitchRoll
+		static fromQuaternion(quaternion? : Quaternion, result? : HeadingPitchRoll) : HeadingPitchRoll
 		clone(result : HeadingPitchRoll) : HeadingPitchRoll
 		equals(right : HeadingPitchRoll) : boolean
-		equalsEpsilon(right : HeadingPitchRoll, relativeEpsilon? : number, absoluteEpsilon : number) : boolean
+		equalsEpsilon(right : HeadingPitchRoll, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
 		toString() : string
 
 	}
@@ -809,42 +826,42 @@ declare module 'cesium/Source/Core/Matrix3' {
 		equals(right : Matrix3) : boolean
 		equalsEpsilon(right : Matrix3, epsilon? : number) : boolean
 		toString() : string
-		static abs(matrix : Matrix3, result : Matrix3) : Matrix3
-		static add(left : Matrix3, right : Matrix3, result : Matrix3) : Matrix3
-		static clone(matrix : Matrix3, result : Matrix3) : Matrix3
-		static computeEigenDecomposition(matrix : Matrix3, result : any) : Object
-		static determinant(matrix : Matrix3) : number
+		static abs(matrix? : Matrix3, result? : Matrix3) : Matrix3
+		static add(left? : Matrix3, right? : Matrix3, result? : Matrix3) : Matrix3
+		static clone(matrix? : Matrix3, result? : Matrix3) : Matrix3
+		static computeEigenDecomposition(matrix? : Matrix3, result? : any) : Object
+		static determinant(matrix? : Matrix3) : number
 		static equals(left : Matrix3, right : Matrix3) : boolean
 		static equalsEpsilon(left : Matrix3, right : Matrix3, epsilon? : number) : boolean
-		static fromArray(array : Array<number>, startingIndex : number, result : Matrix3) : Matrix3
-		static fromColumnMajorArray(values : Array<number>, result : Matrix3) : Matrix3
-		static fromCrossProduct(vector : Cartesian3, result : Matrix3) : Matrix3
-		static fromHeadingPitchRoll(headingPitchRoll : HeadingPitchRoll, result : Matrix3) : Matrix3
-		static fromQuaternion(quaternion : Quaternion, result : Matrix3) : Matrix3
-		static fromRotationX(angle : number, result : Matrix3) : Matrix3
-		static fromRotationY(angle : number, result : Matrix3) : Matrix3
-		static fromRotationZ(angle : number, result : Matrix3) : Matrix3
-		static fromRowMajorArray(values : Array<number>, result : Matrix3) : Matrix3
-		static fromScale(scale : Cartesian3, result : Matrix3) : Matrix3
-		static fromUniformScale(scale : number, result : Matrix3) : Matrix3
-		static getColumn(matrix : Matrix3, index : number, result : Cartesian3) : Cartesian3
-		static getElementIndex(row : number, column : number) : number
-		static getMaximumScale(matrix : Matrix3) : number
-		static getRow(matrix : Matrix3, index : number, result : Cartesian3) : Cartesian3
-		static getScale(matrix : Matrix3, result : Cartesian3) : Cartesian3
-		static inverse(matrix : Matrix3, result : Matrix3) : Matrix3
-		static multiply(left : Matrix3, right : Matrix3, result : Matrix3) : Matrix3
-		static multiplyByScalar(matrix : Matrix3, scalar : number, result : Matrix3) : Matrix3
-		static multiplyByScale(matrix : Matrix3, scale : Cartesian3, result : Matrix3) : Matrix3
-		static multiplyByVector(matrix : Matrix3, cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		static negate(matrix : Matrix3, result : Matrix3) : Matrix3
-		static pack(value : Matrix3, array : Array<number>, startingIndex : number) : Array<number>
-		static setColumn(matrix : Matrix3, index : number, cartesian : Cartesian3, result : Matrix3) : Matrix3
-		static setRow(matrix : Matrix3, index : number, cartesian : Cartesian3, result : Matrix3) : Matrix3
-		static subtract(left : Matrix3, right : Matrix3, result : Matrix3) : Matrix3
-		static toArray(matrix : Matrix3, result : Array<number>) : Array<number>
-		static transpose(matrix : Matrix3, result : Matrix3) : Matrix3
-		static unpack(array : Array<number>, startingIndex : number, result : Matrix3) : Matrix3
+		static fromArray(array? : Array<number>, startingIndex? : number, result? : Matrix3) : Matrix3
+		static fromColumnMajorArray(values? : Array<number>, result? : Matrix3) : Matrix3
+		static fromCrossProduct(vector? : Cartesian3, result? : Matrix3) : Matrix3
+		static fromHeadingPitchRoll(headingPitchRoll? : HeadingPitchRoll, result? : Matrix3) : Matrix3
+		static fromQuaternion(quaternion? : Quaternion, result? : Matrix3) : Matrix3
+		static fromRotationX(angle? : number, result? : Matrix3) : Matrix3
+		static fromRotationY(angle? : number, result? : Matrix3) : Matrix3
+		static fromRotationZ(angle? : number, result? : Matrix3) : Matrix3
+		static fromRowMajorArray(values? : Array<number>, result? : Matrix3) : Matrix3
+		static fromScale(scale? : Cartesian3, result? : Matrix3) : Matrix3
+		static fromUniformScale(scale? : number, result? : Matrix3) : Matrix3
+		static getColumn(matrix? : Matrix3, index? : number, result? : Cartesian3) : Cartesian3
+		static getElementIndex(row? : number, column? : number) : number
+		static getMaximumScale(matrix? : Matrix3) : number
+		static getRow(matrix? : Matrix3, index? : number, result? : Cartesian3) : Cartesian3
+		static getScale(matrix? : Matrix3, result? : Cartesian3) : Cartesian3
+		static inverse(matrix? : Matrix3, result? : Matrix3) : Matrix3
+		static multiply(left? : Matrix3, right? : Matrix3, result? : Matrix3) : Matrix3
+		static multiplyByScalar(matrix? : Matrix3, scalar? : number, result? : Matrix3) : Matrix3
+		static multiplyByScale(matrix? : Matrix3, scale? : Cartesian3, result? : Matrix3) : Matrix3
+		static multiplyByVector(matrix? : Matrix3, cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static negate(matrix? : Matrix3, result? : Matrix3) : Matrix3
+		static pack(value? : Matrix3, array? : Array<number>, startingIndex? : number) : Array<number>
+		static setColumn(matrix? : Matrix3, index? : number, cartesian? : Cartesian3, result? : Matrix3) : Matrix3
+		static setRow(matrix? : Matrix3, index? : number, cartesian? : Cartesian3, result? : Matrix3) : Matrix3
+		static subtract(left? : Matrix3, right? : Matrix3, result? : Matrix3) : Matrix3
+		static toArray(matrix? : Matrix3, result? : Array<number>) : Array<number>
+		static transpose(matrix? : Matrix3, result? : Matrix3) : Matrix3
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Matrix3) : Matrix3
 
 	}
 	export = Matrix3
@@ -907,55 +924,55 @@ declare module 'cesium/Source/Core/Matrix4' {
 		equals(right : Matrix4) : boolean
 		equalsEpsilon(right : Matrix4, epsilon? : number) : boolean
 		toString() : string
-		static abs(matrix : Matrix4, result : Matrix4) : Matrix4
-		static add(left : Matrix4, right : Matrix4, result : Matrix4) : Matrix4
-		static clone(matrix : Matrix4, result : Matrix4) : Matrix4
-		static computeInfinitePerspectiveOffCenter(left : number, right : number, bottom : number, top : number, near : number, result : Matrix4) : Matrix4
-		static computeOrthographicOffCenter(left : number, right : number, bottom : number, top : number, near : number, far : number, result : Matrix4) : Matrix4
-		static computePerspectiveFieldOfView(fovY : number, aspectRatio : number, near : number, far : number, result : Matrix4) : Matrix4
-		static computePerspectiveOffCenter(left : number, right : number, bottom : number, top : number, near : number, far : number, result : Matrix4) : Matrix4
-		static computeView(position : Cartesian3, direction : Cartesian3, up : Cartesian3, right : Cartesian3, result : Matrix4) : Matrix4
+		static abs(matrix? : Matrix4, result? : Matrix4) : Matrix4
+		static add(left? : Matrix4, right? : Matrix4, result? : Matrix4) : Matrix4
+		static clone(matrix? : Matrix4, result? : Matrix4) : Matrix4
+		static computeInfinitePerspectiveOffCenter(left? : number, right? : number, bottom? : number, top? : number, near? : number, result? : Matrix4) : Matrix4
+		static computeOrthographicOffCenter(left? : number, right? : number, bottom? : number, top? : number, near? : number, far? : number, result? : Matrix4) : Matrix4
+		static computePerspectiveFieldOfView(fovY? : number, aspectRatio? : number, near? : number, far? : number, result? : Matrix4) : Matrix4
+		static computePerspectiveOffCenter(left? : number, right? : number, bottom? : number, top? : number, near? : number, far? : number, result? : Matrix4) : Matrix4
+		static computeView(position? : Cartesian3, direction? : Cartesian3, up? : Cartesian3, right? : Cartesian3, result? : Matrix4) : Matrix4
 		static computeViewportTransformation(viewport : any, nearDepthRange : number, farDepthRange : number, result? : Matrix4) : Matrix4
 		static equals(left : Matrix4, right : Matrix4) : boolean
 		static equalsEpsilon(left : Matrix4, right : Matrix4, epsilon? : number) : boolean
-		static fromArray(array : Array<number>, startingIndex : number, result : Matrix4) : Matrix4
-		static fromCamera(camera : Camera, result : Matrix4) : Matrix4
-		static fromColumnMajorArray(values : Array<number>, result : Matrix4) : Matrix4
-		static fromRotationTranslation(rotation : Matrix3, translation : Cartesian3, result : Matrix4) : Matrix4
-		static fromRowMajorArray(values : Array<number>, result : Matrix4) : Matrix4
-		static fromScale(scale : Cartesian3, result : Matrix4) : Matrix4
-		static fromTranslation(translation : Cartesian3, result : Matrix4) : Matrix4
-		static fromTranslationQuaternionRotationScale(translation : Cartesian3, rotation : Quaternion, scale : Cartesian3, result : Matrix4) : Matrix4
-		static fromTranslationRotationScale(translationRotationScale : TranslationRotationScale, result : Matrix4) : Matrix4
-		static fromUniformScale(scale : number, result : Matrix4) : Matrix4
-		static getColumn(matrix : Matrix4, index : number, result : Cartesian4) : Cartesian4
-		static getElementIndex(row : number, column : number) : number
-		static getMaximumScale(matrix : Matrix4) : number
-		static getRotation(matrix : Matrix4, result : Matrix3) : Matrix3
-		static getRow(matrix : Matrix4, index : number, result : Cartesian4) : Cartesian4
-		static getScale(matrix : Matrix4, result : Cartesian3) : Cartesian3
-		static getTranslation(matrix : Matrix4, result : Cartesian3) : Cartesian3
-		static inverse(matrix : Matrix4, result : Matrix4) : Matrix4
-		static inverseTransformation(matrix : Matrix4, result : Matrix4) : Matrix4
-		static multiply(left : Matrix4, right : Matrix4, result : Matrix4) : Matrix4
-		static multiplyByMatrix3(matrix : Matrix4, rotation : Matrix3, result : Matrix4) : Matrix4
-		static multiplyByPoint(matrix : Matrix4, cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		static multiplyByPointAsVector(matrix : Matrix4, cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		static multiplyByScalar(matrix : Matrix4, scalar : number, result : Matrix4) : Matrix4
-		static multiplyByScale(matrix : Matrix4, scale : Cartesian3, result : Matrix4) : Matrix4
-		static multiplyByTranslation(matrix : Matrix4, translation : Cartesian3, result : Matrix4) : Matrix4
-		static multiplyByUniformScale(matrix : Matrix4, scale : number, result : Matrix4) : Matrix4
-		static multiplyByVector(matrix : Matrix4, cartesian : Cartesian4, result : Cartesian4) : Cartesian4
-		static multiplyTransformation(left : Matrix4, right : Matrix4, result : Matrix4) : Matrix4
-		static negate(matrix : Matrix4, result : Matrix4) : Matrix4
-		static pack(value : Matrix4, array : Array<number>, startingIndex : number) : Array<number>
-		static setColumn(matrix : Matrix4, index : number, cartesian : Cartesian4, result : Matrix4) : Matrix4
-		static setRow(matrix : Matrix4, index : number, cartesian : Cartesian4, result : Matrix4) : Matrix4
-		static setTranslation(matrix : Matrix4, translation : Cartesian3, result : Cartesian4) : Matrix4
-		static subtract(left : Matrix4, right : Matrix4, result : Matrix4) : Matrix4
-		static toArray(matrix : Matrix4, result : Array<number>) : Array<number>
-		static transpose(matrix : Matrix4, result : Matrix4) : Matrix4
-		static unpack(array : Array<number>, startingIndex : number, result : Matrix4) : Matrix4
+		static fromArray(array? : Array<number>, startingIndex? : number, result? : Matrix4) : Matrix4
+		static fromCamera(camera? : Camera, result? : Matrix4) : Matrix4
+		static fromColumnMajorArray(values? : Array<number>, result? : Matrix4) : Matrix4
+		static fromRotationTranslation(rotation? : Matrix3, translation? : Cartesian3, result? : Matrix4) : Matrix4
+		static fromRowMajorArray(values? : Array<number>, result? : Matrix4) : Matrix4
+		static fromScale(scale? : Cartesian3, result? : Matrix4) : Matrix4
+		static fromTranslation(translation? : Cartesian3, result? : Matrix4) : Matrix4
+		static fromTranslationQuaternionRotationScale(translation? : Cartesian3, rotation? : Quaternion, scale? : Cartesian3, result? : Matrix4) : Matrix4
+		static fromTranslationRotationScale(translationRotationScale? : TranslationRotationScale, result? : Matrix4) : Matrix4
+		static fromUniformScale(scale? : number, result? : Matrix4) : Matrix4
+		static getColumn(matrix? : Matrix4, index? : number, result? : Cartesian4) : Cartesian4
+		static getElementIndex(row? : number, column? : number) : number
+		static getMaximumScale(matrix? : Matrix4) : number
+		static getRotation(matrix? : Matrix4, result? : Matrix3) : Matrix3
+		static getRow(matrix? : Matrix4, index? : number, result? : Cartesian4) : Cartesian4
+		static getScale(matrix? : Matrix4, result? : Cartesian3) : Cartesian3
+		static getTranslation(matrix? : Matrix4, result? : Cartesian3) : Cartesian3
+		static inverse(matrix? : Matrix4, result? : Matrix4) : Matrix4
+		static inverseTransformation(matrix? : Matrix4, result? : Matrix4) : Matrix4
+		static multiply(left? : Matrix4, right? : Matrix4, result? : Matrix4) : Matrix4
+		static multiplyByMatrix3(matrix? : Matrix4, rotation? : Matrix3, result? : Matrix4) : Matrix4
+		static multiplyByPoint(matrix? : Matrix4, cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static multiplyByPointAsVector(matrix? : Matrix4, cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		static multiplyByScalar(matrix? : Matrix4, scalar? : number, result? : Matrix4) : Matrix4
+		static multiplyByScale(matrix? : Matrix4, scale? : Cartesian3, result? : Matrix4) : Matrix4
+		static multiplyByTranslation(matrix? : Matrix4, translation? : Cartesian3, result? : Matrix4) : Matrix4
+		static multiplyByUniformScale(matrix? : Matrix4, scale? : number, result? : Matrix4) : Matrix4
+		static multiplyByVector(matrix? : Matrix4, cartesian? : Cartesian4, result? : Cartesian4) : Cartesian4
+		static multiplyTransformation(left? : Matrix4, right? : Matrix4, result? : Matrix4) : Matrix4
+		static negate(matrix? : Matrix4, result? : Matrix4) : Matrix4
+		static pack(value? : Matrix4, array? : Array<number>, startingIndex? : number) : Array<number>
+		static setColumn(matrix? : Matrix4, index? : number, cartesian? : Cartesian4, result? : Matrix4) : Matrix4
+		static setRow(matrix? : Matrix4, index? : number, cartesian? : Cartesian4, result? : Matrix4) : Matrix4
+		static setTranslation(matrix? : Matrix4, translation? : Cartesian3, result? : Cartesian4) : Matrix4
+		static subtract(left? : Matrix4, right? : Matrix4, result? : Matrix4) : Matrix4
+		static toArray(matrix? : Matrix4, result? : Array<number>) : Array<number>
+		static transpose(matrix? : Matrix4, result? : Matrix4) : Matrix4
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Matrix4) : Matrix4
 
 	}
 	export = Matrix4
@@ -991,12 +1008,12 @@ declare module 'cesium/Source/Core/Occluder' {
 
 
 		//Methods
-		static computeOccludeePoint(occluderBoundingSphere : BoundingSphere, occludeePosition : Cartesian3, positions : Array<Cartesian3>) : Object
-		static computeOccludeePointFromRectangle(rectangle : Rectangle, ellipsoid : Ellipsoid) : Object
-		static fromBoundingSphere(occluderBoundingSphere : BoundingSphere, cameraPosition : Cartesian3, result : Occluder) : Occluder
-		computeVisibility(occludeeBS : BoundingSphere) : number
-		isBoundingSphereVisible(occludee : BoundingSphere) : boolean
-		isPointVisible(occludee : Cartesian3) : boolean
+		static computeOccludeePoint(occluderBoundingSphere? : BoundingSphere, occludeePosition? : Cartesian3, positions? : Array<Cartesian3>) : Object
+		static computeOccludeePointFromRectangle(rectangle? : Rectangle, ellipsoid? : Ellipsoid) : Object
+		static fromBoundingSphere(occluderBoundingSphere? : BoundingSphere, cameraPosition? : Cartesian3, result? : Occluder) : Occluder
+		computeVisibility(occludeeBS? : BoundingSphere) : number
+		isBoundingSphereVisible(occludee? : BoundingSphere) : boolean
+		isPointVisible(occludee? : Cartesian3) : boolean
 
 	}
 	export = Occluder
@@ -1020,20 +1037,20 @@ declare module 'cesium/Source/Core/OrientedBoundingBox' {
 
 
 		//Methods
-		static clone(box : OrientedBoundingBox, result : OrientedBoundingBox) : OrientedBoundingBox
-		static computePlaneDistances(box : OrientedBoundingBox, position : Cartesian3, direction : Cartesian3, result : Interval) : Interval
-		static distanceSquaredTo(box : OrientedBoundingBox, cartesian : Cartesian3) : number
-		static equals(left : OrientedBoundingBox, right : OrientedBoundingBox) : boolean
-		static fromPoints(positions : Array<Cartesian3>, result : OrientedBoundingBox) : OrientedBoundingBox
-		static fromRectangle(rectangle : Rectangle, minimumHeight : number, maximumHeight : number, ellipsoid : Ellipsoid, result : OrientedBoundingBox) : OrientedBoundingBox
-		static intersectPlane(box : OrientedBoundingBox, plane : Plane) : Intersect
-		static isOccluded(box : OrientedBoundingBox, occluder : Occluder) : boolean
+		static clone(box? : OrientedBoundingBox, result? : OrientedBoundingBox) : OrientedBoundingBox
+		static computePlaneDistances(box? : OrientedBoundingBox, position? : Cartesian3, direction? : Cartesian3, result? : Interval) : Interval
+		static distanceSquaredTo(box? : OrientedBoundingBox, cartesian? : Cartesian3) : number
+		static equals(left? : OrientedBoundingBox, right? : OrientedBoundingBox) : boolean
+		static fromPoints(positions? : Array<Cartesian3>, result? : OrientedBoundingBox) : OrientedBoundingBox
+		static fromRectangle(rectangle? : Rectangle, minimumHeight? : number, maximumHeight? : number, ellipsoid? : Ellipsoid, result? : OrientedBoundingBox) : OrientedBoundingBox
+		static intersectPlane(box? : OrientedBoundingBox, plane? : Plane) : Intersect
+		static isOccluded(box? : OrientedBoundingBox, occluder? : Occluder) : boolean
 		clone(result : OrientedBoundingBox) : OrientedBoundingBox
-		computePlaneDistances(position : Cartesian3, direction : Cartesian3, result : Interval) : Interval
-		distanceSquaredTo(cartesian : Cartesian3) : number
+		computePlaneDistances(position? : Cartesian3, direction? : Cartesian3, result? : Interval) : Interval
+		distanceSquaredTo(cartesian? : Cartesian3) : number
 		equals(right : OrientedBoundingBox) : boolean
-		intersectPlane(plane : Plane) : Intersect
-		isOccluded(occluder : Occluder) : boolean
+		intersectPlane(plane? : Plane) : Intersect
+		isOccluded(occluder? : Occluder) : boolean
 
 	}
 	export = OrientedBoundingBox
@@ -1059,35 +1076,35 @@ declare module 'cesium/Source/Core/BoundingSphere' {
 
 
 		//Methods
-		static clone(sphere : BoundingSphere, result : BoundingSphere) : BoundingSphere
-		static computePlaneDistances(sphere : BoundingSphere, position : Cartesian3, direction : Cartesian3, result : Interval) : Interval
-		static distanceSquaredTo(sphere : BoundingSphere, cartesian : Cartesian3) : number
+		static clone(sphere? : BoundingSphere, result? : BoundingSphere) : BoundingSphere
+		static computePlaneDistances(sphere? : BoundingSphere, position? : Cartesian3, direction? : Cartesian3, result? : Interval) : Interval
+		static distanceSquaredTo(sphere? : BoundingSphere, cartesian? : Cartesian3) : number
 		static equals(left : BoundingSphere, right : BoundingSphere) : boolean
-		static expand(sphere : BoundingSphere, point : Cartesian3, result : BoundingSphere) : BoundingSphere
-		static fromBoundingSpheres(boundingSpheres : Array<BoundingSphere>, result : BoundingSphere) : BoundingSphere
+		static expand(sphere? : BoundingSphere, point? : Cartesian3, result? : BoundingSphere) : BoundingSphere
+		static fromBoundingSpheres(boundingSpheres? : Array<BoundingSphere>, result? : BoundingSphere) : BoundingSphere
 		static fromCornerPoints(corner : Cartesian3, oppositeCorner : Cartesian3, result : BoundingSphere) : BoundingSphere
-		static fromEllipsoid(ellipsoid : Ellipsoid, result : BoundingSphere) : BoundingSphere
-		static fromEncodedCartesianVertices(positionsHigh : Array<number>, positionsLow : Array<number>, result : BoundingSphere) : BoundingSphere
-		static fromOrientedBoundingBox(orientedBoundingBox : OrientedBoundingBox, result : BoundingSphere) : BoundingSphere
-		static fromPoints(positions : Array<Cartesian3>, result : BoundingSphere) : BoundingSphere
-		static fromRectangle2D(rectangle : Rectangle, projection : any, result : BoundingSphere) : BoundingSphere
-		static fromRectangle3D(rectangle : Rectangle, ellipsoid : Ellipsoid, surfaceHeight : number, result : BoundingSphere) : BoundingSphere
-		static fromRectangleWithHeights2D(rectangle : Rectangle, projection : any, minimumHeight : number, maximumHeight : number, result : BoundingSphere) : BoundingSphere
-		static fromVertices(positions : Array<number>, center : Cartesian3, stride : number, result : BoundingSphere) : BoundingSphere
-		static intersectPlane(sphere : BoundingSphere, plane : Plane) : Intersect
-		static isOccluded(sphere : BoundingSphere, occluder : Occluder) : boolean
-		static pack(value : BoundingSphere, array : Array<number>, startingIndex : number) : Array<number>
-		static projectTo2D(sphere : BoundingSphere, projection : any, result : BoundingSphere) : BoundingSphere
-		static transform(sphere : BoundingSphere, transform : Matrix4, result : BoundingSphere) : BoundingSphere
-		static transformWithoutScale(sphere : BoundingSphere, transform : Matrix4, result : BoundingSphere) : BoundingSphere
-		static union(left : BoundingSphere, right : BoundingSphere, result : BoundingSphere) : BoundingSphere
-		static unpack(array : Array<number>, startingIndex : number, result : BoundingSphere) : BoundingSphere
+		static fromEllipsoid(ellipsoid? : Ellipsoid, result? : BoundingSphere) : BoundingSphere
+		static fromEncodedCartesianVertices(positionsHigh? : Array<number>, positionsLow? : Array<number>, result? : BoundingSphere) : BoundingSphere
+		static fromOrientedBoundingBox(orientedBoundingBox? : OrientedBoundingBox, result? : BoundingSphere) : BoundingSphere
+		static fromPoints(positions? : Array<Cartesian3>, result? : BoundingSphere) : BoundingSphere
+		static fromRectangle2D(rectangle? : Rectangle, projection? : any, result? : BoundingSphere) : BoundingSphere
+		static fromRectangle3D(rectangle? : Rectangle, ellipsoid? : Ellipsoid, surfaceHeight? : number, result? : BoundingSphere) : BoundingSphere
+		static fromRectangleWithHeights2D(rectangle? : Rectangle, projection? : any, minimumHeight? : number, maximumHeight? : number, result? : BoundingSphere) : BoundingSphere
+		static fromVertices(positions? : Array<number>, center? : Cartesian3, stride? : number, result? : BoundingSphere) : BoundingSphere
+		static intersectPlane(sphere? : BoundingSphere, plane? : Plane) : Intersect
+		static isOccluded(sphere? : BoundingSphere, occluder? : Occluder) : boolean
+		static pack(value? : BoundingSphere, array? : Array<number>, startingIndex? : number) : Array<number>
+		static projectTo2D(sphere? : BoundingSphere, projection? : any, result? : BoundingSphere) : BoundingSphere
+		static transform(sphere? : BoundingSphere, transform? : Matrix4, result? : BoundingSphere) : BoundingSphere
+		static transformWithoutScale(sphere? : BoundingSphere, transform? : Matrix4, result? : BoundingSphere) : BoundingSphere
+		static union(left? : BoundingSphere, right? : BoundingSphere, result? : BoundingSphere) : BoundingSphere
+		static unpack(array? : Array<number>, startingIndex? : number, result? : BoundingSphere) : BoundingSphere
 		clone(result : BoundingSphere) : BoundingSphere
-		computePlaneDistances(position : Cartesian3, direction : Cartesian3, result : Interval) : Interval
-		distanceSquaredTo(cartesian : Cartesian3) : number
+		computePlaneDistances(position? : Cartesian3, direction? : Cartesian3, result? : Interval) : Interval
+		distanceSquaredTo(cartesian? : Cartesian3) : number
 		equals(right : BoundingSphere) : boolean
-		intersectPlane(plane : Plane) : Intersect
-		isOccluded(occluder : Occluder) : boolean
+		intersectPlane(plane? : Plane) : Intersect
+		isOccluded(occluder? : Occluder) : boolean
 
 	}
 	export = BoundingSphere
@@ -1105,8 +1122,8 @@ declare module 'cesium/Source/Core/CullingVolume' {
 
 
 		//Methods
-		static fromBoundingSphere(boundingSphere : BoundingSphere, result : CullingVolume) : CullingVolume
-		computeVisibility(boundingVolume : any) : Intersect
+		static fromBoundingSphere(boundingSphere? : BoundingSphere, result? : CullingVolume) : CullingVolume
+		computeVisibility(boundingVolume? : any) : Intersect
 
 	}
 	export = CullingVolume
@@ -1130,40 +1147,40 @@ declare module 'cesium/Source/Core/Cartesian2' {
 		//Methods
 		clone(result : Cartesian2) : Cartesian2
 		equals(right : Cartesian2) : boolean
-		equalsEpsilon(right : Cartesian2, relativeEpsilon? : number, absoluteEpsilon : number) : boolean
+		equalsEpsilon(right : Cartesian2, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
 		toString() : string
-		static abs(cartesian : Cartesian2, result : Cartesian2) : Cartesian2
-		static add(left : Cartesian2, right : Cartesian2, result : Cartesian2) : Cartesian2
-		static angleBetween(left : Cartesian2, right : Cartesian2) : number
-		static clone(cartesian : Cartesian2, result : Cartesian2) : Cartesian2
-		static distance(left : Cartesian2, right : Cartesian2) : number
-		static distanceSquared(left : Cartesian2, right : Cartesian2) : number
-		static divideByScalar(cartesian : Cartesian2, scalar : number, result : Cartesian2) : Cartesian2
-		static divideComponents(left : Cartesian2, right : Cartesian2, result : Cartesian2) : Cartesian2
-		static dot(left : Cartesian2, right : Cartesian2) : number
+		static abs(cartesian? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static add(left? : Cartesian2, right? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static angleBetween(left? : Cartesian2, right? : Cartesian2) : number
+		static clone(cartesian? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static distance(left? : Cartesian2, right? : Cartesian2) : number
+		static distanceSquared(left? : Cartesian2, right? : Cartesian2) : number
+		static divideByScalar(cartesian? : Cartesian2, scalar? : number, result? : Cartesian2) : Cartesian2
+		static divideComponents(left? : Cartesian2, right? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static dot(left? : Cartesian2, right? : Cartesian2) : number
 		static equals(left : Cartesian2, right : Cartesian2) : boolean
-		static equalsEpsilon(left : Cartesian2, right : Cartesian2, relativeEpsilon? : number, absoluteEpsilon : number) : boolean
-		static fromArray(array : Array<number>, startingIndex : number, result : Cartesian2) : Cartesian2
-		static fromCartesian3(cartesian : Cartesian3, result : Cartesian2) : Cartesian2
-		static fromCartesian4(cartesian : Cartesian4, result : Cartesian2) : Cartesian2
-		static fromElements(x : number, y : number, result : Cartesian2) : Cartesian2
-		static lerp(start : Cartesian2, end : Cartesian2, t : number, result : Cartesian2) : Cartesian2
-		static magnitude(cartesian : Cartesian2) : number
-		static magnitudeSquared(cartesian : Cartesian2) : number
-		static maximumByComponent(first : Cartesian2, second : Cartesian2, result : Cartesian2) : Cartesian2
-		static maximumComponent(cartesian : Cartesian2) : number
-		static minimumByComponent(first : Cartesian2, second : Cartesian2, result : Cartesian2) : Cartesian2
-		static minimumComponent(cartesian : Cartesian2) : number
-		static mostOrthogonalAxis(cartesian : Cartesian2, result : Cartesian2) : Cartesian2
-		static multiplyByScalar(cartesian : Cartesian2, scalar : number, result : Cartesian2) : Cartesian2
-		static multiplyComponents(left : Cartesian2, right : Cartesian2, result : Cartesian2) : Cartesian2
-		static negate(cartesian : Cartesian2, result : Cartesian2) : Cartesian2
-		static normalize(cartesian : Cartesian2, result : Cartesian2) : Cartesian2
-		static pack(value : Cartesian2, array : Array<number>, startingIndex : number) : Array<number>
-		static packArray(array : Array<Cartesian2>, result : Array<number>) : Array<number>
-		static subtract(left : Cartesian2, right : Cartesian2, result : Cartesian2) : Cartesian2
-		static unpack(array : Array<number>, startingIndex : number, result : Cartesian2) : Cartesian2
-		static unpackArray(array : Array<number>, result : Array<Cartesian2>) : Array<Cartesian2>
+		static equalsEpsilon(left : Cartesian2, right : Cartesian2, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
+		static fromArray(array? : Array<number>, startingIndex? : number, result? : Cartesian2) : Cartesian2
+		static fromCartesian3(cartesian? : Cartesian3, result? : Cartesian2) : Cartesian2
+		static fromCartesian4(cartesian? : Cartesian4, result? : Cartesian2) : Cartesian2
+		static fromElements(x? : number, y? : number, result? : Cartesian2) : Cartesian2
+		static lerp(start? : Cartesian2, end? : Cartesian2, t? : number, result? : Cartesian2) : Cartesian2
+		static magnitude(cartesian? : Cartesian2) : number
+		static magnitudeSquared(cartesian? : Cartesian2) : number
+		static maximumByComponent(first? : Cartesian2, second? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static maximumComponent(cartesian? : Cartesian2) : number
+		static minimumByComponent(first? : Cartesian2, second? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static minimumComponent(cartesian? : Cartesian2) : number
+		static mostOrthogonalAxis(cartesian? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static multiplyByScalar(cartesian? : Cartesian2, scalar? : number, result? : Cartesian2) : Cartesian2
+		static multiplyComponents(left? : Cartesian2, right? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static negate(cartesian? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static normalize(cartesian? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static pack(value? : Cartesian2, array? : Array<number>, startingIndex? : number) : Array<number>
+		static packArray(array? : Array<Cartesian2>, result? : Array<number>) : Array<number>
+		static subtract(left? : Cartesian2, right? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Cartesian2) : Cartesian2
+		static unpackArray(array? : Array<number>, result? : Array<Cartesian2>) : Array<Cartesian2>
 
 	}
 	export = Cartesian2
@@ -1192,12 +1209,12 @@ declare module 'cesium/Source/Core/PerspectiveFrustum' {
 
 
 		//Methods
-		static pack(value : PerspectiveFrustum, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : PerspectiveFrustum) : PerspectiveFrustum
+		static pack(value? : PerspectiveFrustum, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : PerspectiveFrustum) : PerspectiveFrustum
 		clone(result : PerspectiveFrustum) : PerspectiveFrustum
-		computeCullingVolume(position : Cartesian3, direction : Cartesian3, up : Cartesian3) : CullingVolume
+		computeCullingVolume(position? : Cartesian3, direction? : Cartesian3, up? : Cartesian3) : CullingVolume
 		equals(other : PerspectiveFrustum) : boolean
-		getPixelDimensions(drawingBufferWidth : number, drawingBufferHeight : number, distance : number, result : Cartesian2) : Cartesian2
+		getPixelDimensions(drawingBufferWidth? : number, drawingBufferHeight? : number, distance? : number, result? : Cartesian2) : Cartesian2
 
 	}
 	export = PerspectiveFrustum
@@ -1300,7 +1317,7 @@ declare module 'cesium/Source/Core/Ray' {
 
 
 		//Methods
-		static getPoint(ray : Ray, t : number, result : Cartesian3) : Cartesian3
+		static getPoint(ray? : Ray, t? : number, result? : Cartesian3) : Cartesian3
 
 	}
 	export = Ray
@@ -1373,35 +1390,35 @@ declare module 'cesium/Source/Scene/Camera' {
 
 
 		//Methods
-		cameraToWorldCoordinates(cartesian : Cartesian4, result : Cartesian4) : Cartesian4
-		cameraToWorldCoordinatesPoint(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		cameraToWorldCoordinatesVector(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
+		cameraToWorldCoordinates(cartesian? : Cartesian4, result? : Cartesian4) : Cartesian4
+		cameraToWorldCoordinatesPoint(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		cameraToWorldCoordinatesVector(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
 		cancelFlight() : void
 		computeViewRectangle(ellipsoid : Ellipsoid, result : Rectangle) : Rectangle|void
-		distanceToBoundingSphere(boundingSphere : BoundingSphere) : number
+		distanceToBoundingSphere(boundingSphere? : BoundingSphere) : number
 		flyHome(duration : number) : void
 		flyTo(options : flyToOptions) : void
-		flyToBoundingSphere(boundingSphere : BoundingSphere, options : flyToBoundingSphereOptions) : void
+		flyToBoundingSphere(boundingSphere? : BoundingSphere, options? : flyToBoundingSphereOptions) : void
 		getMagnitude() : number
-		getPickRay(windowPosition : Cartesian2, result : Ray) : Ray
-		getPixelSize(boundingSphere : BoundingSphere, drawingBufferWidth : number, drawingBufferHeight : number) : number
-		getRectangleCameraCoordinates(rectangle : Rectangle, result : Cartesian3) : Cartesian3
-		look(axis : Cartesian3, angle : number) : void
-		lookAt(target : Cartesian3, offset : Cartesian3|HeadingPitchRange) : void
-		lookAtTransform(transform : Matrix4, offset : Cartesian3|HeadingPitchRange) : void
+		getPickRay(windowPosition? : Cartesian2, result? : Ray) : Ray
+		getPixelSize(boundingSphere? : BoundingSphere, drawingBufferWidth? : number, drawingBufferHeight? : number) : number
+		getRectangleCameraCoordinates(rectangle? : Rectangle, result? : Cartesian3) : Cartesian3
+		look(axis? : Cartesian3, angle? : number) : void
+		lookAt(target? : Cartesian3, offset? : Cartesian3|HeadingPitchRange) : void
+		lookAtTransform(transform? : Matrix4, offset? : Cartesian3|HeadingPitchRange) : void
 		lookDown(amount : number) : void
 		lookLeft(amount : number) : void
 		lookRight(amount : number) : void
 		lookUp(amount : number) : void
-		move(direction : Cartesian3, amount : number) : void
+		move(direction? : Cartesian3, amount? : number) : void
 		moveBackward(amount : number) : void
 		moveDown(amount : number) : void
 		moveForward(amount : number) : void
 		moveLeft(amount : number) : void
 		moveRight(amount : number) : void
 		moveUp(amount : number) : void
-		pickEllipsoid(windowPosition : Cartesian2, ellipsoid : Ellipsoid, result : Cartesian3) : Cartesian3
-		rotate(axis : Cartesian3, angle : number) : void
+		pickEllipsoid(windowPosition? : Cartesian2, ellipsoid? : Ellipsoid, result? : Cartesian3) : Cartesian3
+		rotate(axis? : Cartesian3, angle? : number) : void
 		rotateDown(angle : number) : void
 		rotateLeft(angle : number) : void
 		rotateRight(angle : number) : void
@@ -1411,10 +1428,10 @@ declare module 'cesium/Source/Scene/Camera' {
 		switchToPerspectiveFrustum() : void
 		twistLeft(amount : number) : void
 		twistRight(amount : number) : void
-		viewBoundingSphere(boundingSphere : BoundingSphere, offset : HeadingPitchRange) : void
-		worldToCameraCoordinates(cartesian : Cartesian4, result : Cartesian4) : Cartesian4
-		worldToCameraCoordinatesPoint(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
-		worldToCameraCoordinatesVector(cartesian : Cartesian3, result : Cartesian3) : Cartesian3
+		viewBoundingSphere(boundingSphere? : BoundingSphere, offset? : HeadingPitchRange) : void
+		worldToCameraCoordinates(cartesian? : Cartesian4, result? : Cartesian4) : Cartesian4
+		worldToCameraCoordinatesPoint(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
+		worldToCameraCoordinatesVector(cartesian? : Cartesian3, result? : Cartesian3) : Cartesian3
 		zoomIn(amount : number) : void
 		zoomOut(amount : number) : void
 
@@ -1449,8 +1466,8 @@ declare module 'cesium/Source/Core/Credit' {
 
 
 		//Methods
-		static equals(left : Credit, right : Credit) : boolean
-		equals(credit : Credit) : boolean
+		static equals(left? : Credit, right? : Credit) : boolean
+		equals(credit? : Credit) : boolean
 		hasImage() : boolean
 		hasLink() : boolean
 
@@ -1466,7 +1483,7 @@ declare module 'cesium/Source/Core/DefaultProxy' {
 
 
 		//Methods
-		getURL(resource : string) : string
+		getURL(resource? : string) : string
 
 	}
 	export = DefaultProxy
@@ -1481,7 +1498,7 @@ declare module 'cesium/Source/Scene/TileDiscardPolicy' {
 
 		//Methods
 		isReady() : boolean
-		shouldDiscardImage(image : HTMLImageElement) : boolean
+		shouldDiscardImage(image? : HTMLImageElement) : boolean
 
 	}
 	export = TileDiscardPolicy
@@ -1503,12 +1520,12 @@ declare module 'cesium/Source/Core/TilingScheme' {
 
 
 		//Methods
-		getNumberOfXTilesAtLevel(level : number) : number
-		getNumberOfYTilesAtLevel(level : number) : number
-		positionToTileXY(position : Cartographic, level : number, result : Cartesian2) : Cartesian2
-		rectangleToNativeRectangle(rectangle : Rectangle, result : Rectangle) : Rectangle
-		tileXYToNativeRectangle(x : number, y : number, level : number, result : any) : Rectangle
-		tileXYToRectangle(x : number, y : number, level : number, result : any) : Rectangle
+		getNumberOfXTilesAtLevel(level? : number) : number
+		getNumberOfYTilesAtLevel(level? : number) : number
+		positionToTileXY(position? : Cartographic, level? : number, result? : Cartesian2) : Cartesian2
+		rectangleToNativeRectangle(rectangle? : Rectangle, result? : Rectangle) : Rectangle
+		tileXYToNativeRectangle(x? : number, y? : number, level? : number, result? : any) : Rectangle
+		tileXYToRectangle(x? : number, y? : number, level? : number, result? : any) : Rectangle
 
 	}
 	export = TilingScheme
@@ -1605,8 +1622,8 @@ declare module 'cesium/Source/Scene/ImageryLayerFeatureInfo' {
 
 
 		//Methods
-		configureDescriptionFromProperties(properties : any) : void
-		configureNameFromProperties(properties : any) : void
+		configureDescriptionFromProperties(properties? : any) : void
+		configureNameFromProperties(properties? : any) : void
 
 	}
 	export = ImageryLayerFeatureInfo
@@ -1648,10 +1665,10 @@ declare module 'cesium/Source/Scene/ImageryProvider' {
 
 
 		//Methods
-		static loadImage(imageryProvider : ImageryProvider, url : string, request : Request) : Promise<Image | Canvas>|void
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		static loadImage(imageryProvider? : ImageryProvider, url? : string, request? : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = ImageryProvider
@@ -1752,19 +1769,19 @@ declare module 'cesium/Source/Scene/ImageryLayerCollection' {
 
 
 		//Methods
-		add(layer : ImageryLayer, index : number) : void
-		addImageryProvider(imageryProvider : ImageryProvider, index : number) : ImageryLayer
-		contains(layer : ImageryLayer) : boolean
+		add(layer? : ImageryLayer, index? : number) : void
+		addImageryProvider(imageryProvider? : ImageryProvider, index? : number) : ImageryLayer
+		contains(layer? : ImageryLayer) : boolean
 		destroy() : void
-		get(index : number) : ImageryLayer
-		indexOf(layer : ImageryLayer) : number
+		get(index? : number) : ImageryLayer
+		indexOf(layer? : ImageryLayer) : number
 		isDestroyed() : boolean
-		lower(layer : ImageryLayer) : void
-		lowerToBottom(layer : ImageryLayer) : void
-		pickImageryLayerFeatures(ray : Ray, scene : Scene) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		raise(layer : ImageryLayer) : void
-		raiseToTop(layer : ImageryLayer) : void
-		remove(layer : ImageryLayer, destroy : boolean) : boolean
+		lower(layer? : ImageryLayer) : void
+		lowerToBottom(layer? : ImageryLayer) : void
+		pickImageryLayerFeatures(ray? : Ray, scene? : Scene) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		raise(layer? : ImageryLayer) : void
+		raiseToTop(layer? : ImageryLayer) : void
+		remove(layer? : ImageryLayer, destroy? : boolean) : boolean
 		removeAll(destroy : boolean) : void
 
 	}
@@ -1799,11 +1816,11 @@ declare module 'cesium/Source/Core/TileAvailability' {
 
 
 		//Methods
-		addAvailableTileRange(level : number, startX : number, startY : number, endX : number, endY : number) : void
-		computeBestAvailableLevelOverRectangle(rectangle : Rectangle) : number
-		computeChildMaskForTile(level : number, x : number, y : number) : number
-		computeMaximumLevelAtPosition(position : Cartographic) : number
-		isTileAvailable(level : number, x : number, y : number) : boolean
+		addAvailableTileRange(level? : number, startX? : number, startY? : number, endX? : number, endY? : number) : void
+		computeBestAvailableLevelOverRectangle(rectangle? : Rectangle) : number
+		computeChildMaskForTile(level? : number, x? : number, y? : number) : number
+		computeMaximumLevelAtPosition(position? : Cartographic) : number
+		isTileAvailable(level? : number, x? : number, y? : number) : boolean
 
 	}
 	export = TileAvailability
@@ -1823,9 +1840,9 @@ declare module 'cesium/Source/Core/TerrainData' {
 
 
 		//Methods
-		interpolateHeight(rectangle : Rectangle, longitude : number, latitude : number) : number
-		isChildAvailable(thisX : number, thisY : number, childX : number, childY : number) : boolean
-		upsample(tilingScheme : TilingScheme, thisX : number, thisY : number, thisLevel : number, descendantX : number, descendantY : number, descendantLevel : number) : Promise<TerrainData>|void
+		interpolateHeight(rectangle? : Rectangle, longitude? : number, latitude? : number) : number
+		isChildAvailable(thisX? : number, thisY? : number, childX? : number, childY? : number) : boolean
+		upsample(tilingScheme? : TilingScheme, thisX? : number, thisY? : number, thisLevel? : number, descendantX? : number, descendantY? : number, descendantLevel? : number) : Promise<TerrainData>|void
 		wasCreatedByUpsampling() : boolean
 
 	}
@@ -1857,11 +1874,11 @@ declare module 'cesium/Source/Core/TerrainProvider' {
 
 
 		//Methods
-		static getEstimatedLevelZeroGeometricErrorForAHeightmap(ellipsoid : Ellipsoid, tileImageWidth : number, numberOfTilesAtLevelZero : number) : number
-		static getRegularGridIndices(width : number, height : number) : Uint16Array
-		getLevelMaximumGeometricError(level : number) : number
-		getTileDataAvailable(x : number, y : number, level : number) : boolean
-		requestTileGeometry(x : number, y : number, level : number, request : Request) : Promise<TerrainData>|void
+		static getEstimatedLevelZeroGeometricErrorForAHeightmap(ellipsoid? : Ellipsoid, tileImageWidth? : number, numberOfTilesAtLevelZero? : number) : number
+		static getRegularGridIndices(width? : number, height? : number) : Uint16Array
+		getLevelMaximumGeometricError(level? : number) : number
+		getTileDataAvailable(x? : number, y? : number, level? : number) : boolean
+		requestTileGeometry(x? : number, y? : number, level? : number, request? : Request) : Promise<TerrainData>|void
 
 	}
 	export = TerrainProvider
@@ -1902,9 +1919,9 @@ declare module 'cesium/Source/Scene/Globe' {
 
 		//Methods
 		destroy() : void
-		getHeight(cartographic : Cartographic) : number|void
+		getHeight(cartographic? : Cartographic) : number|void
 		isDestroyed() : boolean
-		pick(ray : Ray, scene : Scene, result : Cartesian3) : Cartesian3|void
+		pick(ray? : Ray, scene? : Scene, result? : Cartesian3) : Cartesian3|void
 
 	}
 	export = Globe
@@ -1931,10 +1948,10 @@ declare module 'cesium/Source/Scene/PrimitiveCollection' {
 
 
 		//Methods
-		add(primitive : any) : Object
+		add(primitive? : any) : Object
 		contains(primitive : any) : boolean
 		destroy() : void
-		get(index : number) : Object
+		get(index? : number) : Object
 		isDestroyed() : boolean
 		lower(primitive : any) : void
 		lowerToBottom(primitive : any) : void
@@ -1959,7 +1976,7 @@ declare module 'cesium/Source/Scene/SceneMode' {
 
 
 		//Methods
-		static getMorphTime(value : SceneMode) : number
+		static getMorphTime(value? : SceneMode) : number
 
 	}
 	export = SceneMode
@@ -2240,17 +2257,17 @@ declare module 'cesium/Source/Scene/Scene' {
 
 
 		//Methods
-		cartesianToCanvasCoordinates(position : Cartesian3, result : Cartesian2) : Cartesian2
+		cartesianToCanvasCoordinates(position? : Cartesian3, result? : Cartesian2) : Cartesian2
 		completeMorph() : void
 		destroy() : void
-		drillPick(windowPosition : Cartesian2, limit : number) : Array<Object>
-		getCompressedTextureFormatSupported(format : string) : boolean
+		drillPick(windowPosition? : Cartesian2, limit? : number) : Array<Object>
+		getCompressedTextureFormatSupported(format? : string) : boolean
 		isDestroyed() : boolean
 		morphTo2D(duration : number) : void
 		morphTo3D(duration : number) : void
 		morphToColumbusView(duration : number) : void
-		pick(windowPosition : Cartesian2, width : number, height : number) : Object
-		pickPosition(windowPosition : Cartesian2, result : Cartesian3) : Cartesian3
+		pick(windowPosition? : Cartesian2, width? : number, height? : number) : Object
+		pickPosition(windowPosition? : Cartesian2, result? : Cartesian3) : Cartesian3
 
 	}
 	export = Scene
@@ -2275,7 +2292,7 @@ declare module 'cesium/Source/Core/BingMapsGeocoderService' {
 
 
 		//Methods
-		geocode(query : string) : any
+		geocode(query? : string) : any
 
 	}
 	export = BingMapsGeocoderService
@@ -2297,18 +2314,18 @@ declare module 'cesium/Source/Core/BoundingRectangle' {
 
 
 		//Methods
-		static clone(rectangle : BoundingRectangle, result : BoundingRectangle) : BoundingRectangle
+		static clone(rectangle? : BoundingRectangle, result? : BoundingRectangle) : BoundingRectangle
 		static equals(left : BoundingRectangle, right : BoundingRectangle) : boolean
-		static expand(rectangle : BoundingRectangle, point : Cartesian2, result : BoundingRectangle) : BoundingRectangle
-		static fromPoints(positions : Array<Cartesian2>, result : BoundingRectangle) : BoundingRectangle
-		static fromRectangle(rectangle : Rectangle, projection : any, result : BoundingRectangle) : BoundingRectangle
-		static intersect(left : BoundingRectangle, right : BoundingRectangle) : Intersect
-		static pack(value : BoundingRectangle, array : Array<number>, startingIndex : number) : Array<number>
-		static union(left : BoundingRectangle, right : BoundingRectangle, result : BoundingRectangle) : BoundingRectangle
-		static unpack(array : Array<number>, startingIndex : number, result : BoundingRectangle) : BoundingRectangle
+		static expand(rectangle? : BoundingRectangle, point? : Cartesian2, result? : BoundingRectangle) : BoundingRectangle
+		static fromPoints(positions? : Array<Cartesian2>, result? : BoundingRectangle) : BoundingRectangle
+		static fromRectangle(rectangle? : Rectangle, projection? : any, result? : BoundingRectangle) : BoundingRectangle
+		static intersect(left? : BoundingRectangle, right? : BoundingRectangle) : Intersect
+		static pack(value? : BoundingRectangle, array? : Array<number>, startingIndex? : number) : Array<number>
+		static union(left? : BoundingRectangle, right? : BoundingRectangle, result? : BoundingRectangle) : BoundingRectangle
+		static unpack(array? : Array<number>, startingIndex? : number, result? : BoundingRectangle) : BoundingRectangle
 		clone(result : BoundingRectangle) : BoundingRectangle
 		equals(right : BoundingRectangle) : boolean
-		intersect(right : BoundingRectangle) : Intersect
+		intersect(right? : BoundingRectangle) : Intersect
 
 	}
 	export = BoundingRectangle
@@ -2336,9 +2353,9 @@ declare module 'cesium/Source/Core/VertexFormat' {
 
 
 		//Methods
-		static clone(vertexFormat : VertexFormat, result : VertexFormat) : VertexFormat
-		static pack(value : VertexFormat, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : VertexFormat) : VertexFormat
+		static clone(vertexFormat? : VertexFormat, result? : VertexFormat) : VertexFormat
+		static pack(value? : VertexFormat, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : VertexFormat) : VertexFormat
 
 	}
 	export = VertexFormat
@@ -2372,12 +2389,12 @@ declare module 'cesium/Source/Core/ComponentDatatype' {
 
 
 		//Methods
-		static createArrayBufferView(componentDatatype : ComponentDatatype, buffer : ArrayBuffer, byteOffset : number, length : number) : Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Float32Array|Float64Array
-		static createTypedArray(componentDatatype : ComponentDatatype, valuesOrLength : number|Array<any>) : Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Float32Array|Float64Array
-		static fromName(name : string) : ComponentDatatype
-		static fromTypedArray(array : TypedArray) : ComponentDatatype
-		static getSizeInBytes(componentDatatype : ComponentDatatype) : number
-		static validate(componentDatatype : ComponentDatatype) : boolean
+		static createArrayBufferView(componentDatatype? : ComponentDatatype, buffer? : ArrayBuffer, byteOffset? : number, length? : number) : Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Float32Array|Float64Array
+		static createTypedArray(componentDatatype? : ComponentDatatype, valuesOrLength? : number|Array<any>) : Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Float32Array|Float64Array
+		static fromName(name? : string) : ComponentDatatype
+		static fromTypedArray(array? : TypedArray) : ComponentDatatype
+		static getSizeInBytes(componentDatatype? : ComponentDatatype) : number
+		static validate(componentDatatype? : ComponentDatatype) : boolean
 
 	}
 	export = ComponentDatatype
@@ -2484,7 +2501,7 @@ declare module 'cesium/Source/Core/Geometry' {
 
 
 		//Methods
-		static computeNumberOfVertices(geometry : Geometry) : number
+		static computeNumberOfVertices(geometry? : Geometry) : number
 
 	}
 	export = Geometry
@@ -2514,11 +2531,11 @@ declare module 'cesium/Source/Core/BoxGeometry' {
 
 
 		//Methods
-		static createGeometry(boxGeometry : BoxGeometry) : Geometry|void
-		static fromAxisAlignedBoundingBox(boundingBox : AxisAlignedBoundingBox) : BoxGeometry
+		static createGeometry(boxGeometry? : BoxGeometry) : Geometry|void
+		static fromAxisAlignedBoundingBox(boundingBox? : AxisAlignedBoundingBox) : BoxGeometry
 		static fromDimensions(options : fromDimensionsOptions) : BoxGeometry
-		static pack(value : BoxGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : BoxGeometry) : BoxGeometry
+		static pack(value? : BoxGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : BoxGeometry) : BoxGeometry
 
 	}
 	export = BoxGeometry
@@ -2547,11 +2564,11 @@ declare module 'cesium/Source/Core/BoxOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(boxGeometry : BoxOutlineGeometry) : Geometry|void
-		static fromAxisAlignedBoundingBox(boundingBox : AxisAlignedBoundingBox) : BoxOutlineGeometry
-		static fromDimensions(options : fromDimensionsOptions) : BoxOutlineGeometry
-		static pack(value : BoxOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : BoxOutlineGeometry) : BoxOutlineGeometry
+		static createGeometry(boxGeometry? : BoxOutlineGeometry) : Geometry|void
+		static fromAxisAlignedBoundingBox(boundingBox? : AxisAlignedBoundingBox) : BoxOutlineGeometry
+		static fromDimensions(options? : fromDimensionsOptions) : BoxOutlineGeometry
+		static pack(value? : BoxOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : BoxOutlineGeometry) : BoxOutlineGeometry
 
 	}
 	export = BoxOutlineGeometry
@@ -2565,7 +2582,7 @@ declare module 'cesium/Source/Core/CartographicGeocoderService' {
 
 
 		//Methods
-		geocode(query : string) : any
+		geocode(query? : string) : any
 
 	}
 	export = CartographicGeocoderService
@@ -2597,8 +2614,8 @@ declare module 'cesium/Source/Core/CatmullRomSpline' {
 
 
 		//Methods
-		evaluate(time : number, result : Cartesian3) : Cartesian3
-		findTimeInterval(time : number) : number
+		evaluate(time? : number, result? : Cartesian3) : Cartesian3
+		findTimeInterval(time? : number) : number
 
 	}
 	export = CatmullRomSpline
@@ -2650,12 +2667,12 @@ declare module 'cesium/Source/Core/GeographicTilingScheme' {
 
 
 		//Methods
-		getNumberOfXTilesAtLevel(level : number) : number
-		getNumberOfYTilesAtLevel(level : number) : number
-		positionToTileXY(position : Cartographic, level : number, result : Cartesian2) : Cartesian2
-		rectangleToNativeRectangle(rectangle : Rectangle, result : Rectangle) : Rectangle
-		tileXYToNativeRectangle(x : number, y : number, level : number, result : any) : Rectangle
-		tileXYToRectangle(x : number, y : number, level : number, result : any) : Rectangle
+		getNumberOfXTilesAtLevel(level? : number) : number
+		getNumberOfYTilesAtLevel(level? : number) : number
+		positionToTileXY(position? : Cartographic, level? : number, result? : Cartesian2) : Cartesian2
+		rectangleToNativeRectangle(rectangle? : Rectangle, result? : Rectangle) : Rectangle
+		tileXYToNativeRectangle(x? : number, y? : number, level? : number, result? : any) : Rectangle
+		tileXYToRectangle(x? : number, y? : number, level? : number, result? : any) : Rectangle
 
 	}
 	export = GeographicTilingScheme
@@ -2687,9 +2704,9 @@ declare module 'cesium/Source/Core/CesiumTerrainProvider' {
 
 
 		//Methods
-		getLevelMaximumGeometricError(level : number) : number
-		getTileDataAvailable(x : number, y : number, level : number) : boolean
-		requestTileGeometry(x : number, y : number, level : number, request : Request) : Promise<TerrainData>|void
+		getLevelMaximumGeometricError(level? : number) : number
+		getTileDataAvailable(x? : number, y? : number, level? : number) : boolean
+		requestTileGeometry(x? : number, y? : number, level? : number, request? : Request) : Promise<TerrainData>|void
 
 	}
 	export = CesiumTerrainProvider
@@ -2724,9 +2741,9 @@ declare module 'cesium/Source/Core/CircleGeometry' {
 
 
 		//Methods
-		static createGeometry(circleGeometry : CircleGeometry) : Geometry|void
-		static pack(value : CircleGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : CircleGeometry) : CircleGeometry
+		static createGeometry(circleGeometry? : CircleGeometry) : Geometry|void
+		static pack(value? : CircleGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : CircleGeometry) : CircleGeometry
 
 	}
 	export = CircleGeometry
@@ -2759,9 +2776,9 @@ declare module 'cesium/Source/Core/CircleOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(circleGeometry : CircleOutlineGeometry) : Geometry|void
-		static pack(value : CircleOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : CircleOutlineGeometry) : CircleOutlineGeometry
+		static createGeometry(circleGeometry? : CircleOutlineGeometry) : Geometry|void
+		static pack(value? : CircleOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : CircleOutlineGeometry) : CircleOutlineGeometry
 
 	}
 	export = CircleOutlineGeometry
@@ -2833,29 +2850,29 @@ declare module 'cesium/Source/Core/JulianDate' {
 
 
 		//Methods
-		static addDays(julianDate : JulianDate, days : number, result : JulianDate) : JulianDate
-		static addHours(julianDate : JulianDate, hours : number, result : JulianDate) : JulianDate
-		static addMinutes(julianDate : JulianDate, minutes : number, result : JulianDate) : JulianDate
-		static addSeconds(julianDate : JulianDate, seconds : number, result : JulianDate) : JulianDate
-		static clone(julianDate : JulianDate, result : JulianDate) : JulianDate
-		static compare(left : JulianDate, right : JulianDate) : number
-		static computeTaiMinusUtc(julianDate : JulianDate) : number
-		static daysDifference(left : JulianDate, right : JulianDate) : number
+		static addDays(julianDate? : JulianDate, days? : number, result? : JulianDate) : JulianDate
+		static addHours(julianDate? : JulianDate, hours? : number, result? : JulianDate) : JulianDate
+		static addMinutes(julianDate? : JulianDate, minutes? : number, result? : JulianDate) : JulianDate
+		static addSeconds(julianDate? : JulianDate, seconds? : number, result? : JulianDate) : JulianDate
+		static clone(julianDate? : JulianDate, result? : JulianDate) : JulianDate
+		static compare(left? : JulianDate, right? : JulianDate) : number
+		static computeTaiMinusUtc(julianDate? : JulianDate) : number
+		static daysDifference(left? : JulianDate, right? : JulianDate) : number
 		static equals(left : JulianDate, right : JulianDate) : boolean
 		static equalsEpsilon(left : JulianDate, right : JulianDate, epsilon? : number) : boolean
-		static fromDate(date : Date, result : JulianDate) : JulianDate
-		static fromGregorianDate(date : GregorianDate, result : JulianDate) : JulianDate
-		static fromIso8601(iso8601String : string, result : JulianDate) : JulianDate
-		static greaterThan(left : JulianDate, right : JulianDate) : boolean
-		static greaterThanOrEquals(left : JulianDate, right : JulianDate) : boolean
-		static lessThan(left : JulianDate, right : JulianDate) : boolean
-		static lessThanOrEquals(left : JulianDate, right : JulianDate) : boolean
+		static fromDate(date? : Date, result? : JulianDate) : JulianDate
+		static fromGregorianDate(date? : GregorianDate, result? : JulianDate) : JulianDate
+		static fromIso8601(iso8601String? : string, result? : JulianDate) : JulianDate
+		static greaterThan(left? : JulianDate, right? : JulianDate) : boolean
+		static greaterThanOrEquals(left? : JulianDate, right? : JulianDate) : boolean
+		static lessThan(left? : JulianDate, right? : JulianDate) : boolean
+		static lessThanOrEquals(left? : JulianDate, right? : JulianDate) : boolean
 		static now(result : JulianDate) : JulianDate
-		static secondsDifference(left : JulianDate, right : JulianDate) : number
-		static toDate(julianDate : JulianDate) : Date
-		static toGregorianDate(julianDate : JulianDate, result : GregorianDate) : GregorianDate
-		static toIso8601(julianDate : JulianDate, precision : number) : string
-		static totalDays(julianDate : JulianDate) : number
+		static secondsDifference(left? : JulianDate, right? : JulianDate) : number
+		static toDate(julianDate? : JulianDate) : Date
+		static toGregorianDate(julianDate? : JulianDate, result? : GregorianDate) : GregorianDate
+		static toIso8601(julianDate? : JulianDate, precision? : number) : string
+		static totalDays(julianDate? : JulianDate) : number
 		clone(result : JulianDate) : JulianDate
 		equals(right : JulianDate) : boolean
 		equalsEpsilon(right : JulianDate, epsilon? : number) : boolean
@@ -2958,8 +2975,8 @@ declare module 'cesium/Source/Core/ColorGeometryInstanceAttribute' {
 
 		//Methods
 		static equals(left : ColorGeometryInstanceAttribute, right : ColorGeometryInstanceAttribute) : boolean
-		static fromColor(color : Color) : ColorGeometryInstanceAttribute
-		static toValue(color : Color, result : Uint8Array) : Uint8Array
+		static fromColor(color? : Color) : ColorGeometryInstanceAttribute
+		static toValue(color? : Color, result? : Uint8Array) : Uint8Array
 
 	}
 	export = ColorGeometryInstanceAttribute
@@ -3011,9 +3028,9 @@ declare module 'cesium/Source/Core/CorridorGeometry' {
 
 
 		//Methods
-		static createGeometry(corridorGeometry : CorridorGeometry) : Geometry|void
-		static pack(value : CorridorGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : CorridorGeometry) : CorridorGeometry
+		static createGeometry(corridorGeometry? : CorridorGeometry) : Geometry|void
+		static pack(value? : CorridorGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : CorridorGeometry) : CorridorGeometry
 
 	}
 	export = CorridorGeometry
@@ -3047,9 +3064,9 @@ declare module 'cesium/Source/Core/CorridorOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(corridorOutlineGeometry : CorridorOutlineGeometry) : Geometry|void
-		static pack(value : CorridorOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : CorridorOutlineGeometry) : CorridorOutlineGeometry
+		static createGeometry(corridorOutlineGeometry? : CorridorOutlineGeometry) : Geometry|void
+		static pack(value? : CorridorOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : CorridorOutlineGeometry) : CorridorOutlineGeometry
 
 	}
 	export = CorridorOutlineGeometry
@@ -3063,8 +3080,8 @@ declare module 'cesium/Source/Core/CubicRealPolynomial' {
 
 
 		//Methods
-		static computeDiscriminant(a : number, b : number, c : number, d : number) : number
-		static computeRealRoots(a : number, b : number, c : number, d : number) : Array<number>
+		static computeDiscriminant(a? : number, b? : number, c? : number, d? : number) : number
+		static computeRealRoots(a? : number, b? : number, c? : number, d? : number) : Array<number>
 
 	}
 	export = CubicRealPolynomial
@@ -3094,9 +3111,9 @@ declare module 'cesium/Source/Core/CylinderGeometry' {
 
 
 		//Methods
-		static createGeometry(cylinderGeometry : CylinderGeometry) : Geometry|void
-		static pack(value : CylinderGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : CylinderGeometry) : CylinderGeometry
+		static createGeometry(cylinderGeometry? : CylinderGeometry) : Geometry|void
+		static pack(value? : CylinderGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : CylinderGeometry) : CylinderGeometry
 
 	}
 	export = CylinderGeometry
@@ -3125,9 +3142,9 @@ declare module 'cesium/Source/Core/CylinderOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(cylinderGeometry : CylinderOutlineGeometry) : Geometry|void
-		static pack(value : CylinderOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : CylinderOutlineGeometry) : CylinderOutlineGeometry
+		static createGeometry(cylinderGeometry? : CylinderOutlineGeometry) : Geometry|void
+		static pack(value? : CylinderOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : CylinderOutlineGeometry) : CylinderOutlineGeometry
 
 	}
 	export = CylinderOutlineGeometry
@@ -3160,9 +3177,9 @@ declare module 'cesium/Source/Core/DistanceDisplayCondition' {
 
 		//Methods
 		static clone(value : DistanceDisplayCondition, result : DistanceDisplayCondition) : DistanceDisplayCondition
-		static equals(left : DistanceDisplayCondition, right : DistanceDisplayCondition) : boolean
+		static equals(left? : DistanceDisplayCondition, right? : DistanceDisplayCondition) : boolean
 		clone(result : DistanceDisplayCondition) : DistanceDisplayCondition
-		equals(other : DistanceDisplayCondition) : boolean
+		equals(other? : DistanceDisplayCondition) : boolean
 
 	}
 	export = DistanceDisplayCondition
@@ -3182,8 +3199,8 @@ declare module 'cesium/Source/Core/DistanceDisplayConditionGeometryInstanceAttri
 
 
 		//Methods
-		static fromDistanceDisplayCondition(distanceDisplayCondition : DistanceDisplayCondition) : DistanceDisplayConditionGeometryInstanceAttribute
-		static toValue(distanceDisplayCondition : DistanceDisplayCondition, result : Float32Array) : Float32Array
+		static fromDistanceDisplayCondition(distanceDisplayCondition? : DistanceDisplayCondition) : DistanceDisplayConditionGeometryInstanceAttribute
+		static toValue(distanceDisplayCondition? : DistanceDisplayCondition, result? : Float32Array) : Float32Array
 
 	}
 	export = DistanceDisplayConditionGeometryInstanceAttribute
@@ -3220,9 +3237,9 @@ declare module 'cesium/Source/Core/EllipseGeometry' {
 
 
 		//Methods
-		static createGeometry(ellipseGeometry : EllipseGeometry) : Geometry|void
-		static pack(value : EllipseGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : EllipseGeometry) : EllipseGeometry
+		static createGeometry(ellipseGeometry? : EllipseGeometry) : Geometry|void
+		static pack(value? : EllipseGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : EllipseGeometry) : EllipseGeometry
 
 	}
 	export = EllipseGeometry
@@ -3257,9 +3274,9 @@ declare module 'cesium/Source/Core/EllipseOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(ellipseGeometry : EllipseOutlineGeometry) : Geometry|void
-		static pack(value : EllipseOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : EllipseOutlineGeometry) : EllipseOutlineGeometry
+		static createGeometry(ellipseGeometry? : EllipseOutlineGeometry) : Geometry|void
+		static pack(value? : EllipseOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : EllipseOutlineGeometry) : EllipseOutlineGeometry
 
 	}
 	export = EllipseOutlineGeometry
@@ -3281,9 +3298,9 @@ declare module 'cesium/Source/Core/EllipsoidGeodesic' {
 
 
 		//Methods
-		interpolateUsingFraction(fraction : number, result : Cartographic) : Cartographic
-		interpolateUsingSurfaceDistance(distance : number, result : Cartographic) : Cartographic
-		setEndPoints(start : Cartographic, end : Cartographic) : void
+		interpolateUsingFraction(fraction? : number, result? : Cartographic) : Cartographic
+		interpolateUsingSurfaceDistance(distance? : number, result? : Cartographic) : Cartographic
+		setEndPoints(start? : Cartographic, end? : Cartographic) : void
 
 	}
 	export = EllipsoidGeodesic
@@ -3313,9 +3330,9 @@ declare module 'cesium/Source/Core/EllipsoidGeometry' {
 
 
 		//Methods
-		static createGeometry(ellipsoidGeometry : EllipsoidGeometry) : Geometry|void
-		static pack(value : EllipsoidGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : EllipsoidGeometry) : EllipsoidGeometry
+		static createGeometry(ellipsoidGeometry? : EllipsoidGeometry) : Geometry|void
+		static pack(value? : EllipsoidGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : EllipsoidGeometry) : EllipsoidGeometry
 
 	}
 	export = EllipsoidGeometry
@@ -3344,9 +3361,9 @@ declare module 'cesium/Source/Core/EllipsoidOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(ellipsoidGeometry : EllipsoidOutlineGeometry) : Geometry|void
-		static pack(value : EllipsoidOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : EllipsoidOutlineGeometry) : EllipsoidOutlineGeometry
+		static createGeometry(ellipsoidGeometry? : EllipsoidOutlineGeometry) : Geometry|void
+		static pack(value? : EllipsoidOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : EllipsoidOutlineGeometry) : EllipsoidOutlineGeometry
 
 	}
 	export = EllipsoidOutlineGeometry
@@ -3369,12 +3386,12 @@ declare module 'cesium/Source/Core/EllipsoidTangentPlane' {
 
 
 		//Methods
-		static fromPoints(ellipsoid : Ellipsoid, cartesians : Cartesian3) : void
-		projectPointOntoPlane(cartesian : Cartesian3, result : Cartesian2) : Cartesian2
-		projectPointsOntoEllipsoid(cartesians : Array<Cartesian2>, result : Array<Cartesian3>) : Array<Cartesian3>
-		projectPointsOntoPlane(cartesians : Array<Cartesian3>, result : Array<Cartesian2>) : Array<Cartesian2>
-		projectPointsToNearestOnPlane(cartesians : Array<Cartesian3>, result : Array<Cartesian2>) : Array<Cartesian2>
-		projectPointToNearestOnPlane(cartesian : Cartesian3, result : Cartesian2) : Cartesian2
+		static fromPoints(ellipsoid? : Ellipsoid, cartesians? : Cartesian3) : void
+		projectPointOntoPlane(cartesian? : Cartesian3, result? : Cartesian2) : Cartesian2
+		projectPointsOntoEllipsoid(cartesians? : Array<Cartesian2>, result? : Array<Cartesian3>) : Array<Cartesian3>
+		projectPointsOntoPlane(cartesians? : Array<Cartesian3>, result? : Array<Cartesian2>) : Array<Cartesian2>
+		projectPointsToNearestOnPlane(cartesians? : Array<Cartesian3>, result? : Array<Cartesian2>) : Array<Cartesian2>
+		projectPointToNearestOnPlane(cartesian? : Cartesian3, result? : Cartesian2) : Cartesian2
 
 	}
 	export = EllipsoidTangentPlane
@@ -3413,9 +3430,9 @@ declare module 'cesium/Source/Core/EllipsoidTerrainProvider' {
 
 
 		//Methods
-		getLevelMaximumGeometricError(level : number) : number
-		getTileDataAvailable(x : number, y : number, level : number) : boolean
-		requestTileGeometry(x : number, y : number, level : number, request : Request) : Promise<TerrainData>|void
+		getLevelMaximumGeometricError(level? : number) : number
+		getTileDataAvailable(x? : number, y? : number, level? : number) : boolean
+		requestTileGeometry(x? : number, y? : number, level? : number, request? : Request) : Promise<TerrainData>|void
 
 	}
 	export = EllipsoidTerrainProvider
@@ -3430,7 +3447,7 @@ declare module 'cesium/Source/Core/EventHelper' {
 
 
 		//Methods
-		add(event : Event, listener : (()=>void), scope : any) : any
+		add(event? : Event, listener? : (()=>void), scope? : any) : any
 		removeAll() : void
 
 	}
@@ -3499,12 +3516,12 @@ declare module 'cesium/Source/Core/OrthographicFrustum' {
 
 
 		//Methods
-		static pack(value : OrthographicFrustum, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : OrthographicFrustum) : OrthographicFrustum
+		static pack(value? : OrthographicFrustum, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : OrthographicFrustum) : OrthographicFrustum
 		clone(result : OrthographicFrustum) : OrthographicFrustum
-		computeCullingVolume(position : Cartesian3, direction : Cartesian3, up : Cartesian3) : CullingVolume
+		computeCullingVolume(position? : Cartesian3, direction? : Cartesian3, up? : Cartesian3) : CullingVolume
 		equals(other : OrthographicFrustum) : boolean
-		getPixelDimensions(drawingBufferWidth : number, drawingBufferHeight : number, distance : number, result : Cartesian2) : Cartesian2
+		getPixelDimensions(drawingBufferWidth? : number, drawingBufferHeight? : number, distance? : number, result? : Cartesian2) : Cartesian2
 
 	}
 	export = OrthographicFrustum
@@ -3537,9 +3554,9 @@ declare module 'cesium/Source/Core/FrustumGeometry' {
 
 
 		//Methods
-		static createGeometry(frustumGeometry : FrustumGeometry) : Geometry|void
-		static pack(value : FrustumGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : FrustumGeometry) : void
+		static createGeometry(frustumGeometry? : FrustumGeometry) : Geometry|void
+		static pack(value? : FrustumGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : FrustumGeometry) : void
 
 	}
 	export = FrustumGeometry
@@ -3570,9 +3587,9 @@ declare module 'cesium/Source/Core/FrustumOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(frustumGeometry : FrustumOutlineGeometry) : Geometry|void
-		static pack(value : FrustumOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : FrustumOutlineGeometry) : void
+		static createGeometry(frustumGeometry? : FrustumOutlineGeometry) : Geometry|void
+		static pack(value? : FrustumOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : FrustumOutlineGeometry) : void
 
 	}
 	export = FrustumOutlineGeometry
@@ -3592,7 +3609,7 @@ declare module 'cesium/Source/Core/Fullscreen' {
 
 		//Methods
 		static exitFullscreen() : void
-		static requestFullscreen(element : any, vrDevice : HMDVRDevice) : void
+		static requestFullscreen(element? : any, vrDevice? : HMDVRDevice) : void
 		static supportsFullscreen() : boolean
 
 	}
@@ -3607,7 +3624,7 @@ declare module 'cesium/Source/Core/GeocoderService' {
 
 
 		//Methods
-		geocode(query : string) : any
+		geocode(query? : string) : any
 
 	}
 	export = GeocoderService
@@ -3625,8 +3642,8 @@ declare module 'cesium/Source/Core/GeographicProjection' {
 
 
 		//Methods
-		project(cartographic : Cartographic, result : Cartesian3) : Cartesian3
-		unproject(cartesian : Cartesian3, result : Cartographic) : Cartographic
+		project(cartographic? : Cartographic, result? : Cartesian3) : Cartesian3
+		unproject(cartesian? : Cartesian3, result? : Cartographic) : Cartographic
 
 	}
 	export = GeographicProjection
@@ -3706,18 +3723,18 @@ declare module 'cesium/Source/Core/GeometryPipeline' {
 
 
 		//Methods
-		static compressVertices(geometry : Geometry) : Geometry
-		static computeNormal(geometry : Geometry) : Geometry
-		static computeTangentAndBitangent(geometry : Geometry) : Geometry
-		static createAttributeLocations(geometry : Geometry) : Object
-		static createLineSegmentsForVectors(geometry : Geometry, attributeName : string, length : number) : Geometry
-		static encodeAttribute(geometry : Geometry, attributeName : string, attributeHighName : string, attributeLowName : string) : Geometry
-		static fitToUnsignedShortIndices(geometry : Geometry) : Array<Geometry>
-		static projectTo2D(geometry : Geometry, attributeName : string, attributeName3D : string, attributeName2D : string, projection : any) : Geometry
-		static reorderForPostVertexCache(geometry : Geometry, cacheCapacity : number) : Geometry
-		static reorderForPreVertexCache(geometry : Geometry) : Geometry
-		static toWireframe(geometry : Geometry) : Geometry
-		static transformToWorldCoordinates(instance : GeometryInstance) : GeometryInstance
+		static compressVertices(geometry? : Geometry) : Geometry
+		static computeNormal(geometry? : Geometry) : Geometry
+		static computeTangentAndBitangent(geometry? : Geometry) : Geometry
+		static createAttributeLocations(geometry? : Geometry) : Object
+		static createLineSegmentsForVectors(geometry? : Geometry, attributeName? : string, length? : number) : Geometry
+		static encodeAttribute(geometry? : Geometry, attributeName? : string, attributeHighName? : string, attributeLowName? : string) : Geometry
+		static fitToUnsignedShortIndices(geometry? : Geometry) : Array<Geometry>
+		static projectTo2D(geometry? : Geometry, attributeName? : string, attributeName3D? : string, attributeName2D? : string, projection? : any) : Geometry
+		static reorderForPostVertexCache(geometry? : Geometry, cacheCapacity? : number) : Geometry
+		static reorderForPreVertexCache(geometry? : Geometry) : Geometry
+		static toWireframe(geometry? : Geometry) : Geometry
+		static transformToWorldCoordinates(instance? : GeometryInstance) : GeometryInstance
 
 	}
 	export = GeometryPipeline
@@ -3754,8 +3771,8 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseMetadata' {
 
 
 		//Methods
-		static quadKeyToTileXY(quadkey : string) : void
-		static tileXYToQuadKey(x : number, y : number, level : number) : void
+		static quadKeyToTileXY(quadkey? : string) : void
+		static tileXYToQuadKey(x? : number, y? : number, level? : number) : void
 
 	}
 	export = GoogleEarthEnterpriseMetadata
@@ -3805,9 +3822,9 @@ declare module 'cesium/Source/Core/HeightmapTerrainData' {
 
 
 		//Methods
-		interpolateHeight(rectangle : Rectangle, longitude : number, latitude : number) : number
-		isChildAvailable(thisX : number, thisY : number, childX : number, childY : number) : boolean
-		upsample(tilingScheme : TilingScheme, thisX : number, thisY : number, thisLevel : number, descendantX : number, descendantY : number, descendantLevel : number) : Promise<HeightmapTerrainData>|void
+		interpolateHeight(rectangle? : Rectangle, longitude? : number, latitude? : number) : number
+		isChildAvailable(thisX? : number, thisY? : number, childX? : number, childY? : number) : boolean
+		upsample(tilingScheme? : TilingScheme, thisX? : number, thisY? : number, thisLevel? : number, descendantX? : number, descendantY? : number, descendantLevel? : number) : Promise<HeightmapTerrainData>|void
 		wasCreatedByUpsampling() : boolean
 
 	}
@@ -3830,9 +3847,9 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainData' {
 
 
 		//Methods
-		interpolateHeight(rectangle : Rectangle, longitude : number, latitude : number) : number
-		isChildAvailable(thisX : number, thisY : number, childX : number, childY : number) : boolean
-		upsample(tilingScheme : TilingScheme, thisX : number, thisY : number, thisLevel : number, descendantX : number, descendantY : number, descendantLevel : number) : Promise<HeightmapTerrainData>|void
+		interpolateHeight(rectangle? : Rectangle, longitude? : number, latitude? : number) : number
+		isChildAvailable(thisX? : number, thisY? : number, childX? : number, childY? : number) : boolean
+		upsample(tilingScheme? : TilingScheme, thisX? : number, thisY? : number, thisLevel? : number, descendantX? : number, descendantY? : number, descendantLevel? : number) : Promise<HeightmapTerrainData>|void
 		wasCreatedByUpsampling() : boolean
 
 	}
@@ -3882,9 +3899,9 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainProvider' {
 
 
 		//Methods
-		getLevelMaximumGeometricError(level : number) : number
-		getTileDataAvailable(x : number, y : number, level : number) : boolean
-		requestTileGeometry(x : number, y : number, level : number, request : Request) : Promise<TerrainData>|void
+		getLevelMaximumGeometricError(level? : number) : number
+		getTileDataAvailable(x? : number, y? : number, level? : number) : boolean
+		requestTileGeometry(x? : number, y? : number, level? : number, request? : Request) : Promise<TerrainData>|void
 
 	}
 	export = GoogleEarthEnterpriseTerrainProvider
@@ -3898,9 +3915,9 @@ declare module 'cesium/Source/Core/HermitePolynomialApproximation' {
 
 
 		//Methods
-		static getRequiredDataPoints(degree : number, inputOrder : number) : number
-		static interpolate(x : number, xTable : Array<number>, yTable : Array<number>, yStride : number, inputOrder : number, outputOrder : number, result : Array<number>) : Array<number>
-		static interpolateOrderZero(x : number, xTable : Array<number>, yTable : Array<number>, yStride : number, result : Array<number>) : Array<number>
+		static getRequiredDataPoints(degree? : number, inputOrder? : number) : number
+		static interpolate(x? : number, xTable? : Array<number>, yTable? : Array<number>, yStride? : number, inputOrder? : number, outputOrder? : number, result? : Array<number>) : Array<number>
+		static interpolateOrderZero(x? : number, xTable? : Array<number>, yTable? : Array<number>, yStride? : number, result? : Array<number>) : Array<number>
 
 	}
 	export = HermitePolynomialApproximation
@@ -3951,8 +3968,8 @@ declare module 'cesium/Source/Core/LinearSpline' {
 
 
 		//Methods
-		evaluate(time : number, result : Cartesian3) : Cartesian3
-		findTimeInterval(time : number) : number
+		evaluate(time? : number, result? : Cartesian3) : Cartesian3
+		findTimeInterval(time? : number) : number
 
 	}
 	export = LinearSpline
@@ -3998,11 +4015,11 @@ declare module 'cesium/Source/Core/HermiteSpline' {
 
 
 		//Methods
-		static createC1(options : createC1Options) : HermiteSpline
-		static createClampedCubic(options : createClampedCubicOptions) : HermiteSpline|LinearSpline
-		static createNaturalCubic(options : createNaturalCubicOptions) : HermiteSpline|LinearSpline
-		evaluate(time : number, result : Cartesian3) : Cartesian3
-		findTimeInterval(time : number) : number
+		static createC1(options? : createC1Options) : HermiteSpline
+		static createClampedCubic(options? : createClampedCubicOptions) : HermiteSpline|LinearSpline
+		static createNaturalCubic(options? : createNaturalCubicOptions) : HermiteSpline|LinearSpline
+		evaluate(time? : number, result? : Cartesian3) : Cartesian3
+		findTimeInterval(time? : number) : number
 
 	}
 	export = HermiteSpline
@@ -4019,10 +4036,10 @@ declare module 'cesium/Source/Core/IndexDatatype' {
 
 
 		//Methods
-		static createTypedArray(numberOfVertices : number, indicesLengthOrArray : any) : Uint16Array|Uint32Array
-		static createTypedArrayFromArrayBuffer(numberOfVertices : number, sourceArray : ArrayBuffer, byteOffset : number, length : number) : Uint16Array|Uint32Array
-		static getSizeInBytes(indexDatatype : IndexDatatype) : number
-		static validate(indexDatatype : IndexDatatype) : boolean
+		static createTypedArray(numberOfVertices? : number, indicesLengthOrArray? : any) : Uint16Array|Uint32Array
+		static createTypedArrayFromArrayBuffer(numberOfVertices? : number, sourceArray? : ArrayBuffer, byteOffset? : number, length? : number) : Uint16Array|Uint32Array
+		static getSizeInBytes(indexDatatype? : IndexDatatype) : number
+		static validate(indexDatatype? : IndexDatatype) : boolean
 
 	}
 	export = IndexDatatype
@@ -4037,9 +4054,9 @@ declare module 'cesium/Source/Core/InterpolationAlgorithm' {
 
 
 		//Methods
-		static getRequiredDataPoints(degree : number) : number
-		static interpolate(x : number, xTable : Array<number>, yTable : Array<number>, yStride : number, inputOrder : number, outputOrder : number, result : Array<number>) : Array<number>
-		static interpolateOrderZero(x : number, xTable : Array<number>, yTable : Array<number>, yStride : number, result : Array<number>) : Array<number>
+		static getRequiredDataPoints(degree? : number) : number
+		static interpolate(x? : number, xTable? : Array<number>, yTable? : Array<number>, yStride? : number, inputOrder? : number, outputOrder? : number, result? : Array<number>) : Array<number>
+		static interpolateOrderZero(x? : number, xTable? : Array<number>, yTable? : Array<number>, yStride? : number, result? : Array<number>) : Array<number>
 
 	}
 	export = InterpolationAlgorithm
@@ -4059,16 +4076,16 @@ declare module 'cesium/Source/Core/IntersectionTests' {
 
 
 		//Methods
-		static lineSegmentSphere(p0 : Cartesian3, p1 : Cartesian3, sphere : BoundingSphere, result : Interval) : Interval
-		static lineSegmentTriangle(v0 : Cartesian3, v1 : Cartesian3, p0 : Cartesian3, p1 : Cartesian3, p2 : Cartesian3, cullBackFaces : boolean, result : Cartesian3) : Cartesian3
-		static raySphere(ray : Ray, sphere : BoundingSphere, result : Interval) : Interval
-		static rayTriangle(ray : Ray, p0 : Cartesian3, p1 : Cartesian3, p2 : Cartesian3, cullBackFaces : boolean, result : Cartesian3) : Cartesian3
-		static rayTriangleParametric(ray : Ray, p0 : Cartesian3, p1 : Cartesian3, p2 : Cartesian3, cullBackFaces : boolean) : number
-		static grazingAltitudeLocation(ray : Ray, ellipsoid : Ellipsoid) : Cartesian3
-		static lineSegmentPlane(endPoint0 : Cartesian3, endPoint1 : Cartesian3, plane : Plane, result : Cartesian3) : Cartesian3
-		static rayEllipsoid(ray : Ray, ellipsoid : Ellipsoid) : Interval
-		static rayPlane(ray : Ray, plane : Plane, result : Cartesian3) : Cartesian3
-		static trianglePlaneIntersection(p0 : Cartesian3, p1 : Cartesian3, p2 : Cartesian3, plane : Plane) : Object
+		static lineSegmentSphere(p0? : Cartesian3, p1? : Cartesian3, sphere? : BoundingSphere, result? : Interval) : Interval
+		static lineSegmentTriangle(v0? : Cartesian3, v1? : Cartesian3, p0? : Cartesian3, p1? : Cartesian3, p2? : Cartesian3, cullBackFaces? : boolean, result? : Cartesian3) : Cartesian3
+		static raySphere(ray? : Ray, sphere? : BoundingSphere, result? : Interval) : Interval
+		static rayTriangle(ray? : Ray, p0? : Cartesian3, p1? : Cartesian3, p2? : Cartesian3, cullBackFaces? : boolean, result? : Cartesian3) : Cartesian3
+		static rayTriangleParametric(ray? : Ray, p0? : Cartesian3, p1? : Cartesian3, p2? : Cartesian3, cullBackFaces? : boolean) : number
+		static grazingAltitudeLocation(ray? : Ray, ellipsoid? : Ellipsoid) : Cartesian3
+		static lineSegmentPlane(endPoint0? : Cartesian3, endPoint1? : Cartesian3, plane? : Plane, result? : Cartesian3) : Cartesian3
+		static rayEllipsoid(ray? : Ray, ellipsoid? : Ellipsoid) : Interval
+		static rayPlane(ray? : Ray, plane? : Plane, result? : Cartesian3) : Cartesian3
+		static trianglePlaneIntersection(p0? : Cartesian3, p1? : Cartesian3, p2? : Cartesian3, plane? : Plane) : Object
 
 	}
 	export = IntersectionTests
@@ -4083,8 +4100,8 @@ declare module 'cesium/Source/Core/Intersections2D' {
 
 
 		//Methods
-		static clipTriangleAtAxisAlignedThreshold(threshold : number, keepAbove : boolean, u0 : number, u1 : number, u2 : number, result : Array<number>) : Array<number>
-		static computeBarycentricCoordinates(x : number, y : number, x1 : number, y1 : number, x2 : number, y2 : number, x3 : number, y3 : number, result : Cartesian3) : Cartesian3
+		static clipTriangleAtAxisAlignedThreshold(threshold? : number, keepAbove? : boolean, u0? : number, u1? : number, u2? : number, result? : Array<number>) : Array<number>
+		static computeBarycentricCoordinates(x? : number, y? : number, x1? : number, y1? : number, x2? : number, y2? : number, x3? : number, y3? : number, result? : Cartesian3) : Cartesian3
 
 	}
 	export = Intersections2D
@@ -4131,8 +4148,8 @@ declare module 'cesium/Source/Core/LagrangePolynomialApproximation' {
 
 
 		//Methods
-		static getRequiredDataPoints(degree : number) : number
-		static interpolateOrderZero(x : number, xTable : Array<number>, yTable : Array<number>, yStride : number, result : Array<number>) : Array<number>
+		static getRequiredDataPoints(degree? : number) : number
+		static interpolateOrderZero(x? : number, xTable? : Array<number>, yTable? : Array<number>, yStride? : number, result? : Array<number>) : Array<number>
 
 	}
 	export = LagrangePolynomialApproximation
@@ -4146,8 +4163,8 @@ declare module 'cesium/Source/Core/LinearApproximation' {
 
 
 		//Methods
-		static getRequiredDataPoints(degree : number) : number
-		static interpolateOrderZero(x : number, xTable : Array<number>, yTable : Array<number>, yStride : number, result : Array<number>) : Array<number>
+		static getRequiredDataPoints(degree? : number) : number
+		static interpolateOrderZero(x? : number, xTable? : Array<number>, yTable? : Array<number>, yStride? : number, result? : Array<number>) : Array<number>
 
 	}
 	export = LinearApproximation
@@ -4197,33 +4214,33 @@ declare module 'cesium/Source/Core/Math' {
 
 
 		//Methods
-		static acosClamped(value : number) : number
-		static asinClamped(value : number) : number
-		static chordLength(angle : number, radius : number) : number
-		static clamp(value : number, min : number, max : number) : number
-		static clampToLatitudeRange(angle : number) : number
-		static convertLongitudeRange(angle : number) : number
-		static cosh(value : number) : number
-		static equalsEpsilon(left : number, right : number, relativeEpsilon : number, absoluteEpsilon : number) : boolean
-		static factorial(n : number) : number
-		static fromSNorm(value : number, rangeMax : number) : number
+		static acosClamped(value? : number) : number
+		static asinClamped(value? : number) : number
+		static chordLength(angle? : number, radius? : number) : number
+		static clamp(value? : number, min? : number, max? : number) : number
+		static clampToLatitudeRange(angle? : number) : number
+		static convertLongitudeRange(angle? : number) : number
+		static cosh(value? : number) : number
+		static equalsEpsilon(left? : number, right? : number, relativeEpsilon? : number, absoluteEpsilon? : number) : boolean
+		static factorial(n? : number) : number
+		static fromSNorm(value? : number, rangeMax? : number) : number
 		static incrementWrap(n : number, maximumValue : number, minimumValue : number) : number
-		static isPowerOfTwo(n : number) : boolean
-		static lerp(p : number, q : number, time : number) : number
-		static logBase(number : number, base : number) : number
-		static mod(m : number, n : number) : number
-		static negativePiToPi(angle : number) : number
-		static nextPowerOfTwo(n : number) : number
+		static isPowerOfTwo(n? : number) : boolean
+		static lerp(p? : number, q? : number, time? : number) : number
+		static logBase(number? : number, base? : number) : number
+		static mod(m? : number, n? : number) : number
+		static negativePiToPi(angle? : number) : number
+		static nextPowerOfTwo(n? : number) : number
 		static nextRandomNumber() : number
-		static randomBetween(min : number, max : number) : number
-		static setRandomNumberSeed(seed : number) : void
-		static sign(value : number) : number
-		static signNotZero(value : number) : number
-		static sinh(value : number) : number
-		static toDegrees(radians : number) : number
-		static toRadians(degrees : number) : number
-		static toSNorm(value : number, rangeMax : number) : number
-		static zeroToTwoPi(angle : number) : number
+		static randomBetween(min? : number, max? : number) : number
+		static setRandomNumberSeed(seed? : number) : void
+		static sign(value? : number) : number
+		static signNotZero(value? : number) : number
+		static sinh(value? : number) : number
+		static toDegrees(radians? : number) : number
+		static toRadians(degrees? : number) : number
+		static toSNorm(value? : number, rangeMax? : number) : number
+		static zeroToTwoPi(angle? : number) : number
 
 	}
 	export = Math
@@ -4250,34 +4267,34 @@ declare module 'cesium/Source/Core/Matrix2' {
 		equals(right : Matrix2) : boolean
 		equalsEpsilon(right : Matrix2, epsilon? : number) : boolean
 		toString() : string
-		static abs(matrix : Matrix2, result : Matrix2) : Matrix2
-		static add(left : Matrix2, right : Matrix2, result : Matrix2) : Matrix2
-		static clone(matrix : Matrix2, result : Matrix2) : Matrix2
+		static abs(matrix? : Matrix2, result? : Matrix2) : Matrix2
+		static add(left? : Matrix2, right? : Matrix2, result? : Matrix2) : Matrix2
+		static clone(matrix? : Matrix2, result? : Matrix2) : Matrix2
 		static equals(left : Matrix2, right : Matrix2) : boolean
 		static equalsEpsilon(left : Matrix2, right : Matrix2, epsilon? : number) : boolean
-		static fromArray(array : Array<number>, startingIndex : number, result : Matrix2) : Matrix2
-		static fromColumnMajorArray(values : Array<number>, result : Matrix2) : Matrix2
-		static fromRotation(angle : number, result : Matrix2) : Matrix2
-		static fromRowMajorArray(values : Array<number>, result : Matrix2) : Matrix2
-		static fromScale(scale : Cartesian2, result : Matrix2) : Matrix2
-		static fromUniformScale(scale : number, result : Matrix2) : Matrix2
-		static getColumn(matrix : Matrix2, index : number, result : Cartesian2) : Cartesian2
-		static getElementIndex(row : number, column : number) : number
-		static getMaximumScale(matrix : Matrix2) : number
-		static getRow(matrix : Matrix2, index : number, result : Cartesian2) : Cartesian2
-		static getScale(matrix : Matrix2, result : Cartesian2) : Cartesian2
-		static multiply(left : Matrix2, right : Matrix2, result : Matrix2) : Matrix2
-		static multiplyByScalar(matrix : Matrix2, scalar : number, result : Matrix2) : Matrix2
-		static multiplyByScale(matrix : Matrix2, scale : Cartesian2, result : Matrix2) : Matrix2
-		static multiplyByVector(matrix : Matrix2, cartesian : Cartesian2, result : Cartesian2) : Cartesian2
-		static negate(matrix : Matrix2, result : Matrix2) : Matrix2
-		static pack(value : Matrix2, array : Array<number>, startingIndex : number) : Array<number>
-		static setColumn(matrix : Matrix2, index : number, cartesian : Cartesian2, result : Cartesian2) : Matrix2
-		static setRow(matrix : Matrix2, index : number, cartesian : Cartesian2, result : Matrix2) : Matrix2
-		static subtract(left : Matrix2, right : Matrix2, result : Matrix2) : Matrix2
-		static toArray(matrix : Matrix2, result : Array<number>) : Array<number>
-		static transpose(matrix : Matrix2, result : Matrix2) : Matrix2
-		static unpack(array : Array<number>, startingIndex : number, result : Matrix2) : Matrix2
+		static fromArray(array? : Array<number>, startingIndex? : number, result? : Matrix2) : Matrix2
+		static fromColumnMajorArray(values? : Array<number>, result? : Matrix2) : Matrix2
+		static fromRotation(angle? : number, result? : Matrix2) : Matrix2
+		static fromRowMajorArray(values? : Array<number>, result? : Matrix2) : Matrix2
+		static fromScale(scale? : Cartesian2, result? : Matrix2) : Matrix2
+		static fromUniformScale(scale? : number, result? : Matrix2) : Matrix2
+		static getColumn(matrix? : Matrix2, index? : number, result? : Cartesian2) : Cartesian2
+		static getElementIndex(row? : number, column? : number) : number
+		static getMaximumScale(matrix? : Matrix2) : number
+		static getRow(matrix? : Matrix2, index? : number, result? : Cartesian2) : Cartesian2
+		static getScale(matrix? : Matrix2, result? : Cartesian2) : Cartesian2
+		static multiply(left? : Matrix2, right? : Matrix2, result? : Matrix2) : Matrix2
+		static multiplyByScalar(matrix? : Matrix2, scalar? : number, result? : Matrix2) : Matrix2
+		static multiplyByScale(matrix? : Matrix2, scale? : Cartesian2, result? : Matrix2) : Matrix2
+		static multiplyByVector(matrix? : Matrix2, cartesian? : Cartesian2, result? : Cartesian2) : Cartesian2
+		static negate(matrix? : Matrix2, result? : Matrix2) : Matrix2
+		static pack(value? : Matrix2, array? : Array<number>, startingIndex? : number) : Array<number>
+		static setColumn(matrix? : Matrix2, index? : number, cartesian? : Cartesian2, result? : Cartesian2) : Matrix2
+		static setRow(matrix? : Matrix2, index? : number, cartesian? : Cartesian2, result? : Matrix2) : Matrix2
+		static subtract(left? : Matrix2, right? : Matrix2, result? : Matrix2) : Matrix2
+		static toArray(matrix? : Matrix2, result? : Array<number>) : Array<number>
+		static transpose(matrix? : Matrix2, result? : Matrix2) : Matrix2
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Matrix2) : Matrix2
 
 	}
 	export = Matrix2
@@ -4286,7 +4303,7 @@ declare module 'cesium/Source/Core/Matrix2' {
 declare module 'cesium/Source/Core/NearFarScalar' {
 	class NearFarScalar 
 	{
-		constructor(near? : number, near? : numberValue, far? : number, far? : numberValue);
+		constructor(near? : number, nearValue? : number, far? : number, farValue? : number);
 		//Members
 		static packedLength: number
 		far: number
@@ -4296,10 +4313,10 @@ declare module 'cesium/Source/Core/NearFarScalar' {
 
 
 		//Methods
-		static clone(nearFarScalar : NearFarScalar, result : NearFarScalar) : NearFarScalar
+		static clone(nearFarScalar? : NearFarScalar, result? : NearFarScalar) : NearFarScalar
 		static equals(left : NearFarScalar, right : NearFarScalar) : boolean
-		static pack(value : NearFarScalar, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : NearFarScalar) : NearFarScalar
+		static pack(value? : NearFarScalar, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : NearFarScalar) : NearFarScalar
 		clone(result : NearFarScalar) : NearFarScalar
 		equals(right : NearFarScalar) : boolean
 
@@ -4341,9 +4358,9 @@ declare module 'cesium/Source/Core/OrthographicOffCenterFrustum' {
 
 		//Methods
 		clone(result : OrthographicOffCenterFrustum) : OrthographicOffCenterFrustum
-		computeCullingVolume(position : Cartesian3, direction : Cartesian3, up : Cartesian3) : CullingVolume
+		computeCullingVolume(position? : Cartesian3, direction? : Cartesian3, up? : Cartesian3) : CullingVolume
 		equals(other : OrthographicOffCenterFrustum) : boolean
-		getPixelDimensions(drawingBufferWidth : number, drawingBufferHeight : number, distance : number, result : Cartesian2) : Cartesian2
+		getPixelDimensions(drawingBufferWidth? : number, drawingBufferHeight? : number, distance? : number, result? : Cartesian2) : Cartesian2
 
 	}
 	export = OrthographicOffCenterFrustum
@@ -4358,8 +4375,8 @@ declare module 'cesium/Source/Core/Packable' {
 
 
 		//Methods
-		static pack(value : any, array : Array<number>, startingIndex : number) : void
-		static unpack(array : Array<number>, startingIndex : number, result : any) : Object
+		static pack(value? : any, array? : Array<number>, startingIndex? : number) : void
+		static unpack(array? : Array<number>, startingIndex? : number, result? : any) : Object
 
 	}
 	export = Packable
@@ -4374,8 +4391,8 @@ declare module 'cesium/Source/Core/PackableForInterpolation' {
 
 
 		//Methods
-		static convertPackedArrayForInterpolation(packedArray : Array<number>, startingIndex : number, lastIndex : number, result? : Array<number>) : void
-		static unpackInterpolationResult(array : Array<number>, sourceArray : Array<number>, startingIndex : number, lastIndex : number, result : any) : Object
+		static convertPackedArrayForInterpolation(packedArray? : Array<number>, startingIndex? : number, lastIndex? : number, result? : Array<number>) : void
+		static unpackInterpolationResult(array? : Array<number>, sourceArray? : Array<number>, startingIndex? : number, lastIndex? : number, result? : any) : Object
 
 	}
 	export = PackableForInterpolation
@@ -4416,9 +4433,9 @@ declare module 'cesium/Source/Core/PerspectiveOffCenterFrustum' {
 
 		//Methods
 		clone(result : PerspectiveOffCenterFrustum) : PerspectiveOffCenterFrustum
-		computeCullingVolume(position : Cartesian3, direction : Cartesian3, up : Cartesian3) : CullingVolume
+		computeCullingVolume(position? : Cartesian3, direction? : Cartesian3, up? : Cartesian3) : CullingVolume
 		equals(other : PerspectiveOffCenterFrustum) : boolean
-		getPixelDimensions(drawingBufferWidth : number, drawingBufferHeight : number, distance : number, result : Cartesian2) : Cartesian2
+		getPixelDimensions(drawingBufferWidth? : number, drawingBufferHeight? : number, distance? : number, result? : Cartesian2) : Cartesian2
 
 	}
 	export = PerspectiveOffCenterFrustum
@@ -4434,10 +4451,10 @@ declare module 'cesium/Source/Core/PinBuilder' {
 
 
 		//Methods
-		fromColor(color : Color, size : number) : HTMLCanvasElement
-		fromMakiIconId(id : string, color : Color, size : number) : HTMLCanvasElement|Promise<HTMLCanvasElement>
-		fromText(text : string, color : Color, size : number) : HTMLCanvasElement
-		fromUrl(url : string, color : Color, size : number) : HTMLCanvasElement|Promise<HTMLCanvasElement>
+		fromColor(color? : Color, size? : number) : HTMLCanvasElement
+		fromMakiIconId(id? : string, color? : Color, size? : number) : HTMLCanvasElement|Promise<HTMLCanvasElement>
+		fromText(text? : string, color? : Color, size? : number) : HTMLCanvasElement
+		fromUrl(url? : string, color? : Color, size? : number) : HTMLCanvasElement|Promise<HTMLCanvasElement>
 
 	}
 	export = PinBuilder
@@ -4540,10 +4557,10 @@ declare module 'cesium/Source/Core/PolygonGeometry' {
 
 
 		//Methods
-		static createGeometry(polygonGeometry : PolygonGeometry) : Geometry|void
+		static createGeometry(polygonGeometry? : PolygonGeometry) : Geometry|void
 		static fromPositions(options : fromPositionsOptions) : PolygonGeometry
-		static pack(value : PolygonGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : PolygonGeometry) : void
+		static pack(value? : PolygonGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : PolygonGeometry) : void
 
 	}
 	export = PolygonGeometry
@@ -4578,10 +4595,10 @@ declare module 'cesium/Source/Core/PolygonOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(polygonGeometry : PolygonOutlineGeometry) : Geometry|void
+		static createGeometry(polygonGeometry? : PolygonOutlineGeometry) : Geometry|void
 		static fromPositions(options : fromPositionsOptions) : PolygonOutlineGeometry
-		static pack(value : PolygonOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : PolygonOutlineGeometry) : PolygonOutlineGeometry
+		static pack(value? : PolygonOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : PolygonOutlineGeometry) : PolygonOutlineGeometry
 
 	}
 	export = PolygonOutlineGeometry
@@ -4617,9 +4634,9 @@ declare module 'cesium/Source/Core/PolylineGeometry' {
 
 
 		//Methods
-		static createGeometry(polylineGeometry : PolylineGeometry) : Geometry|void
-		static pack(value : PolylineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : PolylineGeometry) : PolylineGeometry
+		static createGeometry(polylineGeometry? : PolylineGeometry) : Geometry|void
+		static pack(value? : PolylineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : PolylineGeometry) : PolylineGeometry
 
 	}
 	export = PolylineGeometry
@@ -4654,9 +4671,9 @@ declare module 'cesium/Source/Core/PolylineVolumeGeometry' {
 
 
 		//Methods
-		static createGeometry(polylineVolumeGeometry : PolylineVolumeGeometry) : Geometry|void
-		static pack(value : PolylineVolumeGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : PolylineVolumeGeometry) : PolylineVolumeGeometry
+		static createGeometry(polylineVolumeGeometry? : PolylineVolumeGeometry) : Geometry|void
+		static pack(value? : PolylineVolumeGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : PolylineVolumeGeometry) : PolylineVolumeGeometry
 
 	}
 	export = PolylineVolumeGeometry
@@ -4689,9 +4706,9 @@ declare module 'cesium/Source/Core/PolylineVolumeOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(polylineVolumeOutlineGeometry : PolylineVolumeOutlineGeometry) : Geometry|void
-		static pack(value : PolylineVolumeOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : PolylineVolumeOutlineGeometry) : PolylineVolumeOutlineGeometry
+		static createGeometry(polylineVolumeOutlineGeometry? : PolylineVolumeOutlineGeometry) : Geometry|void
+		static pack(value? : PolylineVolumeOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : PolylineVolumeOutlineGeometry) : PolylineVolumeOutlineGeometry
 
 	}
 	export = PolylineVolumeOutlineGeometry
@@ -4705,8 +4722,8 @@ declare module 'cesium/Source/Core/QuadraticRealPolynomial' {
 
 
 		//Methods
-		static computeDiscriminant(a : number, b : number, c : number) : number
-		static computeRealRoots(a : number, b : number, c : number) : Array<number>
+		static computeDiscriminant(a? : number, b? : number, c? : number) : number
+		static computeRealRoots(a? : number, b? : number, c? : number) : Array<number>
 
 	}
 	export = QuadraticRealPolynomial
@@ -4758,9 +4775,9 @@ declare module 'cesium/Source/Core/QuantizedMeshTerrainData' {
 
 
 		//Methods
-		interpolateHeight(rectangle : Rectangle, longitude : number, latitude : number) : number
-		isChildAvailable(thisX : number, thisY : number, childX : number, childY : number) : boolean
-		upsample(tilingScheme : TilingScheme, thisX : number, thisY : number, thisLevel : number, descendantX : number, descendantY : number, descendantLevel : number) : Promise<QuantizedMeshTerrainData>|void
+		interpolateHeight(rectangle? : Rectangle, longitude? : number, latitude? : number) : number
+		isChildAvailable(thisX? : number, thisY? : number, childX? : number, childY? : number) : boolean
+		upsample(tilingScheme? : TilingScheme, thisX? : number, thisY? : number, thisLevel? : number, descendantX? : number, descendantY? : number, descendantLevel? : number) : Promise<QuantizedMeshTerrainData>|void
 		wasCreatedByUpsampling() : boolean
 
 	}
@@ -4775,8 +4792,8 @@ declare module 'cesium/Source/Core/QuarticRealPolynomial' {
 
 
 		//Methods
-		static computeDiscriminant(a : number, b : number, c : number, d : number, e : number) : number
-		static computeRealRoots(a : number, b : number, c : number, d : number, e : number) : Array<number>
+		static computeDiscriminant(a? : number, b? : number, c? : number, d? : number, e? : number) : number
+		static computeRealRoots(a? : number, b? : number, c? : number, d? : number, e? : number) : Array<number>
 
 	}
 	export = QuarticRealPolynomial
@@ -4807,8 +4824,8 @@ declare module 'cesium/Source/Core/QuaternionSpline' {
 
 
 		//Methods
-		evaluate(time : number, result : Quaternion) : Quaternion
-		findTimeInterval(time : number) : number
+		evaluate(time? : number, result? : Quaternion) : Quaternion
+		findTimeInterval(time? : number) : number
 
 	}
 	export = QuaternionSpline
@@ -4824,11 +4841,11 @@ declare module 'cesium/Source/Core/Queue' {
 
 		//Methods
 		clear() : void
-		contains(item : any) : void
+		contains(item? : any) : void
 		dequeue() : Object
-		enqueue(item : any) : void
+		enqueue(item? : any) : void
 		peek() : Object
-		sort(compareFunction : any) : void
+		sort(compareFunction? : any) : void
 
 	}
 	export = Queue
@@ -4865,9 +4882,9 @@ declare module 'cesium/Source/Core/RectangleGeometry' {
 
 
 		//Methods
-		static createGeometry(rectangleGeometry : RectangleGeometry) : Geometry|void
-		static pack(value : RectangleGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : RectangleGeometry) : RectangleGeometry
+		static createGeometry(rectangleGeometry? : RectangleGeometry) : Geometry|void
+		static pack(value? : RectangleGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : RectangleGeometry) : RectangleGeometry
 
 	}
 	export = RectangleGeometry
@@ -4899,9 +4916,9 @@ declare module 'cesium/Source/Core/RectangleOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(rectangleGeometry : RectangleOutlineGeometry) : Geometry|void
-		static pack(value : RectangleOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : RectangleOutlineGeometry) : RectangleOutlineGeometry
+		static createGeometry(rectangleGeometry? : RectangleOutlineGeometry) : Geometry|void
+		static pack(value? : RectangleOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : RectangleOutlineGeometry) : RectangleOutlineGeometry
 
 	}
 	export = RectangleOutlineGeometry
@@ -4925,7 +4942,7 @@ declare module 'cesium/Source/Core/ReferenceFrame' {
 declare module 'cesium/Source/Core/RequestErrorEvent' {
 	class RequestErrorEvent 
 	{
-		constructor(statusCode? : number, response? : any, response? : anyHeaders);
+		constructor(statusCode? : number, response? : any, responseHeaders? : string|any);
 		//Members
 		response: Object
 		responseHeaders: Object
@@ -4965,10 +4982,10 @@ declare module 'cesium/Source/Core/ScreenSpaceEventHandler' {
 
 		//Methods
 		destroy() : void
-		getInputAction(type : number, modifier : number) : void
+		getInputAction(type? : number, modifier? : number) : void
 		isDestroyed() : boolean
-		removeInputAction(type : number, modifier : number) : void
-		setInputAction(action : (()=>void), type : number, modifier : number) : void
+		removeInputAction(type? : number, modifier? : number) : void
+		setInputAction(action? : (()=>void), type? : number, modifier? : number) : void
 
 	}
 	export = ScreenSpaceEventHandler
@@ -5015,7 +5032,7 @@ declare module 'cesium/Source/Core/ShowGeometryInstanceAttribute' {
 
 
 		//Methods
-		static toValue(show : boolean, result : Uint8Array) : Uint8Array
+		static toValue(show? : boolean, result? : Uint8Array) : Uint8Array
 
 	}
 	export = ShowGeometryInstanceAttribute
@@ -5065,9 +5082,9 @@ declare module 'cesium/Source/Core/SimplePolylineGeometry' {
 
 
 		//Methods
-		static createGeometry(simplePolylineGeometry : SimplePolylineGeometry) : Geometry
-		static pack(value : SimplePolylineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : SimplePolylineGeometry) : SimplePolylineGeometry
+		static createGeometry(simplePolylineGeometry? : SimplePolylineGeometry) : Geometry
+		static pack(value? : SimplePolylineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : SimplePolylineGeometry) : SimplePolylineGeometry
 
 	}
 	export = SimplePolylineGeometry
@@ -5096,9 +5113,9 @@ declare module 'cesium/Source/Core/SphereGeometry' {
 
 
 		//Methods
-		static createGeometry(sphereGeometry : SphereGeometry) : Geometry
-		static pack(value : SphereGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : SphereGeometry) : SphereGeometry
+		static createGeometry(sphereGeometry? : SphereGeometry) : Geometry
+		static pack(value? : SphereGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : SphereGeometry) : SphereGeometry
 
 	}
 	export = SphereGeometry
@@ -5126,9 +5143,9 @@ declare module 'cesium/Source/Core/SphereOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(sphereGeometry : SphereOutlineGeometry) : Geometry
-		static pack(value : SphereOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : SphereOutlineGeometry) : SphereOutlineGeometry
+		static createGeometry(sphereGeometry? : SphereOutlineGeometry) : Geometry
+		static pack(value? : SphereOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : SphereOutlineGeometry) : SphereOutlineGeometry
 
 	}
 	export = SphereOutlineGeometry
@@ -5146,8 +5163,8 @@ declare module 'cesium/Source/Core/Spline' {
 
 
 		//Methods
-		evaluate(time : number, result : Cartesian3|Quaternion) : Cartesian3|Quaternion
-		findTimeInterval(time : number, startIndex : number) : number
+		evaluate(time? : number, result? : Cartesian3|Quaternion) : Cartesian3|Quaternion
+		findTimeInterval(time? : number, startIndex? : number) : number
 
 	}
 	export = Spline
@@ -5164,7 +5181,7 @@ declare module 'cesium/Source/Core/TaskProcessor' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		scheduleTask(parameters : any, transferableObjects : Array<any>) : Promise<Object>|void
+		scheduleTask(parameters? : any, transferableObjects? : Array<any>) : Promise<Object>|void
 
 	}
 	export = TaskProcessor
@@ -5189,8 +5206,8 @@ declare module 'cesium/Source/Core/TileProviderError' {
 
 
 		//Methods
-		static handleError(previousError : TileProviderError, provider : ImageryProvider|TerrainProvider, event : Event, message : string, x : number, y : number, level : number, retryFunction : any, errorDetails : Error) : TileProviderError
-		static handleSuccess(previousError : TileProviderError) : void
+		static handleError(previousError? : TileProviderError, provider? : ImageryProvider|TerrainProvider, event? : Event, message? : string, x? : number, y? : number, level? : number, retryFunction? : any, errorDetails? : Error) : TileProviderError
+		static handleSuccess(previousError? : TileProviderError) : void
 
 	}
 	export = TileProviderError
@@ -5239,15 +5256,15 @@ declare module 'cesium/Source/Core/TimeInterval' {
 
 		//Methods
 		static clone(timeInterval : TimeInterval, result : TimeInterval) : TimeInterval
-		static contains(timeInterval : TimeInterval, julianDate : JulianDate) : boolean
+		static contains(timeInterval? : TimeInterval, julianDate? : JulianDate) : boolean
 		static equals(left : TimeInterval, right : TimeInterval, dataComparer : any) : boolean
-		static equalsEpsilon(left : TimeInterval, right : TimeInterval, epsilon? : number, dataComparer : any) : boolean
+		static equalsEpsilon(left : TimeInterval, right : TimeInterval, epsilon? : number, dataComparer? : any) : boolean
 		static fromIso8601(options : fromIso8601Options, result : TimeInterval) : TimeInterval
-		static intersect(left : TimeInterval, right : TimeInterval, result? : TimeInterval, mergeCallback : any) : TimeInterval
-		static toIso8601(timeInterval : TimeInterval, precision : number) : string
+		static intersect(left? : TimeInterval, right? : TimeInterval, result? : TimeInterval, mergeCallback? : any) : TimeInterval
+		static toIso8601(timeInterval? : TimeInterval, precision? : number) : string
 		clone(result : TimeInterval) : TimeInterval
 		equals(right : TimeInterval, dataComparer : any) : boolean
-		equalsEpsilon(right : TimeInterval, epsilon? : number, dataComparer : any) : boolean
+		equalsEpsilon(right : TimeInterval, epsilon? : number, dataComparer? : any) : boolean
 		toString() : string
 
 	}
@@ -5336,17 +5353,17 @@ declare module 'cesium/Source/Core/TimeIntervalCollection' {
 		static fromIso8601DateArray(options : fromIso8601DateArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
 		static fromIso8601DurationArray(options : fromIso8601DurationArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
 		static fromJulianDateArray(options : fromJulianDateArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
-		addInterval(interval : TimeInterval, dataComparer : any) : void
-		contains(julianDate : JulianDate) : boolean
+		addInterval(interval? : TimeInterval, dataComparer? : any) : void
+		contains(julianDate? : JulianDate) : boolean
 		equals(right : TimeIntervalCollection, dataComparer : any) : boolean
-		findDataForIntervalContainingDate(date : JulianDate) : Object
+		findDataForIntervalContainingDate(date? : JulianDate) : Object
 		findInterval(options : findIntervalOptions) : TimeInterval
-		findIntervalContainingDate(date : JulianDate) : TimeInterval|void
-		get(index : number) : TimeInterval
-		indexOf(date : JulianDate) : number
-		intersect(other : TimeIntervalCollection, dataComparer : any, mergeCallback : any) : TimeIntervalCollection
+		findIntervalContainingDate(date? : JulianDate) : TimeInterval|void
+		get(index? : number) : TimeInterval
+		indexOf(date? : JulianDate) : number
+		intersect(other? : TimeIntervalCollection, dataComparer? : any, mergeCallback? : any) : TimeIntervalCollection
 		removeAll() : void
-		removeInterval(interval : TimeInterval) : void
+		removeInterval(interval? : TimeInterval) : void
 
 	}
 	export = TimeIntervalCollection
@@ -5370,18 +5387,18 @@ declare module 'cesium/Source/Core/Transforms' {
 
 
 		//Methods
-		static computeFixedToIcrfMatrix(date : JulianDate, result : Matrix3) : Matrix3
-		static computeIcrfToFixedMatrix(date : JulianDate, result : Matrix3) : Matrix3
-		static computeTemeToPseudoFixedMatrix(date : JulianDate, result : Matrix3) : Matrix3
-		static eastNorthUpToFixedFrame(origin : Cartesian3, ellipsoid : Ellipsoid, result : Matrix4) : Matrix4
-		static headingPitchRollQuaternion(origin : Cartesian3, headingPitchRoll : HeadingPitchRoll, ellipsoid : Ellipsoid, fixedFrameTransform : any, result : Quaternion) : Quaternion
-		static headingPitchRollToFixedFrame(origin : Cartesian3, headingPitchRoll : HeadingPitchRoll, ellipsoid : Ellipsoid, fixedFrameTransform : any, result : Matrix4) : Matrix4
-		static localFrameToFixedFrameGenerator(firstAxis : string, secondAxis : string) : any
-		static northEastDownToFixedFrame(origin : Cartesian3, ellipsoid : Ellipsoid, result : Matrix4) : Matrix4
-		static northUpEastToFixedFrame(origin : Cartesian3, ellipsoid : Ellipsoid, result : Matrix4) : Matrix4
-		static northWestUpToFixedFrame(origin : Cartesian3, ellipsoid : Ellipsoid, result : Matrix4) : Matrix4
-		static pointToWindowCoordinates(modelViewProjectionMatrix : Matrix4, viewportTransformation : Matrix4, point : Cartesian3, result : Cartesian2) : Cartesian2
-		static preloadIcrfFixed(timeInterval : TimeInterval) : Promise<void>
+		static computeFixedToIcrfMatrix(date? : JulianDate, result? : Matrix3) : Matrix3
+		static computeIcrfToFixedMatrix(date? : JulianDate, result? : Matrix3) : Matrix3
+		static computeTemeToPseudoFixedMatrix(date? : JulianDate, result? : Matrix3) : Matrix3
+		static eastNorthUpToFixedFrame(origin? : Cartesian3, ellipsoid? : Ellipsoid, result? : Matrix4) : Matrix4
+		static headingPitchRollQuaternion(origin? : Cartesian3, headingPitchRoll? : HeadingPitchRoll, ellipsoid? : Ellipsoid, fixedFrameTransform? : any, result? : Quaternion) : Quaternion
+		static headingPitchRollToFixedFrame(origin? : Cartesian3, headingPitchRoll? : HeadingPitchRoll, ellipsoid? : Ellipsoid, fixedFrameTransform? : any, result? : Matrix4) : Matrix4
+		static localFrameToFixedFrameGenerator(firstAxis? : string, secondAxis? : string) : any
+		static northEastDownToFixedFrame(origin? : Cartesian3, ellipsoid? : Ellipsoid, result? : Matrix4) : Matrix4
+		static northUpEastToFixedFrame(origin? : Cartesian3, ellipsoid? : Ellipsoid, result? : Matrix4) : Matrix4
+		static northWestUpToFixedFrame(origin? : Cartesian3, ellipsoid? : Ellipsoid, result? : Matrix4) : Matrix4
+		static pointToWindowCoordinates(modelViewProjectionMatrix? : Matrix4, viewportTransformation? : Matrix4, point? : Cartesian3, result? : Cartesian2) : Cartesian2
+		static preloadIcrfFixed(timeInterval? : TimeInterval) : Promise<void>
 
 	}
 	export = Transforms
@@ -5396,7 +5413,7 @@ declare module 'cesium/Source/Core/TridiagonalSystemSolver' {
 
 
 		//Methods
-		static solve(diagonal : Array<number>, lower : Array<number>, upper : Array<number>, right : Array<Cartesian3>) : Array<Cartesian3>
+		static solve(diagonal? : Array<number>, lower? : Array<number>, upper? : Array<number>, right? : Array<Cartesian3>) : Array<Cartesian3>
 
 	}
 	export = TridiagonalSystemSolver
@@ -5410,10 +5427,10 @@ declare module 'cesium/Source/Core/TrustedServers' {
 
 
 		//Methods
-		static add(host : string, port : number) : void
+		static add(host? : string, port? : number) : void
 		static clear() : void
-		static contains(url : string) : boolean
-		static remove(host : string, port : number) : void
+		static contains(url? : string) : boolean
+		static remove(host? : string, port? : number) : void
 
 	}
 	export = TrustedServers
@@ -5454,9 +5471,9 @@ declare module 'cesium/Source/Core/VRTheWorldTerrainProvider' {
 
 
 		//Methods
-		getLevelMaximumGeometricError(level : number) : number
-		getTileDataAvailable(x : number, y : number, level : number) : boolean
-		requestTileGeometry(x : number, y : number, level : number, request : Request) : Promise<TerrainData>|void
+		getLevelMaximumGeometricError(level? : number) : number
+		getTileDataAvailable(x? : number, y? : number, level? : number) : boolean
+		requestTileGeometry(x? : number, y? : number, level? : number, request? : Request) : Promise<TerrainData>|void
 
 	}
 	export = VRTheWorldTerrainProvider
@@ -5556,10 +5573,10 @@ declare module 'cesium/Source/Core/WallGeometry' {
 
 
 		//Methods
-		static createGeometry(wallGeometry : WallGeometry) : Geometry|void
+		static createGeometry(wallGeometry? : WallGeometry) : Geometry|void
 		static fromConstantHeights(options : fromConstantHeightsOptions) : WallGeometry
-		static pack(value : WallGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : WallGeometry) : WallGeometry
+		static pack(value? : WallGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : WallGeometry) : WallGeometry
 
 	}
 	export = WallGeometry
@@ -5591,10 +5608,10 @@ declare module 'cesium/Source/Core/WallOutlineGeometry' {
 
 
 		//Methods
-		static createGeometry(wallGeometry : WallOutlineGeometry) : Geometry|void
+		static createGeometry(wallGeometry? : WallOutlineGeometry) : Geometry|void
 		static fromConstantHeights(options : fromConstantHeightsOptions) : WallOutlineGeometry
-		static pack(value : WallOutlineGeometry, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : WallOutlineGeometry) : WallOutlineGeometry
+		static pack(value? : WallOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : WallOutlineGeometry) : WallOutlineGeometry
 
 	}
 	export = WallOutlineGeometry
@@ -5626,10 +5643,10 @@ declare module 'cesium/Source/Core/WebMercatorProjection' {
 
 
 		//Methods
-		static geodeticLatitudeToMercatorAngle(latitude : number) : number
-		static mercatorAngleToGeodeticLatitude(mercatorAngle : number) : number
-		project(cartographic : Cartographic, result : Cartesian3) : Cartesian3
-		unproject(cartesian : Cartesian3, result : Cartographic) : Cartographic
+		static geodeticLatitudeToMercatorAngle(latitude? : number) : number
+		static mercatorAngleToGeodeticLatitude(mercatorAngle? : number) : number
+		project(cartographic? : Cartographic, result? : Cartesian3) : Cartesian3
+		unproject(cartesian? : Cartesian3, result? : Cartographic) : Cartographic
 
 	}
 	export = WebMercatorProjection
@@ -5666,12 +5683,12 @@ declare module 'cesium/Source/Core/WebMercatorTilingScheme' {
 
 
 		//Methods
-		getNumberOfXTilesAtLevel(level : number) : number
-		getNumberOfYTilesAtLevel(level : number) : number
-		positionToTileXY(position : Cartographic, level : number, result : Cartesian2) : Cartesian2
-		rectangleToNativeRectangle(rectangle : Rectangle, result : Rectangle) : Rectangle
-		tileXYToNativeRectangle(x : number, y : number, level : number, result : any) : Rectangle
-		tileXYToRectangle(x : number, y : number, level : number, result : any) : Rectangle
+		getNumberOfXTilesAtLevel(level? : number) : number
+		getNumberOfYTilesAtLevel(level? : number) : number
+		positionToTileXY(position? : Cartographic, level? : number, result? : Cartesian2) : Cartesian2
+		rectangleToNativeRectangle(rectangle? : Rectangle, result? : Rectangle) : Rectangle
+		tileXYToNativeRectangle(x? : number, y? : number, level? : number, result? : any) : Rectangle
+		tileXYToRectangle(x? : number, y? : number, level? : number, result? : any) : Rectangle
 
 	}
 	export = WebMercatorTilingScheme
@@ -5697,8 +5714,8 @@ declare module 'cesium/Source/Core/WeightSpline' {
 
 
 		//Methods
-		evaluate(time : number, result : Array<number>) : Array<number>
-		findTimeInterval(time : number) : number
+		evaluate(time? : number, result? : Array<number>) : Array<number>
+		findTimeInterval(time? : number) : number
 
 	}
 	export = WeightSpline
@@ -5963,7 +5980,7 @@ declare module 'cesium/Source/DataSources/Property' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : any) : Object
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = Property
@@ -6029,7 +6046,7 @@ declare module 'cesium/Source/DataSources/BillboardGraphics' {
 
 		//Methods
 		clone(result : BillboardGraphics) : BillboardGraphics
-		merge(source : BillboardGraphics) : void
+		merge(source? : BillboardGraphics) : void
 
 	}
 	export = BillboardGraphics
@@ -6092,9 +6109,9 @@ declare module 'cesium/Source/DataSources/DataSourceClock' {
 
 		//Methods
 		clone(result : DataSourceClock) : DataSourceClock
-		equals(other : DataSourceClock) : boolean
+		equals(other? : DataSourceClock) : boolean
 		getValue() : Clock
-		merge(source : DataSourceClock) : void
+		merge(source? : DataSourceClock) : void
 
 	}
 	export = DataSourceClock
@@ -6122,7 +6139,7 @@ declare module 'cesium/Source/DataSources/DataSource' {
 
 
 		//Methods
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = DataSource
@@ -6145,8 +6162,8 @@ declare module 'cesium/Source/DataSources/PositionProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : Cartesian3) : Cartesian3
-		getValueInReferenceFrame(time : JulianDate, referenceFrame : ReferenceFrame, result : Cartesian3) : Cartesian3
+		getValue(time? : JulianDate, result? : Cartesian3) : Cartesian3
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 
 	}
 	export = PositionProperty
@@ -6166,8 +6183,8 @@ declare module 'cesium/Source/DataSources/MaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = MaterialProperty
@@ -6214,7 +6231,7 @@ declare module 'cesium/Source/DataSources/BoxGraphics' {
 
 		//Methods
 		clone(result : BoxGraphics) : BoxGraphics
-		merge(source : BoxGraphics) : void
+		merge(source? : BoxGraphics) : void
 
 	}
 	export = BoxGraphics
@@ -6271,7 +6288,7 @@ declare module 'cesium/Source/DataSources/CorridorGraphics' {
 
 		//Methods
 		clone(result : CorridorGraphics) : CorridorGraphics
-		merge(source : CorridorGraphics) : void
+		merge(source? : CorridorGraphics) : void
 
 	}
 	export = CorridorGraphics
@@ -6326,7 +6343,7 @@ declare module 'cesium/Source/DataSources/CylinderGraphics' {
 
 		//Methods
 		clone(result : CylinderGraphics) : CylinderGraphics
-		merge(source : CylinderGraphics) : void
+		merge(source? : CylinderGraphics) : void
 
 	}
 	export = CylinderGraphics
@@ -6387,7 +6404,7 @@ declare module 'cesium/Source/DataSources/EllipseGraphics' {
 
 		//Methods
 		clone(result : EllipseGraphics) : EllipseGraphics
-		merge(source : EllipseGraphics) : void
+		merge(source? : EllipseGraphics) : void
 
 	}
 	export = EllipseGraphics
@@ -6440,7 +6457,7 @@ declare module 'cesium/Source/DataSources/EllipsoidGraphics' {
 
 		//Methods
 		clone(result : EllipsoidGraphics) : EllipsoidGraphics
-		merge(source : EllipsoidGraphics) : void
+		merge(source? : EllipsoidGraphics) : void
 
 	}
 	export = EllipsoidGraphics
@@ -6508,7 +6525,7 @@ declare module 'cesium/Source/DataSources/LabelGraphics' {
 
 		//Methods
 		clone(result : LabelGraphics) : LabelGraphics
-		merge(source : LabelGraphics) : void
+		merge(source? : LabelGraphics) : void
 
 	}
 	export = LabelGraphics
@@ -6552,12 +6569,12 @@ declare module 'cesium/Source/DataSources/PropertyBag' {
 
 
 		//Methods
-		addProperty(propertyName : string, value : any, createPropertyCallback : (()=>void)) : void
+		addProperty(propertyName? : string, value? : any, createPropertyCallback? : (()=>void)) : void
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : any) : Object
-		hasProperty(propertyName : string) : boolean
-		merge(source : any, createPropertyCallback : (()=>void)) : void
-		removeProperty(propertyName : string) : void
+		getValue(time? : JulianDate, result? : any) : Object
+		hasProperty(propertyName? : string) : boolean
+		merge(source? : any, createPropertyCallback? : (()=>void)) : void
+		removeProperty(propertyName? : string) : void
 
 	}
 	export = PropertyBag
@@ -6593,7 +6610,7 @@ declare module 'cesium/Source/DataSources/ModelGraphics' {
 
 		//Methods
 		clone(result : ModelGraphics) : ModelGraphics
-		merge(source : ModelGraphics) : void
+		merge(source? : ModelGraphics) : void
 
 	}
 	export = ModelGraphics
@@ -6636,7 +6653,7 @@ declare module 'cesium/Source/DataSources/PathGraphics' {
 
 		//Methods
 		clone(result : PathGraphics) : PathGraphics
-		merge(source : PathGraphics) : void
+		merge(source? : PathGraphics) : void
 
 	}
 	export = PathGraphics
@@ -6682,7 +6699,7 @@ declare module 'cesium/Source/DataSources/PointGraphics' {
 
 		//Methods
 		clone(result : PointGraphics) : PointGraphics
-		merge(source : PointGraphics) : void
+		merge(source? : PointGraphics) : void
 
 	}
 	export = PointGraphics
@@ -6743,7 +6760,7 @@ declare module 'cesium/Source/DataSources/PolygonGraphics' {
 
 		//Methods
 		clone(result : PolygonGraphics) : PolygonGraphics
-		merge(source : PolygonGraphics) : void
+		merge(source? : PolygonGraphics) : void
 
 	}
 	export = PolygonGraphics
@@ -6788,7 +6805,7 @@ declare module 'cesium/Source/DataSources/PolylineGraphics' {
 
 		//Methods
 		clone(result : PolylineGraphics) : PolylineGraphics
-		merge(source : PolylineGraphics) : void
+		merge(source? : PolylineGraphics) : void
 
 	}
 	export = PolylineGraphics
@@ -6841,7 +6858,7 @@ declare module 'cesium/Source/DataSources/PolylineVolumeGraphics' {
 
 		//Methods
 		clone(result : PolylineVolumeGraphics) : PolylineVolumeGraphics
-		merge(source : PolylineVolumeGraphics) : void
+		merge(source? : PolylineVolumeGraphics) : void
 
 	}
 	export = PolylineVolumeGraphics
@@ -6902,7 +6919,7 @@ declare module 'cesium/Source/DataSources/RectangleGraphics' {
 
 		//Methods
 		clone(result : RectangleGraphics) : RectangleGraphics
-		merge(source : RectangleGraphics) : void
+		merge(source? : RectangleGraphics) : void
 
 	}
 	export = RectangleGraphics
@@ -6955,7 +6972,7 @@ declare module 'cesium/Source/DataSources/WallGraphics' {
 
 		//Methods
 		clone(result : WallGraphics) : WallGraphics
-		merge(source : WallGraphics) : void
+		merge(source? : WallGraphics) : void
 
 	}
 	export = WallGraphics
@@ -7074,11 +7091,11 @@ declare module 'cesium/Source/DataSources/Entity' {
 
 
 		//Methods
-		addProperty(propertyName : string) : void
-		computeModelMatrix(time : JulianDate, result : Matrix4) : Matrix4
-		isAvailable(time : JulianDate) : boolean
-		merge(source : Entity) : void
-		removeProperty(propertyName : string) : void
+		addProperty(propertyName? : string) : void
+		computeModelMatrix(time? : JulianDate, result? : Matrix4) : Matrix4
+		isAvailable(time? : JulianDate) : boolean
+		merge(source? : Entity) : void
+		removeProperty(propertyName? : string) : void
 
 	}
 	export = Entity
@@ -7101,20 +7118,20 @@ declare module 'cesium/Source/DataSources/CompositeEntityCollection' {
 
 
 		//Methods
-		addCollection(collection : EntityCollection, index : number) : void
+		addCollection(collection? : EntityCollection, index? : number) : void
 		computeAvailability() : TimeInterval
-		contains(entity : Entity) : boolean
-		containsCollection(collection : EntityCollection) : boolean
-		getById(id : any) : Entity
-		getCollection(index : number) : void
+		contains(entity? : Entity) : boolean
+		containsCollection(collection? : EntityCollection) : boolean
+		getById(id? : any) : Entity
+		getCollection(index? : number) : void
 		getCollectionsLength() : void
-		indexOfCollection(collection : EntityCollection) : number
-		lowerCollection(collection : EntityCollection) : void
-		lowerCollectionToBottom(collection : EntityCollection) : void
-		raiseCollection(collection : EntityCollection) : void
-		raiseCollectionToTop(collection : EntityCollection) : void
+		indexOfCollection(collection? : EntityCollection) : number
+		lowerCollection(collection? : EntityCollection) : void
+		lowerCollectionToBottom(collection? : EntityCollection) : void
+		raiseCollection(collection? : EntityCollection) : void
+		raiseCollectionToTop(collection? : EntityCollection) : void
 		removeAllCollections() : void
-		removeCollection(collection : EntityCollection) : boolean
+		removeCollection(collection? : EntityCollection) : boolean
 		resumeEvents() : void
 		suspendEvents() : void
 
@@ -7140,15 +7157,15 @@ declare module 'cesium/Source/DataSources/EntityCollection' {
 
 
 		//Methods
-		static collectionChangedEventCallback(collection : EntityCollection, added : Array<Entity>, removed : Array<Entity>, changed : Array<Entity>) : void
-		add(entity : Entity) : Entity
+		static collectionChangedEventCallback(collection? : EntityCollection, added? : Array<Entity>, removed? : Array<Entity>, changed? : Array<Entity>) : void
+		add(entity? : Entity) : Entity
 		computeAvailability() : TimeInterval
-		contains(entity : Entity) : boolean
-		getById(id : any) : Entity
-		getOrCreateEntity(id : any) : Entity
-		remove(entity : Entity) : boolean
+		contains(entity? : Entity) : boolean
+		getById(id? : any) : Entity
+		getOrCreateEntity(id? : any) : Entity
+		remove(entity? : Entity) : boolean
 		removeAll() : void
-		removeById(id : any) : boolean
+		removeById(id? : any) : boolean
 		resumeEvents() : void
 		suspendEvents() : void
 
@@ -7169,7 +7186,7 @@ declare module 'cesium/Source/DataSources/BillboardVisualizer' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = BillboardVisualizer
@@ -7220,7 +7237,7 @@ declare module 'cesium/Source/Scene/Material' {
 
 
 		//Methods
-		static fromType(type : string, uniforms : any) : Material
+		static fromType(type? : string, uniforms? : any) : Material
 		destroy() : void
 		isDestroyed() : boolean
 		isTranslucent() : void
@@ -7278,7 +7295,7 @@ declare module 'cesium/Source/DataSources/DynamicGeometryUpdater' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : void
+		update(time? : JulianDate) : void
 
 	}
 	export = DynamicGeometryUpdater
@@ -7316,13 +7333,13 @@ declare module 'cesium/Source/DataSources/BoxGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = BoxGeometryUpdater
@@ -7343,7 +7360,7 @@ declare module 'cesium/Source/DataSources/CallbackProperty' {
 		//Methods
 		equals(other : Property|string) : boolean
 		getValue(time : JulianDate, result : any) : Object
-		setCallback(callback : any, isConstant : boolean) : void
+		setCallback(callback? : any, isConstant? : boolean) : void
 
 	}
 	export = CallbackProperty
@@ -7378,8 +7395,8 @@ declare module 'cesium/Source/DataSources/CheckerboardMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = CheckerboardMaterialProperty
@@ -7400,8 +7417,8 @@ declare module 'cesium/Source/DataSources/ColorMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = ColorMaterialProperty
@@ -7423,8 +7440,8 @@ declare module 'cesium/Source/DataSources/CompositeMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = CompositeMaterialProperty
@@ -7449,8 +7466,8 @@ declare module 'cesium/Source/DataSources/CompositePositionProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : any) : Object
-		getValueInReferenceFrame(time : JulianDate, referenceFrame : ReferenceFrame, result : Cartesian3) : Cartesian3
+		getValue(time? : JulianDate, result? : any) : Object
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 
 	}
 	export = CompositePositionProperty
@@ -7472,7 +7489,7 @@ declare module 'cesium/Source/DataSources/CompositeProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : any) : Object
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = CompositeProperty
@@ -7495,9 +7512,9 @@ declare module 'cesium/Source/DataSources/ConstantPositionProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : any) : Object
-		getValueInReferenceFrame(time : JulianDate, referenceFrame : ReferenceFrame, result : Cartesian3) : Cartesian3
-		setValue(value : Cartesian3, referenceFrame : ReferenceFrame) : void
+		getValue(time? : JulianDate, result? : any) : Object
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
+		setValue(value? : Cartesian3, referenceFrame? : ReferenceFrame) : void
 
 	}
 	export = ConstantPositionProperty
@@ -7518,7 +7535,7 @@ declare module 'cesium/Source/DataSources/ConstantProperty' {
 		//Methods
 		equals(other : Property|string) : boolean
 		getValue(time : JulianDate, result : any) : Object
-		setValue(value : any) : void
+		setValue(value? : any) : void
 		toString() : string
 		valueOf() : any
 
@@ -7559,13 +7576,13 @@ declare module 'cesium/Source/DataSources/CorridorGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection, groundPrimitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection, groundPrimitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = CorridorGeometryUpdater
@@ -7629,13 +7646,13 @@ declare module 'cesium/Source/DataSources/CylinderGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = CylinderGeometryUpdater
@@ -7686,12 +7703,12 @@ declare module 'cesium/Source/DataSources/CzmlDataSource' {
 
 
 		//Methods
-		static load(czml : string|any, options : loadOptions) : Promise<CzmlDataSource>
-		static processMaterialPacketData(object : any, propertyName : string, packetData : any, interval : TimeInterval, sourceUri : string, entityCollection : EntityCollection) : void
-		static processPacketData(type : (()=>void), object : any, propertyName : string, packetData : any, interval : TimeInterval, sourceUri : string, entityCollection : EntityCollection) : void
-		static processPositionPacketData(object : any, propertyName : string, packetData : any, interval : TimeInterval, sourceUri : string, entityCollection : EntityCollection) : void
-		load(czml : string|any, options : loadOptions) : Promise<CzmlDataSource>
-		process(czml : string|any, options : processOptions) : Promise<CzmlDataSource>
+		static load(czml? : string|any, options? : loadOptions) : Promise<CzmlDataSource>
+		static processMaterialPacketData(object? : any, propertyName? : string, packetData? : any, interval? : TimeInterval, sourceUri? : string, entityCollection? : EntityCollection) : void
+		static processPacketData(type? : (()=>void), object? : any, propertyName? : string, packetData? : any, interval? : TimeInterval, sourceUri? : string, entityCollection? : EntityCollection) : void
+		static processPositionPacketData(object? : any, propertyName? : string, packetData? : any, interval? : TimeInterval, sourceUri? : string, entityCollection? : EntityCollection) : void
+		load(czml? : string|any, options? : loadOptions) : Promise<CzmlDataSource>
+		process(czml? : string|any, options? : processOptions) : Promise<CzmlDataSource>
 
 	}
 	export = CzmlDataSource
@@ -7711,13 +7728,13 @@ declare module 'cesium/Source/DataSources/DataSourceCollection' {
 
 
 		//Methods
-		add(dataSource : DataSource|Promise<DataSource>) : Promise<DataSource>
-		contains(dataSource : DataSource) : boolean
+		add(dataSource? : DataSource|Promise<DataSource>) : Promise<DataSource>
+		contains(dataSource? : DataSource) : boolean
 		destroy() : void
-		get(index : number) : DataSource
-		indexOf(dataSource : DataSource) : number
+		get(index? : number) : DataSource
+		indexOf(dataSource? : DataSource) : number
 		isDestroyed() : boolean
-		remove(dataSource : DataSource, destroy : boolean) : boolean
+		remove(dataSource? : DataSource, destroy? : boolean) : boolean
 		removeAll(destroy : boolean) : void
 
 	}
@@ -7756,7 +7773,7 @@ declare module 'cesium/Source/DataSources/DataSourceDisplay' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = DataSourceDisplay
@@ -7795,13 +7812,13 @@ declare module 'cesium/Source/DataSources/EllipseGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection, groundPrimitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection, groundPrimitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = EllipseGeometryUpdater
@@ -7839,13 +7856,13 @@ declare module 'cesium/Source/DataSources/EllipsoidGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = EllipsoidGeometryUpdater
@@ -7870,7 +7887,7 @@ declare module 'cesium/Source/DataSources/EntityView' {
 
 
 		//Methods
-		update(time : JulianDate, boundingSphere : BoundingSphere) : void
+		update(time? : JulianDate, boundingSphere? : BoundingSphere) : void
 
 	}
 	export = EntityView
@@ -7910,8 +7927,8 @@ declare module 'cesium/Source/DataSources/GeoJsonDataSource' {
 
 
 		//Methods
-		static load(data : string|any, options : loadOptions) : Promise<GeoJsonDataSource>
-		load(data : string|any, options : loadOptions) : Promise<GeoJsonDataSource>
+		static load(data? : string|any, options? : loadOptions) : Promise<GeoJsonDataSource>
+		load(data? : string|any, options? : loadOptions) : Promise<GeoJsonDataSource>
 
 	}
 	export = GeoJsonDataSource
@@ -7947,13 +7964,13 @@ declare module 'cesium/Source/DataSources/GeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = GeometryUpdater
@@ -7973,7 +7990,7 @@ declare module 'cesium/Source/DataSources/GeometryVisualizer' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = GeometryVisualizer
@@ -8012,8 +8029,8 @@ declare module 'cesium/Source/DataSources/GridMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = GridMaterialProperty
@@ -8050,8 +8067,8 @@ declare module 'cesium/Source/DataSources/ImageMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = ImageMaterialProperty
@@ -8085,9 +8102,9 @@ declare module 'cesium/Source/DataSources/KmlDataSource' {
 
 
 		//Methods
-		static load(data : string|Document|Blob, options : loadOptions) : Promise<KmlDataSource>
-		load(data : string|Document|Blob, options : loadOptions) : Promise<KmlDataSource>
-		update(time : JulianDate) : boolean
+		static load(data? : string|Document|Blob, options? : loadOptions) : Promise<KmlDataSource>
+		load(data? : string|Document|Blob, options? : loadOptions) : Promise<KmlDataSource>
+		update(time? : JulianDate) : boolean
 
 	}
 	export = KmlDataSource
@@ -8106,7 +8123,7 @@ declare module 'cesium/Source/DataSources/LabelVisualizer' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = LabelVisualizer
@@ -8125,7 +8142,7 @@ declare module 'cesium/Source/DataSources/ModelVisualizer' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = ModelVisualizer
@@ -8161,7 +8178,7 @@ declare module 'cesium/Source/DataSources/NodeTransformationProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : TranslationRotationScale) : TranslationRotationScale
+		getValue(time? : JulianDate, result? : TranslationRotationScale) : TranslationRotationScale
 
 	}
 	export = NodeTransformationProperty
@@ -8180,7 +8197,7 @@ declare module 'cesium/Source/DataSources/PathVisualizer' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = PathVisualizer
@@ -8199,7 +8216,7 @@ declare module 'cesium/Source/DataSources/PointVisualizer' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = PointVisualizer
@@ -8238,13 +8255,13 @@ declare module 'cesium/Source/DataSources/PolygonGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection, groundPrimitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection, groundPrimitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = PolygonGeometryUpdater
@@ -8265,8 +8282,8 @@ declare module 'cesium/Source/DataSources/PolylineArrowMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = PolylineArrowMaterialProperty
@@ -8303,8 +8320,8 @@ declare module 'cesium/Source/DataSources/PolylineDashMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = PolylineDashMaterialProperty
@@ -8342,13 +8359,13 @@ declare module 'cesium/Source/DataSources/PolylineGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = PolylineGeometryUpdater
@@ -8381,8 +8398,8 @@ declare module 'cesium/Source/DataSources/PolylineGlowMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = PolylineGlowMaterialProperty
@@ -8417,8 +8434,8 @@ declare module 'cesium/Source/DataSources/PolylineOutlineMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = PolylineOutlineMaterialProperty
@@ -8456,13 +8473,13 @@ declare module 'cesium/Source/DataSources/PolylineVolumeGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = PolylineVolumeGeometryUpdater
@@ -8486,8 +8503,8 @@ declare module 'cesium/Source/DataSources/PositionPropertyArray' {
 		//Methods
 		equals(other : Property|string) : boolean
 		getValue(time : JulianDate, result : Array<Cartesian3>) : Array<Cartesian3>
-		getValueInReferenceFrame(time : JulianDate, referenceFrame : ReferenceFrame, result : Cartesian3) : Cartesian3
-		setValue(value : Array<Property>) : void
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
+		setValue(value? : Array<Property>) : void
 
 	}
 	export = PositionPropertyArray
@@ -8507,8 +8524,8 @@ declare module 'cesium/Source/DataSources/PropertyArray' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : Array<any>) : Array<Object>
-		setValue(value : Array<Property>) : void
+		getValue(time? : JulianDate, result? : Array<any>) : Array<Object>
+		setValue(value? : Array<Property>) : void
 
 	}
 	export = PropertyArray
@@ -8547,13 +8564,13 @@ declare module 'cesium/Source/DataSources/RectangleGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection, groundPrimitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection, groundPrimitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = RectangleGeometryUpdater
@@ -8580,11 +8597,11 @@ declare module 'cesium/Source/DataSources/ReferenceProperty' {
 
 
 		//Methods
-		static fromString(targetCollection : EntityCollection, referenceString : string) : ReferenceProperty
+		static fromString(targetCollection? : EntityCollection, referenceString? : string) : ReferenceProperty
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
-		getValueInReferenceFrame(time : JulianDate, referenceFrame : ReferenceFrame, result : Cartesian3) : Cartesian3
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 
 	}
 	export = ReferenceProperty
@@ -8599,10 +8616,10 @@ declare module 'cesium/Source/DataSources/Rotation' {
 
 
 		//Methods
-		static convertPackedArrayForInterpolation(packedArray : Array<number>, startingIndex : number, lastIndex : number, result? : Array<number>) : void
-		static pack(value : Rotation, array : Array<number>, startingIndex : number) : Array<number>
-		static unpack(array : Array<number>, startingIndex : number, result : Rotation) : Rotation
-		static unpackInterpolationResult(array : Array<number>, sourceArray : Array<number>, firstIndex : number, lastIndex : number, result : Rotation) : Rotation
+		static convertPackedArrayForInterpolation(packedArray? : Array<number>, startingIndex? : number, lastIndex? : number, result? : Array<number>) : void
+		static pack(value? : Rotation, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Rotation) : Rotation
+		static unpackInterpolationResult(array? : Array<number>, sourceArray? : Array<number>, firstIndex? : number, lastIndex? : number, result? : Rotation) : Rotation
 
 	}
 	export = Rotation
@@ -8644,12 +8661,12 @@ declare module 'cesium/Source/DataSources/SampledPositionProperty' {
 
 
 		//Methods
-		addSample(time : JulianDate, position : Cartesian3, derivatives : Array<Cartesian3>) : void
-		addSamples(times : Array<JulianDate>, positions : Array<Cartesian3>, derivatives : Array<Array<any>>) : void
-		addSamplesPackedArray(packedSamples : Array<number>, epoch : JulianDate) : void
+		addSample(time? : JulianDate, position? : Cartesian3, derivatives? : Array<Cartesian3>) : void
+		addSamples(times? : Array<JulianDate>, positions? : Array<Cartesian3>, derivatives? : Array<Array<any>>) : void
+		addSamplesPackedArray(packedSamples? : Array<number>, epoch? : JulianDate) : void
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : Cartesian3) : Cartesian3
-		getValueInReferenceFrame(time : JulianDate, referenceFrame : ReferenceFrame, result : Cartesian3) : Cartesian3
+		getValue(time? : JulianDate, result? : Cartesian3) : Cartesian3
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 		setInterpolationOptions(options : setInterpolationOptionsOptions) : void
 
 	}
@@ -8681,11 +8698,11 @@ declare module 'cesium/Source/DataSources/SampledProperty' {
 
 
 		//Methods
-		addSample(time : JulianDate, value : Packable, derivatives : Array<Packable>) : void
-		addSamples(times : Array<JulianDate>, values : Array<Packable>, derivativeValues : Array<Array<any>>) : void
-		addSamplesPackedArray(packedSamples : Array<number>, epoch : JulianDate) : void
+		addSample(time? : JulianDate, value? : Packable, derivatives? : Array<Packable>) : void
+		addSamples(times? : Array<JulianDate>, values? : Array<Packable>, derivativeValues? : Array<Array<any>>) : void
+		addSamplesPackedArray(packedSamples? : Array<number>, epoch? : JulianDate) : void
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : any) : Object
+		getValue(time? : JulianDate, result? : any) : Object
 		setInterpolationOptions(options : setInterpolationOptionsOptions) : void
 
 	}
@@ -8725,8 +8742,8 @@ declare module 'cesium/Source/DataSources/StripeMaterialProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getType(time : JulianDate) : string
-		getValue(time : JulianDate, result : any) : Object
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = StripeMaterialProperty
@@ -8766,8 +8783,8 @@ declare module 'cesium/Source/DataSources/TimeIntervalCollectionPositionProperty
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : any) : Object
-		getValueInReferenceFrame(time : JulianDate, referenceFrame : ReferenceFrame, result : Cartesian3) : Cartesian3
+		getValue(time? : JulianDate, result? : any) : Object
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
 
 	}
 	export = TimeIntervalCollectionPositionProperty
@@ -8789,7 +8806,7 @@ declare module 'cesium/Source/DataSources/TimeIntervalCollectionProperty' {
 
 		//Methods
 		equals(other : Property|string) : boolean
-		getValue(time : JulianDate, result : any) : Object
+		getValue(time? : JulianDate, result? : any) : Object
 
 	}
 	export = TimeIntervalCollectionProperty
@@ -8853,7 +8870,7 @@ declare module 'cesium/Source/DataSources/Visualizer' {
 		//Methods
 		destroy() : void
 		isDestroyed() : boolean
-		update(time : JulianDate) : boolean
+		update(time? : JulianDate) : boolean
 
 	}
 	export = Visualizer
@@ -8891,13 +8908,13 @@ declare module 'cesium/Source/DataSources/WallGeometryUpdater' {
 
 
 		//Methods
-		createDynamicUpdater(primitives : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time : JulianDate) : GeometryInstance
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
 		destroy() : void
 		isDestroyed() : boolean
-		isFilled(time : JulianDate) : boolean
-		isOutlineVisible(time : JulianDate) : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
 
 	}
 	export = WallGeometryUpdater
@@ -8964,9 +8981,9 @@ declare module 'cesium/Source/Scene/ArcGisMapServerImageryProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = ArcGisMapServerImageryProvider
@@ -9061,10 +9078,10 @@ declare module 'cesium/Source/Scene/Billboard' {
 
 
 		//Methods
-		computeScreenSpacePosition(scene : Scene, result : Cartesian2) : Cartesian2
-		equals(other : Billboard) : boolean
-		setImage(id : string, image : HTMLImageElement|HTMLCanvasElement|string|any) : void
-		setImageSubRegion(id : string, subRegion : BoundingRectangle) : void
+		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
+		equals(other? : Billboard) : boolean
+		setImage(id? : string, image? : HTMLImageElement|HTMLCanvasElement|string|any) : void
+		setImageSubRegion(id? : string, subRegion? : BoundingRectangle) : void
 
 	}
 	export = Billboard
@@ -9119,9 +9136,9 @@ declare module 'cesium/Source/Scene/BillboardCollection' {
 		add(billboard : any) : Billboard
 		contains(billboard : Billboard) : boolean
 		destroy() : void
-		get(index : number) : Billboard
+		get(index? : number) : Billboard
 		isDestroyed() : boolean
-		remove(billboard : Billboard) : boolean
+		remove(billboard? : Billboard) : boolean
 		removeAll() : void
 		update() : void
 
@@ -9202,11 +9219,11 @@ declare module 'cesium/Source/Scene/BingMapsImageryProvider' {
 
 
 		//Methods
-		static quadKeyToTileXY(quadkey : string) : void
-		static tileXYToQuadKey(x : number, y : number, level : number) : void
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		static quadKeyToTileXY(quadkey? : string) : void
+		static tileXYToQuadKey(x? : number, y? : number, level? : number) : void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = BingMapsImageryProvider
@@ -9304,14 +9321,14 @@ declare module 'cesium/Source/Scene/CameraEventAggregator' {
 
 		//Methods
 		destroy() : void
-		getButtonPressTime(type : CameraEventType, modifier : KeyboardEventModifier) : Date
-		getButtonReleaseTime(type : CameraEventType, modifier : KeyboardEventModifier) : Date
-		getLastMovement(type : CameraEventType, modifier : KeyboardEventModifier) : Object|void
-		getMovement(type : CameraEventType, modifier : KeyboardEventModifier) : Object
-		getStartMousePosition(type : CameraEventType, modifier : KeyboardEventModifier) : Cartesian2
-		isButtonDown(type : CameraEventType, modifier : KeyboardEventModifier) : boolean
+		getButtonPressTime(type? : CameraEventType, modifier? : KeyboardEventModifier) : Date
+		getButtonReleaseTime(type? : CameraEventType, modifier? : KeyboardEventModifier) : Date
+		getLastMovement(type? : CameraEventType, modifier? : KeyboardEventModifier) : Object|void
+		getMovement(type? : CameraEventType, modifier? : KeyboardEventModifier) : Object
+		getStartMousePosition(type? : CameraEventType, modifier? : KeyboardEventModifier) : Cartesian2
+		isButtonDown(type? : CameraEventType, modifier? : KeyboardEventModifier) : boolean
 		isDestroyed() : boolean
-		isMoving(type : CameraEventType, modifier : KeyboardEventModifier) : boolean
+		isMoving(type? : CameraEventType, modifier? : KeyboardEventModifier) : boolean
 		reset() : void
 
 	}
@@ -9384,8 +9401,8 @@ declare module 'cesium/Source/Scene/StyleExpression' {
 
 
 		//Methods
-		evaluate(frameState : any, feature : Cesium3DTileFeature, result : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
-		evaluateColor(frameState : FrameState, feature : Cesium3DTileFeature, result : Color) : Color
+		evaluate(frameState? : any, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
+		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
 
 	}
 	export = StyleExpression
@@ -9496,10 +9513,10 @@ declare module 'cesium/Source/Scene/Cesium3DTileFeature' {
 
 
 		//Methods
-		getProperty(name : string) : any
-		getPropertyNames(results : Array<string>) : Array<string>
-		hasProperty(name : string) : boolean
-		setProperty(name : string, value : any) : void
+		getProperty(name? : string) : any
+		getPropertyNames(results? : Array<string>) : Array<string>
+		hasProperty(name? : string) : boolean
+		setProperty(name? : string, value? : any) : void
 
 	}
 	export = Cesium3DTileFeature
@@ -9524,8 +9541,8 @@ declare module 'cesium/Source/Scene/Cesium3DTileContent' {
 
 
 		//Methods
-		getFeature(batchId : number) : Cesium3DTileFeature
-		hasProperty(batchId : number, name : string) : boolean
+		getFeature(batchId? : number) : Cesium3DTileFeature
+		hasProperty(batchId? : number, name? : string) : boolean
 
 	}
 	export = Cesium3DTileContent
@@ -9616,9 +9633,9 @@ declare module 'cesium/Source/Scene/ClassificationPrimitive' {
 
 
 		//Methods
-		static isSupported(scene : Scene) : boolean
+		static isSupported(scene? : Scene) : boolean
 		destroy() : void
-		getGeometryInstanceAttributes(id : any) : Object
+		getGeometryInstanceAttributes(id? : any) : Object
 		isDestroyed() : boolean
 		update() : void
 
@@ -9654,8 +9671,8 @@ declare module 'cesium/Source/Scene/ConditionsExpression' {
 
 
 		//Methods
-		evaluate(frameState : FrameState, feature : Cesium3DTileFeature, result : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
-		evaluateColor(frameState : FrameState, feature : Cesium3DTileFeature, result : Color) : Color
+		evaluate(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
+		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
 
 	}
 	export = ConditionsExpression
@@ -9684,13 +9701,13 @@ declare module 'cesium/Source/Scene/CreditDisplay' {
 
 
 		//Methods
-		addCredit(credit : Credit) : void
-		addDefaultCredit(credit : Credit) : void
+		addCredit(credit? : Credit) : void
+		addDefaultCredit(credit? : Credit) : void
 		beginFrame() : void
 		destroy() : void
 		endFrame() : void
 		isDestroyed() : boolean
-		removeDefaultCredit(credit : Credit) : void
+		removeDefaultCredit(credit? : Credit) : void
 
 	}
 	export = CreditDisplay
@@ -9860,7 +9877,7 @@ declare module 'cesium/Source/Scene/DiscardMissingTileImagePolicy' {
 
 		//Methods
 		isReady() : boolean
-		shouldDiscardImage(image : HTMLImageElement) : boolean
+		shouldDiscardImage(image? : HTMLImageElement) : boolean
 
 	}
 	export = DiscardMissingTileImagePolicy
@@ -9927,8 +9944,8 @@ declare module 'cesium/Source/Scene/Expression' {
 
 
 		//Methods
-		evaluate(frameState : FrameState, feature : Cesium3DTileFeature, result : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
-		evaluateColor(frameState : FrameState, feature : Cesium3DTileFeature, result : Color) : Color
+		evaluate(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
+		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
 
 	}
 	export = Expression
@@ -9969,7 +9986,7 @@ declare module 'cesium/Source/Scene/FrameRateMonitor' {
 
 
 		//Methods
-		static fromScene(scene : Scene) : FrameRateMonitor
+		static fromScene(scene? : Scene) : FrameRateMonitor
 		destroy() : void
 		isDestroyed() : boolean
 		pause() : void
@@ -10042,9 +10059,9 @@ declare module 'cesium/Source/Scene/GoogleEarthEnterpriseImageryProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = GoogleEarthEnterpriseImageryProvider
@@ -10104,9 +10121,9 @@ declare module 'cesium/Source/Scene/GoogleEarthEnterpriseMapsProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = GoogleEarthEnterpriseMapsProvider
@@ -10178,9 +10195,9 @@ declare module 'cesium/Source/Scene/GridImageryProvider' {
 		//Methods
 		_createGridCanvas() : void
 		_drawGrid() : void
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = GridImageryProvider
@@ -10228,9 +10245,9 @@ declare module 'cesium/Source/Scene/GroundPrimitive' {
 
 
 		//Methods
-		static initializeTerrainHeights() : Promise
+		static initializeTerrainHeights() : Promise<any>
 		destroy() : void
-		getGeometryInstanceAttributes(id : any) : Object
+		getGeometryInstanceAttributes(id? : any) : Object
 		isDestroyed() : boolean
 		update() : void
 
@@ -10295,8 +10312,8 @@ declare module 'cesium/Source/Scene/Label' {
 
 
 		//Methods
-		computeScreenSpacePosition(scene : Scene, result : Cartesian2) : Cartesian2
-		equals(other : Label) : boolean
+		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
+		equals(other? : Label) : boolean
 		isDestroyed() : boolean
 
 	}
@@ -10334,11 +10351,11 @@ declare module 'cesium/Source/Scene/LabelCollection' {
 
 		//Methods
 		add(options : any) : Label
-		contains(label : Label) : boolean
+		contains(label? : Label) : boolean
 		destroy() : void
-		get(index : number) : Label
+		get(index? : number) : Label
 		isDestroyed() : boolean
-		remove(label : Label) : boolean
+		remove(label? : Label) : boolean
 		removeAll() : void
 
 	}
@@ -10397,9 +10414,9 @@ declare module 'cesium/Source/Scene/MapboxImageryProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = MapboxImageryProvider
@@ -10581,9 +10598,9 @@ declare module 'cesium/Source/Scene/ModelAnimationCollection' {
 		//Methods
 		add(options : addOptions) : ModelAnimation
 		addAll(options : addAllOptions) : Array<ModelAnimation>
-		contains(animation : ModelAnimation) : boolean
-		get(index : number) : ModelAnimation
-		remove(animation : ModelAnimation) : boolean
+		contains(animation? : ModelAnimation) : boolean
+		get(index? : number) : ModelAnimation
+		remove(animation? : ModelAnimation) : boolean
 		removeAll() : void
 
 	}
@@ -10624,8 +10641,8 @@ declare module 'cesium/Source/Scene/ModelMaterial' {
 
 
 		//Methods
-		getValue(name : string) : Object
-		setValue(name : string, value : any) : void
+		getValue(name? : string) : Object
+		setValue(name? : string, value? : any) : void
 
 	}
 	export = ModelMaterial
@@ -10714,11 +10731,11 @@ declare module 'cesium/Source/Scene/Model' {
 
 		//Methods
 		static fromGltf(options : fromGltfOptions) : Model
-		static silhouetteSupported(scene : Scene) : boolean
+		static silhouetteSupported(scene? : Scene) : boolean
 		destroy() : void
-		getMaterial(name : string) : ModelMaterial
-		getMesh(name : string) : ModelMesh
-		getNode(name : string) : ModelNode
+		getMaterial(name? : string) : ModelMaterial
+		getMesh(name? : string) : ModelMesh
+		getNode(name? : string) : ModelNode
 		isDestroyed() : boolean
 		update() : void
 
@@ -10735,7 +10752,7 @@ declare module 'cesium/Source/Scene/NeverTileDiscardPolicy' {
 
 		//Methods
 		isReady() : boolean
-		shouldDiscardImage(image : HTMLImageElement) : boolean
+		shouldDiscardImage(image? : HTMLImageElement) : boolean
 
 	}
 	export = NeverTileDiscardPolicy
@@ -10985,8 +11002,8 @@ declare module 'cesium/Source/Scene/PointPrimitive' {
 
 
 		//Methods
-		computeScreenSpacePosition(scene : Scene, result : Cartesian2) : Cartesian2
-		equals(other : PointPrimitive) : boolean
+		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
+		equals(other? : PointPrimitive) : boolean
 
 	}
 	export = PointPrimitive
@@ -11023,9 +11040,9 @@ declare module 'cesium/Source/Scene/PointPrimitiveCollection' {
 		add(pointPrimitive : any) : PointPrimitive
 		contains(pointPrimitive : PointPrimitive) : boolean
 		destroy() : void
-		get(index : number) : PointPrimitive
+		get(index? : number) : PointPrimitive
 		isDestroyed() : boolean
-		remove(pointPrimitive : PointPrimitive) : boolean
+		remove(pointPrimitive? : PointPrimitive) : boolean
 		removeAll() : void
 
 	}
@@ -11074,11 +11091,11 @@ declare module 'cesium/Source/Scene/PolylineCollection' {
 
 		//Methods
 		add(polyline : any) : Polyline
-		contains(polyline : Polyline) : boolean
+		contains(polyline? : Polyline) : boolean
 		destroy() : void
-		get(index : number) : Polyline
+		get(index? : number) : Polyline
 		isDestroyed() : boolean
-		remove(polyline : Polyline) : boolean
+		remove(polyline? : Polyline) : boolean
 		removeAll() : void
 		update() : void
 
@@ -11094,7 +11111,7 @@ declare module 'cesium/Source/Scene/Polyline' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	class Polyline 
 	{
-		constructor(options? : PolylineOptions, polylineCollection : PolylineCollection);
+		constructor(options? : PolylineOptions, polylineCollection? : PolylineCollection);
 		//Members
 		distanceDisplayCondition: DistanceDisplayCondition
 		id: Object
@@ -11244,7 +11261,7 @@ declare module 'cesium/Source/Scene/Primitive' {
 
 		//Methods
 		destroy() : void
-		getGeometryInstanceAttributes(id : any) : Object
+		getGeometryInstanceAttributes(id? : any) : Object
 		isDestroyed() : boolean
 		update() : void
 
@@ -11263,8 +11280,8 @@ declare module 'cesium/Source/Scene/SceneTransforms' {
 
 
 		//Methods
-		static wgs84ToDrawingBufferCoordinates(scene : Scene, position : Cartesian3, result : Cartesian2) : Cartesian2
-		static wgs84ToWindowCoordinates(scene : Scene, position : Cartesian3, result : Cartesian2) : Cartesian2
+		static wgs84ToDrawingBufferCoordinates(scene? : Scene, position? : Cartesian3, result? : Cartesian2) : Cartesian2
+		static wgs84ToWindowCoordinates(scene? : Scene, position? : Cartesian3, result? : Cartesian2) : Cartesian2
 
 	}
 	export = SceneTransforms
@@ -11317,9 +11334,9 @@ declare module 'cesium/Source/Scene/SingleTileImageryProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = SingleTileImageryProvider
@@ -11427,9 +11444,9 @@ declare module 'cesium/Source/Scene/TileCoordinatesImageryProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = TileCoordinatesImageryProvider
@@ -11465,8 +11482,8 @@ declare module 'cesium/Source/Scene/TimeDynamicImagery' {
 
 
 		//Methods
-		checkApproachingInterval(x : number, y : number, level : number, request : Request) : void
-		getFromCache(x : number, y : number, level : number, request : Request) : Promise<HTMLImageElement>|void
+		checkApproachingInterval(x? : number, y? : number, level? : number, request? : Request) : void
+		getFromCache(x? : number, y? : number, level? : number, request? : Request) : Promise<HTMLImageElement>|void
 
 	}
 	export = TimeDynamicImagery
@@ -11506,10 +11523,10 @@ declare module 'cesium/Source/Scene/UrlTemplateImageryProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		reinitialize(options : Promise<any>|any) : void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		reinitialize(options? : Promise<any>|any) : void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = UrlTemplateImageryProvider
@@ -11600,9 +11617,9 @@ declare module 'cesium/Source/Scene/WebMapServiceImageryProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = WebMapServiceImageryProvider
@@ -11678,9 +11695,9 @@ declare module 'cesium/Source/Scene/WebMapTileServiceImageryProvider' {
 
 
 		//Methods
-		getTileCredits(x : number, y : number, level : number) : Array<Credit>
-		pickFeatures(x : number, y : number, level : number, longitude : number, latitude : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x : number, y : number, level : number, request : Request) : Promise<Image | Canvas>|void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
 
 	}
 	export = WebMapTileServiceImageryProvider
@@ -11705,6 +11722,7 @@ declare module 'cesium/Source/Scene/createOpenStreetMapImageryProviderOptions' {
 
 }
 declare module 'cesium/Source/Scene/createOpenStreetMapImageryProvider' {
+	import UrlTemplateImageryProvider = require('cesium/Source/Scene/UrlTemplateImageryProvider')
 	import createOpenStreetMapImageryProviderOptions = require('cesium/Source/Scene/createOpenStreetMapImageryProviderOptions')
 	function createOpenStreetMapImageryProvider(options? : createOpenStreetMapImageryProviderOptions) : UrlTemplateImageryProvider;
 	export = createOpenStreetMapImageryProvider
@@ -11723,6 +11741,7 @@ declare module 'cesium/Source/Scene/createTangentSpaceDebugPrimitiveOptions' {
 
 }
 declare module 'cesium/Source/Scene/createTangentSpaceDebugPrimitive' {
+	import Primitive = require('cesium/Source/Scene/Primitive')
 	import createTangentSpaceDebugPrimitiveOptions = require('cesium/Source/Scene/createTangentSpaceDebugPrimitiveOptions')
 	function createTangentSpaceDebugPrimitive(options? : createTangentSpaceDebugPrimitiveOptions) : Primitive;
 	export = createTangentSpaceDebugPrimitive
@@ -11752,6 +11771,7 @@ declare module 'cesium/Source/Scene/createTileMapServiceImageryProviderOptions' 
 
 }
 declare module 'cesium/Source/Scene/createTileMapServiceImageryProvider' {
+	import UrlTemplateImageryProvider = require('cesium/Source/Scene/UrlTemplateImageryProvider')
 	import createTileMapServiceImageryProviderOptions = require('cesium/Source/Scene/createTileMapServiceImageryProviderOptions')
 	function createTileMapServiceImageryProvider(options? : createTileMapServiceImageryProviderOptions) : UrlTemplateImageryProvider;
 	export = createTileMapServiceImageryProvider
@@ -11889,7 +11909,7 @@ declare module 'cesium/Source/Widgets/Animation/AnimationViewModel' {
 
 		//Methods
 		getShuttleRingTicks() : Array<number>
-		setShuttleRingTicks(positiveTicks : Array<number>) : void
+		setShuttleRingTicks(positiveTicks? : Array<number>) : void
 
 	}
 	export = AnimationViewModel
@@ -12079,7 +12099,7 @@ declare module 'cesium/Source/Widgets/Cesium3DTilesInspector/Cesium3DTilesInspec
 
 
 		//Methods
-		static getStatistics(tileset : Cesium3DTileset, isPick : boolean) : string
+		static getStatistics(tileset? : Cesium3DTileset, isPick? : boolean) : string
 		compileStyle() : void
 		destroy() : void
 		isDestroyed() : boolean
@@ -12273,7 +12293,7 @@ declare module 'cesium/Source/Widgets/CesiumWidget/CesiumWidget' {
 		isDestroyed() : boolean
 		render() : void
 		resize() : void
-		showErrorPanel(title : string, message : string, error : string) : void
+		showErrorPanel(title? : string, message? : string, error? : string) : void
 
 	}
 	export = CesiumWidget
@@ -12448,7 +12468,7 @@ declare module 'cesium/Source/Widgets/InfoBox/InfoBoxViewModel' {
 
 
 		//Methods
-		maxHeightOffset(offset : number) : string
+		maxHeightOffset(offset? : number) : string
 
 	}
 	export = InfoBoxViewModel
@@ -12735,7 +12755,7 @@ declare module 'cesium/Source/Widgets/Timeline/Timeline' {
 		destroy() : void
 		isDestroyed() : boolean
 		resize() : void
-		zoomTo(startTime : JulianDate, stopTime : JulianDate) : void
+		zoomTo(startTime? : JulianDate, stopTime? : JulianDate) : void
 
 	}
 	export = Timeline
@@ -12932,13 +12952,13 @@ declare module 'cesium/Source/Widgets/Viewer/Viewer' {
 
 		//Methods
 		destroy() : void
-		extend(mixin : any, options : any) : void
-		flyTo(target : Entity|Array<Entity>|EntityCollection|DataSource|ImageryLayer|Promise<Entity | Array<Entity> | EntityCollection | DataSource | ImageryLayer>, options : flyToOptions) : Promise<boolean>
+		extend(mixin? : any, options? : any) : void
+		flyTo(target? : Entity|Array<Entity>|EntityCollection|DataSource|ImageryLayer|Promise<Entity | Array<Entity> | EntityCollection | DataSource | ImageryLayer>, options? : flyToOptions) : Promise<boolean>
 		forceResize() : void
 		isDestroyed() : boolean
 		render() : void
 		resize() : void
-		zoomTo(target : Entity|Array<Entity>|EntityCollection|DataSource|ImageryLayer|Promise<Entity | Array<Entity> | EntityCollection | DataSource | ImageryLayer>, offset : HeadingPitchRange) : Promise<boolean>
+		zoomTo(target? : Entity|Array<Entity>|EntityCollection|DataSource|ImageryLayer|Promise<Entity | Array<Entity> | EntityCollection | DataSource | ImageryLayer>, offset? : HeadingPitchRange) : Promise<boolean>
 
 	}
 	export = Viewer
@@ -12999,6 +13019,7 @@ declare module 'cesium/Source/Workers/createTaskProcessorWorker' {
 
 }
 declare module 'cesium/Cesium' {
+	export import FrameState = require('cesium/FrameState')
 	export import Promise = require('cesium/Promise')
 	export import when = require('cesium/when')
 	export import AssociativeArray = require('cesium/Source/Core/AssociativeArray')

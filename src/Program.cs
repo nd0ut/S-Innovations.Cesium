@@ -85,9 +85,7 @@ namespace SInnovations.Cesium.TypescriptGenerator
 
                         props = props.ToDictionary(k => k.Key, v => Program.extractDependencies(dependencies, v.Value));
 
-
                         Program.WriteDependencies(type, dependencies, writer, null, null, _source);
-
 
                         writer.WriteLine($"interface {type}");
                         writer.WriteLine("{");
@@ -186,13 +184,20 @@ namespace SInnovations.Cesium.TypescriptGenerator
 					}
                 }
 
-                var promish = GetWriter("Promise");
-                promish.WriteLine("class Promise<T>");
-                promish.WriteLine("{");
-                promish.WriteLine("constructor(doneHandler?:(obj:T)=>void,errorHandler?:(obj:any)=>void)");
-                promish.WriteLine("then(result:T);");
-                promish.WriteLine("}");
-                promish.WriteLine("export = Promise");
+                var frameState = GetWriter("FrameState");
+                frameState.WriteLine("class FrameState");
+                frameState.WriteLine("{");
+                frameState.WriteLine("constructor();");
+                frameState.WriteLine("}");
+                frameState.WriteLine("export = FrameState");
+
+                var promise = GetWriter("Promise");
+                promise.WriteLine("class Promise<T>");
+                promise.WriteLine("{");
+                promise.WriteLine("constructor(doneHandler?:(obj:T)=>void,errorHandler?:(obj:any)=>void)");
+                promise.WriteLine("then(result:T);");
+                promise.WriteLine("}");
+                promise.WriteLine("export = Promise");
 
                 var when = GetWriter("when");
                 when.WriteLine("import Promise = require(\"./Promise\");");
@@ -212,10 +217,6 @@ namespace SInnovations.Cesium.TypescriptGenerator
 
                     WriteDependency(cesium, "Cesium.d.ts", cls,true, cls == "CesiumMath" ? "Math":null);
                 }
-
-             
-
-
             }
             foreach (var writer in files.Values)
             {
@@ -230,6 +231,8 @@ namespace SInnovations.Cesium.TypescriptGenerator
                 File.AppendAllLines(local, File.ReadAllLines(file));
             }
             File.AppendAllLines(local, new string[] { "}", " export = Cesium;", " }" });
+
+
             if(!string.IsNullOrEmpty(Options.OutputPath))
                 File.Copy(local, Options.OutputPath, true);
             if (Directory.Exists("../artifacts"))
@@ -255,9 +258,14 @@ namespace SInnovations.Cesium.TypescriptGenerator
 
             var classdt = doc.DocumentNode.SelectSingleNode(@"//*[@id=""main""]/section/article/div/dt");
             var signatureName = Path.GetFileNameWithoutExtension(url);
+
+            Console.WriteLine("CLASSNAME: " + signatureName);
+
             var signature = "()";
             var signatureReturnType = " : void";
             var dependencies = new List<string>();
+            string signatureReturnName = null;
+            
             StreamWriter writer = null;
             if (classdt != null)
             {
@@ -278,8 +286,10 @@ namespace SInnovations.Cesium.TypescriptGenerator
               
 
                 var signatureReturnNode = ctor.SelectSingleNode(@".//span[@class=""type-signature returnType"" ]");
-                if (signatureReturnNode != null)
-                    signatureReturnType = " : " + ArrayTypeFixer(TypeNormalizer(signatureReturnNode.InnerText));
+                if (signatureReturnNode != null) {
+                    signatureReturnName = ArrayTypeFixer(TypeNormalizer(signatureReturnNode.InnerText));
+                    signatureReturnType = " : " + signatureReturnName;
+                }
                 if (signatureOverrides.ContainsKey(signatureName))
                     signatureReturnType = "";
 
@@ -288,15 +298,24 @@ namespace SInnovations.Cesium.TypescriptGenerator
                     var optionals = (signatureNode.SelectNodes(@".//span[@class=""optional"" ]") ?? new HtmlNodeCollection(signatureNode))
                         .Select(o => o.InnerText).ToArray();
 
+                    var anyOptionalFound = false;
                     foreach (var ctorParam in signatureParams)
                     {
                         var name = ctorParam.Key;
                         var types = ctorParam.Value.Replace("Object", "any");
                         
                         types = extractDependencies(dependencies, types);
+                        var nameIsOptional = name[name.Length - 1] == '?';
+                        if(nameIsOptional) {
+                            anyOptionalFound = true;
+                        }
+
+                        if(anyOptionalFound) {
+                            name = nameIsOptional ? name : name + "?";
+                        }
 
 						var replaceRx = new Regex(@"\b" + name.TrimEnd('?'));
-						signature = replaceRx.Replace(signature, $"{name} : {types}");
+						signature = replaceRx.Replace(signature, $"{name} : {types}", 1);
                     }
                 }
             }
@@ -312,8 +331,11 @@ namespace SInnovations.Cesium.TypescriptGenerator
             if (Char.IsLower(signatureName.First()))
             {
                 var members = ParseAndWriteMembers(doc, true);
+                if(signatureReturnName != null && !dependencies.Contains(signatureReturnName)) {
+                    WriteReturnDependency(writer, signatureReturnName, source);
+                }
                 WriteDependencies(signatureName, dependencies, writer, methods, members,source);
-
+                
                 //var interfaceName = $"{signatureName.Substring(0, 1).ToUpper()}{signatureName.Substring(1)}Static";
 
                 //writer.WriteLine($"interface {interfaceName}");
@@ -335,9 +357,7 @@ namespace SInnovations.Cesium.TypescriptGenerator
                 var members = ParseAndWriteMembers(doc, false);
                 var extends = classExtents.ContainsKey(signatureName) ? classExtents[signatureName] : "";
                 extends = extractDependencies(dependencies, extends);
-                WriteDependencies(signatureName, dependencies, writer, methods, members,source);
-
-              
+                WriteDependencies(signatureName, dependencies, writer, methods, members,source);                
                 
                 writer.WriteLine($"class {signatureName} {extends}");
                 writer.WriteLine("{");
@@ -356,8 +376,9 @@ namespace SInnovations.Cesium.TypescriptGenerator
         public static void WriteDependencies(string signatureName, List<string> dependencies, StreamWriter writer, MethodResult methods, MethodResult members, string currentPath)
         {
             var dependenciesList = dependencies.ToArray().ToList();
-            if (members != null)
+            if (members != null) {
                 dependenciesList.AddRange(members.dependencies);
+            }
             if (methods != null)
                 dependenciesList.AddRange(methods.dependencies);
 
@@ -371,9 +392,35 @@ namespace SInnovations.Cesium.TypescriptGenerator
         {
             var path = classToPath.ContainsKey(dep) ? classToPath[dep] : dep;
 
+            if(dep == "FrameState") {
+                path = "FrameState";
+            }
+
+            var test = new Uri(Path.Combine(Directory.GetCurrentDirectory(), "tempOut", currentPath)).MakeRelativeUri(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "tempOut", path)));
+            
+            writer.WriteLine($"{(export?"export ":"")}import {(localName==null? dep : localName)} = require(\"./{test}\")");
+        }
+
+        private static void WriteReturnDependency(StreamWriter writer, string dep, string currentPath)
+        {
+            string path = null;
+
+            if(dep == "Primitive") {
+                path = "Source/Scene/Primitive";
+            }
+            else if(dep == "UrlTemplateImageryProvider") {
+                path = "Source/Scene/UrlTemplateImageryProvider";
+            }
+            else if(classToPath.ContainsKey(dep)) {
+                path = classToPath[dep];
+            }
+            else {
+                return;
+            }
+
             var test = new Uri(Path.Combine(Directory.GetCurrentDirectory(), "tempOut", currentPath)).MakeRelativeUri(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "tempOut", path)));
 
-            writer.WriteLine($"{(export?"export ":"")}import {(localName==null? dep : localName)} = require(\"./{test}\")");
+            writer.WriteLine($"import {dep} = require(\"./{test}\")");
         }
 
         private static HtmlDocument GetDocument(string url)
@@ -428,7 +475,6 @@ namespace SInnovations.Cesium.TypescriptGenerator
 
         public static string extractDependencies(List<string> dependencies, string typeList)
         {
-
             var type= Regex.Replace(typeList, @"Cesium\.([a-zA-Z]+[a-zA-Z0-9\\_]*)", (m) =>
             {
                 if (m.Success)
@@ -474,25 +520,25 @@ namespace SInnovations.Cesium.TypescriptGenerator
 				var sigInner = string.Join(", ", signature.Split(',')
 					.Select(s => s.Trim(')', '(', ' '))
 					.Select(s =>
-						{
-							if (signatureParams.ContainsKey(s))
-							{
-
-								// return $"{s + (optionalFound ? "?" : "")} : { extractDependencies(dependencies,signatureParams[s].Replace("Object", "any"))}";
-								return (s + (optionalFound ? "?" : "")) + " : " + extractDependencies(dependencies,signatureParams[s].Replace("Object", "any"));
-							}
-							if (signatureParams.ContainsKey(s + "?"))
-							{
-								optionalFound = true;
-								//return $"{s}? : {extractDependencies(dependencies, signatureParams[s + "?"].Replace("Object", "any"))}";
-								return s + " : " + extractDependencies(dependencies, signatureParams[s + "?"].Replace("Object", "any"));
-							}
+						{   
+                            if (signatureParams.ContainsKey(s))
+                            {
+                                optionalFound = true;
+                                return (s + (optionalFound ? "?" : "")) + " : " + extractDependencies(dependencies,signatureParams[s].Replace("Object", "any"));
+                            }
+                        
+                            if (signatureParams.ContainsKey(s + "?"))
+                            {
+                                return (s + (optionalFound ? "?" : "")) + " : " + extractDependencies(dependencies, signatureParams[s + "?"].Replace("Object", "any"));
+                            }
 							return s;
 
 						}));
                 signature = "(" + sigInner + ")";
 
-
+                var replaceType = new Regex(@"^Promise$");
+                typeList = replaceType.Replace(typeList, "Promise<any>");
+                
                 writer.WriteLine($"\t{(staticMember == null ? "" : "static ")}{memberName}{signature.Replace("arguments", "args")} : {typeList}");
 
             }
