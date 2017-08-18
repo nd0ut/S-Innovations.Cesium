@@ -12,7 +12,7 @@ module.exports = function (grunt) {
         name: 'cesium',
         baseDir: './artifacts/',
         out: './dist/cesium.d.ts',
-        main: 'cesium/Cesium'
+        main: 'cesium/Source/Cesium'
       },
       default: {
         src: ['./artifacts/**/*.d.ts']
@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     gruntPrepend: {
       prepend: {
         options: {
-          content: fs.readFileSync('./TypeOverrides.d.ts')
+          content: fs.readFileSync('./header.d.ts')
         },
         files: [{
           src: './dist/cesium.d.ts'

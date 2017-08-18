@@ -170,8 +170,6 @@ namespace SInnovations.Cesium.TypescriptGenerator
 			}
 
 
-            // Options.OutputPath = @"C:\dev\AscendXYZ Portal\typings\Cesium.d.ts";
-
             if (CommandLine.Parser.Default.ParseArguments(args, Options))
             {
 
@@ -183,57 +181,27 @@ namespace SInnovations.Cesium.TypescriptGenerator
 					}
                 }
 
-                var frameState = GetWriter("FrameState");
+                var frameState = GetWriter("FrameState", "./Source/Scene/");
                 frameState.WriteLine("class FrameState");
                 frameState.WriteLine("{");
                 frameState.WriteLine("constructor();");
                 frameState.WriteLine("}");
                 frameState.WriteLine("export = FrameState");
 
-                var promise = GetWriter("Promise");
-                promise.WriteLine("class Promise<T>");
-                promise.WriteLine("{");
-                promise.WriteLine("constructor(doneHandler?:(obj:T)=>void,errorHandler?:(obj:any)=>void)");
-                promise.WriteLine("then(result:T);");
-                promise.WriteLine("}");
-                promise.WriteLine("export = Promise");
-
-                var when = GetWriter("when");
-                when.WriteLine("import Promise = require(\"./Promise\");");
-                when.WriteLine("function when<T>(promise:Promise<T>, succes:(result)=>void, fail:(result)=>void) : void");         
-                when.WriteLine("export = when;");
-
-                //var bingMapApi = GetWriter("BingMapApi");
-                //bingMapApi.WriteLine("  export module BingMapsApi {");
-                //bingMapApi.WriteLine("  var defaultKey;");
-                //bingMapApi.WriteLine("}");
-
-                var cesium = GetWriter("Cesium");
+                var cesium = GetWriter("Cesium", "./Source/");
                 foreach (var cls in Directory.GetFiles("tempOut","*.*",SearchOption.AllDirectories)
                     .Select(f=>Path.GetFileName(f).Substring(0, Path.GetFileName(f).Length-5))
                     .Where(f=>!f.EndsWith("Options"))
                     .Where(f=>f!="Cesium")) {
 
-                    WriteDependency(cesium, "Cesium.d.ts", cls,true, cls == "CesiumMath" ? "Math":null);
+                    WriteDependency(cesium, "Source/Cesium.d.ts", cls,true, cls == "CesiumMath" ? "Math":null);
                 }
             }
             foreach (var writer in files.Values)
             {
                 writer.Dispose();
             }
-            var local = "Cesium.d.ts";
-            File.AppendAllLines(local, new string[] { @"declare module ""cesium"" {", "module Cesium {" });
-            foreach (var file in Directory.GetFiles(".", "*.d.ts"))
-            {
-                if (Path.GetFileName(file) == local)
-                    continue;
-                File.AppendAllLines(local, File.ReadAllLines(file));
-            }
-            File.AppendAllLines(local, new string[] { "}", " export = Cesium;", " }" });
 
-
-            if(!string.IsNullOrEmpty(Options.OutputPath))
-                File.Copy(local, Options.OutputPath, true);
             if (Directory.Exists("../artifacts"))
                 Directory.Delete("../artifacts", true);
             Thread.Sleep(1000);
@@ -283,6 +251,12 @@ namespace SInnovations.Cesium.TypescriptGenerator
                 var signatureNode = ctor.SelectSingleNode(@".//span[@class=""signature"" ]");
                 signature = signatureOverrides.ContainsKey(signatureName) ? signatureOverrides[signatureName] : signatureNode.InnerText;
               
+            // if(!string.IsNullOrEmpty(Options.OutputPath))
+            //     File.Copy(local, Options.OutputPath, true);
+            // if (Directory.Exists("../artifacts"))
+            //     Directory.Delete("../artifacts", true);
+            // Thread.Sleep(1000);
+            // Directory.Move("tempOut", "../artifacts");
 
                 var signatureReturnNode = ctor.SelectSingleNode(@".//span[@class=""type-signature returnType"" ]");
                 if (signatureReturnNode != null) {
@@ -392,11 +366,11 @@ namespace SInnovations.Cesium.TypescriptGenerator
             var path = classToPath.ContainsKey(dep) ? classToPath[dep] : dep;
 
             if(dep == "FrameState") {
-                path = "FrameState";
+                path = "Source/Scene/FrameState";
             }
 
             var test = new Uri(Path.Combine(Directory.GetCurrentDirectory(), "tempOut", currentPath)).MakeRelativeUri(new Uri(Path.Combine(Directory.GetCurrentDirectory(), "tempOut", path)));
-            
+
             writer.WriteLine($"{(export?"export ":"")}import {(localName==null? dep : localName)} = require(\"./{test}\")");
         }
 
@@ -483,9 +457,6 @@ namespace SInnovations.Cesium.TypescriptGenerator
                 }
                 return m.Value;
             });
-
-            if(type.Contains("Promise"))
-                dependencies.Add("Promise");
 
             type = Regex.Replace(type, @"Property\|string", "Property|string|any");
 

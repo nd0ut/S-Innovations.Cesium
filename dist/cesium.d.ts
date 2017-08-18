@@ -7,29 +7,11 @@ type PerformanceContainer = any
 type RenderState = any
 type CompressedTextureBuffer = any
 
-declare module 'cesium/FrameState' {
-	class FrameState
-	{
-	constructor();
-	}
-	export = FrameState
-
+declare module 'cesium' {
+	export * from 'cesium/Source/Cesium';
 }
-declare module 'cesium/Promise' {
-	class Promise<T>
-	{
-	constructor(doneHandler?:(obj:T)=>void,errorHandler?:(obj:any)=>void)
-	then(result:T);
-	}
-	export = Promise
 
-}
-declare module 'cesium/when' {
-	import Promise = require('cesium/Promise');
-	function when<T>(promise:Promise<T>, succes:(result)=>void, fail:(result)=>void) : void
-	export = when;
 
-}
 declare module 'cesium/Source/Core/AssociativeArray' {
 	class AssociativeArray 
 	{
@@ -1633,7 +1615,6 @@ declare module 'cesium/Source/Scene/ImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -1716,7 +1697,6 @@ declare module 'cesium/Source/Scene/ImageryLayer' {
 	import ImageryLayerOptions = require('cesium/Source/Scene/ImageryLayerOptions')
 	import ImagerySplitDirection = require('cesium/Source/Scene/ImagerySplitDirection')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import Promise = require('cesium/Promise')
 	class ImageryLayer 
 	{
 		constructor(imageryProvider : ImageryProvider, options? : ImageryLayerOptions);
@@ -1754,7 +1734,6 @@ declare module 'cesium/Source/Scene/ImageryLayerCollection' {
 	import ImageryLayer = require('cesium/Source/Scene/ImageryLayer')
 	import ImageryProvider = require('cesium/Source/Scene/ImageryProvider')
 	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Promise = require('cesium/Promise')
 	import Ray = require('cesium/Source/Core/Ray')
 	import Scene = require('cesium/Source/Scene/Scene')
 	class ImageryLayerCollection 
@@ -1829,7 +1808,6 @@ declare module 'cesium/Source/Core/TileAvailability' {
 declare module 'cesium/Source/Core/TerrainData' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import Promise = require('cesium/Promise')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	class TerrainData 
 	{
@@ -1853,7 +1831,6 @@ declare module 'cesium/Source/Core/TerrainProvider' {
 	import TileAvailability = require('cesium/Source/Core/TileAvailability')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
-	import Promise = require('cesium/Promise')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import TerrainData = require('cesium/Source/Core/TerrainData')
@@ -2683,7 +2660,6 @@ declare module 'cesium/Source/Core/CesiumTerrainProvider' {
 	import TileAvailability = require('cesium/Source/Core/TileAvailability')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
-	import Promise = require('cesium/Promise')
 	import GeographicTilingScheme = require('cesium/Source/Core/GeographicTilingScheme')
 	import TerrainData = require('cesium/Source/Core/TerrainData')
 	import Request = require('cesium/Source/Core/Request')
@@ -3412,7 +3388,6 @@ declare module 'cesium/Source/Core/EllipsoidTerrainProvider' {
 	import EllipsoidTerrainProviderOptions = require('cesium/Source/Core/EllipsoidTerrainProviderOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
-	import Promise = require('cesium/Promise')
 	import GeographicTilingScheme = require('cesium/Source/Core/GeographicTilingScheme')
 	import TerrainData = require('cesium/Source/Core/TerrainData')
 	import Request = require('cesium/Source/Core/Request')
@@ -3753,7 +3728,6 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseMetadataOptions' {
 declare module 'cesium/Source/Core/GoogleEarthEnterpriseMetadata' {
 	import GoogleEarthEnterpriseMetadataOptions = require('cesium/Source/Core/GoogleEarthEnterpriseMetadataOptions')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	class GoogleEarthEnterpriseMetadata 
 	{
 		constructor(options? : GoogleEarthEnterpriseMetadataOptions);
@@ -3811,7 +3785,6 @@ declare module 'cesium/Source/Core/HeightmapTerrainData' {
 	import HeightmapTerrainDataOptions = require('cesium/Source/Core/HeightmapTerrainDataOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import Promise = require('cesium/Promise')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	class HeightmapTerrainData 
 	{
@@ -3836,7 +3809,6 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainData' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import HeightmapTerrainData = require('cesium/Source/Core/HeightmapTerrainData')
-	import Promise = require('cesium/Promise')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	class GoogleEarthEnterpriseTerrainData 
 	{
@@ -3878,7 +3850,6 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	import TerrainData = require('cesium/Source/Core/TerrainData')
 	import Request = require('cesium/Source/Core/Request')
@@ -4443,7 +4414,6 @@ declare module 'cesium/Source/Core/PerspectiveOffCenterFrustum' {
 }
 declare module 'cesium/Source/Core/PinBuilder' {
 	import Color = require('cesium/Source/Core/Color')
-	import Promise = require('cesium/Promise')
 	class PinBuilder 
 	{
 		constructor();
@@ -4764,7 +4734,6 @@ declare module 'cesium/Source/Core/QuantizedMeshTerrainData' {
 	import QuantizedMeshTerrainDataOptions = require('cesium/Source/Core/QuantizedMeshTerrainDataOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import Promise = require('cesium/Promise')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	class QuantizedMeshTerrainData 
 	{
@@ -5171,7 +5140,6 @@ declare module 'cesium/Source/Core/Spline' {
 
 }
 declare module 'cesium/Source/Core/TaskProcessor' {
-	import Promise = require('cesium/Promise')
 	class TaskProcessor 
 	{
 		constructor(workerName : string, maximumActiveTasks? : number);
@@ -5378,7 +5346,6 @@ declare module 'cesium/Source/Core/Transforms' {
 	import Quaternion = require('cesium/Source/Core/Quaternion')
 	import HeadingPitchRoll = require('cesium/Source/Core/HeadingPitchRoll')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import Promise = require('cesium/Promise')
 	import TimeInterval = require('cesium/Source/Core/TimeInterval')
 	class Transforms 
 	{
@@ -5453,7 +5420,6 @@ declare module 'cesium/Source/Core/VRTheWorldTerrainProvider' {
 	import VRTheWorldTerrainProviderOptions = require('cesium/Source/Core/VRTheWorldTerrainProviderOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
-	import Promise = require('cesium/Promise')
 	import GeographicTilingScheme = require('cesium/Source/Core/GeographicTilingScheme')
 	import TerrainData = require('cesium/Source/Core/TerrainData')
 	import Request = require('cesium/Source/Core/Request')
@@ -7682,7 +7648,6 @@ declare module 'cesium/Source/DataSources/CzmlDataSource' {
 	import DataSourceClock = require('cesium/Source/DataSources/DataSourceClock')
 	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
 	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import Promise = require('cesium/Promise')
 	import loadOptions = require('cesium/Source/DataSources/loadOptions')
 	import TimeInterval = require('cesium/Source/Core/TimeInterval')
 	import processOptions = require('cesium/Source/DataSources/processOptions')
@@ -7717,7 +7682,6 @@ declare module 'cesium/Source/DataSources/CzmlDataSource' {
 declare module 'cesium/Source/DataSources/DataSourceCollection' {
 	import Event = require('cesium/Source/Core/Event')
 	import DataSource = require('cesium/Source/DataSources/DataSource')
-	import Promise = require('cesium/Promise')
 	class DataSourceCollection 
 	{
 		constructor();
@@ -7899,7 +7863,6 @@ declare module 'cesium/Source/DataSources/GeoJsonDataSource' {
 	import DataSourceClock = require('cesium/Source/DataSources/DataSourceClock')
 	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
 	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import Promise = require('cesium/Promise')
 	import loadOptions = require('cesium/Source/DataSources/loadOptions')
 	class GeoJsonDataSource 
 	{
@@ -8081,7 +8044,6 @@ declare module 'cesium/Source/DataSources/KmlDataSource' {
 	import DataSourceClock = require('cesium/Source/DataSources/DataSourceClock')
 	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
 	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import Promise = require('cesium/Promise')
 	import loadOptions = require('cesium/Source/DataSources/loadOptions')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class KmlDataSource 
@@ -8950,7 +8912,6 @@ declare module 'cesium/Source/Scene/ArcGisMapServerImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -9188,7 +9149,6 @@ declare module 'cesium/Source/Scene/BingMapsImageryProvider' {
 	import Event = require('cesium/Source/Core/Event')
 	import BingMapsStyle = require('cesium/Source/Scene/BingMapsStyle')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -9387,13 +9347,21 @@ declare module 'cesium/Source/Scene/Cesium3DTileColorBlendMode' {
 	export = Cesium3DTileColorBlendMode
 
 }
+declare module 'cesium/Source/Scene/FrameState' {
+	class FrameState
+	{
+	constructor();
+	}
+	export = FrameState
+
+}
 declare module 'cesium/Source/Scene/StyleExpression' {
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
 	import Color = require('cesium/Source/Core/Color')
 	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
-	import FrameState = require('cesium/FrameState')
+	import FrameState = require('cesium/Source/Scene/FrameState')
 	class StyleExpression 
 	{
 		constructor();
@@ -9410,7 +9378,6 @@ declare module 'cesium/Source/Scene/StyleExpression' {
 }
 declare module 'cesium/Source/Scene/Cesium3DTileStyle' {
 	import StyleExpression = require('cesium/Source/Scene/StyleExpression')
-	import Promise = require('cesium/Promise')
 	class Cesium3DTileStyle 
 	{
 		constructor(style? : string|any);
@@ -9436,7 +9403,6 @@ declare module 'cesium/Source/Scene/Cesium3DTileset' {
 	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
 	import Cesium3DTileColorBlendMode = require('cesium/Source/Scene/Cesium3DTileColorBlendMode')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Promise = require('cesium/Promise')
 	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
 	import Cesium3DTileStyle = require('cesium/Source/Scene/Cesium3DTileStyle')
 	class Cesium3DTileset 
@@ -9523,7 +9489,6 @@ declare module 'cesium/Source/Scene/Cesium3DTileFeature' {
 
 }
 declare module 'cesium/Source/Scene/Cesium3DTileContent' {
-	import Promise = require('cesium/Promise')
 	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
 	class Cesium3DTileContent 
 	{
@@ -9612,7 +9577,6 @@ declare module 'cesium/Source/Scene/ClassificationPrimitiveOptions' {
 declare module 'cesium/Source/Scene/ClassificationPrimitive' {
 	import ClassificationPrimitiveOptions = require('cesium/Source/Scene/ClassificationPrimitiveOptions')
 	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import Promise = require('cesium/Promise')
 	import Scene = require('cesium/Source/Scene/Scene')
 	class ClassificationPrimitive 
 	{
@@ -9661,7 +9625,7 @@ declare module 'cesium/Source/Scene/ConditionsExpression' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
 	import Color = require('cesium/Source/Core/Color')
-	import FrameState = require('cesium/FrameState')
+	import FrameState = require('cesium/Source/Scene/FrameState')
 	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
 	class ConditionsExpression 
 	{
@@ -9934,7 +9898,7 @@ declare module 'cesium/Source/Scene/Expression' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
 	import Color = require('cesium/Source/Core/Color')
-	import FrameState = require('cesium/FrameState')
+	import FrameState = require('cesium/Source/Scene/FrameState')
 	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
 	class Expression 
 	{
@@ -10032,7 +9996,6 @@ declare module 'cesium/Source/Scene/GoogleEarthEnterpriseImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -10089,7 +10052,6 @@ declare module 'cesium/Source/Scene/GoogleEarthEnterpriseMapsProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -10167,7 +10129,6 @@ declare module 'cesium/Source/Scene/GridImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -10224,7 +10185,6 @@ declare module 'cesium/Source/Scene/GroundPrimitiveOptions' {
 declare module 'cesium/Source/Scene/GroundPrimitive' {
 	import GroundPrimitiveOptions = require('cesium/Source/Scene/GroundPrimitiveOptions')
 	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import Promise = require('cesium/Promise')
 	class GroundPrimitive 
 	{
 		constructor(options? : GroundPrimitiveOptions);
@@ -10387,7 +10347,6 @@ declare module 'cesium/Source/Scene/MapboxImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -10691,7 +10650,6 @@ declare module 'cesium/Source/Scene/Model' {
 	import ColorBlendMode = require('cesium/Source/Scene/ColorBlendMode')
 	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Promise = require('cesium/Promise')
 	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
 	import fromGltfOptions = require('cesium/Source/Scene/fromGltfOptions')
 	import Scene = require('cesium/Source/Scene/Scene')
@@ -11235,7 +11193,6 @@ declare module 'cesium/Source/Scene/Primitive' {
 	import Appearance = require('cesium/Source/Scene/Appearance')
 	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Promise = require('cesium/Promise')
 	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
 	class Primitive 
 	{
@@ -11307,7 +11264,6 @@ declare module 'cesium/Source/Scene/SingleTileImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -11418,7 +11374,6 @@ declare module 'cesium/Source/Scene/TileCoordinatesImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -11471,7 +11426,6 @@ declare module 'cesium/Source/Scene/TimeDynamicImagery' {
 	import TimeInterval = require('cesium/Source/Core/TimeInterval')
 	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
 	import Request = require('cesium/Source/Core/Request')
-	import Promise = require('cesium/Promise')
 	class TimeDynamicImagery 
 	{
 		constructor(options : TimeDynamicImageryOptions);
@@ -11490,7 +11444,6 @@ declare module 'cesium/Source/Scene/TimeDynamicImagery' {
 
 }
 declare module 'cesium/Source/Scene/UrlTemplateImageryProvider' {
-	import Promise = require('cesium/Promise')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
@@ -11586,7 +11539,6 @@ declare module 'cesium/Source/Scene/WebMapServiceImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -11663,7 +11615,6 @@ declare module 'cesium/Source/Scene/WebMapTileServiceImageryProvider' {
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Promise = require('cesium/Promise')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
@@ -12901,7 +12852,6 @@ declare module 'cesium/Source/Widgets/Viewer/Viewer' {
 	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
 	import Timeline = require('cesium/Source/Widgets/Timeline/Timeline')
 	import VRButton = require('cesium/Source/Widgets/VRButton/VRButton')
-	import Promise = require('cesium/Promise')
 	import ImageryLayer = require('cesium/Source/Scene/ImageryLayer')
 	import flyToOptions = require('cesium/Source/Widgets/Viewer/flyToOptions')
 	import HeadingPitchRange = require('cesium/Source/Core/HeadingPitchRange')
@@ -13018,10 +12968,7 @@ declare module 'cesium/Source/Workers/createTaskProcessorWorker' {
 	export = createTaskProcessorWorker
 
 }
-declare module 'cesium/Cesium' {
-	export import FrameState = require('cesium/FrameState')
-	export import Promise = require('cesium/Promise')
-	export import when = require('cesium/when')
+declare module 'cesium/Source/Cesium' {
 	export import AssociativeArray = require('cesium/Source/Core/AssociativeArray')
 	export import AxisAlignedBoundingBox = require('cesium/Source/Core/AxisAlignedBoundingBox')
 	export import BingMapsApi = require('cesium/Source/Core/BingMapsApi')
@@ -13328,6 +13275,7 @@ declare module 'cesium/Cesium' {
 	export import Expression = require('cesium/Source/Scene/Expression')
 	export import Fog = require('cesium/Source/Scene/Fog')
 	export import FrameRateMonitor = require('cesium/Source/Scene/FrameRateMonitor')
+	export import FrameState = require('cesium/Source/Scene/FrameState')
 	export import GetFeatureInfoFormat = require('cesium/Source/Scene/GetFeatureInfoFormat')
 	export import Globe = require('cesium/Source/Scene/Globe')
 	export import GoogleEarthEnterpriseImageryProvider = require('cesium/Source/Scene/GoogleEarthEnterpriseImageryProvider')
@@ -13442,4 +13390,5 @@ declare module 'cesium/Cesium' {
 
 }
 declare module 'cesium' {
-	}
+	export * from 'cesium/Source/Cesium';
+}
