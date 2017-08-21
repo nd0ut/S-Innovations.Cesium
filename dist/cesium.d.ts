@@ -1,3 +1,4 @@
+//VERSION=1.36
 type Image = HTMLImageElement
 type Canvas = HTMLCanvasElement
 type TypedArray = any[]

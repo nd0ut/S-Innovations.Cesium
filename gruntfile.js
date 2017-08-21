@@ -6,6 +6,9 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['dtsGenerator', 'gruntPrepend']);
 
+  var version = '//' + fs.readFileSync('./artifacts/version.txt');
+  var header = fs.readFileSync('./header.d.ts');
+
   grunt.initConfig({
     dtsGenerator: {
       options: {
@@ -21,7 +24,7 @@ module.exports = function (grunt) {
     gruntPrepend: {
       prepend: {
         options: {
-          content: fs.readFileSync('./header.d.ts')
+          content: version + header
         },
         files: [{
           src: './dist/cesium.d.ts'

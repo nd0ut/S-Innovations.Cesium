@@ -200,7 +200,7 @@ namespace SInnovations.Cesium.TypescriptGenerator
                 frameState.WriteLine("export = FrameState");
 
                 var cesium = GetWriter("Cesium", "./Source/");
-                foreach (var cls in Directory.GetFiles("tempOut","*.*",SearchOption.AllDirectories)
+                foreach (var cls in Directory.GetFiles("tempOut","*.d.ts",SearchOption.AllDirectories)
                     .Select(f=>Path.GetFileName(f).Substring(0, Path.GetFileName(f).Length-5))
                     .Where(f=>!f.EndsWith("Options"))
                     .Where(f=>f!="Cesium")) {
@@ -212,6 +212,10 @@ namespace SInnovations.Cesium.TypescriptGenerator
             {
                 writer.Dispose();
             }
+
+            var versionFile = new StreamWriter(new FileStream($"tempOut/version.txt", FileMode.Create));
+            versionFile.WriteLine("VERSION=" + Options.CesiumVersion);
+            versionFile.Dispose();
 
             if (Directory.Exists("../artifacts"))
                 Directory.Delete("../artifacts", true);
