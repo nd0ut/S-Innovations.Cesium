@@ -13390,5 +13390,4 @@ declare module 'cesium/Source/Cesium' {
 
 }
 declare module 'cesium' {
-	export * from 'cesium/Source/Cesium';
-}
+	}

@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using HtmlAgilityPack;
+using System.Net;
 
 namespace SInnovations.Cesium.TypescriptGenerator
 {
@@ -156,13 +157,23 @@ namespace SInnovations.Cesium.TypescriptGenerator
         }
         static void Main(string[] args)
         {
-
-
-
             if(Directory.Exists("tempOut"))
                 Directory.Delete("tempOut",true);
+            
+            String[] arguments = Environment.GetCommandLineArgs();
+            if(arguments.Length == 2 && arguments[1] != "") {
+                Options.CesiumVersion = arguments[1]; 
+            }
+            else {
+                HtmlDocument downloads = GetDocument($"https://cesiumjs.org/downloads.html");
+                var lastVersion = downloads.DocumentNode.SelectSingleNode(@"/html/body/div/div/div[1]/div[2]/div/div/div[1]/div/a/div/div/div[2]/h3").InnerHtml;
+                lastVersion = lastVersion.Substring(16);
+                Options.CesiumVersion = lastVersion;
+            }
 
-            Options.BaseUrl = "https://cesiumjs.org/Cesium/Build/Documentation/";
+            Console.WriteLine("Using Cesium of version " + Options.CesiumVersion);
+
+            Options.BaseUrl = "https://cesiumjs.org/releases/" + Options.CesiumVersion + "/Build/Documentation/";
 			HtmlDocument index = GetDocument($"{Options.BaseUrl.TrimEnd('/')}/index.html");
 			var classLinks = index.DocumentNode.SelectNodes(@"//*[@id=""ClassList""]/li");
 			foreach (var link in classLinks) {
@@ -399,23 +410,39 @@ namespace SInnovations.Cesium.TypescriptGenerator
         private static HtmlDocument GetDocument(string url)
         {
             Directory.CreateDirectory(".cache");
-            var name = ".cache/" + Path.GetFileName(url);
+            Directory.CreateDirectory(".cache/" + Options.CesiumVersion);
+            
+            var name = ".cache/" + Options.CesiumVersion + "/" + Path.GetFileName(url);
+
             HtmlDocument doc = new HtmlDocument();
-            if (File.Exists(name))
+            
+            if(url == "https://cesiumjs.org/downloads.html") {
+                string html = LoadHtml(url);
+                doc.LoadHtml(html);
+            }
+            else if (File.Exists(name))
                 doc.Load(name);
             else
             {
-                var htmlClient = new HttpClient();
-
-
-                var content = htmlClient.GetAsync(url).GetAwaiter().GetResult();
-
-                doc.Load(new GZipStream(content.Content.ReadAsStreamAsync().GetAwaiter().GetResult(), CompressionMode.Decompress)
-                    , Encoding.UTF8);
+                string html = LoadHtml(url);                
+                doc.LoadHtml(html);
                 doc.Save(name);
             }
+
             return doc;
         }
+
+        private static string LoadHtml(string url) {
+            var request = (HttpWebRequest)HttpWebRequest.Create(url);
+            request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip,deflate");
+            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream dataStream = response.GetResponseStream();
+            StreamReader readStream = new StreamReader (dataStream);
+            string html = readStream.ReadToEnd();
+            return html;
+        }
+
         public class MethodResult
         {
             public string part;

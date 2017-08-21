@@ -4,7 +4,9 @@
   "description": "",
   "main": "dist/cesium.d.ts",
   "scripts": {
-    "build": "cd src && ./build.sh && ./run.sh && cd ../ && grunt && cd dist"
+    "mono": "cd src && ./build.sh && cd ..",
+    "dist": "cd src && ./run.sh && cd ../ && grunt && cd dist",
+    "build": "npm run mono && npm run dist"
   },
   "author": "",
   "license": "ISC",

@@ -20,6 +20,7 @@ namespace SInnovations.Cesium.TypescriptGenerator
         [ParserState]
         public IParserState LastParserState { get; set; }
         public string BaseUrl { get; internal set; }
+        public string CesiumVersion { get; internal set; }
         public IList<string> Class { get; internal set; }
         public string OutputPath { get; internal set; }
 
