@@ -1,4 +1,4 @@
-//VERSION=1.36
+//VERSION=1.37
 type Image = HTMLImageElement
 type Canvas = HTMLCanvasElement
 type TypedArray = any[]
@@ -33,8 +33,8 @@ declare module 'cesium/Source/Core/AssociativeArray' {
 	export = AssociativeArray
 
 }
-declare module 'cesium/Source/Core/fromRandomOptions' {
-	interface fromRandomOptions
+declare module 'cesium/Source/Core/HASH_12088_fromRandomOptions' {
+	interface HASH_12088_fromRandomOptions
 	{
 		red?: number;
 		minimumRed?: number;
@@ -49,12 +49,12 @@ declare module 'cesium/Source/Core/fromRandomOptions' {
 		minimumAlpha?: number;
 		maximumAlpha?: number;
 	}
-	export = fromRandomOptions
+	export = HASH_12088_fromRandomOptions
 
 }
 declare module 'cesium/Source/Core/Color' {
 	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
-	import fromRandomOptions = require('cesium/Source/Core/fromRandomOptions')
+	import HASH_12088_fromRandomOptions = require('cesium/Source/Core/HASH_12088_fromRandomOptions')
 	class Color 
 	{
 		constructor(red? : number, green? : number, blue? : number, alpha? : number);
@@ -226,7 +226,7 @@ declare module 'cesium/Source/Core/Color' {
 		static fromCartesian4(cartesian? : Cartesian4, result? : Color) : Color
 		static fromCssColorString(color? : string, result? : Color) : Color
 		static fromHsl(hue : number, saturation : number, lightness : number, alpha : number, result : Color) : Color
-		static fromRandom(options : fromRandomOptions, result : Color) : Color
+		static fromRandom(options : HASH_12088_fromRandomOptions, result : Color) : Color
 		static fromRgba(rgba? : number, result? : Color) : Color
 		static mod(left? : Color, right? : Color, result? : Color) : Color
 		static multiply(left? : Color, right? : Color, result? : Color) : Color
@@ -584,10 +584,10 @@ declare module 'cesium/Source/Scene/MapMode2D' {
 	export = MapMode2D
 
 }
-declare module 'cesium/Source/Scene/SceneOptions' {
+declare module 'cesium/Source/Scene/HASH_31547_SceneOptions' {
 	import MapProjection = require('cesium/Source/Core/MapProjection')
 	import MapMode2D = require('cesium/Source/Scene/MapMode2D')
-	interface SceneOptions
+	interface HASH_31547_SceneOptions
 	{
 		canvas: HTMLCanvasElement;
 		contextOptions?: Object;
@@ -599,7 +599,7 @@ declare module 'cesium/Source/Scene/SceneOptions' {
 		shadows?: boolean;
 		mapMode2D?: MapMode2D;
 	}
-	export = SceneOptions
+	export = HASH_31547_SceneOptions
 
 }
 declare module 'cesium/Source/Core/HeadingPitchRange' {
@@ -685,8 +685,8 @@ declare module 'cesium/Source/Core/Event' {
 	export = Event
 
 }
-declare module 'cesium/Source/Core/PerspectiveFrustumOptions' {
-	interface PerspectiveFrustumOptions
+declare module 'cesium/Source/Core/HASH_04333_PerspectiveFrustumOptions' {
+	interface HASH_04333_PerspectiveFrustumOptions
 	{
 		fov?: number;
 		aspectRatio?: number;
@@ -695,7 +695,7 @@ declare module 'cesium/Source/Core/PerspectiveFrustumOptions' {
 		xOffset?: number;
 		yOffset?: number;
 	}
-	export = PerspectiveFrustumOptions
+	export = HASH_04333_PerspectiveFrustumOptions
 
 }
 declare module 'cesium/Source/Core/Quaternion' {
@@ -1170,14 +1170,14 @@ declare module 'cesium/Source/Core/Cartesian2' {
 
 }
 declare module 'cesium/Source/Core/PerspectiveFrustum' {
-	import PerspectiveFrustumOptions = require('cesium/Source/Core/PerspectiveFrustumOptions')
+	import HASH_04333_PerspectiveFrustumOptions = require('cesium/Source/Core/HASH_04333_PerspectiveFrustumOptions')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
 	import CullingVolume = require('cesium/Source/Core/CullingVolume')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
 	class PerspectiveFrustum 
 	{
-		constructor(options? : PerspectiveFrustumOptions);
+		constructor(options? : HASH_04333_PerspectiveFrustumOptions);
 		//Members
 		static packedLength: number
 		aspectRatio: number
@@ -1247,12 +1247,12 @@ declare module 'cesium/Source/Core/EasingFunction' {
 	export = EasingFunction
 
 }
-declare module 'cesium/Source/Scene/flyToOptions' {
+declare module 'cesium/Source/Scene/HASH_10372_flyToOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
 	import EasingFunction = require('cesium/Source/Core/EasingFunction')
-	interface flyToOptions
+	interface HASH_10372_flyToOptions
 	{
 		destination: Cartesian3|Rectangle;
 		orientation?: Object;
@@ -1266,14 +1266,14 @@ declare module 'cesium/Source/Scene/flyToOptions' {
 		flyOverLongitudeWeight?: number;
 		easingFunction?: EasingFunction|any;
 	}
-	export = flyToOptions
+	export = HASH_10372_flyToOptions
 
 }
-declare module 'cesium/Source/Scene/flyToBoundingSphereOptions' {
+declare module 'cesium/Source/Scene/HASH_28261_flyToBoundingSphereOptions' {
 	import HeadingPitchRange = require('cesium/Source/Core/HeadingPitchRange')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
 	import EasingFunction = require('cesium/Source/Core/EasingFunction')
-	interface flyToBoundingSphereOptions
+	interface HASH_28261_flyToBoundingSphereOptions
 	{
 		duration?: number;
 		offset?: HeadingPitchRange;
@@ -1286,7 +1286,7 @@ declare module 'cesium/Source/Scene/flyToBoundingSphereOptions' {
 		flyOverLongitudeWeight?: number;
 		easingFunction?: EasingFunction|any;
 	}
-	export = flyToBoundingSphereOptions
+	export = HASH_28261_flyToBoundingSphereOptions
 
 }
 declare module 'cesium/Source/Core/Ray' {
@@ -1306,17 +1306,17 @@ declare module 'cesium/Source/Core/Ray' {
 	export = Ray
 
 }
-declare module 'cesium/Source/Scene/setViewOptions' {
+declare module 'cesium/Source/Scene/HASH_12230_setViewOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	interface setViewOptions
+	interface HASH_12230_setViewOptions
 	{
 		destination?: Cartesian3|Rectangle;
 		orientation?: Object;
 		endTransform?: Matrix4;
 	}
-	export = setViewOptions
+	export = HASH_12230_setViewOptions
 
 }
 declare module 'cesium/Source/Scene/Camera' {
@@ -1331,11 +1331,11 @@ declare module 'cesium/Source/Scene/Camera' {
 	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
-	import flyToOptions = require('cesium/Source/Scene/flyToOptions')
-	import flyToBoundingSphereOptions = require('cesium/Source/Scene/flyToBoundingSphereOptions')
+	import HASH_10372_flyToOptions = require('cesium/Source/Scene/HASH_10372_flyToOptions')
+	import HASH_28261_flyToBoundingSphereOptions = require('cesium/Source/Scene/HASH_28261_flyToBoundingSphereOptions')
 	import Ray = require('cesium/Source/Core/Ray')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import setViewOptions = require('cesium/Source/Scene/setViewOptions')
+	import HASH_12230_setViewOptions = require('cesium/Source/Scene/HASH_12230_setViewOptions')
 	class Camera 
 	{
 		constructor(scene : Scene);
@@ -1380,8 +1380,8 @@ declare module 'cesium/Source/Scene/Camera' {
 		computeViewRectangle(ellipsoid : Ellipsoid, result : Rectangle) : Rectangle|void
 		distanceToBoundingSphere(boundingSphere? : BoundingSphere) : number
 		flyHome(duration : number) : void
-		flyTo(options : flyToOptions) : void
-		flyToBoundingSphere(boundingSphere? : BoundingSphere, options? : flyToBoundingSphereOptions) : void
+		flyTo(options : HASH_10372_flyToOptions) : void
+		flyToBoundingSphere(boundingSphere? : BoundingSphere, options? : HASH_28261_flyToBoundingSphereOptions) : void
 		getMagnitude() : number
 		getPickRay(windowPosition? : Cartesian2, result? : Ray) : Ray
 		getPixelSize(boundingSphere? : BoundingSphere, drawingBufferWidth? : number, drawingBufferHeight? : number) : number
@@ -1406,7 +1406,7 @@ declare module 'cesium/Source/Scene/Camera' {
 		rotateLeft(angle : number) : void
 		rotateRight(angle : number) : void
 		rotateUp(angle : number) : void
-		setView(options : setViewOptions) : void
+		setView(options : HASH_12230_setViewOptions) : void
 		switchToOrthographicFrustum() : void
 		switchToPerspectiveFrustum() : void
 		twistLeft(amount : number) : void
@@ -1531,9 +1531,9 @@ declare module 'cesium/Source/Core/RequestType' {
 	export = RequestType
 
 }
-declare module 'cesium/Source/Core/RequestOptions' {
+declare module 'cesium/Source/Core/HASH_58953_RequestOptions' {
 	import RequestType = require('cesium/Source/Core/RequestType')
-	interface RequestOptions
+	interface HASH_58953_RequestOptions
 	{
 		url?: boolean;
 		requestFunction?: any;
@@ -1544,7 +1544,7 @@ declare module 'cesium/Source/Core/RequestOptions' {
 		throttleByServer?: boolean;
 		type?: RequestType;
 	}
-	export = RequestOptions
+	export = HASH_58953_RequestOptions
 
 }
 declare module 'cesium/Source/Core/RequestState' {
@@ -1567,12 +1567,12 @@ declare module 'cesium/Source/Core/RequestState' {
 
 }
 declare module 'cesium/Source/Core/Request' {
-	import RequestOptions = require('cesium/Source/Core/RequestOptions')
+	import HASH_58953_RequestOptions = require('cesium/Source/Core/HASH_58953_RequestOptions')
 	import RequestState = require('cesium/Source/Core/RequestState')
 	import RequestType = require('cesium/Source/Core/RequestType')
 	class Request 
 	{
-		constructor(options? : RequestOptions);
+		constructor(options? : HASH_58953_RequestOptions);
 		//Members
 		cancelFunction: any
 		priority: number
@@ -1672,10 +1672,10 @@ declare module 'cesium/Source/Scene/ImagerySplitDirection' {
 	export = ImagerySplitDirection
 
 }
-declare module 'cesium/Source/Scene/ImageryLayerOptions' {
+declare module 'cesium/Source/Scene/HASH_19059_ImageryLayerOptions' {
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import ImagerySplitDirection = require('cesium/Source/Scene/ImagerySplitDirection')
-	interface ImageryLayerOptions
+	interface HASH_19059_ImageryLayerOptions
 	{
 		rectangle?: Rectangle;
 		alpha?: number|(()=>void);
@@ -1690,17 +1690,17 @@ declare module 'cesium/Source/Scene/ImageryLayerOptions' {
 		minimumTerrainLevel?: number;
 		maximumTerrainLevel?: number;
 	}
-	export = ImageryLayerOptions
+	export = HASH_19059_ImageryLayerOptions
 
 }
 declare module 'cesium/Source/Scene/ImageryLayer' {
 	import ImageryProvider = require('cesium/Source/Scene/ImageryProvider')
-	import ImageryLayerOptions = require('cesium/Source/Scene/ImageryLayerOptions')
+	import HASH_19059_ImageryLayerOptions = require('cesium/Source/Scene/HASH_19059_ImageryLayerOptions')
 	import ImagerySplitDirection = require('cesium/Source/Scene/ImagerySplitDirection')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	class ImageryLayer 
 	{
-		constructor(imageryProvider : ImageryProvider, options? : ImageryLayerOptions);
+		constructor(imageryProvider : ImageryProvider, options? : HASH_19059_ImageryLayerOptions);
 		//Members
 		static DEFAULT_BRIGHTNESS: number
 		static DEFAULT_CONTRAST: number
@@ -1905,20 +1905,20 @@ declare module 'cesium/Source/Scene/Globe' {
 	export = Globe
 
 }
-declare module 'cesium/Source/Scene/PrimitiveCollectionOptions' {
-	interface PrimitiveCollectionOptions
+declare module 'cesium/Source/Scene/HASH_44217_PrimitiveCollectionOptions' {
+	interface HASH_44217_PrimitiveCollectionOptions
 	{
 		show?: boolean;
 		destroyPrimitives?: boolean;
 	}
-	export = PrimitiveCollectionOptions
+	export = HASH_44217_PrimitiveCollectionOptions
 
 }
 declare module 'cesium/Source/Scene/PrimitiveCollection' {
-	import PrimitiveCollectionOptions = require('cesium/Source/Scene/PrimitiveCollectionOptions')
+	import HASH_44217_PrimitiveCollectionOptions = require('cesium/Source/Scene/HASH_44217_PrimitiveCollectionOptions')
 	class PrimitiveCollection 
 	{
-		constructor(options? : PrimitiveCollectionOptions);
+		constructor(options? : HASH_44217_PrimitiveCollectionOptions);
 		//Members
 		destroyPrimitives: boolean
 		length: number
@@ -1960,24 +1960,24 @@ declare module 'cesium/Source/Scene/SceneMode' {
 	export = SceneMode
 
 }
-declare module 'cesium/Source/Scene/MoonOptions' {
+declare module 'cesium/Source/Scene/HASH_54429_MoonOptions' {
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface MoonOptions
+	interface HASH_54429_MoonOptions
 	{
 		show?: boolean;
 		textureUrl?: string;
 		ellipsoid?: Ellipsoid;
 		onlySunLighting?: boolean;
 	}
-	export = MoonOptions
+	export = HASH_54429_MoonOptions
 
 }
 declare module 'cesium/Source/Scene/Moon' {
-	import MoonOptions = require('cesium/Source/Scene/MoonOptions')
+	import HASH_54429_MoonOptions = require('cesium/Source/Scene/HASH_54429_MoonOptions')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	class Moon 
 	{
-		constructor(options? : MoonOptions);
+		constructor(options? : HASH_54429_MoonOptions);
 		//Members
 		ellipsoid: Ellipsoid
 		onlySunLighting: boolean
@@ -2050,9 +2050,9 @@ declare module 'cesium/Source/Scene/ScreenSpaceCameraController' {
 	export = ScreenSpaceCameraController
 
 }
-declare module 'cesium/Source/Scene/ShadowMapOptions' {
+declare module 'cesium/Source/Scene/HASH_63121_ShadowMapOptions' {
 	import Camera = require('cesium/Source/Scene/Camera')
-	interface ShadowMapOptions
+	interface HASH_63121_ShadowMapOptions
 	{
 		lightCamera: Camera;
 		enabled?: boolean;
@@ -2066,14 +2066,14 @@ declare module 'cesium/Source/Scene/ShadowMapOptions' {
 		darkness?: number;
 		normalOffset?: boolean;
 	}
-	export = ShadowMapOptions
+	export = HASH_63121_ShadowMapOptions
 
 }
 declare module 'cesium/Source/Scene/ShadowMap' {
-	import ShadowMapOptions = require('cesium/Source/Scene/ShadowMapOptions')
+	import HASH_63121_ShadowMapOptions = require('cesium/Source/Scene/HASH_63121_ShadowMapOptions')
 	class ShadowMap 
 	{
-		constructor(options? : ShadowMapOptions);
+		constructor(options? : HASH_63121_ShadowMapOptions);
 		//Members
 		darkness: number
 		enabled: boolean
@@ -2110,20 +2110,20 @@ declare module 'cesium/Source/Scene/SkyAtmosphere' {
 	export = SkyAtmosphere
 
 }
-declare module 'cesium/Source/Scene/SkyBoxOptions' {
-	interface SkyBoxOptions
+declare module 'cesium/Source/Scene/HASH_16137_SkyBoxOptions' {
+	interface HASH_16137_SkyBoxOptions
 	{
 		sources?: Object;
 		show?: boolean;
 	}
-	export = SkyBoxOptions
+	export = HASH_16137_SkyBoxOptions
 
 }
 declare module 'cesium/Source/Scene/SkyBox' {
-	import SkyBoxOptions = require('cesium/Source/Scene/SkyBoxOptions')
+	import HASH_16137_SkyBoxOptions = require('cesium/Source/Scene/HASH_16137_SkyBoxOptions')
 	class SkyBox 
 	{
-		constructor(options? : SkyBoxOptions);
+		constructor(options? : HASH_16137_SkyBoxOptions);
 		//Members
 		show: boolean
 		sources: Object
@@ -2156,7 +2156,7 @@ declare module 'cesium/Source/Scene/Sun' {
 
 }
 declare module 'cesium/Source/Scene/Scene' {
-	import SceneOptions = require('cesium/Source/Scene/SceneOptions')
+	import HASH_31547_SceneOptions = require('cesium/Source/Scene/HASH_31547_SceneOptions')
 	import Color = require('cesium/Source/Core/Color')
 	import Camera = require('cesium/Source/Scene/Camera')
 	import Fog = require('cesium/Source/Scene/Fog')
@@ -2177,7 +2177,7 @@ declare module 'cesium/Source/Scene/Scene' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	class Scene 
 	{
-		constructor(options? : SceneOptions);
+		constructor(options? : HASH_31547_SceneOptions);
 		//Members
 		backgroundColor: Color
 		camera: Camera
@@ -2251,21 +2251,21 @@ declare module 'cesium/Source/Scene/Scene' {
 	export = Scene
 
 }
-declare module 'cesium/Source/Core/BingMapsGeocoderServiceOptions' {
+declare module 'cesium/Source/Core/HASH_52378_BingMapsGeocoderServiceOptions' {
 	import Scene = require('cesium/Source/Scene/Scene')
-	interface BingMapsGeocoderServiceOptions
+	interface HASH_52378_BingMapsGeocoderServiceOptions
 	{
 		scene: Scene;
 		key?: string;
 	}
-	export = BingMapsGeocoderServiceOptions
+	export = HASH_52378_BingMapsGeocoderServiceOptions
 
 }
 declare module 'cesium/Source/Core/BingMapsGeocoderService' {
-	import BingMapsGeocoderServiceOptions = require('cesium/Source/Core/BingMapsGeocoderServiceOptions')
+	import HASH_52378_BingMapsGeocoderServiceOptions = require('cesium/Source/Core/HASH_52378_BingMapsGeocoderServiceOptions')
 	class BingMapsGeocoderService 
 	{
-		constructor(options? : BingMapsGeocoderServiceOptions);
+		constructor(options? : HASH_52378_BingMapsGeocoderServiceOptions);
 		//Members
 
 
@@ -2339,16 +2339,16 @@ declare module 'cesium/Source/Core/VertexFormat' {
 	export = VertexFormat
 
 }
-declare module 'cesium/Source/Core/BoxGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_77487_BoxGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface BoxGeometryOptions
+	interface HASH_77487_BoxGeometryOptions
 	{
 		minimum: Cartesian3;
 		maximum: Cartesian3;
 		vertexFormat?: VertexFormat;
 	}
-	export = BoxGeometryOptions
+	export = HASH_77487_BoxGeometryOptions
 
 }
 declare module 'cesium/Source/Core/ComponentDatatype' {
@@ -2378,24 +2378,24 @@ declare module 'cesium/Source/Core/ComponentDatatype' {
 	export = ComponentDatatype
 
 }
-declare module 'cesium/Source/Core/GeometryAttributeOptions' {
+declare module 'cesium/Source/Core/HASH_17002_GeometryAttributeOptions' {
 	import ComponentDatatype = require('cesium/Source/Core/ComponentDatatype')
-	interface GeometryAttributeOptions
+	interface HASH_17002_GeometryAttributeOptions
 	{
 		componentDatatype?: ComponentDatatype;
 		componentsPerAttribute?: number;
 		normalize?: boolean;
 		values?: TypedArray;
 	}
-	export = GeometryAttributeOptions
+	export = HASH_17002_GeometryAttributeOptions
 
 }
 declare module 'cesium/Source/Core/GeometryAttribute' {
-	import GeometryAttributeOptions = require('cesium/Source/Core/GeometryAttributeOptions')
+	import HASH_17002_GeometryAttributeOptions = require('cesium/Source/Core/HASH_17002_GeometryAttributeOptions')
 	import ComponentDatatype = require('cesium/Source/Core/ComponentDatatype')
 	class GeometryAttribute 
 	{
-		constructor(options? : GeometryAttributeOptions);
+		constructor(options? : HASH_17002_GeometryAttributeOptions);
 		//Members
 		componentDatatype: ComponentDatatype
 		componentsPerAttribute: number
@@ -2449,28 +2449,28 @@ declare module 'cesium/Source/Core/PrimitiveType' {
 	export = PrimitiveType
 
 }
-declare module 'cesium/Source/Core/GeometryOptions' {
+declare module 'cesium/Source/Core/HASH_79973_GeometryOptions' {
 	import GeometryAttributes = require('cesium/Source/Core/GeometryAttributes')
 	import PrimitiveType = require('cesium/Source/Core/PrimitiveType')
 	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
-	interface GeometryOptions
+	interface HASH_79973_GeometryOptions
 	{
 		attributes: GeometryAttributes;
 		primitiveType?: PrimitiveType;
 		indices?: Uint16Array|Uint32Array;
 		boundingSphere?: BoundingSphere;
 	}
-	export = GeometryOptions
+	export = HASH_79973_GeometryOptions
 
 }
 declare module 'cesium/Source/Core/Geometry' {
-	import GeometryOptions = require('cesium/Source/Core/GeometryOptions')
+	import HASH_79973_GeometryOptions = require('cesium/Source/Core/HASH_79973_GeometryOptions')
 	import GeometryAttributes = require('cesium/Source/Core/GeometryAttributes')
 	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
 	import PrimitiveType = require('cesium/Source/Core/PrimitiveType')
 	class Geometry 
 	{
-		constructor(options? : GeometryOptions);
+		constructor(options? : HASH_79973_GeometryOptions);
 		//Members
 		attributes: GeometryAttributes
 		boundingSphere: BoundingSphere
@@ -2485,25 +2485,25 @@ declare module 'cesium/Source/Core/Geometry' {
 	export = Geometry
 
 }
-declare module 'cesium/Source/Core/fromDimensionsOptions' {
+declare module 'cesium/Source/Core/HASH_11099_fromDimensionsOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface fromDimensionsOptions
+	interface HASH_11099_fromDimensionsOptions
 	{
 		dimensions: Cartesian3;
 		vertexFormat?: VertexFormat;
 	}
-	export = fromDimensionsOptions
+	export = HASH_11099_fromDimensionsOptions
 
 }
 declare module 'cesium/Source/Core/BoxGeometry' {
-	import BoxGeometryOptions = require('cesium/Source/Core/BoxGeometryOptions')
+	import HASH_77487_BoxGeometryOptions = require('cesium/Source/Core/HASH_77487_BoxGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	import AxisAlignedBoundingBox = require('cesium/Source/Core/AxisAlignedBoundingBox')
-	import fromDimensionsOptions = require('cesium/Source/Core/fromDimensionsOptions')
+	import HASH_11099_fromDimensionsOptions = require('cesium/Source/Core/HASH_11099_fromDimensionsOptions')
 	class BoxGeometry 
 	{
-		constructor(options? : BoxGeometryOptions);
+		constructor(options? : HASH_77487_BoxGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -2511,7 +2511,7 @@ declare module 'cesium/Source/Core/BoxGeometry' {
 		//Methods
 		static createGeometry(boxGeometry? : BoxGeometry) : Geometry|void
 		static fromAxisAlignedBoundingBox(boundingBox? : AxisAlignedBoundingBox) : BoxGeometry
-		static fromDimensions(options : fromDimensionsOptions) : BoxGeometry
+		static fromDimensions(options : HASH_11099_fromDimensionsOptions) : BoxGeometry
 		static pack(value? : BoxGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
 		static unpack(array? : Array<number>, startingIndex? : number, result? : BoxGeometry) : BoxGeometry
 
@@ -2519,24 +2519,33 @@ declare module 'cesium/Source/Core/BoxGeometry' {
 	export = BoxGeometry
 
 }
-declare module 'cesium/Source/Core/BoxOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_22432_BoxOutlineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	interface BoxOutlineGeometryOptions
+	interface HASH_22432_BoxOutlineGeometryOptions
 	{
 		minimum: Cartesian3;
 		maximum: Cartesian3;
 	}
-	export = BoxOutlineGeometryOptions
+	export = HASH_22432_BoxOutlineGeometryOptions
+
+}
+declare module 'cesium/Source/Core/HASH_05942_fromDimensionsOptions' {
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	interface HASH_05942_fromDimensionsOptions
+	{
+		dimensions: Cartesian3;
+	}
+	export = HASH_05942_fromDimensionsOptions
 
 }
 declare module 'cesium/Source/Core/BoxOutlineGeometry' {
-	import BoxOutlineGeometryOptions = require('cesium/Source/Core/BoxOutlineGeometryOptions')
+	import HASH_22432_BoxOutlineGeometryOptions = require('cesium/Source/Core/HASH_22432_BoxOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	import AxisAlignedBoundingBox = require('cesium/Source/Core/AxisAlignedBoundingBox')
-	import fromDimensionsOptions = require('cesium/Source/Core/fromDimensionsOptions')
+	import HASH_05942_fromDimensionsOptions = require('cesium/Source/Core/HASH_05942_fromDimensionsOptions')
 	class BoxOutlineGeometry 
 	{
-		constructor(options : BoxOutlineGeometryOptions);
+		constructor(options : HASH_22432_BoxOutlineGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -2544,7 +2553,7 @@ declare module 'cesium/Source/Core/BoxOutlineGeometry' {
 		//Methods
 		static createGeometry(boxGeometry? : BoxOutlineGeometry) : Geometry|void
 		static fromAxisAlignedBoundingBox(boundingBox? : AxisAlignedBoundingBox) : BoxOutlineGeometry
-		static fromDimensions(options? : fromDimensionsOptions) : BoxOutlineGeometry
+		static fromDimensions(options? : HASH_05942_fromDimensionsOptions) : BoxOutlineGeometry
 		static pack(value? : BoxOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
 		static unpack(array? : Array<number>, startingIndex? : number, result? : BoxOutlineGeometry) : BoxOutlineGeometry
 
@@ -2566,24 +2575,24 @@ declare module 'cesium/Source/Core/CartographicGeocoderService' {
 	export = CartographicGeocoderService
 
 }
-declare module 'cesium/Source/Core/CatmullRomSplineOptions' {
+declare module 'cesium/Source/Core/HASH_58294_CatmullRomSplineOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	interface CatmullRomSplineOptions
+	interface HASH_58294_CatmullRomSplineOptions
 	{
 		times: Array<number>;
 		points: Array<Cartesian3>;
 		firstTangent?: Cartesian3;
 		lastTangent?: Cartesian3;
 	}
-	export = CatmullRomSplineOptions
+	export = HASH_58294_CatmullRomSplineOptions
 
 }
 declare module 'cesium/Source/Core/CatmullRomSpline' {
-	import CatmullRomSplineOptions = require('cesium/Source/Core/CatmullRomSplineOptions')
+	import HASH_58294_CatmullRomSplineOptions = require('cesium/Source/Core/HASH_58294_CatmullRomSplineOptions')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	class CatmullRomSpline 
 	{
-		constructor(options? : CatmullRomSplineOptions);
+		constructor(options? : HASH_58294_CatmullRomSplineOptions);
 		//Members
 		firstTangent: Cartesian3
 		lastTangent: Cartesian3
@@ -2599,11 +2608,11 @@ declare module 'cesium/Source/Core/CatmullRomSpline' {
 	export = CatmullRomSpline
 
 }
-declare module 'cesium/Source/Core/CesiumTerrainProviderOptions' {
+declare module 'cesium/Source/Core/HASH_14184_CesiumTerrainProviderOptions' {
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import Credit = require('cesium/Source/Core/Credit')
-	interface CesiumTerrainProviderOptions
+	interface HASH_14184_CesiumTerrainProviderOptions
 	{
 		url: string;
 		proxy?: DefaultProxy;
@@ -2612,24 +2621,24 @@ declare module 'cesium/Source/Core/CesiumTerrainProviderOptions' {
 		ellipsoid?: Ellipsoid;
 		credit?: Credit|string;
 	}
-	export = CesiumTerrainProviderOptions
+	export = HASH_14184_CesiumTerrainProviderOptions
 
 }
-declare module 'cesium/Source/Core/GeographicTilingSchemeOptions' {
+declare module 'cesium/Source/Core/HASH_25555_GeographicTilingSchemeOptions' {
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
-	interface GeographicTilingSchemeOptions
+	interface HASH_25555_GeographicTilingSchemeOptions
 	{
 		ellipsoid?: Ellipsoid;
 		rectangle?: Rectangle;
 		numberOfLevelZeroTilesX?: number;
 		numberOfLevelZeroTilesY?: number;
 	}
-	export = GeographicTilingSchemeOptions
+	export = HASH_25555_GeographicTilingSchemeOptions
 
 }
 declare module 'cesium/Source/Core/GeographicTilingScheme' {
-	import GeographicTilingSchemeOptions = require('cesium/Source/Core/GeographicTilingSchemeOptions')
+	import HASH_25555_GeographicTilingSchemeOptions = require('cesium/Source/Core/HASH_25555_GeographicTilingSchemeOptions')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import MapProjection = require('cesium/Source/Core/MapProjection')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
@@ -2637,7 +2646,7 @@ declare module 'cesium/Source/Core/GeographicTilingScheme' {
 	import Cartographic = require('cesium/Source/Core/Cartographic')
 	class GeographicTilingScheme 
 	{
-		constructor(options? : GeographicTilingSchemeOptions);
+		constructor(options? : HASH_25555_GeographicTilingSchemeOptions);
 		//Members
 		ellipsoid: Ellipsoid
 		projection: MapProjection
@@ -2657,7 +2666,7 @@ declare module 'cesium/Source/Core/GeographicTilingScheme' {
 
 }
 declare module 'cesium/Source/Core/CesiumTerrainProvider' {
-	import CesiumTerrainProviderOptions = require('cesium/Source/Core/CesiumTerrainProviderOptions')
+	import HASH_14184_CesiumTerrainProviderOptions = require('cesium/Source/Core/HASH_14184_CesiumTerrainProviderOptions')
 	import TileAvailability = require('cesium/Source/Core/TileAvailability')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
@@ -2666,7 +2675,7 @@ declare module 'cesium/Source/Core/CesiumTerrainProvider' {
 	import Request = require('cesium/Source/Core/Request')
 	class CesiumTerrainProvider 
 	{
-		constructor(options? : CesiumTerrainProviderOptions);
+		constructor(options? : HASH_14184_CesiumTerrainProviderOptions);
 		//Members
 		availability: TileAvailability
 		credit: Credit
@@ -2689,11 +2698,11 @@ declare module 'cesium/Source/Core/CesiumTerrainProvider' {
 	export = CesiumTerrainProvider
 
 }
-declare module 'cesium/Source/Core/CircleGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_93791_CircleGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface CircleGeometryOptions
+	interface HASH_93791_CircleGeometryOptions
 	{
 		center: Cartesian3;
 		radius: number;
@@ -2704,15 +2713,15 @@ declare module 'cesium/Source/Core/CircleGeometryOptions' {
 		extrudedHeight?: number;
 		stRotation?: number;
 	}
-	export = CircleGeometryOptions
+	export = HASH_93791_CircleGeometryOptions
 
 }
 declare module 'cesium/Source/Core/CircleGeometry' {
-	import CircleGeometryOptions = require('cesium/Source/Core/CircleGeometryOptions')
+	import HASH_93791_CircleGeometryOptions = require('cesium/Source/Core/HASH_93791_CircleGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class CircleGeometry 
 	{
-		constructor(options? : CircleGeometryOptions);
+		constructor(options? : HASH_93791_CircleGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -2726,10 +2735,10 @@ declare module 'cesium/Source/Core/CircleGeometry' {
 	export = CircleGeometry
 
 }
-declare module 'cesium/Source/Core/CircleOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_32548_CircleOutlineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface CircleOutlineGeometryOptions
+	interface HASH_32548_CircleOutlineGeometryOptions
 	{
 		center: Cartesian3;
 		radius: number;
@@ -2739,15 +2748,15 @@ declare module 'cesium/Source/Core/CircleOutlineGeometryOptions' {
 		extrudedHeight?: number;
 		numberOfVerticalLines?: number;
 	}
-	export = CircleOutlineGeometryOptions
+	export = HASH_32548_CircleOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/CircleOutlineGeometry' {
-	import CircleOutlineGeometryOptions = require('cesium/Source/Core/CircleOutlineGeometryOptions')
+	import HASH_32548_CircleOutlineGeometryOptions = require('cesium/Source/Core/HASH_32548_CircleOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class CircleOutlineGeometry 
 	{
-		constructor(options? : CircleOutlineGeometryOptions);
+		constructor(options? : HASH_32548_CircleOutlineGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -2891,11 +2900,11 @@ declare module 'cesium/Source/Core/ClockRange' {
 	export = ClockRange
 
 }
-declare module 'cesium/Source/Core/ClockOptions' {
+declare module 'cesium/Source/Core/HASH_76136_ClockOptions' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	import ClockStep = require('cesium/Source/Core/ClockStep')
 	import ClockRange = require('cesium/Source/Core/ClockRange')
-	interface ClockOptions
+	interface HASH_76136_ClockOptions
 	{
 		startTime?: JulianDate;
 		stopTime?: JulianDate;
@@ -2906,18 +2915,18 @@ declare module 'cesium/Source/Core/ClockOptions' {
 		canAnimate?: boolean;
 		shouldAnimate?: boolean;
 	}
-	export = ClockOptions
+	export = HASH_76136_ClockOptions
 
 }
 declare module 'cesium/Source/Core/Clock' {
-	import ClockOptions = require('cesium/Source/Core/ClockOptions')
+	import HASH_76136_ClockOptions = require('cesium/Source/Core/HASH_76136_ClockOptions')
 	import ClockRange = require('cesium/Source/Core/ClockRange')
 	import ClockStep = require('cesium/Source/Core/ClockStep')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	import Event = require('cesium/Source/Core/Event')
 	class Clock 
 	{
-		constructor(options? : ClockOptions);
+		constructor(options? : HASH_76136_ClockOptions);
 		//Members
 		canAnimate: boolean
 		clockRange: ClockRange
@@ -2975,12 +2984,12 @@ declare module 'cesium/Source/Core/CornerType' {
 	export = CornerType
 
 }
-declare module 'cesium/Source/Core/CorridorGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_79644_CorridorGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
 	import CornerType = require('cesium/Source/Core/CornerType')
-	interface CorridorGeometryOptions
+	interface HASH_79644_CorridorGeometryOptions
 	{
 		positions: Array<Cartesian3>;
 		width: number;
@@ -2991,15 +3000,15 @@ declare module 'cesium/Source/Core/CorridorGeometryOptions' {
 		vertexFormat?: VertexFormat;
 		cornerType?: CornerType;
 	}
-	export = CorridorGeometryOptions
+	export = HASH_79644_CorridorGeometryOptions
 
 }
 declare module 'cesium/Source/Core/CorridorGeometry' {
-	import CorridorGeometryOptions = require('cesium/Source/Core/CorridorGeometryOptions')
+	import HASH_79644_CorridorGeometryOptions = require('cesium/Source/Core/HASH_79644_CorridorGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class CorridorGeometry 
 	{
-		constructor(options? : CorridorGeometryOptions);
+		constructor(options? : HASH_79644_CorridorGeometryOptions);
 		//Members
 		packedLength: number
 
@@ -3013,11 +3022,11 @@ declare module 'cesium/Source/Core/CorridorGeometry' {
 	export = CorridorGeometry
 
 }
-declare module 'cesium/Source/Core/CorridorOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_10539_CorridorOutlineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import CornerType = require('cesium/Source/Core/CornerType')
-	interface CorridorOutlineGeometryOptions
+	interface HASH_10539_CorridorOutlineGeometryOptions
 	{
 		positions: Array<Cartesian3>;
 		width: number;
@@ -3027,15 +3036,15 @@ declare module 'cesium/Source/Core/CorridorOutlineGeometryOptions' {
 		extrudedHeight?: number;
 		cornerType?: CornerType;
 	}
-	export = CorridorOutlineGeometryOptions
+	export = HASH_10539_CorridorOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/CorridorOutlineGeometry' {
-	import CorridorOutlineGeometryOptions = require('cesium/Source/Core/CorridorOutlineGeometryOptions')
+	import HASH_10539_CorridorOutlineGeometryOptions = require('cesium/Source/Core/HASH_10539_CorridorOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class CorridorOutlineGeometry 
 	{
-		constructor(options? : CorridorOutlineGeometryOptions);
+		constructor(options? : HASH_10539_CorridorOutlineGeometryOptions);
 		//Members
 		packedLength: number
 
@@ -3064,9 +3073,9 @@ declare module 'cesium/Source/Core/CubicRealPolynomial' {
 	export = CubicRealPolynomial
 
 }
-declare module 'cesium/Source/Core/CylinderGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_11668_CylinderGeometryOptions' {
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface CylinderGeometryOptions
+	interface HASH_11668_CylinderGeometryOptions
 	{
 		length: number;
 		topRadius: number;
@@ -3074,15 +3083,15 @@ declare module 'cesium/Source/Core/CylinderGeometryOptions' {
 		slices?: number;
 		vertexFormat?: VertexFormat;
 	}
-	export = CylinderGeometryOptions
+	export = HASH_11668_CylinderGeometryOptions
 
 }
 declare module 'cesium/Source/Core/CylinderGeometry' {
-	import CylinderGeometryOptions = require('cesium/Source/Core/CylinderGeometryOptions')
+	import HASH_11668_CylinderGeometryOptions = require('cesium/Source/Core/HASH_11668_CylinderGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class CylinderGeometry 
 	{
-		constructor(options? : CylinderGeometryOptions);
+		constructor(options? : HASH_11668_CylinderGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -3096,8 +3105,8 @@ declare module 'cesium/Source/Core/CylinderGeometry' {
 	export = CylinderGeometry
 
 }
-declare module 'cesium/Source/Core/CylinderOutlineGeometryOptions' {
-	interface CylinderOutlineGeometryOptions
+declare module 'cesium/Source/Core/HASH_40797_CylinderOutlineGeometryOptions' {
+	interface HASH_40797_CylinderOutlineGeometryOptions
 	{
 		length: number;
 		topRadius: number;
@@ -3105,15 +3114,15 @@ declare module 'cesium/Source/Core/CylinderOutlineGeometryOptions' {
 		slices?: number;
 		numberOfVerticalLines?: number;
 	}
-	export = CylinderOutlineGeometryOptions
+	export = HASH_40797_CylinderOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/CylinderOutlineGeometry' {
-	import CylinderOutlineGeometryOptions = require('cesium/Source/Core/CylinderOutlineGeometryOptions')
+	import HASH_40797_CylinderOutlineGeometryOptions = require('cesium/Source/Core/HASH_40797_CylinderOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class CylinderOutlineGeometry 
 	{
-		constructor(options? : CylinderOutlineGeometryOptions);
+		constructor(options? : HASH_40797_CylinderOutlineGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -3183,11 +3192,11 @@ declare module 'cesium/Source/Core/DistanceDisplayConditionGeometryInstanceAttri
 	export = DistanceDisplayConditionGeometryInstanceAttribute
 
 }
-declare module 'cesium/Source/Core/EllipseGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_16607_EllipseGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface EllipseGeometryOptions
+	interface HASH_16607_EllipseGeometryOptions
 	{
 		center: Cartesian3;
 		semiMajorAxis: number;
@@ -3200,15 +3209,15 @@ declare module 'cesium/Source/Core/EllipseGeometryOptions' {
 		granularity?: number;
 		vertexFormat?: VertexFormat;
 	}
-	export = EllipseGeometryOptions
+	export = HASH_16607_EllipseGeometryOptions
 
 }
 declare module 'cesium/Source/Core/EllipseGeometry' {
-	import EllipseGeometryOptions = require('cesium/Source/Core/EllipseGeometryOptions')
+	import HASH_16607_EllipseGeometryOptions = require('cesium/Source/Core/HASH_16607_EllipseGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class EllipseGeometry 
 	{
-		constructor(options? : EllipseGeometryOptions);
+		constructor(options? : HASH_16607_EllipseGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -3222,10 +3231,10 @@ declare module 'cesium/Source/Core/EllipseGeometry' {
 	export = EllipseGeometry
 
 }
-declare module 'cesium/Source/Core/EllipseOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_76966_EllipseOutlineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface EllipseOutlineGeometryOptions
+	interface HASH_76966_EllipseOutlineGeometryOptions
 	{
 		center: Cartesian3;
 		semiMajorAxis: number;
@@ -3237,15 +3246,15 @@ declare module 'cesium/Source/Core/EllipseOutlineGeometryOptions' {
 		granularity?: number;
 		numberOfVerticalLines?: number;
 	}
-	export = EllipseOutlineGeometryOptions
+	export = HASH_76966_EllipseOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/EllipseOutlineGeometry' {
-	import EllipseOutlineGeometryOptions = require('cesium/Source/Core/EllipseOutlineGeometryOptions')
+	import HASH_76966_EllipseOutlineGeometryOptions = require('cesium/Source/Core/HASH_76966_EllipseOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class EllipseOutlineGeometry 
 	{
-		constructor(options? : EllipseOutlineGeometryOptions);
+		constructor(options? : HASH_76966_EllipseOutlineGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -3283,25 +3292,25 @@ declare module 'cesium/Source/Core/EllipsoidGeodesic' {
 	export = EllipsoidGeodesic
 
 }
-declare module 'cesium/Source/Core/EllipsoidGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_16567_EllipsoidGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface EllipsoidGeometryOptions
+	interface HASH_16567_EllipsoidGeometryOptions
 	{
 		radii?: Cartesian3;
 		stackPartitions?: number;
 		slicePartitions?: number;
 		vertexFormat?: VertexFormat;
 	}
-	export = EllipsoidGeometryOptions
+	export = HASH_16567_EllipsoidGeometryOptions
 
 }
 declare module 'cesium/Source/Core/EllipsoidGeometry' {
-	import EllipsoidGeometryOptions = require('cesium/Source/Core/EllipsoidGeometryOptions')
+	import HASH_16567_EllipsoidGeometryOptions = require('cesium/Source/Core/HASH_16567_EllipsoidGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class EllipsoidGeometry 
 	{
-		constructor(options? : EllipsoidGeometryOptions);
+		constructor(options? : HASH_16567_EllipsoidGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -3315,24 +3324,24 @@ declare module 'cesium/Source/Core/EllipsoidGeometry' {
 	export = EllipsoidGeometry
 
 }
-declare module 'cesium/Source/Core/EllipsoidOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_97746_EllipsoidOutlineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	interface EllipsoidOutlineGeometryOptions
+	interface HASH_97746_EllipsoidOutlineGeometryOptions
 	{
 		radii?: Cartesian3;
 		stackPartitions?: number;
 		slicePartitions?: number;
 		subdivisions?: number;
 	}
-	export = EllipsoidOutlineGeometryOptions
+	export = HASH_97746_EllipsoidOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/EllipsoidOutlineGeometry' {
-	import EllipsoidOutlineGeometryOptions = require('cesium/Source/Core/EllipsoidOutlineGeometryOptions')
+	import HASH_97746_EllipsoidOutlineGeometryOptions = require('cesium/Source/Core/HASH_97746_EllipsoidOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class EllipsoidOutlineGeometry 
 	{
-		constructor(options? : EllipsoidOutlineGeometryOptions);
+		constructor(options? : HASH_97746_EllipsoidOutlineGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -3374,19 +3383,19 @@ declare module 'cesium/Source/Core/EllipsoidTangentPlane' {
 	export = EllipsoidTangentPlane
 
 }
-declare module 'cesium/Source/Core/EllipsoidTerrainProviderOptions' {
+declare module 'cesium/Source/Core/HASH_20202_EllipsoidTerrainProviderOptions' {
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface EllipsoidTerrainProviderOptions
+	interface HASH_20202_EllipsoidTerrainProviderOptions
 	{
 		tilingScheme?: TilingScheme;
 		ellipsoid?: Ellipsoid;
 	}
-	export = EllipsoidTerrainProviderOptions
+	export = HASH_20202_EllipsoidTerrainProviderOptions
 
 }
 declare module 'cesium/Source/Core/EllipsoidTerrainProvider' {
-	import EllipsoidTerrainProviderOptions = require('cesium/Source/Core/EllipsoidTerrainProviderOptions')
+	import HASH_20202_EllipsoidTerrainProviderOptions = require('cesium/Source/Core/HASH_20202_EllipsoidTerrainProviderOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import GeographicTilingScheme = require('cesium/Source/Core/GeographicTilingScheme')
@@ -3394,7 +3403,7 @@ declare module 'cesium/Source/Core/EllipsoidTerrainProvider' {
 	import Request = require('cesium/Source/Core/Request')
 	class EllipsoidTerrainProvider 
 	{
-		constructor(options? : EllipsoidTerrainProviderOptions);
+		constructor(options? : HASH_20202_EllipsoidTerrainProviderOptions);
 		//Members
 		credit: Credit
 		errorEvent: Event
@@ -3462,26 +3471,26 @@ declare module 'cesium/Source/Core/FeatureDetection' {
 	export = FeatureDetection
 
 }
-declare module 'cesium/Source/Core/OrthographicFrustumOptions' {
-	interface OrthographicFrustumOptions
+declare module 'cesium/Source/Core/HASH_20706_OrthographicFrustumOptions' {
+	interface HASH_20706_OrthographicFrustumOptions
 	{
 		width?: number;
 		aspectRatio?: number;
 		near?: number;
 		far?: number;
 	}
-	export = OrthographicFrustumOptions
+	export = HASH_20706_OrthographicFrustumOptions
 
 }
 declare module 'cesium/Source/Core/OrthographicFrustum' {
-	import OrthographicFrustumOptions = require('cesium/Source/Core/OrthographicFrustumOptions')
+	import HASH_20706_OrthographicFrustumOptions = require('cesium/Source/Core/HASH_20706_OrthographicFrustumOptions')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
 	import CullingVolume = require('cesium/Source/Core/CullingVolume')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
 	class OrthographicFrustum 
 	{
-		constructor(options? : OrthographicFrustumOptions);
+		constructor(options? : HASH_20706_OrthographicFrustumOptions);
 		//Members
 		static packedLength: number
 		aspectRatio: number
@@ -3503,28 +3512,28 @@ declare module 'cesium/Source/Core/OrthographicFrustum' {
 	export = OrthographicFrustum
 
 }
-declare module 'cesium/Source/Core/FrustumGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_16976_FrustumGeometryOptions' {
 	import PerspectiveFrustum = require('cesium/Source/Core/PerspectiveFrustum')
 	import OrthographicFrustum = require('cesium/Source/Core/OrthographicFrustum')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Quaternion = require('cesium/Source/Core/Quaternion')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface FrustumGeometryOptions
+	interface HASH_16976_FrustumGeometryOptions
 	{
 		frustum: PerspectiveFrustum|OrthographicFrustum;
 		origin: Cartesian3;
 		orientation: Quaternion;
 		vertexFormat?: VertexFormat;
 	}
-	export = FrustumGeometryOptions
+	export = HASH_16976_FrustumGeometryOptions
 
 }
 declare module 'cesium/Source/Core/FrustumGeometry' {
-	import FrustumGeometryOptions = require('cesium/Source/Core/FrustumGeometryOptions')
+	import HASH_16976_FrustumGeometryOptions = require('cesium/Source/Core/HASH_16976_FrustumGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class FrustumGeometry 
 	{
-		constructor(options? : FrustumGeometryOptions);
+		constructor(options? : HASH_16976_FrustumGeometryOptions);
 		//Members
 		packedLength: number
 
@@ -3538,26 +3547,26 @@ declare module 'cesium/Source/Core/FrustumGeometry' {
 	export = FrustumGeometry
 
 }
-declare module 'cesium/Source/Core/FrustumOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_16495_FrustumOutlineGeometryOptions' {
 	import PerspectiveFrustum = require('cesium/Source/Core/PerspectiveFrustum')
 	import OrthographicFrustum = require('cesium/Source/Core/OrthographicFrustum')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Quaternion = require('cesium/Source/Core/Quaternion')
-	interface FrustumOutlineGeometryOptions
+	interface HASH_16495_FrustumOutlineGeometryOptions
 	{
 		frustum: PerspectiveFrustum|OrthographicFrustum;
 		origin: Cartesian3;
 		orientation: Quaternion;
 	}
-	export = FrustumOutlineGeometryOptions
+	export = HASH_16495_FrustumOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/FrustumOutlineGeometry' {
-	import FrustumOutlineGeometryOptions = require('cesium/Source/Core/FrustumOutlineGeometryOptions')
+	import HASH_16495_FrustumOutlineGeometryOptions = require('cesium/Source/Core/HASH_16495_FrustumOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class FrustumOutlineGeometry 
 	{
-		constructor(options : FrustumOutlineGeometryOptions);
+		constructor(options : HASH_16495_FrustumOutlineGeometryOptions);
 		//Members
 		packedLength: number
 
@@ -3625,26 +3634,26 @@ declare module 'cesium/Source/Core/GeographicProjection' {
 	export = GeographicProjection
 
 }
-declare module 'cesium/Source/Core/GeometryInstanceOptions' {
+declare module 'cesium/Source/Core/HASH_13263_GeometryInstanceOptions' {
 	import Geometry = require('cesium/Source/Core/Geometry')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	interface GeometryInstanceOptions
+	interface HASH_13263_GeometryInstanceOptions
 	{
 		geometry: Geometry;
 		modelMatrix?: Matrix4;
 		id?: Object;
 		attributes?: Object;
 	}
-	export = GeometryInstanceOptions
+	export = HASH_13263_GeometryInstanceOptions
 
 }
 declare module 'cesium/Source/Core/GeometryInstance' {
-	import GeometryInstanceOptions = require('cesium/Source/Core/GeometryInstanceOptions')
+	import HASH_13263_GeometryInstanceOptions = require('cesium/Source/Core/HASH_13263_GeometryInstanceOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
 	class GeometryInstance 
 	{
-		constructor(options? : GeometryInstanceOptions);
+		constructor(options? : HASH_13263_GeometryInstanceOptions);
 		//Members
 		attributes: Object
 		geometry: Geometry
@@ -3658,24 +3667,24 @@ declare module 'cesium/Source/Core/GeometryInstance' {
 	export = GeometryInstance
 
 }
-declare module 'cesium/Source/Core/GeometryInstanceAttributeOptions' {
+declare module 'cesium/Source/Core/HASH_92923_GeometryInstanceAttributeOptions' {
 	import ComponentDatatype = require('cesium/Source/Core/ComponentDatatype')
-	interface GeometryInstanceAttributeOptions
+	interface HASH_92923_GeometryInstanceAttributeOptions
 	{
 		componentDatatype?: ComponentDatatype;
 		componentsPerAttribute?: number;
 		normalize?: boolean;
 		value?: Array<number>;
 	}
-	export = GeometryInstanceAttributeOptions
+	export = HASH_92923_GeometryInstanceAttributeOptions
 
 }
 declare module 'cesium/Source/Core/GeometryInstanceAttribute' {
-	import GeometryInstanceAttributeOptions = require('cesium/Source/Core/GeometryInstanceAttributeOptions')
+	import HASH_92923_GeometryInstanceAttributeOptions = require('cesium/Source/Core/HASH_92923_GeometryInstanceAttributeOptions')
 	import ComponentDatatype = require('cesium/Source/Core/ComponentDatatype')
 	class GeometryInstanceAttribute 
 	{
-		constructor(options? : GeometryInstanceAttributeOptions);
+		constructor(options? : HASH_92923_GeometryInstanceAttributeOptions);
 		//Members
 		componentDatatype: ComponentDatatype
 		componentsPerAttribute: number
@@ -3716,22 +3725,22 @@ declare module 'cesium/Source/Core/GeometryPipeline' {
 	export = GeometryPipeline
 
 }
-declare module 'cesium/Source/Core/GoogleEarthEnterpriseMetadataOptions' {
+declare module 'cesium/Source/Core/HASH_83055_GoogleEarthEnterpriseMetadataOptions' {
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	interface GoogleEarthEnterpriseMetadataOptions
+	interface HASH_83055_GoogleEarthEnterpriseMetadataOptions
 	{
 		url: string;
 		proxy?: DefaultProxy;
 	}
-	export = GoogleEarthEnterpriseMetadataOptions
+	export = HASH_83055_GoogleEarthEnterpriseMetadataOptions
 
 }
 declare module 'cesium/Source/Core/GoogleEarthEnterpriseMetadata' {
-	import GoogleEarthEnterpriseMetadataOptions = require('cesium/Source/Core/GoogleEarthEnterpriseMetadataOptions')
+	import HASH_83055_GoogleEarthEnterpriseMetadataOptions = require('cesium/Source/Core/HASH_83055_GoogleEarthEnterpriseMetadataOptions')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
 	class GoogleEarthEnterpriseMetadata 
 	{
-		constructor(options? : GoogleEarthEnterpriseMetadataOptions);
+		constructor(options? : HASH_83055_GoogleEarthEnterpriseMetadataOptions);
 		//Members
 		imageryPresent: boolean
 		key: ArrayBuffer
@@ -3753,9 +3762,9 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseMetadata' {
 	export = GoogleEarthEnterpriseMetadata
 
 }
-declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainDataOptions' {
+declare module 'cesium/Source/Core/HASH_93468_GoogleEarthEnterpriseTerrainDataOptions' {
 	import Credit = require('cesium/Source/Core/Credit')
-	interface GoogleEarthEnterpriseTerrainDataOptions
+	interface HASH_93468_GoogleEarthEnterpriseTerrainDataOptions
 	{
 		buffer: ArrayBuffer;
 		negativeAltitudeExponentBias: number;
@@ -3764,11 +3773,11 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainDataOptions' {
 		createdByUpsampling?: boolean;
 		credits?: Array<Credit>;
 	}
-	export = GoogleEarthEnterpriseTerrainDataOptions
+	export = HASH_93468_GoogleEarthEnterpriseTerrainDataOptions
 
 }
-declare module 'cesium/Source/Core/HeightmapTerrainDataOptions' {
-	interface HeightmapTerrainDataOptions
+declare module 'cesium/Source/Core/HASH_50902_HeightmapTerrainDataOptions' {
+	interface HASH_50902_HeightmapTerrainDataOptions
 	{
 		heightScale?: number;
 		heightOffset?: number;
@@ -3779,17 +3788,31 @@ declare module 'cesium/Source/Core/HeightmapTerrainDataOptions' {
 		lowestEncodedHeight?: number;
 		highestEncodedHeight?: number;
 	}
-	export = HeightmapTerrainDataOptions
+	export = HASH_50902_HeightmapTerrainDataOptions
+
+}
+declare module 'cesium/Source/Core/HASH_20159_HeightmapTerrainDataOptions' {
+	import HASH_50902_HeightmapTerrainDataOptions = require('cesium/Source/Core/HASH_50902_HeightmapTerrainDataOptions')
+	interface HASH_20159_HeightmapTerrainDataOptions
+	{
+		buffer: TypedArray;
+		width: number;
+		height: number;
+		childTileMask?: number;
+		structure?: HASH_50902_HeightmapTerrainDataOptions;
+		createdByUpsampling?: boolean;
+	}
+	export = HASH_20159_HeightmapTerrainDataOptions
 
 }
 declare module 'cesium/Source/Core/HeightmapTerrainData' {
-	import HeightmapTerrainDataOptions = require('cesium/Source/Core/HeightmapTerrainDataOptions')
+	import HASH_20159_HeightmapTerrainDataOptions = require('cesium/Source/Core/HASH_20159_HeightmapTerrainDataOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	class HeightmapTerrainData 
 	{
-		constructor(options? : HeightmapTerrainDataOptions);
+		constructor(options? : HASH_20159_HeightmapTerrainDataOptions);
 		//Members
 		credits: Array<Credit>
 		waterMask: Uint8Array|HTMLImageElement|HTMLCanvasElement
@@ -3806,14 +3829,14 @@ declare module 'cesium/Source/Core/HeightmapTerrainData' {
 
 }
 declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainData' {
-	import GoogleEarthEnterpriseTerrainDataOptions = require('cesium/Source/Core/GoogleEarthEnterpriseTerrainDataOptions')
+	import HASH_93468_GoogleEarthEnterpriseTerrainDataOptions = require('cesium/Source/Core/HASH_93468_GoogleEarthEnterpriseTerrainDataOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import HeightmapTerrainData = require('cesium/Source/Core/HeightmapTerrainData')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	class GoogleEarthEnterpriseTerrainData 
 	{
-		constructor(options? : GoogleEarthEnterpriseTerrainDataOptions);
+		constructor(options? : HASH_93468_GoogleEarthEnterpriseTerrainDataOptions);
 		//Members
 		credits: Array<Credit>
 		waterMask: Uint8Array|HTMLImageElement|HTMLCanvasElement
@@ -3829,12 +3852,12 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainData' {
 	export = GoogleEarthEnterpriseTerrainData
 
 }
-declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainProviderOptions' {
+declare module 'cesium/Source/Core/HASH_12141_GoogleEarthEnterpriseTerrainProviderOptions' {
 	import GoogleEarthEnterpriseMetadata = require('cesium/Source/Core/GoogleEarthEnterpriseMetadata')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import Credit = require('cesium/Source/Core/Credit')
-	interface GoogleEarthEnterpriseTerrainProviderOptions
+	interface HASH_12141_GoogleEarthEnterpriseTerrainProviderOptions
 	{
 		url: string;
 		metadata: GoogleEarthEnterpriseMetadata;
@@ -3842,11 +3865,11 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainProviderOptions' 
 		ellipsoid?: Ellipsoid;
 		credit?: Credit|string;
 	}
-	export = GoogleEarthEnterpriseTerrainProviderOptions
+	export = HASH_12141_GoogleEarthEnterpriseTerrainProviderOptions
 
 }
 declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainProvider' {
-	import GoogleEarthEnterpriseTerrainProviderOptions = require('cesium/Source/Core/GoogleEarthEnterpriseTerrainProviderOptions')
+	import HASH_12141_GoogleEarthEnterpriseTerrainProviderOptions = require('cesium/Source/Core/HASH_12141_GoogleEarthEnterpriseTerrainProviderOptions')
 	import TileAvailability = require('cesium/Source/Core/TileAvailability')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
@@ -3856,7 +3879,7 @@ declare module 'cesium/Source/Core/GoogleEarthEnterpriseTerrainProvider' {
 	import Request = require('cesium/Source/Core/Request')
 	class GoogleEarthEnterpriseTerrainProvider 
 	{
-		constructor(options? : GoogleEarthEnterpriseTerrainProviderOptions);
+		constructor(options? : HASH_12141_GoogleEarthEnterpriseTerrainProviderOptions);
 		//Members
 		availability: TileAvailability
 		credit: Credit
@@ -3895,45 +3918,45 @@ declare module 'cesium/Source/Core/HermitePolynomialApproximation' {
 	export = HermitePolynomialApproximation
 
 }
-declare module 'cesium/Source/Core/HermiteSplineOptions' {
+declare module 'cesium/Source/Core/HASH_18370_HermiteSplineOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	interface HermiteSplineOptions
+	interface HASH_18370_HermiteSplineOptions
 	{
 		times: Array<number>;
 		points: Array<Cartesian3>;
 		inTangents: Array<Cartesian3>;
 		outTangents: Array<Cartesian3>;
 	}
-	export = HermiteSplineOptions
+	export = HASH_18370_HermiteSplineOptions
 
 }
-declare module 'cesium/Source/Core/createC1Options' {
+declare module 'cesium/Source/Core/HASH_57082_createC1Options' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	interface createC1Options
+	interface HASH_57082_createC1Options
 	{
 		times: Array<number>;
 		points: Array<Cartesian3>;
 		tangents: Array<Cartesian3>;
 	}
-	export = createC1Options
+	export = HASH_57082_createC1Options
 
 }
-declare module 'cesium/Source/Core/LinearSplineOptions' {
+declare module 'cesium/Source/Core/HASH_82505_LinearSplineOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	interface LinearSplineOptions
+	interface HASH_82505_LinearSplineOptions
 	{
 		times: Array<number>;
 		points: Array<Cartesian3>;
 	}
-	export = LinearSplineOptions
+	export = HASH_82505_LinearSplineOptions
 
 }
 declare module 'cesium/Source/Core/LinearSpline' {
-	import LinearSplineOptions = require('cesium/Source/Core/LinearSplineOptions')
+	import HASH_82505_LinearSplineOptions = require('cesium/Source/Core/HASH_82505_LinearSplineOptions')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	class LinearSpline 
 	{
-		constructor(options : LinearSplineOptions);
+		constructor(options : HASH_82505_LinearSplineOptions);
 		//Members
 		points: Array<Cartesian3>
 		times: Array<number>
@@ -3947,38 +3970,38 @@ declare module 'cesium/Source/Core/LinearSpline' {
 	export = LinearSpline
 
 }
-declare module 'cesium/Source/Core/createClampedCubicOptions' {
+declare module 'cesium/Source/Core/HASH_35250_createClampedCubicOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	interface createClampedCubicOptions
+	interface HASH_35250_createClampedCubicOptions
 	{
 		times: Array<number>;
 		points: Array<Cartesian3>;
 		firstTangent: Cartesian3;
 		lastTangent: Cartesian3;
 	}
-	export = createClampedCubicOptions
+	export = HASH_35250_createClampedCubicOptions
 
 }
-declare module 'cesium/Source/Core/createNaturalCubicOptions' {
+declare module 'cesium/Source/Core/HASH_82505_createNaturalCubicOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	interface createNaturalCubicOptions
+	interface HASH_82505_createNaturalCubicOptions
 	{
 		times: Array<number>;
 		points: Array<Cartesian3>;
 	}
-	export = createNaturalCubicOptions
+	export = HASH_82505_createNaturalCubicOptions
 
 }
 declare module 'cesium/Source/Core/HermiteSpline' {
-	import HermiteSplineOptions = require('cesium/Source/Core/HermiteSplineOptions')
+	import HASH_18370_HermiteSplineOptions = require('cesium/Source/Core/HASH_18370_HermiteSplineOptions')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import createC1Options = require('cesium/Source/Core/createC1Options')
+	import HASH_57082_createC1Options = require('cesium/Source/Core/HASH_57082_createC1Options')
 	import LinearSpline = require('cesium/Source/Core/LinearSpline')
-	import createClampedCubicOptions = require('cesium/Source/Core/createClampedCubicOptions')
-	import createNaturalCubicOptions = require('cesium/Source/Core/createNaturalCubicOptions')
+	import HASH_35250_createClampedCubicOptions = require('cesium/Source/Core/HASH_35250_createClampedCubicOptions')
+	import HASH_82505_createNaturalCubicOptions = require('cesium/Source/Core/HASH_82505_createNaturalCubicOptions')
 	class HermiteSpline 
 	{
-		constructor(options : HermiteSplineOptions);
+		constructor(options : HASH_18370_HermiteSplineOptions);
 		//Members
 		inTangents: Array<Cartesian3>
 		outTangents: Array<Cartesian3>
@@ -3987,9 +4010,9 @@ declare module 'cesium/Source/Core/HermiteSpline' {
 
 
 		//Methods
-		static createC1(options? : createC1Options) : HermiteSpline
-		static createClampedCubic(options? : createClampedCubicOptions) : HermiteSpline|LinearSpline
-		static createNaturalCubic(options? : createNaturalCubicOptions) : HermiteSpline|LinearSpline
+		static createC1(options? : HASH_57082_createC1Options) : HermiteSpline
+		static createClampedCubic(options? : HASH_35250_createClampedCubicOptions) : HermiteSpline|LinearSpline
+		static createNaturalCubic(options? : HASH_82505_createNaturalCubicOptions) : HermiteSpline|LinearSpline
 		evaluate(time? : number, result? : Cartesian3) : Cartesian3
 		findTimeInterval(time? : number) : number
 
@@ -4296,8 +4319,8 @@ declare module 'cesium/Source/Core/NearFarScalar' {
 	export = NearFarScalar
 
 }
-declare module 'cesium/Source/Core/OrthographicOffCenterFrustumOptions' {
-	interface OrthographicOffCenterFrustumOptions
+declare module 'cesium/Source/Core/HASH_64228_OrthographicOffCenterFrustumOptions' {
+	interface HASH_64228_OrthographicOffCenterFrustumOptions
 	{
 		left?: number;
 		right?: number;
@@ -4306,18 +4329,18 @@ declare module 'cesium/Source/Core/OrthographicOffCenterFrustumOptions' {
 		near?: number;
 		far?: number;
 	}
-	export = OrthographicOffCenterFrustumOptions
+	export = HASH_64228_OrthographicOffCenterFrustumOptions
 
 }
 declare module 'cesium/Source/Core/OrthographicOffCenterFrustum' {
-	import OrthographicOffCenterFrustumOptions = require('cesium/Source/Core/OrthographicOffCenterFrustumOptions')
+	import HASH_64228_OrthographicOffCenterFrustumOptions = require('cesium/Source/Core/HASH_64228_OrthographicOffCenterFrustumOptions')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
 	import CullingVolume = require('cesium/Source/Core/CullingVolume')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
 	class OrthographicOffCenterFrustum 
 	{
-		constructor(options? : OrthographicOffCenterFrustumOptions);
+		constructor(options? : HASH_64228_OrthographicOffCenterFrustumOptions);
 		//Members
 		bottom: number
 		far: number
@@ -4370,8 +4393,8 @@ declare module 'cesium/Source/Core/PackableForInterpolation' {
 	export = PackableForInterpolation
 
 }
-declare module 'cesium/Source/Core/PerspectiveOffCenterFrustumOptions' {
-	interface PerspectiveOffCenterFrustumOptions
+declare module 'cesium/Source/Core/HASH_64228_PerspectiveOffCenterFrustumOptions' {
+	interface HASH_64228_PerspectiveOffCenterFrustumOptions
 	{
 		left?: number;
 		right?: number;
@@ -4380,18 +4403,18 @@ declare module 'cesium/Source/Core/PerspectiveOffCenterFrustumOptions' {
 		near?: number;
 		far?: number;
 	}
-	export = PerspectiveOffCenterFrustumOptions
+	export = HASH_64228_PerspectiveOffCenterFrustumOptions
 
 }
 declare module 'cesium/Source/Core/PerspectiveOffCenterFrustum' {
-	import PerspectiveOffCenterFrustumOptions = require('cesium/Source/Core/PerspectiveOffCenterFrustumOptions')
+	import HASH_64228_PerspectiveOffCenterFrustumOptions = require('cesium/Source/Core/HASH_64228_PerspectiveOffCenterFrustumOptions')
 	import Matrix4 = require('cesium/Source/Core/Matrix4')
 	import CullingVolume = require('cesium/Source/Core/CullingVolume')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
 	class PerspectiveOffCenterFrustum 
 	{
-		constructor(options? : PerspectiveOffCenterFrustumOptions);
+		constructor(options? : HASH_64228_PerspectiveOffCenterFrustumOptions);
 		//Members
 		bottom: number
 		far: number
@@ -4476,11 +4499,11 @@ declare module 'cesium/Source/Core/PolygonHierarchy' {
 	export = PolygonHierarchy
 
 }
-declare module 'cesium/Source/Core/PolygonGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_20578_PolygonGeometryOptions' {
 	import PolygonHierarchy = require('cesium/Source/Core/PolygonHierarchy')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface PolygonGeometryOptions
+	interface HASH_20578_PolygonGeometryOptions
 	{
 		polygonHierarchy: PolygonHierarchy;
 		height?: number;
@@ -4493,14 +4516,14 @@ declare module 'cesium/Source/Core/PolygonGeometryOptions' {
 		closeTop?: boolean;
 		closeBottom?: boolean;
 	}
-	export = PolygonGeometryOptions
+	export = HASH_20578_PolygonGeometryOptions
 
 }
-declare module 'cesium/Source/Core/fromPositionsOptions' {
+declare module 'cesium/Source/Core/HASH_34325_fromPositionsOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface fromPositionsOptions
+	interface HASH_34325_fromPositionsOptions
 	{
 		positions: Array<Cartesian3>;
 		height?: number;
@@ -4513,23 +4536,23 @@ declare module 'cesium/Source/Core/fromPositionsOptions' {
 		closeTop?: boolean;
 		closeBottom?: boolean;
 	}
-	export = fromPositionsOptions
+	export = HASH_34325_fromPositionsOptions
 
 }
 declare module 'cesium/Source/Core/PolygonGeometry' {
-	import PolygonGeometryOptions = require('cesium/Source/Core/PolygonGeometryOptions')
+	import HASH_20578_PolygonGeometryOptions = require('cesium/Source/Core/HASH_20578_PolygonGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
-	import fromPositionsOptions = require('cesium/Source/Core/fromPositionsOptions')
+	import HASH_34325_fromPositionsOptions = require('cesium/Source/Core/HASH_34325_fromPositionsOptions')
 	class PolygonGeometry 
 	{
-		constructor(options? : PolygonGeometryOptions);
+		constructor(options? : HASH_20578_PolygonGeometryOptions);
 		//Members
 		packedLength: number
 
 
 		//Methods
 		static createGeometry(polygonGeometry? : PolygonGeometry) : Geometry|void
-		static fromPositions(options : fromPositionsOptions) : PolygonGeometry
+		static fromPositions(options : HASH_34325_fromPositionsOptions) : PolygonGeometry
 		static pack(value? : PolygonGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
 		static unpack(array? : Array<number>, startingIndex? : number, result? : PolygonGeometry) : void
 
@@ -4537,11 +4560,11 @@ declare module 'cesium/Source/Core/PolygonGeometry' {
 	export = PolygonGeometry
 
 }
-declare module 'cesium/Source/Core/PolygonOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_17624_PolygonOutlineGeometryOptions' {
 	import PolygonHierarchy = require('cesium/Source/Core/PolygonHierarchy')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface PolygonOutlineGeometryOptions
+	interface HASH_17624_PolygonOutlineGeometryOptions
 	{
 		polygonHierarchy: PolygonHierarchy;
 		height?: number;
@@ -4551,23 +4574,38 @@ declare module 'cesium/Source/Core/PolygonOutlineGeometryOptions' {
 		granularity?: number;
 		perPositionHeight?: boolean;
 	}
-	export = PolygonOutlineGeometryOptions
+	export = HASH_17624_PolygonOutlineGeometryOptions
+
+}
+declare module 'cesium/Source/Core/HASH_11633_fromPositionsOptions' {
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	interface HASH_11633_fromPositionsOptions
+	{
+		positions: Array<Cartesian3>;
+		height?: number;
+		extrudedHeight?: number;
+		ellipsoid?: Ellipsoid;
+		granularity?: number;
+		perPositionHeight?: boolean;
+	}
+	export = HASH_11633_fromPositionsOptions
 
 }
 declare module 'cesium/Source/Core/PolygonOutlineGeometry' {
-	import PolygonOutlineGeometryOptions = require('cesium/Source/Core/PolygonOutlineGeometryOptions')
+	import HASH_17624_PolygonOutlineGeometryOptions = require('cesium/Source/Core/HASH_17624_PolygonOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
-	import fromPositionsOptions = require('cesium/Source/Core/fromPositionsOptions')
+	import HASH_11633_fromPositionsOptions = require('cesium/Source/Core/HASH_11633_fromPositionsOptions')
 	class PolygonOutlineGeometry 
 	{
-		constructor(options? : PolygonOutlineGeometryOptions);
+		constructor(options? : HASH_17624_PolygonOutlineGeometryOptions);
 		//Members
 		packedLength: number
 
 
 		//Methods
 		static createGeometry(polygonGeometry? : PolygonOutlineGeometry) : Geometry|void
-		static fromPositions(options : fromPositionsOptions) : PolygonOutlineGeometry
+		static fromPositions(options : HASH_11633_fromPositionsOptions) : PolygonOutlineGeometry
 		static pack(value? : PolygonOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
 		static unpack(array? : Array<number>, startingIndex? : number, result? : PolygonOutlineGeometry) : PolygonOutlineGeometry
 
@@ -4575,12 +4613,12 @@ declare module 'cesium/Source/Core/PolygonOutlineGeometry' {
 	export = PolygonOutlineGeometry
 
 }
-declare module 'cesium/Source/Core/PolylineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_90456_PolylineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Color = require('cesium/Source/Core/Color')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface PolylineGeometryOptions
+	interface HASH_90456_PolylineGeometryOptions
 	{
 		positions: Array<Cartesian3>;
 		width?: number;
@@ -4591,15 +4629,15 @@ declare module 'cesium/Source/Core/PolylineGeometryOptions' {
 		vertexFormat?: VertexFormat;
 		ellipsoid?: Ellipsoid;
 	}
-	export = PolylineGeometryOptions
+	export = HASH_90456_PolylineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/PolylineGeometry' {
-	import PolylineGeometryOptions = require('cesium/Source/Core/PolylineGeometryOptions')
+	import HASH_90456_PolylineGeometryOptions = require('cesium/Source/Core/HASH_90456_PolylineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class PolylineGeometry 
 	{
-		constructor(options? : PolylineGeometryOptions);
+		constructor(options? : HASH_90456_PolylineGeometryOptions);
 		//Members
 		packedLength: number
 
@@ -4613,13 +4651,13 @@ declare module 'cesium/Source/Core/PolylineGeometry' {
 	export = PolylineGeometry
 
 }
-declare module 'cesium/Source/Core/PolylineVolumeGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_47549_PolylineVolumeGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
 	import CornerType = require('cesium/Source/Core/CornerType')
-	interface PolylineVolumeGeometryOptions
+	interface HASH_47549_PolylineVolumeGeometryOptions
 	{
 		polylinePositions: Array<Cartesian3>;
 		shapePositions: Array<Cartesian2>;
@@ -4628,15 +4666,15 @@ declare module 'cesium/Source/Core/PolylineVolumeGeometryOptions' {
 		vertexFormat?: VertexFormat;
 		cornerType?: CornerType;
 	}
-	export = PolylineVolumeGeometryOptions
+	export = HASH_47549_PolylineVolumeGeometryOptions
 
 }
 declare module 'cesium/Source/Core/PolylineVolumeGeometry' {
-	import PolylineVolumeGeometryOptions = require('cesium/Source/Core/PolylineVolumeGeometryOptions')
+	import HASH_47549_PolylineVolumeGeometryOptions = require('cesium/Source/Core/HASH_47549_PolylineVolumeGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class PolylineVolumeGeometry 
 	{
-		constructor(options? : PolylineVolumeGeometryOptions);
+		constructor(options? : HASH_47549_PolylineVolumeGeometryOptions);
 		//Members
 		packedLength: number
 
@@ -4650,12 +4688,12 @@ declare module 'cesium/Source/Core/PolylineVolumeGeometry' {
 	export = PolylineVolumeGeometry
 
 }
-declare module 'cesium/Source/Core/PolylineVolumeOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_77826_PolylineVolumeOutlineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import CornerType = require('cesium/Source/Core/CornerType')
-	interface PolylineVolumeOutlineGeometryOptions
+	interface HASH_77826_PolylineVolumeOutlineGeometryOptions
 	{
 		polylinePositions: Array<Cartesian3>;
 		shapePositions: Array<Cartesian2>;
@@ -4663,15 +4701,15 @@ declare module 'cesium/Source/Core/PolylineVolumeOutlineGeometryOptions' {
 		granularity?: number;
 		cornerType?: CornerType;
 	}
-	export = PolylineVolumeOutlineGeometryOptions
+	export = HASH_77826_PolylineVolumeOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/PolylineVolumeOutlineGeometry' {
-	import PolylineVolumeOutlineGeometryOptions = require('cesium/Source/Core/PolylineVolumeOutlineGeometryOptions')
+	import HASH_77826_PolylineVolumeOutlineGeometryOptions = require('cesium/Source/Core/HASH_77826_PolylineVolumeOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class PolylineVolumeOutlineGeometry 
 	{
-		constructor(options? : PolylineVolumeOutlineGeometryOptions);
+		constructor(options? : HASH_77826_PolylineVolumeOutlineGeometryOptions);
 		//Members
 		packedLength: number
 
@@ -4700,12 +4738,12 @@ declare module 'cesium/Source/Core/QuadraticRealPolynomial' {
 	export = QuadraticRealPolynomial
 
 }
-declare module 'cesium/Source/Core/QuantizedMeshTerrainDataOptions' {
+declare module 'cesium/Source/Core/HASH_10829_QuantizedMeshTerrainDataOptions' {
 	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
 	import OrientedBoundingBox = require('cesium/Source/Core/OrientedBoundingBox')
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Credit = require('cesium/Source/Core/Credit')
-	interface QuantizedMeshTerrainDataOptions
+	interface HASH_10829_QuantizedMeshTerrainDataOptions
 	{
 		quantizedVertices: Uint16Array;
 		indices: Uint16Array|Uint32Array;
@@ -4728,17 +4766,17 @@ declare module 'cesium/Source/Core/QuantizedMeshTerrainDataOptions' {
 		waterMask?: Uint8Array;
 		credits?: Array<Credit>;
 	}
-	export = QuantizedMeshTerrainDataOptions
+	export = HASH_10829_QuantizedMeshTerrainDataOptions
 
 }
 declare module 'cesium/Source/Core/QuantizedMeshTerrainData' {
-	import QuantizedMeshTerrainDataOptions = require('cesium/Source/Core/QuantizedMeshTerrainDataOptions')
+	import HASH_10829_QuantizedMeshTerrainDataOptions = require('cesium/Source/Core/HASH_10829_QuantizedMeshTerrainDataOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import TilingScheme = require('cesium/Source/Core/TilingScheme')
 	class QuantizedMeshTerrainData 
 	{
-		constructor(options? : QuantizedMeshTerrainDataOptions);
+		constructor(options? : HASH_10829_QuantizedMeshTerrainDataOptions);
 		//Members
 		credits: Array<Credit>
 		waterMask: Uint8Array|HTMLImageElement|HTMLCanvasElement
@@ -4769,24 +4807,24 @@ declare module 'cesium/Source/Core/QuarticRealPolynomial' {
 	export = QuarticRealPolynomial
 
 }
-declare module 'cesium/Source/Core/QuaternionSplineOptions' {
+declare module 'cesium/Source/Core/HASH_10384_QuaternionSplineOptions' {
 	import Quaternion = require('cesium/Source/Core/Quaternion')
-	interface QuaternionSplineOptions
+	interface HASH_10384_QuaternionSplineOptions
 	{
 		times: Array<number>;
 		points: Array<Quaternion>;
 		firstInnerQuadrangle?: Quaternion;
 		lastInnerQuadrangle?: Quaternion;
 	}
-	export = QuaternionSplineOptions
+	export = HASH_10384_QuaternionSplineOptions
 
 }
 declare module 'cesium/Source/Core/QuaternionSpline' {
-	import QuaternionSplineOptions = require('cesium/Source/Core/QuaternionSplineOptions')
+	import HASH_10384_QuaternionSplineOptions = require('cesium/Source/Core/HASH_10384_QuaternionSplineOptions')
 	import Quaternion = require('cesium/Source/Core/Quaternion')
 	class QuaternionSpline 
 	{
-		constructor(options? : QuaternionSplineOptions);
+		constructor(options? : HASH_10384_QuaternionSplineOptions);
 		//Members
 		innerQuadrangles: Array<Quaternion>
 		points: Array<Quaternion>
@@ -4821,11 +4859,11 @@ declare module 'cesium/Source/Core/Queue' {
 	export = Queue
 
 }
-declare module 'cesium/Source/Core/RectangleGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_42066_RectangleGeometryOptions' {
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface RectangleGeometryOptions
+	interface HASH_42066_RectangleGeometryOptions
 	{
 		rectangle: Rectangle;
 		vertexFormat?: VertexFormat;
@@ -4838,15 +4876,15 @@ declare module 'cesium/Source/Core/RectangleGeometryOptions' {
 		closeTop?: boolean;
 		closeBottom?: boolean;
 	}
-	export = RectangleGeometryOptions
+	export = HASH_42066_RectangleGeometryOptions
 
 }
 declare module 'cesium/Source/Core/RectangleGeometry' {
-	import RectangleGeometryOptions = require('cesium/Source/Core/RectangleGeometryOptions')
+	import HASH_42066_RectangleGeometryOptions = require('cesium/Source/Core/HASH_42066_RectangleGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class RectangleGeometry 
 	{
-		constructor(options? : RectangleGeometryOptions);
+		constructor(options? : HASH_42066_RectangleGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -4860,10 +4898,10 @@ declare module 'cesium/Source/Core/RectangleGeometry' {
 	export = RectangleGeometry
 
 }
-declare module 'cesium/Source/Core/RectangleOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_20906_RectangleOutlineGeometryOptions' {
 	import Rectangle = require('cesium/Source/Core/Rectangle')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface RectangleOutlineGeometryOptions
+	interface HASH_20906_RectangleOutlineGeometryOptions
 	{
 		rectangle: Rectangle;
 		ellipsoid?: Ellipsoid;
@@ -4872,15 +4910,15 @@ declare module 'cesium/Source/Core/RectangleOutlineGeometryOptions' {
 		rotation?: number;
 		extrudedHeight?: number;
 	}
-	export = RectangleOutlineGeometryOptions
+	export = HASH_20906_RectangleOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/RectangleOutlineGeometry' {
-	import RectangleOutlineGeometryOptions = require('cesium/Source/Core/RectangleOutlineGeometryOptions')
+	import HASH_20906_RectangleOutlineGeometryOptions = require('cesium/Source/Core/HASH_20906_RectangleOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class RectangleOutlineGeometry 
 	{
-		constructor(options? : RectangleOutlineGeometryOptions);
+		constructor(options? : HASH_20906_RectangleOutlineGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -5025,11 +5063,11 @@ declare module 'cesium/Source/Core/Simon1994PlanetaryPositions' {
 	export = Simon1994PlanetaryPositions
 
 }
-declare module 'cesium/Source/Core/SimplePolylineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_19123_SimplePolylineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Color = require('cesium/Source/Core/Color')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface SimplePolylineGeometryOptions
+	interface HASH_19123_SimplePolylineGeometryOptions
 	{
 		positions: Array<Cartesian3>;
 		colors?: Array<Color>;
@@ -5038,15 +5076,15 @@ declare module 'cesium/Source/Core/SimplePolylineGeometryOptions' {
 		granularity?: number;
 		ellipsoid?: Ellipsoid;
 	}
-	export = SimplePolylineGeometryOptions
+	export = HASH_19123_SimplePolylineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/SimplePolylineGeometry' {
-	import SimplePolylineGeometryOptions = require('cesium/Source/Core/SimplePolylineGeometryOptions')
+	import HASH_19123_SimplePolylineGeometryOptions = require('cesium/Source/Core/HASH_19123_SimplePolylineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class SimplePolylineGeometry 
 	{
-		constructor(options? : SimplePolylineGeometryOptions);
+		constructor(options? : HASH_19123_SimplePolylineGeometryOptions);
 		//Members
 		packedLength: number
 
@@ -5060,24 +5098,24 @@ declare module 'cesium/Source/Core/SimplePolylineGeometry' {
 	export = SimplePolylineGeometry
 
 }
-declare module 'cesium/Source/Core/SphereGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_12545_SphereGeometryOptions' {
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface SphereGeometryOptions
+	interface HASH_12545_SphereGeometryOptions
 	{
 		radius?: number;
 		stackPartitions?: number;
 		slicePartitions?: number;
 		vertexFormat?: VertexFormat;
 	}
-	export = SphereGeometryOptions
+	export = HASH_12545_SphereGeometryOptions
 
 }
 declare module 'cesium/Source/Core/SphereGeometry' {
-	import SphereGeometryOptions = require('cesium/Source/Core/SphereGeometryOptions')
+	import HASH_12545_SphereGeometryOptions = require('cesium/Source/Core/HASH_12545_SphereGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class SphereGeometry 
 	{
-		constructor(options? : SphereGeometryOptions);
+		constructor(options? : HASH_12545_SphereGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -5091,23 +5129,23 @@ declare module 'cesium/Source/Core/SphereGeometry' {
 	export = SphereGeometry
 
 }
-declare module 'cesium/Source/Core/SphereOutlineGeometryOptions' {
-	interface SphereOutlineGeometryOptions
+declare module 'cesium/Source/Core/HASH_34008_SphereOutlineGeometryOptions' {
+	interface HASH_34008_SphereOutlineGeometryOptions
 	{
 		radius?: number;
 		stackPartitions?: number;
 		slicePartitions?: number;
 		subdivisions?: number;
 	}
-	export = SphereOutlineGeometryOptions
+	export = HASH_34008_SphereOutlineGeometryOptions
 
 }
 declare module 'cesium/Source/Core/SphereOutlineGeometry' {
-	import SphereOutlineGeometryOptions = require('cesium/Source/Core/SphereOutlineGeometryOptions')
+	import HASH_34008_SphereOutlineGeometryOptions = require('cesium/Source/Core/HASH_34008_SphereOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
 	class SphereOutlineGeometry 
 	{
-		constructor(options? : SphereOutlineGeometryOptions);
+		constructor(options? : HASH_34008_SphereOutlineGeometryOptions);
 		//Members
 		static packedLength: number
 
@@ -5182,9 +5220,9 @@ declare module 'cesium/Source/Core/TileProviderError' {
 	export = TileProviderError
 
 }
-declare module 'cesium/Source/Core/TimeIntervalOptions' {
+declare module 'cesium/Source/Core/HASH_11464_TimeIntervalOptions' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
-	interface TimeIntervalOptions
+	interface HASH_11464_TimeIntervalOptions
 	{
 		start?: JulianDate;
 		stop?: JulianDate;
@@ -5192,27 +5230,27 @@ declare module 'cesium/Source/Core/TimeIntervalOptions' {
 		isStopIncluded?: boolean;
 		data?: Object;
 	}
-	export = TimeIntervalOptions
+	export = HASH_11464_TimeIntervalOptions
 
 }
-declare module 'cesium/Source/Core/fromIso8601Options' {
-	interface fromIso8601Options
+declare module 'cesium/Source/Core/HASH_18417_fromIso8601Options' {
+	interface HASH_18417_fromIso8601Options
 	{
 		iso8601: string;
 		isStartIncluded?: boolean;
 		isStopIncluded?: boolean;
 		data?: Object;
 	}
-	export = fromIso8601Options
+	export = HASH_18417_fromIso8601Options
 
 }
 declare module 'cesium/Source/Core/TimeInterval' {
-	import TimeIntervalOptions = require('cesium/Source/Core/TimeIntervalOptions')
+	import HASH_11464_TimeIntervalOptions = require('cesium/Source/Core/HASH_11464_TimeIntervalOptions')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import fromIso8601Options = require('cesium/Source/Core/fromIso8601Options')
+	import HASH_18417_fromIso8601Options = require('cesium/Source/Core/HASH_18417_fromIso8601Options')
 	class TimeInterval 
 	{
-		constructor(options? : TimeIntervalOptions);
+		constructor(options? : HASH_11464_TimeIntervalOptions);
 		//Members
 		static EMPTY: TimeInterval
 		data: Object
@@ -5228,7 +5266,7 @@ declare module 'cesium/Source/Core/TimeInterval' {
 		static contains(timeInterval? : TimeInterval, julianDate? : JulianDate) : boolean
 		static equals(left : TimeInterval, right : TimeInterval, dataComparer : any) : boolean
 		static equalsEpsilon(left : TimeInterval, right : TimeInterval, epsilon? : number, dataComparer? : any) : boolean
-		static fromIso8601(options : fromIso8601Options, result : TimeInterval) : TimeInterval
+		static fromIso8601(options : HASH_18417_fromIso8601Options, result : TimeInterval) : TimeInterval
 		static intersect(left? : TimeInterval, right? : TimeInterval, result? : TimeInterval, mergeCallback? : any) : TimeInterval
 		static toIso8601(timeInterval? : TimeInterval, precision? : number) : string
 		clone(result : TimeInterval) : TimeInterval
@@ -5240,8 +5278,21 @@ declare module 'cesium/Source/Core/TimeInterval' {
 	export = TimeInterval
 
 }
-declare module 'cesium/Source/Core/fromIso8601DateArrayOptions' {
-	interface fromIso8601DateArrayOptions
+declare module 'cesium/Source/Core/HASH_04394_fromIso8601Options' {
+	interface HASH_04394_fromIso8601Options
+	{
+		iso8601: string;
+		isStartIncluded?: boolean;
+		isStopIncluded?: boolean;
+		leadingInterval?: boolean;
+		trailingInterval?: boolean;
+		dataCallback?: (()=>void);
+	}
+	export = HASH_04394_fromIso8601Options
+
+}
+declare module 'cesium/Source/Core/HASH_87132_fromIso8601DateArrayOptions' {
+	interface HASH_87132_fromIso8601DateArrayOptions
 	{
 		iso8601Dates: Array<string>;
 		isStartIncluded?: boolean;
@@ -5250,12 +5301,12 @@ declare module 'cesium/Source/Core/fromIso8601DateArrayOptions' {
 		trailingInterval?: boolean;
 		dataCallback?: (()=>void);
 	}
-	export = fromIso8601DateArrayOptions
+	export = HASH_87132_fromIso8601DateArrayOptions
 
 }
-declare module 'cesium/Source/Core/fromIso8601DurationArrayOptions' {
+declare module 'cesium/Source/Core/HASH_64199_fromIso8601DurationArrayOptions' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
-	interface fromIso8601DurationArrayOptions
+	interface HASH_64199_fromIso8601DurationArrayOptions
 	{
 		epoch: JulianDate;
 		iso8601Durations: string;
@@ -5266,12 +5317,12 @@ declare module 'cesium/Source/Core/fromIso8601DurationArrayOptions' {
 		trailingInterval?: boolean;
 		dataCallback?: (()=>void);
 	}
-	export = fromIso8601DurationArrayOptions
+	export = HASH_64199_fromIso8601DurationArrayOptions
 
 }
-declare module 'cesium/Source/Core/fromJulianDateArrayOptions' {
+declare module 'cesium/Source/Core/HASH_43108_fromJulianDateArrayOptions' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
-	interface fromJulianDateArrayOptions
+	interface HASH_43108_fromJulianDateArrayOptions
 	{
 		julianDates: Array<JulianDate>;
 		isStartIncluded?: boolean;
@@ -5280,30 +5331,30 @@ declare module 'cesium/Source/Core/fromJulianDateArrayOptions' {
 		trailingInterval?: boolean;
 		dataCallback?: (()=>void);
 	}
-	export = fromJulianDateArrayOptions
+	export = HASH_43108_fromJulianDateArrayOptions
 
 }
-declare module 'cesium/Source/Core/findIntervalOptions' {
+declare module 'cesium/Source/Core/HASH_20707_findIntervalOptions' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
-	interface findIntervalOptions
+	interface HASH_20707_findIntervalOptions
 	{
 		start?: JulianDate;
 		stop?: JulianDate;
 		isStartIncluded?: boolean;
 		isStopIncluded?: boolean;
 	}
-	export = findIntervalOptions
+	export = HASH_20707_findIntervalOptions
 
 }
 declare module 'cesium/Source/Core/TimeIntervalCollection' {
 	import TimeInterval = require('cesium/Source/Core/TimeInterval')
 	import Event = require('cesium/Source/Core/Event')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import fromIso8601Options = require('cesium/Source/Core/fromIso8601Options')
-	import fromIso8601DateArrayOptions = require('cesium/Source/Core/fromIso8601DateArrayOptions')
-	import fromIso8601DurationArrayOptions = require('cesium/Source/Core/fromIso8601DurationArrayOptions')
-	import fromJulianDateArrayOptions = require('cesium/Source/Core/fromJulianDateArrayOptions')
-	import findIntervalOptions = require('cesium/Source/Core/findIntervalOptions')
+	import HASH_04394_fromIso8601Options = require('cesium/Source/Core/HASH_04394_fromIso8601Options')
+	import HASH_87132_fromIso8601DateArrayOptions = require('cesium/Source/Core/HASH_87132_fromIso8601DateArrayOptions')
+	import HASH_64199_fromIso8601DurationArrayOptions = require('cesium/Source/Core/HASH_64199_fromIso8601DurationArrayOptions')
+	import HASH_43108_fromJulianDateArrayOptions = require('cesium/Source/Core/HASH_43108_fromJulianDateArrayOptions')
+	import HASH_20707_findIntervalOptions = require('cesium/Source/Core/HASH_20707_findIntervalOptions')
 	class TimeIntervalCollection 
 	{
 		constructor(intervals? : Array<TimeInterval>);
@@ -5318,15 +5369,15 @@ declare module 'cesium/Source/Core/TimeIntervalCollection' {
 
 
 		//Methods
-		static fromIso8601(options : fromIso8601Options, result : TimeIntervalCollection) : TimeIntervalCollection
-		static fromIso8601DateArray(options : fromIso8601DateArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
-		static fromIso8601DurationArray(options : fromIso8601DurationArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
-		static fromJulianDateArray(options : fromJulianDateArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
+		static fromIso8601(options : HASH_04394_fromIso8601Options, result : TimeIntervalCollection) : TimeIntervalCollection
+		static fromIso8601DateArray(options : HASH_87132_fromIso8601DateArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
+		static fromIso8601DurationArray(options : HASH_64199_fromIso8601DurationArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
+		static fromJulianDateArray(options : HASH_43108_fromJulianDateArrayOptions, result : TimeIntervalCollection) : TimeIntervalCollection
 		addInterval(interval? : TimeInterval, dataComparer? : any) : void
 		contains(julianDate? : JulianDate) : boolean
 		equals(right : TimeIntervalCollection, dataComparer : any) : boolean
 		findDataForIntervalContainingDate(date? : JulianDate) : Object
-		findInterval(options : findIntervalOptions) : TimeInterval
+		findInterval(options : HASH_20707_findIntervalOptions) : TimeInterval
 		findIntervalContainingDate(date? : JulianDate) : TimeInterval|void
 		get(index? : number) : TimeInterval
 		indexOf(date? : JulianDate) : number
@@ -5404,21 +5455,21 @@ declare module 'cesium/Source/Core/TrustedServers' {
 	export = TrustedServers
 
 }
-declare module 'cesium/Source/Core/VRTheWorldTerrainProviderOptions' {
+declare module 'cesium/Source/Core/HASH_83822_VRTheWorldTerrainProviderOptions' {
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import Credit = require('cesium/Source/Core/Credit')
-	interface VRTheWorldTerrainProviderOptions
+	interface HASH_83822_VRTheWorldTerrainProviderOptions
 	{
 		url: string;
 		proxy?: Object;
 		ellipsoid?: Ellipsoid;
 		credit?: Credit|string;
 	}
-	export = VRTheWorldTerrainProviderOptions
+	export = HASH_83822_VRTheWorldTerrainProviderOptions
 
 }
 declare module 'cesium/Source/Core/VRTheWorldTerrainProvider' {
-	import VRTheWorldTerrainProviderOptions = require('cesium/Source/Core/VRTheWorldTerrainProviderOptions')
+	import HASH_83822_VRTheWorldTerrainProviderOptions = require('cesium/Source/Core/HASH_83822_VRTheWorldTerrainProviderOptions')
 	import Credit = require('cesium/Source/Core/Credit')
 	import Event = require('cesium/Source/Core/Event')
 	import GeographicTilingScheme = require('cesium/Source/Core/GeographicTilingScheme')
@@ -5426,7 +5477,7 @@ declare module 'cesium/Source/Core/VRTheWorldTerrainProvider' {
 	import Request = require('cesium/Source/Core/Request')
 	class VRTheWorldTerrainProvider 
 	{
-		constructor(options? : VRTheWorldTerrainProviderOptions);
+		constructor(options? : HASH_83822_VRTheWorldTerrainProviderOptions);
 		//Members
 		credit: Credit
 		errorEvent: Event
@@ -5446,26 +5497,26 @@ declare module 'cesium/Source/Core/VRTheWorldTerrainProvider' {
 	export = VRTheWorldTerrainProvider
 
 }
-declare module 'cesium/Source/Core/VideoSynchronizerOptions' {
+declare module 'cesium/Source/Core/HASH_50591_VideoSynchronizerOptions' {
 	import Clock = require('cesium/Source/Core/Clock')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
-	interface VideoSynchronizerOptions
+	interface HASH_50591_VideoSynchronizerOptions
 	{
 		clock?: Clock;
 		element?: HTMLVideoElement;
 		epoch?: JulianDate;
 		tolerance?: number;
 	}
-	export = VideoSynchronizerOptions
+	export = HASH_50591_VideoSynchronizerOptions
 
 }
 declare module 'cesium/Source/Core/VideoSynchronizer' {
-	import VideoSynchronizerOptions = require('cesium/Source/Core/VideoSynchronizerOptions')
+	import HASH_50591_VideoSynchronizerOptions = require('cesium/Source/Core/HASH_50591_VideoSynchronizerOptions')
 	import Clock = require('cesium/Source/Core/Clock')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class VideoSynchronizer 
 	{
-		constructor(options? : VideoSynchronizerOptions);
+		constructor(options? : HASH_50591_VideoSynchronizerOptions);
 		//Members
 		clock: Clock
 		element: HTMLVideoElement
@@ -5497,11 +5548,11 @@ declare module 'cesium/Source/Core/Visibility' {
 	export = Visibility
 
 }
-declare module 'cesium/Source/Core/WallGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_19570_WallGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface WallGeometryOptions
+	interface HASH_19570_WallGeometryOptions
 	{
 		positions: Array<Cartesian3>;
 		granularity?: number;
@@ -5510,14 +5561,14 @@ declare module 'cesium/Source/Core/WallGeometryOptions' {
 		ellipsoid?: Ellipsoid;
 		vertexFormat?: VertexFormat;
 	}
-	export = WallGeometryOptions
+	export = HASH_19570_WallGeometryOptions
 
 }
-declare module 'cesium/Source/Core/fromConstantHeightsOptions' {
+declare module 'cesium/Source/Core/HASH_38943_fromConstantHeightsOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	interface fromConstantHeightsOptions
+	interface HASH_38943_fromConstantHeightsOptions
 	{
 		positions: Array<Cartesian3>;
 		maximumHeight?: number;
@@ -5525,23 +5576,23 @@ declare module 'cesium/Source/Core/fromConstantHeightsOptions' {
 		ellipsoid?: Ellipsoid;
 		vertexFormat?: VertexFormat;
 	}
-	export = fromConstantHeightsOptions
+	export = HASH_38943_fromConstantHeightsOptions
 
 }
 declare module 'cesium/Source/Core/WallGeometry' {
-	import WallGeometryOptions = require('cesium/Source/Core/WallGeometryOptions')
+	import HASH_19570_WallGeometryOptions = require('cesium/Source/Core/HASH_19570_WallGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
-	import fromConstantHeightsOptions = require('cesium/Source/Core/fromConstantHeightsOptions')
+	import HASH_38943_fromConstantHeightsOptions = require('cesium/Source/Core/HASH_38943_fromConstantHeightsOptions')
 	class WallGeometry 
 	{
-		constructor(options? : WallGeometryOptions);
+		constructor(options? : HASH_19570_WallGeometryOptions);
 		//Members
 		packedLength: number
 
 
 		//Methods
 		static createGeometry(wallGeometry? : WallGeometry) : Geometry|void
-		static fromConstantHeights(options : fromConstantHeightsOptions) : WallGeometry
+		static fromConstantHeights(options : HASH_38943_fromConstantHeightsOptions) : WallGeometry
 		static pack(value? : WallGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
 		static unpack(array? : Array<number>, startingIndex? : number, result? : WallGeometry) : WallGeometry
 
@@ -5549,10 +5600,10 @@ declare module 'cesium/Source/Core/WallGeometry' {
 	export = WallGeometry
 
 }
-declare module 'cesium/Source/Core/WallOutlineGeometryOptions' {
+declare module 'cesium/Source/Core/HASH_18210_WallOutlineGeometryOptions' {
 	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface WallOutlineGeometryOptions
+	interface HASH_18210_WallOutlineGeometryOptions
 	{
 		positions: Array<Cartesian3>;
 		granularity?: number;
@@ -5560,23 +5611,36 @@ declare module 'cesium/Source/Core/WallOutlineGeometryOptions' {
 		minimumHeights?: Array<number>;
 		ellipsoid?: Ellipsoid;
 	}
-	export = WallOutlineGeometryOptions
+	export = HASH_18210_WallOutlineGeometryOptions
+
+}
+declare module 'cesium/Source/Core/HASH_06081_fromConstantHeightsOptions' {
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	interface HASH_06081_fromConstantHeightsOptions
+	{
+		positions: Array<Cartesian3>;
+		maximumHeight?: number;
+		minimumHeight?: number;
+		ellipsoid?: Ellipsoid;
+	}
+	export = HASH_06081_fromConstantHeightsOptions
 
 }
 declare module 'cesium/Source/Core/WallOutlineGeometry' {
-	import WallOutlineGeometryOptions = require('cesium/Source/Core/WallOutlineGeometryOptions')
+	import HASH_18210_WallOutlineGeometryOptions = require('cesium/Source/Core/HASH_18210_WallOutlineGeometryOptions')
 	import Geometry = require('cesium/Source/Core/Geometry')
-	import fromConstantHeightsOptions = require('cesium/Source/Core/fromConstantHeightsOptions')
+	import HASH_06081_fromConstantHeightsOptions = require('cesium/Source/Core/HASH_06081_fromConstantHeightsOptions')
 	class WallOutlineGeometry 
 	{
-		constructor(options? : WallOutlineGeometryOptions);
+		constructor(options? : HASH_18210_WallOutlineGeometryOptions);
 		//Members
 		packedLength: number
 
 
 		//Methods
 		static createGeometry(wallGeometry? : WallOutlineGeometry) : Geometry|void
-		static fromConstantHeights(options : fromConstantHeightsOptions) : WallOutlineGeometry
+		static fromConstantHeights(options : HASH_06081_fromConstantHeightsOptions) : WallOutlineGeometry
 		static pack(value? : WallOutlineGeometry, array? : Array<number>, startingIndex? : number) : Array<number>
 		static unpack(array? : Array<number>, startingIndex? : number, result? : WallOutlineGeometry) : WallOutlineGeometry
 
@@ -5619,10 +5683,10 @@ declare module 'cesium/Source/Core/WebMercatorProjection' {
 	export = WebMercatorProjection
 
 }
-declare module 'cesium/Source/Core/WebMercatorTilingSchemeOptions' {
+declare module 'cesium/Source/Core/HASH_25154_WebMercatorTilingSchemeOptions' {
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	interface WebMercatorTilingSchemeOptions
+	interface HASH_25154_WebMercatorTilingSchemeOptions
 	{
 		ellipsoid?: Ellipsoid;
 		numberOfLevelZeroTilesX?: number;
@@ -5630,11 +5694,11 @@ declare module 'cesium/Source/Core/WebMercatorTilingSchemeOptions' {
 		rectangleSouthwestInMeters?: Cartesian2;
 		rectangleNortheastInMeters?: Cartesian2;
 	}
-	export = WebMercatorTilingSchemeOptions
+	export = HASH_25154_WebMercatorTilingSchemeOptions
 
 }
 declare module 'cesium/Source/Core/WebMercatorTilingScheme' {
-	import WebMercatorTilingSchemeOptions = require('cesium/Source/Core/WebMercatorTilingSchemeOptions')
+	import HASH_25154_WebMercatorTilingSchemeOptions = require('cesium/Source/Core/HASH_25154_WebMercatorTilingSchemeOptions')
 	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
 	import MapProjection = require('cesium/Source/Core/MapProjection')
 	import Rectangle = require('cesium/Source/Core/Rectangle')
@@ -5642,7 +5706,7 @@ declare module 'cesium/Source/Core/WebMercatorTilingScheme' {
 	import Cartographic = require('cesium/Source/Core/Cartographic')
 	class WebMercatorTilingScheme 
 	{
-		constructor(options? : WebMercatorTilingSchemeOptions);
+		constructor(options? : HASH_25154_WebMercatorTilingSchemeOptions);
 		//Members
 		ellipsoid: Ellipsoid
 		projection: MapProjection
@@ -5661,20 +5725,20 @@ declare module 'cesium/Source/Core/WebMercatorTilingScheme' {
 	export = WebMercatorTilingScheme
 
 }
-declare module 'cesium/Source/Core/WeightSplineOptions' {
-	interface WeightSplineOptions
+declare module 'cesium/Source/Core/HASH_17837_WeightSplineOptions' {
+	interface HASH_17837_WeightSplineOptions
 	{
 		times: Array<number>;
 		weights: Array<number>;
 	}
-	export = WeightSplineOptions
+	export = HASH_17837_WeightSplineOptions
 
 }
 declare module 'cesium/Source/Core/WeightSpline' {
-	import WeightSplineOptions = require('cesium/Source/Core/WeightSplineOptions')
+	import HASH_17837_WeightSplineOptions = require('cesium/Source/Core/HASH_17837_WeightSplineOptions')
 	class WeightSpline 
 	{
-		constructor(options : WeightSplineOptions);
+		constructor(options : HASH_17837_WeightSplineOptions);
 		//Members
 		times: Array<number>
 		weights: Array<number>
@@ -5831,21 +5895,21 @@ declare module 'cesium/Source/Core/loadJson' {
 	export = loadJson
 
 }
-declare module 'cesium/Source/Core/loadJsonpOptions' {
+declare module 'cesium/Source/Core/HASH_62193_loadJsonpOptions' {
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	interface loadJsonpOptions
+	interface HASH_62193_loadJsonpOptions
 	{
 		parameters?: Object;
 		callbackParameterName?: string;
 		proxy?: DefaultProxy;
 	}
-	export = loadJsonpOptions
+	export = HASH_62193_loadJsonpOptions
 
 }
 declare module 'cesium/Source/Core/loadJsonp' {
-	import loadJsonpOptions = require('cesium/Source/Core/loadJsonpOptions')
+	import HASH_62193_loadJsonpOptions = require('cesium/Source/Core/HASH_62193_loadJsonpOptions')
 	import Request = require('cesium/Source/Core/Request')
-	function loadJsonp(url : string, options? : loadJsonpOptions, request? : Request) : Promise<Object>|void;
+	function loadJsonp(url : string, options? : HASH_62193_loadJsonpOptions, request? : Request) : Promise<Object>|void;
 	export = loadJsonp
 
 }
@@ -5861,9 +5925,9 @@ declare module 'cesium/Source/Core/loadText' {
 	export = loadText
 
 }
-declare module 'cesium/Source/Core/loadWithXhrOptions' {
+declare module 'cesium/Source/Core/HASH_58967_loadWithXhrOptions' {
 	import Request = require('cesium/Source/Core/Request')
-	interface loadWithXhrOptions
+	interface HASH_58967_loadWithXhrOptions
 	{
 		url: string;
 		responseType?: string;
@@ -5873,12 +5937,12 @@ declare module 'cesium/Source/Core/loadWithXhrOptions' {
 		overrideMimeType?: string;
 		request?: Request;
 	}
-	export = loadWithXhrOptions
+	export = HASH_58967_loadWithXhrOptions
 
 }
 declare module 'cesium/Source/Core/loadWithXhr' {
-	import loadWithXhrOptions = require('cesium/Source/Core/loadWithXhrOptions')
-	function loadWithXhr(options? : loadWithXhrOptions) : Promise<Object>|void;
+	import HASH_58967_loadWithXhrOptions = require('cesium/Source/Core/HASH_58967_loadWithXhrOptions')
+	function loadWithXhr(options? : HASH_58967_loadWithXhrOptions) : Promise<Object>|void;
 	export = loadWithXhr
 
 }
@@ -5953,9 +6017,9 @@ declare module 'cesium/Source/DataSources/Property' {
 	export = Property
 
 }
-declare module 'cesium/Source/DataSources/BillboardGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_82736_BillboardGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
-	interface BillboardGraphicsOptions
+	interface HASH_82736_BillboardGraphicsOptions
 	{
 		image?: Property|string|any;
 		show?: Property|string|any;
@@ -5977,16 +6041,16 @@ declare module 'cesium/Source/DataSources/BillboardGraphicsOptions' {
 		heightReference?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = BillboardGraphicsOptions
+	export = HASH_82736_BillboardGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/BillboardGraphics' {
-	import BillboardGraphicsOptions = require('cesium/Source/DataSources/BillboardGraphicsOptions')
+	import HASH_82736_BillboardGraphicsOptions = require('cesium/Source/DataSources/HASH_82736_BillboardGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	class BillboardGraphics 
 	{
-		constructor(options? : BillboardGraphicsOptions);
+		constructor(options? : HASH_82736_BillboardGraphicsOptions);
 		//Members
 		alignedAxis: Property|string|any
 		color: Property|string|any
@@ -6019,8 +6083,8 @@ declare module 'cesium/Source/DataSources/BillboardGraphics' {
 	export = BillboardGraphics
 
 }
-declare module 'cesium/Source/DataSources/EntityClusterOptions' {
-	interface EntityClusterOptions
+declare module 'cesium/Source/DataSources/HASH_23612_EntityClusterOptions' {
+	interface HASH_23612_EntityClusterOptions
 	{
 		enabled?: boolean;
 		pixelRange?: number;
@@ -6029,15 +6093,15 @@ declare module 'cesium/Source/DataSources/EntityClusterOptions' {
 		clusterLabels?: boolean;
 		clusterPoints?: boolean;
 	}
-	export = EntityClusterOptions
+	export = HASH_23612_EntityClusterOptions
 
 }
 declare module 'cesium/Source/DataSources/EntityCluster' {
-	import EntityClusterOptions = require('cesium/Source/DataSources/EntityClusterOptions')
+	import HASH_23612_EntityClusterOptions = require('cesium/Source/DataSources/HASH_23612_EntityClusterOptions')
 	import Event = require('cesium/Source/Core/Event')
 	class EntityCluster 
 	{
-		constructor(options? : EntityClusterOptions);
+		constructor(options? : HASH_23612_EntityClusterOptions);
 		//Members
 		clusterBillboards: boolean
 		clusterEvent: Event
@@ -6157,10 +6221,10 @@ declare module 'cesium/Source/DataSources/MaterialProperty' {
 	export = MaterialProperty
 
 }
-declare module 'cesium/Source/DataSources/BoxGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_02544_BoxGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface BoxGraphicsOptions
+	interface HASH_02544_BoxGraphicsOptions
 	{
 		dimensions?: Property|string|any;
 		show?: Property|string|any;
@@ -6172,17 +6236,17 @@ declare module 'cesium/Source/DataSources/BoxGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = BoxGraphicsOptions
+	export = HASH_02544_BoxGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/BoxGraphics' {
-	import BoxGraphicsOptions = require('cesium/Source/DataSources/BoxGraphicsOptions')
+	import HASH_02544_BoxGraphicsOptions = require('cesium/Source/DataSources/HASH_02544_BoxGraphicsOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class BoxGraphics 
 	{
-		constructor(options? : BoxGraphicsOptions);
+		constructor(options? : HASH_02544_BoxGraphicsOptions);
 		//Members
 		definitionChanged: Event
 		dimensions: Property|string|any
@@ -6204,10 +6268,10 @@ declare module 'cesium/Source/DataSources/BoxGraphics' {
 	export = BoxGraphics
 
 }
-declare module 'cesium/Source/DataSources/CorridorGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_10753_CorridorGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface CorridorGraphicsOptions
+	interface HASH_10753_CorridorGraphicsOptions
 	{
 		positions?: Property|string|any;
 		width?: Property|string|any;
@@ -6224,17 +6288,17 @@ declare module 'cesium/Source/DataSources/CorridorGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = CorridorGraphicsOptions
+	export = HASH_10753_CorridorGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/CorridorGraphics' {
-	import CorridorGraphicsOptions = require('cesium/Source/DataSources/CorridorGraphicsOptions')
+	import HASH_10753_CorridorGraphicsOptions = require('cesium/Source/DataSources/HASH_10753_CorridorGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class CorridorGraphics 
 	{
-		constructor(options? : CorridorGraphicsOptions);
+		constructor(options? : HASH_10753_CorridorGraphicsOptions);
 		//Members
 		cornerType: Property|string|any
 		definitionChanged: Event
@@ -6261,10 +6325,10 @@ declare module 'cesium/Source/DataSources/CorridorGraphics' {
 	export = CorridorGraphics
 
 }
-declare module 'cesium/Source/DataSources/CylinderGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_15996_CylinderGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface CylinderGraphicsOptions
+	interface HASH_15996_CylinderGraphicsOptions
 	{
 		length?: Property|string|any;
 		topRadius?: Property|string|any;
@@ -6280,17 +6344,17 @@ declare module 'cesium/Source/DataSources/CylinderGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = CylinderGraphicsOptions
+	export = HASH_15996_CylinderGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/CylinderGraphics' {
-	import CylinderGraphicsOptions = require('cesium/Source/DataSources/CylinderGraphicsOptions')
+	import HASH_15996_CylinderGraphicsOptions = require('cesium/Source/DataSources/HASH_15996_CylinderGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class CylinderGraphics 
 	{
-		constructor(options? : CylinderGraphicsOptions);
+		constructor(options? : HASH_15996_CylinderGraphicsOptions);
 		//Members
 		bottomRadius: Property|string|any
 		definitionChanged: Event
@@ -6316,10 +6380,10 @@ declare module 'cesium/Source/DataSources/CylinderGraphics' {
 	export = CylinderGraphics
 
 }
-declare module 'cesium/Source/DataSources/EllipseGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_02018_EllipseGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface EllipseGraphicsOptions
+	interface HASH_02018_EllipseGraphicsOptions
 	{
 		semiMajorAxis?: Property|string|any;
 		semiMinorAxis?: Property|string|any;
@@ -6338,17 +6402,17 @@ declare module 'cesium/Source/DataSources/EllipseGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = EllipseGraphicsOptions
+	export = HASH_02018_EllipseGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/EllipseGraphics' {
-	import EllipseGraphicsOptions = require('cesium/Source/DataSources/EllipseGraphicsOptions')
+	import HASH_02018_EllipseGraphicsOptions = require('cesium/Source/DataSources/HASH_02018_EllipseGraphicsOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class EllipseGraphics 
 	{
-		constructor(options? : EllipseGraphicsOptions);
+		constructor(options? : HASH_02018_EllipseGraphicsOptions);
 		//Members
 		definitionChanged: Event
 		distanceDisplayCondition: Property|string|any
@@ -6377,10 +6441,10 @@ declare module 'cesium/Source/DataSources/EllipseGraphics' {
 	export = EllipseGraphics
 
 }
-declare module 'cesium/Source/DataSources/EllipsoidGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_13829_EllipsoidGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface EllipsoidGraphicsOptions
+	interface HASH_13829_EllipsoidGraphicsOptions
 	{
 		radii?: Property|string|any;
 		show?: Property|string|any;
@@ -6395,17 +6459,17 @@ declare module 'cesium/Source/DataSources/EllipsoidGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = EllipsoidGraphicsOptions
+	export = HASH_13829_EllipsoidGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/EllipsoidGraphics' {
-	import EllipsoidGraphicsOptions = require('cesium/Source/DataSources/EllipsoidGraphicsOptions')
+	import HASH_13829_EllipsoidGraphicsOptions = require('cesium/Source/DataSources/HASH_13829_EllipsoidGraphicsOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class EllipsoidGraphics 
 	{
-		constructor(options? : EllipsoidGraphicsOptions);
+		constructor(options? : HASH_13829_EllipsoidGraphicsOptions);
 		//Members
 		definitionChanged: Event
 		distanceDisplayCondition: Property|string|any
@@ -6430,9 +6494,9 @@ declare module 'cesium/Source/DataSources/EllipsoidGraphics' {
 	export = EllipsoidGraphics
 
 }
-declare module 'cesium/Source/DataSources/LabelGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_14601_LabelGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
-	interface LabelGraphicsOptions
+	interface HASH_14601_LabelGraphicsOptions
 	{
 		text?: Property|string|any;
 		font?: Property|string|any;
@@ -6455,16 +6519,16 @@ declare module 'cesium/Source/DataSources/LabelGraphicsOptions' {
 		heightReference?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = LabelGraphicsOptions
+	export = HASH_14601_LabelGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/LabelGraphics' {
-	import LabelGraphicsOptions = require('cesium/Source/DataSources/LabelGraphicsOptions')
+	import HASH_14601_LabelGraphicsOptions = require('cesium/Source/DataSources/HASH_14601_LabelGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	class LabelGraphics 
 	{
-		constructor(options? : LabelGraphicsOptions);
+		constructor(options? : HASH_14601_LabelGraphicsOptions);
 		//Members
 		backgroundColor: Property|string|any
 		backgroundPadding: Property|string|any
@@ -6498,9 +6562,9 @@ declare module 'cesium/Source/DataSources/LabelGraphics' {
 	export = LabelGraphics
 
 }
-declare module 'cesium/Source/DataSources/ModelGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_78997_ModelGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
-	interface ModelGraphicsOptions
+	interface HASH_78997_ModelGraphicsOptions
 	{
 		uri?: Property|string|any;
 		show?: Property|string|any;
@@ -6519,7 +6583,7 @@ declare module 'cesium/Source/DataSources/ModelGraphicsOptions' {
 		colorBlendMode?: Property|string|any;
 		colorBlendAmount?: Property|string|any;
 	}
-	export = ModelGraphicsOptions
+	export = HASH_78997_ModelGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/PropertyBag' {
@@ -6548,13 +6612,13 @@ declare module 'cesium/Source/DataSources/PropertyBag' {
 
 }
 declare module 'cesium/Source/DataSources/ModelGraphics' {
-	import ModelGraphicsOptions = require('cesium/Source/DataSources/ModelGraphicsOptions')
+	import HASH_78997_ModelGraphicsOptions = require('cesium/Source/DataSources/HASH_78997_ModelGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	import PropertyBag = require('cesium/Source/DataSources/PropertyBag')
 	class ModelGraphics 
 	{
-		constructor(options? : ModelGraphicsOptions);
+		constructor(options? : HASH_78997_ModelGraphicsOptions);
 		//Members
 		color: Property|string|any
 		colorBlendAmount: Property|string|any
@@ -6583,10 +6647,10 @@ declare module 'cesium/Source/DataSources/ModelGraphics' {
 	export = ModelGraphics
 
 }
-declare module 'cesium/Source/DataSources/PathGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_22183_PathGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface PathGraphicsOptions
+	interface HASH_22183_PathGraphicsOptions
 	{
 		leadTime?: Property|string|any;
 		trailTime?: Property|string|any;
@@ -6596,17 +6660,17 @@ declare module 'cesium/Source/DataSources/PathGraphicsOptions' {
 		resolution?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = PathGraphicsOptions
+	export = HASH_22183_PathGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/PathGraphics' {
-	import PathGraphicsOptions = require('cesium/Source/DataSources/PathGraphicsOptions')
+	import HASH_22183_PathGraphicsOptions = require('cesium/Source/DataSources/HASH_22183_PathGraphicsOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class PathGraphics 
 	{
-		constructor(options? : PathGraphicsOptions);
+		constructor(options? : HASH_22183_PathGraphicsOptions);
 		//Members
 		definitionChanged: Event
 		distanceDisplayCondition: Property|string|any
@@ -6626,9 +6690,9 @@ declare module 'cesium/Source/DataSources/PathGraphics' {
 	export = PathGraphics
 
 }
-declare module 'cesium/Source/DataSources/PointGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_15381_PointGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
-	interface PointGraphicsOptions
+	interface HASH_15381_PointGraphicsOptions
 	{
 		color?: Property|string|any;
 		pixelSize?: Property|string|any;
@@ -6640,16 +6704,16 @@ declare module 'cesium/Source/DataSources/PointGraphicsOptions' {
 		heightReference?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = PointGraphicsOptions
+	export = HASH_15381_PointGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/PointGraphics' {
-	import PointGraphicsOptions = require('cesium/Source/DataSources/PointGraphicsOptions')
+	import HASH_15381_PointGraphicsOptions = require('cesium/Source/DataSources/HASH_15381_PointGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	class PointGraphics 
 	{
-		constructor(options? : PointGraphicsOptions);
+		constructor(options? : HASH_15381_PointGraphicsOptions);
 		//Members
 		color: Property|string|any
 		definitionChanged: Event
@@ -6672,10 +6736,10 @@ declare module 'cesium/Source/DataSources/PointGraphics' {
 	export = PointGraphics
 
 }
-declare module 'cesium/Source/DataSources/PolygonGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_84774_PolygonGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface PolygonGraphicsOptions
+	interface HASH_84774_PolygonGraphicsOptions
 	{
 		hierarchy?: Property|string|any;
 		height?: Property|string|any;
@@ -6694,17 +6758,17 @@ declare module 'cesium/Source/DataSources/PolygonGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = PolygonGraphicsOptions
+	export = HASH_84774_PolygonGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/PolygonGraphics' {
-	import PolygonGraphicsOptions = require('cesium/Source/DataSources/PolygonGraphicsOptions')
+	import HASH_84774_PolygonGraphicsOptions = require('cesium/Source/DataSources/HASH_84774_PolygonGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class PolygonGraphics 
 	{
-		constructor(options? : PolygonGraphicsOptions);
+		constructor(options? : HASH_84774_PolygonGraphicsOptions);
 		//Members
 		closeBottom: Property|string|any
 		closeTop: Property|string|any
@@ -6733,10 +6797,10 @@ declare module 'cesium/Source/DataSources/PolygonGraphics' {
 	export = PolygonGraphics
 
 }
-declare module 'cesium/Source/DataSources/PolylineGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_21342_PolylineGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface PolylineGraphicsOptions
+	interface HASH_21342_PolylineGraphicsOptions
 	{
 		positions?: Property|string|any;
 		followSurface?: Property|string|any;
@@ -6747,17 +6811,17 @@ declare module 'cesium/Source/DataSources/PolylineGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = PolylineGraphicsOptions
+	export = HASH_21342_PolylineGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/PolylineGraphics' {
-	import PolylineGraphicsOptions = require('cesium/Source/DataSources/PolylineGraphicsOptions')
+	import HASH_21342_PolylineGraphicsOptions = require('cesium/Source/DataSources/HASH_21342_PolylineGraphicsOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class PolylineGraphics 
 	{
-		constructor(options? : PolylineGraphicsOptions);
+		constructor(options? : HASH_21342_PolylineGraphicsOptions);
 		//Members
 		definitionChanged: Event
 		distanceDisplayCondition: Property|string|any
@@ -6778,10 +6842,10 @@ declare module 'cesium/Source/DataSources/PolylineGraphics' {
 	export = PolylineGraphics
 
 }
-declare module 'cesium/Source/DataSources/PolylineVolumeGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_87817_PolylineVolumeGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface PolylineVolumeGraphicsOptions
+	interface HASH_87817_PolylineVolumeGraphicsOptions
 	{
 		positions?: Property|string|any;
 		shape?: Property|string|any;
@@ -6796,17 +6860,17 @@ declare module 'cesium/Source/DataSources/PolylineVolumeGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = PolylineVolumeGraphicsOptions
+	export = HASH_87817_PolylineVolumeGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/PolylineVolumeGraphics' {
-	import PolylineVolumeGraphicsOptions = require('cesium/Source/DataSources/PolylineVolumeGraphicsOptions')
+	import HASH_87817_PolylineVolumeGraphicsOptions = require('cesium/Source/DataSources/HASH_87817_PolylineVolumeGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class PolylineVolumeGraphics 
 	{
-		constructor(options? : PolylineVolumeGraphicsOptions);
+		constructor(options? : HASH_87817_PolylineVolumeGraphicsOptions);
 		//Members
 		cornerType: Property|string|any
 		definitionChanged: Event
@@ -6831,10 +6895,10 @@ declare module 'cesium/Source/DataSources/PolylineVolumeGraphics' {
 	export = PolylineVolumeGraphics
 
 }
-declare module 'cesium/Source/DataSources/RectangleGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_88260_RectangleGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface RectangleGraphicsOptions
+	interface HASH_88260_RectangleGraphicsOptions
 	{
 		coordinates?: Property|string|any;
 		height?: Property|string|any;
@@ -6853,17 +6917,17 @@ declare module 'cesium/Source/DataSources/RectangleGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = RectangleGraphicsOptions
+	export = HASH_88260_RectangleGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/RectangleGraphics' {
-	import RectangleGraphicsOptions = require('cesium/Source/DataSources/RectangleGraphicsOptions')
+	import HASH_88260_RectangleGraphicsOptions = require('cesium/Source/DataSources/HASH_88260_RectangleGraphicsOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class RectangleGraphics 
 	{
-		constructor(options? : RectangleGraphicsOptions);
+		constructor(options? : HASH_88260_RectangleGraphicsOptions);
 		//Members
 		closeBottom: Property|string|any
 		closeTop: Property|string|any
@@ -6892,10 +6956,10 @@ declare module 'cesium/Source/DataSources/RectangleGraphics' {
 	export = RectangleGraphics
 
 }
-declare module 'cesium/Source/DataSources/WallGraphicsOptions' {
+declare module 'cesium/Source/DataSources/HASH_74211_WallGraphicsOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	interface WallGraphicsOptions
+	interface HASH_74211_WallGraphicsOptions
 	{
 		positions?: Property|string|any;
 		maximumHeights?: Property|string|any;
@@ -6910,17 +6974,17 @@ declare module 'cesium/Source/DataSources/WallGraphicsOptions' {
 		shadows?: Property|string|any;
 		distanceDisplayCondition?: Property|string|any;
 	}
-	export = WallGraphicsOptions
+	export = HASH_74211_WallGraphicsOptions
 
 }
 declare module 'cesium/Source/DataSources/WallGraphics' {
-	import WallGraphicsOptions = require('cesium/Source/DataSources/WallGraphicsOptions')
+	import HASH_74211_WallGraphicsOptions = require('cesium/Source/DataSources/HASH_74211_WallGraphicsOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import Property = require('cesium/Source/DataSources/Property')
 	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
 	class WallGraphics 
 	{
-		constructor(options? : WallGraphicsOptions);
+		constructor(options? : HASH_74211_WallGraphicsOptions);
 		//Members
 		definitionChanged: Event
 		distanceDisplayCondition: Property|string|any
@@ -6945,7 +7009,7 @@ declare module 'cesium/Source/DataSources/WallGraphics' {
 	export = WallGraphics
 
 }
-declare module 'cesium/Source/DataSources/EntityOptions' {
+declare module 'cesium/Source/DataSources/HASH_66752_EntityOptions' {
 	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
 	import Property = require('cesium/Source/DataSources/Property')
 	import PositionProperty = require('cesium/Source/DataSources/PositionProperty')
@@ -6966,7 +7030,7 @@ declare module 'cesium/Source/DataSources/EntityOptions' {
 	import PolylineVolumeGraphics = require('cesium/Source/DataSources/PolylineVolumeGraphics')
 	import RectangleGraphics = require('cesium/Source/DataSources/RectangleGraphics')
 	import WallGraphics = require('cesium/Source/DataSources/WallGraphics')
-	interface EntityOptions
+	interface HASH_66752_EntityOptions
 	{
 		id?: string;
 		name?: string;
@@ -6994,11 +7058,11 @@ declare module 'cesium/Source/DataSources/EntityOptions' {
 		rectangle?: RectangleGraphics;
 		wall?: WallGraphics;
 	}
-	export = EntityOptions
+	export = HASH_66752_EntityOptions
 
 }
 declare module 'cesium/Source/DataSources/Entity' {
-	import EntityOptions = require('cesium/Source/DataSources/EntityOptions')
+	import HASH_66752_EntityOptions = require('cesium/Source/DataSources/HASH_66752_EntityOptions')
 	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
 	import BillboardGraphics = require('cesium/Source/DataSources/BillboardGraphics')
 	import BoxGraphics = require('cesium/Source/DataSources/BoxGraphics')
@@ -7024,7 +7088,7 @@ declare module 'cesium/Source/DataSources/Entity' {
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class Entity 
 	{
-		constructor(options? : EntityOptions);
+		constructor(options? : HASH_66752_EntityOptions);
 		//Members
 		availability: TimeIntervalCollection
 		billboard: BillboardGraphics
@@ -7089,7 +7153,7 @@ declare module 'cesium/Source/DataSources/CompositeEntityCollection' {
 		computeAvailability() : TimeInterval
 		contains(entity? : Entity) : boolean
 		containsCollection(collection? : EntityCollection) : boolean
-		getById(id? : any) : Entity
+		getById(id? : string) : Entity
 		getCollection(index? : number) : void
 		getCollectionsLength() : void
 		indexOfCollection(collection? : EntityCollection) : number
@@ -7128,11 +7192,11 @@ declare module 'cesium/Source/DataSources/EntityCollection' {
 		add(entity? : Entity) : Entity
 		computeAvailability() : TimeInterval
 		contains(entity? : Entity) : boolean
-		getById(id? : any) : Entity
-		getOrCreateEntity(id? : any) : Entity
+		getById(id? : string) : Entity
+		getOrCreateEntity(id? : string) : Entity
 		remove(entity? : Entity) : boolean
 		removeAll() : void
-		removeById(id? : any) : boolean
+		removeById(id? : string) : boolean
 		resumeEvents() : void
 		suspendEvents() : void
 
@@ -7159,21 +7223,21 @@ declare module 'cesium/Source/DataSources/BillboardVisualizer' {
 	export = BillboardVisualizer
 
 }
-declare module 'cesium/Source/Scene/MaterialOptions' {
-	interface MaterialOptions
+declare module 'cesium/Source/Scene/HASH_49651_MaterialOptions' {
+	interface HASH_49651_MaterialOptions
 	{
 		strict?: boolean;
 		translucent?: boolean|(()=>void);
 		fabric: Object;
 	}
-	export = MaterialOptions
+	export = HASH_49651_MaterialOptions
 
 }
 declare module 'cesium/Source/Scene/Material' {
-	import MaterialOptions = require('cesium/Source/Scene/MaterialOptions')
+	import HASH_49651_MaterialOptions = require('cesium/Source/Scene/HASH_49651_MaterialOptions')
 	class Material 
 	{
-		constructor(options? : MaterialOptions);
+		constructor(options? : HASH_49651_MaterialOptions);
 		//Members
 		static AlphaMapType: string
 		static BumpMapType: string
@@ -7213,9 +7277,9 @@ declare module 'cesium/Source/Scene/Material' {
 	export = Material
 
 }
-declare module 'cesium/Source/Scene/AppearanceOptions' {
+declare module 'cesium/Source/Scene/HASH_96818_AppearanceOptions' {
 	import Material = require('cesium/Source/Scene/Material')
-	interface AppearanceOptions
+	interface HASH_96818_AppearanceOptions
 	{
 		translucent?: boolean;
 		closed?: boolean;
@@ -7224,15 +7288,15 @@ declare module 'cesium/Source/Scene/AppearanceOptions' {
 		fragmentShaderSource?: string;
 		renderState?: RenderState;
 	}
-	export = AppearanceOptions
+	export = HASH_96818_AppearanceOptions
 
 }
 declare module 'cesium/Source/Scene/Appearance' {
-	import AppearanceOptions = require('cesium/Source/Scene/AppearanceOptions')
+	import HASH_96818_AppearanceOptions = require('cesium/Source/Scene/HASH_96818_AppearanceOptions')
 	import Material = require('cesium/Source/Scene/Material')
 	class Appearance 
 	{
-		constructor(options? : AppearanceOptions);
+		constructor(options? : HASH_96818_AppearanceOptions);
 		//Members
 		closed: boolean
 		fragmentShaderSource: string
@@ -7333,25 +7397,25 @@ declare module 'cesium/Source/DataSources/CallbackProperty' {
 	export = CallbackProperty
 
 }
-declare module 'cesium/Source/DataSources/CheckerboardMaterialPropertyOptions' {
+declare module 'cesium/Source/DataSources/HASH_80122_CheckerboardMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
-	interface CheckerboardMaterialPropertyOptions
+	interface HASH_80122_CheckerboardMaterialPropertyOptions
 	{
 		evenColor?: Property|string|any;
 		oddColor?: Property|string|any;
 		repeat?: Property|string|any;
 	}
-	export = CheckerboardMaterialPropertyOptions
+	export = HASH_80122_CheckerboardMaterialPropertyOptions
 
 }
 declare module 'cesium/Source/DataSources/CheckerboardMaterialProperty' {
-	import CheckerboardMaterialPropertyOptions = require('cesium/Source/DataSources/CheckerboardMaterialPropertyOptions')
+	import HASH_80122_CheckerboardMaterialPropertyOptions = require('cesium/Source/DataSources/HASH_80122_CheckerboardMaterialPropertyOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import Property = require('cesium/Source/DataSources/Property')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class CheckerboardMaterialProperty 
 	{
-		constructor(options? : CheckerboardMaterialPropertyOptions);
+		constructor(options? : HASH_80122_CheckerboardMaterialPropertyOptions);
 		//Members
 		definitionChanged: Event
 		evenColor: Property|string|any
@@ -7556,11 +7620,12 @@ declare module 'cesium/Source/DataSources/CorridorGeometryUpdater' {
 
 }
 declare module 'cesium/Source/DataSources/CustomDataSource' {
+	import DataSource = require('cesium/Source/DataSources/DataSource')
 	import Event = require('cesium/Source/Core/Event')
 	import DataSourceClock = require('cesium/Source/DataSources/DataSourceClock')
 	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
 	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	class CustomDataSource 
+	class CustomDataSource extends DataSource
 	{
 		constructor(name? : string);
 		//Members
@@ -7625,22 +7690,22 @@ declare module 'cesium/Source/DataSources/CylinderGeometryUpdater' {
 	export = CylinderGeometryUpdater
 
 }
-declare module 'cesium/Source/DataSources/loadOptions' {
-	interface loadOptions
+declare module 'cesium/Source/DataSources/HASH_14781_loadOptions' {
+	interface HASH_14781_loadOptions
 	{
 		sourceUri?: string;
 		query?: Object;
 	}
-	export = loadOptions
+	export = HASH_14781_loadOptions
 
 }
-declare module 'cesium/Source/DataSources/processOptions' {
-	interface processOptions
+declare module 'cesium/Source/DataSources/HASH_14781_processOptions' {
+	interface HASH_14781_processOptions
 	{
 		sourceUri?: string;
 		query?: Object;
 	}
-	export = processOptions
+	export = HASH_14781_processOptions
 
 }
 declare module 'cesium/Source/DataSources/CzmlDataSource' {
@@ -7649,9 +7714,9 @@ declare module 'cesium/Source/DataSources/CzmlDataSource' {
 	import DataSourceClock = require('cesium/Source/DataSources/DataSourceClock')
 	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
 	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import loadOptions = require('cesium/Source/DataSources/loadOptions')
+	import HASH_14781_loadOptions = require('cesium/Source/DataSources/HASH_14781_loadOptions')
 	import TimeInterval = require('cesium/Source/Core/TimeInterval')
-	import processOptions = require('cesium/Source/DataSources/processOptions')
+	import HASH_14781_processOptions = require('cesium/Source/DataSources/HASH_14781_processOptions')
 	class CzmlDataSource extends DataSource
 	{
 		constructor(name? : string);
@@ -7669,12 +7734,12 @@ declare module 'cesium/Source/DataSources/CzmlDataSource' {
 
 
 		//Methods
-		static load(czml? : string|any, options? : loadOptions) : Promise<CzmlDataSource>
+		static load(czml? : string|any, options? : HASH_14781_loadOptions) : Promise<CzmlDataSource>
 		static processMaterialPacketData(object? : any, propertyName? : string, packetData? : any, interval? : TimeInterval, sourceUri? : string, entityCollection? : EntityCollection) : void
 		static processPacketData(type? : (()=>void), object? : any, propertyName? : string, packetData? : any, interval? : TimeInterval, sourceUri? : string, entityCollection? : EntityCollection) : void
 		static processPositionPacketData(object? : any, propertyName? : string, packetData? : any, interval? : TimeInterval, sourceUri? : string, entityCollection? : EntityCollection) : void
-		load(czml? : string|any, options? : loadOptions) : Promise<CzmlDataSource>
-		process(czml? : string|any, options? : processOptions) : Promise<CzmlDataSource>
+		load(czml? : string|any, options? : HASH_14781_loadOptions) : Promise<CzmlDataSource>
+		process(czml? : string|any, options? : HASH_14781_processOptions) : Promise<CzmlDataSource>
 
 	}
 	export = CzmlDataSource
@@ -7706,27 +7771,27 @@ declare module 'cesium/Source/DataSources/DataSourceCollection' {
 	export = DataSourceCollection
 
 }
-declare module 'cesium/Source/DataSources/DataSourceDisplayOptions' {
+declare module 'cesium/Source/DataSources/HASH_61006_DataSourceDisplayOptions' {
 	import Scene = require('cesium/Source/Scene/Scene')
 	import DataSourceCollection = require('cesium/Source/DataSources/DataSourceCollection')
-	interface DataSourceDisplayOptions
+	interface HASH_61006_DataSourceDisplayOptions
 	{
 		scene: Scene;
 		dataSourceCollection: DataSourceCollection;
 		visualizersCallback?: any;
 	}
-	export = DataSourceDisplayOptions
+	export = HASH_61006_DataSourceDisplayOptions
 
 }
 declare module 'cesium/Source/DataSources/DataSourceDisplay' {
-	import DataSourceDisplayOptions = require('cesium/Source/DataSources/DataSourceDisplayOptions')
+	import HASH_61006_DataSourceDisplayOptions = require('cesium/Source/DataSources/HASH_61006_DataSourceDisplayOptions')
 	import DataSourceCollection = require('cesium/Source/DataSources/DataSourceCollection')
 	import CustomDataSource = require('cesium/Source/DataSources/CustomDataSource')
 	import Scene = require('cesium/Source/Scene/Scene')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class DataSourceDisplay 
 	{
-		constructor(options? : DataSourceDisplayOptions);
+		constructor(options? : HASH_61006_DataSourceDisplayOptions);
 		//Members
 		static defaultVisualizersCallback: any
 		dataSources: DataSourceCollection
@@ -7858,14 +7923,49 @@ declare module 'cesium/Source/DataSources/EntityView' {
 	export = EntityView
 
 }
+declare module 'cesium/Source/DataSources/HASH_64231_loadOptions' {
+	import Color = require('cesium/Source/Core/Color')
+	interface HASH_64231_loadOptions
+	{
+		sourceUri?: string;
+		markerSize?: number;
+		markerSymbol?: string;
+		markerColor?: Color;
+		stroke?: Color;
+		strokeWidth?: number;
+		fill?: Color;
+		clampToGround?: boolean;
+	}
+	export = HASH_64231_loadOptions
+
+}
+declare module 'cesium/Source/DataSources/HASH_54054_loadOptions' {
+	import Color = require('cesium/Source/Core/Color')
+	interface HASH_54054_loadOptions
+	{
+		sourceUri?: string;
+		describe?: any;
+		markerSize?: number;
+		markerSymbol?: string;
+		markerColor?: Color;
+		stroke?: Color;
+		strokeWidth?: number;
+		fill?: Color;
+		clampToGround?: boolean;
+	}
+	export = HASH_54054_loadOptions
+
+}
 declare module 'cesium/Source/DataSources/GeoJsonDataSource' {
+	import DataSource = require('cesium/Source/DataSources/DataSource')
 	import Color = require('cesium/Source/Core/Color')
 	import Event = require('cesium/Source/Core/Event')
 	import DataSourceClock = require('cesium/Source/DataSources/DataSourceClock')
 	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
 	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import loadOptions = require('cesium/Source/DataSources/loadOptions')
-	class GeoJsonDataSource 
+	import HASH_64231_loadOptions = require('cesium/Source/DataSources/HASH_64231_loadOptions')
+	import HASH_54054_loadOptions = require('cesium/Source/DataSources/HASH_54054_loadOptions')
+	class GeoJsonDataSource extends DataSource
 	{
 		constructor(name? : string);
 		//Members
@@ -7891,8 +7991,8 @@ declare module 'cesium/Source/DataSources/GeoJsonDataSource' {
 
 
 		//Methods
-		static load(data? : string|any, options? : loadOptions) : Promise<GeoJsonDataSource>
-		load(data? : string|any, options? : loadOptions) : Promise<GeoJsonDataSource>
+		static load(data? : string|any, options? : HASH_64231_loadOptions) : Promise<GeoJsonDataSource>
+		load(data? : string|any, options? : HASH_54054_loadOptions) : Promise<GeoJsonDataSource>
 
 	}
 	export = GeoJsonDataSource
@@ -7960,9 +8060,9 @@ declare module 'cesium/Source/DataSources/GeometryVisualizer' {
 	export = GeometryVisualizer
 
 }
-declare module 'cesium/Source/DataSources/GridMaterialPropertyOptions' {
+declare module 'cesium/Source/DataSources/HASH_13659_GridMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
-	interface GridMaterialPropertyOptions
+	interface HASH_13659_GridMaterialPropertyOptions
 	{
 		color?: Property|string|any;
 		cellAlpha?: Property|string|any;
@@ -7970,17 +8070,17 @@ declare module 'cesium/Source/DataSources/GridMaterialPropertyOptions' {
 		lineThickness?: Property|string|any;
 		lineOffset?: Property|string|any;
 	}
-	export = GridMaterialPropertyOptions
+	export = HASH_13659_GridMaterialPropertyOptions
 
 }
 declare module 'cesium/Source/DataSources/GridMaterialProperty' {
-	import GridMaterialPropertyOptions = require('cesium/Source/DataSources/GridMaterialPropertyOptions')
+	import HASH_13659_GridMaterialPropertyOptions = require('cesium/Source/DataSources/HASH_13659_GridMaterialPropertyOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class GridMaterialProperty 
 	{
-		constructor(options? : GridMaterialPropertyOptions);
+		constructor(options? : HASH_13659_GridMaterialPropertyOptions);
 		//Members
 		cellAlpha: Property|string|any
 		color: Property|string|any
@@ -8000,26 +8100,26 @@ declare module 'cesium/Source/DataSources/GridMaterialProperty' {
 	export = GridMaterialProperty
 
 }
-declare module 'cesium/Source/DataSources/ImageMaterialPropertyOptions' {
+declare module 'cesium/Source/DataSources/HASH_12727_ImageMaterialPropertyOptions' {
 	import Property = require('cesium/Source/DataSources/Property')
-	interface ImageMaterialPropertyOptions
+	interface HASH_12727_ImageMaterialPropertyOptions
 	{
 		image?: Property|string|any;
 		repeat?: Property|string|any;
 		color?: Property|string|any;
 		transparent?: Property|string|any;
 	}
-	export = ImageMaterialPropertyOptions
+	export = HASH_12727_ImageMaterialPropertyOptions
 
 }
 declare module 'cesium/Source/DataSources/ImageMaterialProperty' {
-	import ImageMaterialPropertyOptions = require('cesium/Source/DataSources/ImageMaterialPropertyOptions')
+	import HASH_12727_ImageMaterialPropertyOptions = require('cesium/Source/DataSources/HASH_12727_ImageMaterialPropertyOptions')
 	import Property = require('cesium/Source/DataSources/Property')
 	import Event = require('cesium/Source/Core/Event')
 	import JulianDate = require('cesium/Source/Core/JulianDate')
 	class ImageMaterialProperty 
 	{
-		constructor(options? : ImageMaterialPropertyOptions);
+		constructor(options? : HASH_12727_ImageMaterialPropertyOptions);
 		//Members
 		color: Property|string|any
 		definitionChanged: Event
@@ -8038,3705 +8138,68 @@ declare module 'cesium/Source/DataSources/ImageMaterialProperty' {
 	export = ImageMaterialProperty
 
 }
-declare module 'cesium/Source/DataSources/KmlDataSource' {
+declare module 'cesium/Source/DataSources/KmlCamera' {
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import HeadingPitchRoll = require('cesium/Source/Core/HeadingPitchRoll')
+	class KmlCamera 
+	{
+		constructor(position : Cartesian3, headingPitchRoll : HeadingPitchRoll);
+		//Members
+
+
+		//Methods
+
+	}
+	export = KmlCamera
+
+}
+declare module 'cesium/Source/DataSources/KmlLookAt' {
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import HeadingPitchRange = require('cesium/Source/Core/HeadingPitchRange')
+	class KmlLookAt 
+	{
+		constructor(position : Cartesian3, headingPitchRange : HeadingPitchRange);
+		//Members
+
+
+		//Methods
+
+	}
+	export = KmlLookAt
+
+}
+declare module 'cesium/Source/DataSources/KmlTourFlyTo' {
+	import KmlCamera = require('cesium/Source/DataSources/KmlCamera')
+	import KmlLookAt = require('cesium/Source/DataSources/KmlLookAt')
 	import Camera = require('cesium/Source/Scene/Camera')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Event = require('cesium/Source/Core/Event')
-	import DataSourceClock = require('cesium/Source/DataSources/DataSourceClock')
-	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
-	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import loadOptions = require('cesium/Source/DataSources/loadOptions')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class KmlDataSource 
+	class KmlTourFlyTo 
 	{
-		constructor();
+		constructor(duration : number, flyToMode : string, view : KmlCamera|KmlLookAt);
 		//Members
-		changedEvent: Event
-		clock: DataSourceClock
-		clustering: EntityCluster
-		entities: EntityCollection
-		errorEvent: Event
-		isLoading: boolean
-		loadingEvent: Event
-		name: string
-		refreshEvent: Event
-		show: boolean
-		unsupportedNodeEvent: Event
 
 
 		//Methods
-		static load(data? : string|Document|Blob, options? : loadOptions) : Promise<KmlDataSource>
-		load(data? : string|Document|Blob, options? : loadOptions) : Promise<KmlDataSource>
-		update(time? : JulianDate) : boolean
+		getCameraOptions(cameraOptions? : any) : Object
+		play(done? : any, camera? : Camera, cameraOptions? : any) : void
+		stop() : void
 
 	}
-	export = KmlDataSource
+	export = KmlTourFlyTo
 
 }
-declare module 'cesium/Source/DataSources/LabelVisualizer' {
-	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
-	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class LabelVisualizer 
+declare module 'cesium/Source/DataSources/KmlTourWait' {
+	class KmlTourWait 
 	{
-		constructor(entityCluster : EntityCluster, entityCollection : EntityCollection);
+		constructor(duration : number);
 		//Members
 
 
 		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-		update(time? : JulianDate) : boolean
+		play(done? : any) : void
+		stop() : void
 
 	}
-	export = LabelVisualizer
-
-}
-declare module 'cesium/Source/DataSources/ModelVisualizer' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class ModelVisualizer 
-	{
-		constructor(scene : Scene, entityCollection : EntityCollection);
-		//Members
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-		update(time? : JulianDate) : boolean
-
-	}
-	export = ModelVisualizer
-
-}
-declare module 'cesium/Source/DataSources/NodeTransformationPropertyOptions' {
-	import Property = require('cesium/Source/DataSources/Property')
-	interface NodeTransformationPropertyOptions
-	{
-		translation?: Property|string|any;
-		rotation?: Property|string|any;
-		scale?: Property|string|any;
-	}
-	export = NodeTransformationPropertyOptions
-
-}
-declare module 'cesium/Source/DataSources/NodeTransformationProperty' {
-	import NodeTransformationPropertyOptions = require('cesium/Source/DataSources/NodeTransformationPropertyOptions')
-	import Event = require('cesium/Source/Core/Event')
-	import Property = require('cesium/Source/DataSources/Property')
-	import TranslationRotationScale = require('cesium/Source/Core/TranslationRotationScale')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class NodeTransformationProperty 
-	{
-		constructor(options? : NodeTransformationPropertyOptions);
-		//Members
-		definitionChanged: Event
-		isConstant: boolean
-		rotation: Property|string|any
-		scale: Property|string|any
-		translation: Property|string|any
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getValue(time? : JulianDate, result? : TranslationRotationScale) : TranslationRotationScale
-
-	}
-	export = NodeTransformationProperty
-
-}
-declare module 'cesium/Source/DataSources/PathVisualizer' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PathVisualizer 
-	{
-		constructor(scene : Scene, entityCollection : EntityCollection);
-		//Members
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-		update(time? : JulianDate) : boolean
-
-	}
-	export = PathVisualizer
-
-}
-declare module 'cesium/Source/DataSources/PointVisualizer' {
-	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
-	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PointVisualizer 
-	{
-		constructor(entityCluster : EntityCluster, entityCollection : EntityCollection);
-		//Members
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-		update(time? : JulianDate) : boolean
-
-	}
-	export = PointVisualizer
-
-}
-declare module 'cesium/Source/DataSources/PolygonGeometryUpdater' {
-	import Entity = require('cesium/Source/DataSources/Entity')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Appearance = require('cesium/Source/Scene/Appearance')
-	import Property = require('cesium/Source/DataSources/Property')
-	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
-	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PolygonGeometryUpdater 
-	{
-		constructor(entity : Entity, scene : Scene);
-		//Members
-		static materialAppearanceType: Appearance
-		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string|any
-		entity: Entity
-		fillEnabled: boolean
-		fillMaterialProperty: MaterialProperty
-		geometryChanged: boolean
-		hasConstantFill: boolean
-		hasConstantOutline: boolean
-		isClosed: boolean
-		isDynamic: boolean
-		onTerrain: boolean
-		outlineColorProperty: Property|string|any
-		outlineEnabled: boolean
-		outlineWidth: number
-		shadowsProperty: Property|string|any
-
-
-		//Methods
-		createDynamicUpdater(primitives? : PrimitiveCollection, groundPrimitives? : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
-		destroy() : void
-		isDestroyed() : boolean
-		isFilled(time? : JulianDate) : boolean
-		isOutlineVisible(time? : JulianDate) : boolean
-
-	}
-	export = PolygonGeometryUpdater
-
-}
-declare module 'cesium/Source/DataSources/PolylineArrowMaterialProperty' {
-	import Property = require('cesium/Source/DataSources/Property')
-	import Event = require('cesium/Source/Core/Event')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PolylineArrowMaterialProperty 
-	{
-		constructor(color? : Property|string|any);
-		//Members
-		color: Property|string|any
-		definitionChanged: Event
-		isConstant: boolean
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getType(time? : JulianDate) : string
-		getValue(time? : JulianDate, result? : any) : Object
-
-	}
-	export = PolylineArrowMaterialProperty
-
-}
-declare module 'cesium/Source/DataSources/PolylineDashMaterialPropertyOptions' {
-	import Property = require('cesium/Source/DataSources/Property')
-	interface PolylineDashMaterialPropertyOptions
-	{
-		color?: Property|string|any;
-		gapColor?: Property|string|any;
-		dashLength?: Property|string|any;
-		dashPattern?: Property|string|any;
-	}
-	export = PolylineDashMaterialPropertyOptions
-
-}
-declare module 'cesium/Source/DataSources/PolylineDashMaterialProperty' {
-	import PolylineDashMaterialPropertyOptions = require('cesium/Source/DataSources/PolylineDashMaterialPropertyOptions')
-	import Property = require('cesium/Source/DataSources/Property')
-	import Event = require('cesium/Source/Core/Event')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PolylineDashMaterialProperty 
-	{
-		constructor(options? : PolylineDashMaterialPropertyOptions);
-		//Members
-		color: Property|string|any
-		dashLength: Property|string|any
-		dashPattern: Property|string|any
-		definitionChanged: Event
-		gapColor: Property|string|any
-		isConstant: boolean
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getType(time? : JulianDate) : string
-		getValue(time? : JulianDate, result? : any) : Object
-
-	}
-	export = PolylineDashMaterialProperty
-
-}
-declare module 'cesium/Source/DataSources/PolylineGeometryUpdater' {
-	import Entity = require('cesium/Source/DataSources/Entity')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Appearance = require('cesium/Source/Scene/Appearance')
-	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	import Property = require('cesium/Source/DataSources/Property')
-	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
-	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PolylineGeometryUpdater 
-	{
-		constructor(entity : Entity, scene : Scene);
-		//Members
-		static materialAppearanceType: Appearance
-		static perInstanceColorAppearanceType: Appearance
-		depthFailMaterialProperty: MaterialProperty
-		distanceDisplayConditionProperty: Property|string|any
-		entity: Entity
-		fillEnabled: boolean
-		fillMaterialProperty: MaterialProperty
-		geometryChanged: boolean
-		hasConstantFill: boolean
-		hasConstantOutline: boolean
-		isClosed: boolean
-		isDynamic: boolean
-		outlineColorProperty: Property|string|any
-		outlineEnabled: boolean
-		shadowsProperty: Property|string|any
-
-
-		//Methods
-		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
-		destroy() : void
-		isDestroyed() : boolean
-		isFilled(time? : JulianDate) : boolean
-		isOutlineVisible(time? : JulianDate) : boolean
-
-	}
-	export = PolylineGeometryUpdater
-
-}
-declare module 'cesium/Source/DataSources/PolylineGlowMaterialPropertyOptions' {
-	import Property = require('cesium/Source/DataSources/Property')
-	interface PolylineGlowMaterialPropertyOptions
-	{
-		color?: Property|string|any;
-		glowPower?: Property|string|any;
-	}
-	export = PolylineGlowMaterialPropertyOptions
-
-}
-declare module 'cesium/Source/DataSources/PolylineGlowMaterialProperty' {
-	import PolylineGlowMaterialPropertyOptions = require('cesium/Source/DataSources/PolylineGlowMaterialPropertyOptions')
-	import Property = require('cesium/Source/DataSources/Property')
-	import Event = require('cesium/Source/Core/Event')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PolylineGlowMaterialProperty 
-	{
-		constructor(options? : PolylineGlowMaterialPropertyOptions);
-		//Members
-		color: Property|string|any
-		definitionChanged: Event
-		glowPower: Property|string|any
-		isConstant: boolean
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getType(time? : JulianDate) : string
-		getValue(time? : JulianDate, result? : any) : Object
-
-	}
-	export = PolylineGlowMaterialProperty
-
-}
-declare module 'cesium/Source/DataSources/PolylineOutlineMaterialPropertyOptions' {
-	import Property = require('cesium/Source/DataSources/Property')
-	interface PolylineOutlineMaterialPropertyOptions
-	{
-		color?: Property|string|any;
-		outlineColor?: Property|string|any;
-		outlineWidth?: Property|string|any;
-	}
-	export = PolylineOutlineMaterialPropertyOptions
-
-}
-declare module 'cesium/Source/DataSources/PolylineOutlineMaterialProperty' {
-	import PolylineOutlineMaterialPropertyOptions = require('cesium/Source/DataSources/PolylineOutlineMaterialPropertyOptions')
-	import Property = require('cesium/Source/DataSources/Property')
-	import Event = require('cesium/Source/Core/Event')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PolylineOutlineMaterialProperty 
-	{
-		constructor(options? : PolylineOutlineMaterialPropertyOptions);
-		//Members
-		color: Property|string|any
-		definitionChanged: Event
-		isConstant: boolean
-		outlineColor: Property|string|any
-		outlineWidth: Property|string|any
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getType(time? : JulianDate) : string
-		getValue(time? : JulianDate, result? : any) : Object
-
-	}
-	export = PolylineOutlineMaterialProperty
-
-}
-declare module 'cesium/Source/DataSources/PolylineVolumeGeometryUpdater' {
-	import Entity = require('cesium/Source/DataSources/Entity')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Appearance = require('cesium/Source/Scene/Appearance')
-	import Property = require('cesium/Source/DataSources/Property')
-	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
-	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PolylineVolumeGeometryUpdater 
-	{
-		constructor(entity : Entity, scene : Scene);
-		//Members
-		static materialAppearanceType: Appearance
-		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string|any
-		entity: Entity
-		fillEnabled: boolean
-		fillMaterialProperty: MaterialProperty
-		geometryChanged: boolean
-		hasConstantFill: boolean
-		hasConstantOutline: boolean
-		isClosed: boolean
-		isDynamic: boolean
-		outlineColorProperty: Property|string|any
-		outlineEnabled: boolean
-		outlineWidth: number
-		shadowsProperty: Property|string|any
-
-
-		//Methods
-		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
-		destroy() : void
-		isDestroyed() : boolean
-		isFilled(time? : JulianDate) : boolean
-		isOutlineVisible(time? : JulianDate) : boolean
-
-	}
-	export = PolylineVolumeGeometryUpdater
-
-}
-declare module 'cesium/Source/DataSources/PositionPropertyArray' {
-	import Property = require('cesium/Source/DataSources/Property')
-	import ReferenceFrame = require('cesium/Source/Core/ReferenceFrame')
-	import Event = require('cesium/Source/Core/Event')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PositionPropertyArray 
-	{
-		constructor(value? : Array<Property>, referenceFrame? : ReferenceFrame);
-		//Members
-		definitionChanged: Event
-		isConstant: boolean
-		referenceFrame: ReferenceFrame
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getValue(time : JulianDate, result : Array<Cartesian3>) : Array<Cartesian3>
-		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
-		setValue(value? : Array<Property>) : void
-
-	}
-	export = PositionPropertyArray
-
-}
-declare module 'cesium/Source/DataSources/PropertyArray' {
-	import Property = require('cesium/Source/DataSources/Property')
-	import Event = require('cesium/Source/Core/Event')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class PropertyArray 
-	{
-		constructor(value? : Array<Property>);
-		//Members
-		definitionChanged: Event
-		isConstant: boolean
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getValue(time? : JulianDate, result? : Array<any>) : Array<Object>
-		setValue(value? : Array<Property>) : void
-
-	}
-	export = PropertyArray
-
-}
-declare module 'cesium/Source/DataSources/RectangleGeometryUpdater' {
-	import Entity = require('cesium/Source/DataSources/Entity')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Appearance = require('cesium/Source/Scene/Appearance')
-	import Property = require('cesium/Source/DataSources/Property')
-	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
-	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class RectangleGeometryUpdater 
-	{
-		constructor(entity : Entity, scene : Scene);
-		//Members
-		static materialAppearanceType: Appearance
-		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string|any
-		entity: Entity
-		fillEnabled: boolean
-		fillMaterialProperty: MaterialProperty
-		geometryChanged: boolean
-		hasConstantFill: boolean
-		hasConstantOutline: boolean
-		isClosed: boolean
-		isDynamic: boolean
-		onTerrain: boolean
-		outlineColorProperty: Property|string|any
-		outlineEnabled: boolean
-		outlineWidth: number
-		shadowsProperty: Property|string|any
-
-
-		//Methods
-		createDynamicUpdater(primitives? : PrimitiveCollection, groundPrimitives? : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
-		destroy() : void
-		isDestroyed() : boolean
-		isFilled(time? : JulianDate) : boolean
-		isOutlineVisible(time? : JulianDate) : boolean
-
-	}
-	export = RectangleGeometryUpdater
-
-}
-declare module 'cesium/Source/DataSources/ReferenceProperty' {
-	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
-	import Event = require('cesium/Source/Core/Event')
-	import ReferenceFrame = require('cesium/Source/Core/ReferenceFrame')
-	import Property = require('cesium/Source/DataSources/Property')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	class ReferenceProperty 
-	{
-		constructor(targetCollection : EntityCollection, targetId : string, targetPropertyNames : Array<string>);
-		//Members
-		definitionChanged: Event
-		isConstant: boolean
-		referenceFrame: ReferenceFrame
-		resolvedProperty: Property|string|any
-		targetCollection: EntityCollection
-		targetId: string
-		targetPropertyNames: Array<string>
-
-
-		//Methods
-		static fromString(targetCollection? : EntityCollection, referenceString? : string) : ReferenceProperty
-		equals(other : Property|string|any) : boolean
-		getType(time? : JulianDate) : string
-		getValue(time? : JulianDate, result? : any) : Object
-		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
-
-	}
-	export = ReferenceProperty
-
-}
-declare module 'cesium/Source/DataSources/Rotation' {
-	class Rotation 
-	{
-		constructor();
-		//Members
-		static packedLength: number
-
-
-		//Methods
-		static convertPackedArrayForInterpolation(packedArray? : Array<number>, startingIndex? : number, lastIndex? : number, result? : Array<number>) : void
-		static pack(value? : Rotation, array? : Array<number>, startingIndex? : number) : Array<number>
-		static unpack(array? : Array<number>, startingIndex? : number, result? : Rotation) : Rotation
-		static unpackInterpolationResult(array? : Array<number>, sourceArray? : Array<number>, firstIndex? : number, lastIndex? : number, result? : Rotation) : Rotation
-
-	}
-	export = Rotation
-
-}
-declare module 'cesium/Source/DataSources/setInterpolationOptionsOptions' {
-	import InterpolationAlgorithm = require('cesium/Source/Core/InterpolationAlgorithm')
-	interface setInterpolationOptionsOptions
-	{
-		interpolationAlgorithm?: InterpolationAlgorithm;
-		interpolationDegree?: number;
-	}
-	export = setInterpolationOptionsOptions
-
-}
-declare module 'cesium/Source/DataSources/SampledPositionProperty' {
-	import ReferenceFrame = require('cesium/Source/Core/ReferenceFrame')
-	import ExtrapolationType = require('cesium/Source/Core/ExtrapolationType')
-	import Event = require('cesium/Source/Core/Event')
-	import InterpolationAlgorithm = require('cesium/Source/Core/InterpolationAlgorithm')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import Property = require('cesium/Source/DataSources/Property')
-	import setInterpolationOptionsOptions = require('cesium/Source/DataSources/setInterpolationOptionsOptions')
-	class SampledPositionProperty 
-	{
-		constructor(referenceFrame? : ReferenceFrame, numberOfDerivatives? : number);
-		//Members
-		backwardExtrapolationDuration: number
-		backwardExtrapolationType: ExtrapolationType
-		definitionChanged: Event
-		forwardExtrapolationDuration: number
-		forwardExtrapolationType: ExtrapolationType
-		interpolationAlgorithm: InterpolationAlgorithm
-		interpolationDegree: number
-		isConstant: boolean
-		numberOfDerivatives: boolean
-		referenceFrame: ReferenceFrame
-
-
-		//Methods
-		addSample(time? : JulianDate, position? : Cartesian3, derivatives? : Array<Cartesian3>) : void
-		addSamples(times? : Array<JulianDate>, positions? : Array<Cartesian3>, derivatives? : Array<Array<any>>) : void
-		addSamplesPackedArray(packedSamples? : Array<number>, epoch? : JulianDate) : void
-		equals(other : Property|string|any) : boolean
-		getValue(time? : JulianDate, result? : Cartesian3) : Cartesian3
-		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
-		setInterpolationOptions(options : setInterpolationOptionsOptions) : void
-
-	}
-	export = SampledPositionProperty
-
-}
-declare module 'cesium/Source/DataSources/SampledProperty' {
-	import Packable = require('cesium/Source/Core/Packable')
-	import ExtrapolationType = require('cesium/Source/Core/ExtrapolationType')
-	import Event = require('cesium/Source/Core/Event')
-	import InterpolationAlgorithm = require('cesium/Source/Core/InterpolationAlgorithm')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import Property = require('cesium/Source/DataSources/Property')
-	import setInterpolationOptionsOptions = require('cesium/Source/DataSources/setInterpolationOptionsOptions')
-	class SampledProperty 
-	{
-		constructor(type : number|Packable, derivativeTypes? : Array<Packable>);
-		//Members
-		backwardExtrapolationDuration: number
-		backwardExtrapolationType: ExtrapolationType
-		definitionChanged: Event
-		derivativeTypes: Array<Packable>
-		forwardExtrapolationDuration: number
-		forwardExtrapolationType: ExtrapolationType
-		interpolationAlgorithm: InterpolationAlgorithm
-		interpolationDegree: number
-		isConstant: boolean
-		type: Object
-
-
-		//Methods
-		addSample(time? : JulianDate, value? : Packable, derivatives? : Array<Packable>) : void
-		addSamples(times? : Array<JulianDate>, values? : Array<Packable>, derivativeValues? : Array<Array<any>>) : void
-		addSamplesPackedArray(packedSamples? : Array<number>, epoch? : JulianDate) : void
-		equals(other : Property|string|any) : boolean
-		getValue(time? : JulianDate, result? : any) : Object
-		setInterpolationOptions(options : setInterpolationOptionsOptions) : void
-
-	}
-	export = SampledProperty
-
-}
-declare module 'cesium/Source/DataSources/StripeMaterialPropertyOptions' {
-	import Property = require('cesium/Source/DataSources/Property')
-	interface StripeMaterialPropertyOptions
-	{
-		evenColor?: Property|string|any;
-		oddColor?: Property|string|any;
-		repeat?: Property|string|any;
-		offset?: Property|string|any;
-		orientation?: Property|string|any;
-	}
-	export = StripeMaterialPropertyOptions
-
-}
-declare module 'cesium/Source/DataSources/StripeMaterialProperty' {
-	import StripeMaterialPropertyOptions = require('cesium/Source/DataSources/StripeMaterialPropertyOptions')
-	import Event = require('cesium/Source/Core/Event')
-	import Property = require('cesium/Source/DataSources/Property')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class StripeMaterialProperty 
-	{
-		constructor(options? : StripeMaterialPropertyOptions);
-		//Members
-		definitionChanged: Event
-		evenColor: Property|string|any
-		isConstant: boolean
-		oddColor: Property|string|any
-		offset: Property|string|any
-		orientation: Property|string|any
-		repeat: Property|string|any
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getType(time? : JulianDate) : string
-		getValue(time? : JulianDate, result? : any) : Object
-
-	}
-	export = StripeMaterialProperty
-
-}
-declare module 'cesium/Source/DataSources/StripeOrientation' {
-	class StripeOrientation 
-	{
-		constructor();
-		//Members
-		static HORIZONTAL: number
-		static VERTICAL: number
-
-
-		//Methods
-
-	}
-	export = StripeOrientation
-
-}
-declare module 'cesium/Source/DataSources/TimeIntervalCollectionPositionProperty' {
-	import ReferenceFrame = require('cesium/Source/Core/ReferenceFrame')
-	import Event = require('cesium/Source/Core/Event')
-	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
-	import Property = require('cesium/Source/DataSources/Property')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	class TimeIntervalCollectionPositionProperty 
-	{
-		constructor(referenceFrame? : ReferenceFrame);
-		//Members
-		definitionChanged: Event
-		intervals: TimeIntervalCollection
-		isConstant: boolean
-		referenceFrame: ReferenceFrame
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getValue(time? : JulianDate, result? : any) : Object
-		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
-
-	}
-	export = TimeIntervalCollectionPositionProperty
-
-}
-declare module 'cesium/Source/DataSources/TimeIntervalCollectionProperty' {
-	import Event = require('cesium/Source/Core/Event')
-	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
-	import Property = require('cesium/Source/DataSources/Property')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class TimeIntervalCollectionProperty extends Property
-	{
-		constructor();
-		//Members
-		definitionChanged: Event
-		intervals: TimeIntervalCollection
-		isConstant: boolean
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getValue(time? : JulianDate, result? : any) : Object
-
-	}
-	export = TimeIntervalCollectionProperty
-
-}
-declare module 'cesium/Source/DataSources/VelocityOrientationProperty' {
-	import Property = require('cesium/Source/DataSources/Property')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import Event = require('cesium/Source/Core/Event')
-	import Quaternion = require('cesium/Source/Core/Quaternion')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class VelocityOrientationProperty extends Property
-	{
-		constructor(position? : Property|string|any, ellipsoid? : Ellipsoid);
-		//Members
-		definitionChanged: Event
-		ellipsoid: Property|string|any
-		isConstant: boolean
-		position: Property|string|any
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getValue(time : JulianDate, result : Quaternion) : Quaternion
-
-	}
-	export = VelocityOrientationProperty
-
-}
-declare module 'cesium/Source/DataSources/VelocityVectorProperty' {
-	import Property = require('cesium/Source/DataSources/Property')
-	import Event = require('cesium/Source/Core/Event')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class VelocityVectorProperty 
-	{
-		constructor(position? : Property|string|any, normalize? : boolean);
-		//Members
-		definitionChanged: Event
-		isConstant: boolean
-		normalize: boolean
-		position: Property|string|any
-
-
-		//Methods
-		equals(other : Property|string|any) : boolean
-		getValue(time : JulianDate, result : Cartesian3) : Cartesian3
-
-	}
-	export = VelocityVectorProperty
-
-}
-declare module 'cesium/Source/DataSources/Visualizer' {
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class Visualizer 
-	{
-		constructor();
-		//Members
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-		update(time? : JulianDate) : boolean
-
-	}
-	export = Visualizer
-
-}
-declare module 'cesium/Source/DataSources/WallGeometryUpdater' {
-	import Entity = require('cesium/Source/DataSources/Entity')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Appearance = require('cesium/Source/Scene/Appearance')
-	import Property = require('cesium/Source/DataSources/Property')
-	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
-	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class WallGeometryUpdater 
-	{
-		constructor(entity : Entity, scene : Scene);
-		//Members
-		static materialAppearanceType: Appearance
-		static perInstanceColorAppearanceType: Appearance
-		distanceDisplayConditionProperty: Property|string|any
-		entity: Entity
-		fillEnabled: boolean
-		fillMaterialProperty: MaterialProperty
-		geometryChanged: boolean
-		hasConstantFill: boolean
-		hasConstantOutline: boolean
-		isClosed: boolean
-		isDynamic: boolean
-		outlineColorProperty: Property|string|any
-		outlineEnabled: boolean
-		outlineWidth: number
-		shadowsProperty: Property|string|any
-
-
-		//Methods
-		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
-		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
-		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
-		destroy() : void
-		isDestroyed() : boolean
-		isFilled(time? : JulianDate) : boolean
-		isOutlineVisible(time? : JulianDate) : boolean
-
-	}
-	export = WallGeometryUpdater
-
-}
-declare module 'cesium/Source/Scene/ArcGisMapServerImageryProviderOptions' {
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface ArcGisMapServerImageryProviderOptions
-	{
-		url: string;
-		token?: string;
-		tileDiscardPolicy?: TileDiscardPolicy;
-		proxy?: DefaultProxy;
-		usePreCachedTilesIfAvailable?: boolean;
-		layers?: string;
-		enablePickFeatures?: boolean;
-		rectangle?: Rectangle;
-		tilingScheme?: TilingScheme;
-		ellipsoid?: Ellipsoid;
-		tileWidth?: number;
-		tileHeight?: number;
-		maximumLevel?: number;
-	}
-	export = ArcGisMapServerImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/ArcGisMapServerImageryProvider' {
-	import ArcGisMapServerImageryProviderOptions = require('cesium/Source/Scene/ArcGisMapServerImageryProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class ArcGisMapServerImageryProvider 
-	{
-		constructor(options? : ArcGisMapServerImageryProviderOptions);
-		//Members
-		credit: Credit
-		enablePickFeatures: boolean
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		layers: string
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		token: string
-		url: string
-		usingPrecachedTiles: boolean
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = ArcGisMapServerImageryProvider
-
-}
-declare module 'cesium/Source/Scene/HeightReference' {
-	class HeightReference 
-	{
-		constructor();
-		//Members
-		static CLAMP_TO_GROUND: number
-		static NONE: number
-		static RELATIVE_TO_GROUND: number
-
-
-		//Methods
-
-	}
-	export = HeightReference
-
-}
-declare module 'cesium/Source/Scene/HorizontalOrigin' {
-	class HorizontalOrigin 
-	{
-		constructor();
-		//Members
-		static CENTER: number
-		static LEFT: number
-		static RIGHT: number
-
-
-		//Methods
-
-	}
-	export = HorizontalOrigin
-
-}
-declare module 'cesium/Source/Scene/VerticalOrigin' {
-	class VerticalOrigin 
-	{
-		constructor();
-		//Members
-		static BASELINE: number
-		static BOTTOM: number
-		static CENTER: number
-		static TOP: number
-
-
-		//Methods
-
-	}
-	export = VerticalOrigin
-
-}
-declare module 'cesium/Source/Scene/Billboard' {
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import Color = require('cesium/Source/Core/Color')
-	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
-	import HeightReference = require('cesium/Source/Scene/HeightReference')
-	import HorizontalOrigin = require('cesium/Source/Scene/HorizontalOrigin')
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import NearFarScalar = require('cesium/Source/Core/NearFarScalar')
-	import VerticalOrigin = require('cesium/Source/Scene/VerticalOrigin')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import BoundingRectangle = require('cesium/Source/Core/BoundingRectangle')
-	class Billboard 
-	{
-		constructor();
-		//Members
-		alignedAxis: Cartesian3
-		color: Color
-		disableDepthTestDistance: number
-		distanceDisplayCondition: DistanceDisplayCondition
-		eyeOffset: Cartesian3
-		height: number
-		heightReference: HeightReference
-		horizontalOrigin: HorizontalOrigin
-		id: Object
-		image: string
-		pixelOffset: Cartesian2
-		pixelOffsetScaleByDistance: NearFarScalar
-		position: Cartesian3
-		ready: boolean
-		rotation: number
-		scale: number
-		scaleByDistance: NearFarScalar
-		show: boolean
-		sizeInMeters: boolean
-		translucencyByDistance: NearFarScalar
-		verticalOrigin: VerticalOrigin
-		width: number
-
-
-		//Methods
-		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
-		equals(other? : Billboard) : boolean
-		setImage(id? : string, image? : HTMLImageElement|HTMLCanvasElement|string|any) : void
-		setImageSubRegion(id? : string, subRegion? : BoundingRectangle) : void
-
-	}
-	export = Billboard
-
-}
-declare module 'cesium/Source/Scene/BlendOption' {
-	class BlendOption 
-	{
-		constructor();
-		//Members
-		static OPAQUE: number
-		static OPAQUE_AND_TRANSLUCENT: number
-		static TRANSLUCENT: number
-
-
-		//Methods
-
-	}
-	export = BlendOption
-
-}
-declare module 'cesium/Source/Scene/BillboardCollectionOptions' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import BlendOption = require('cesium/Source/Scene/BlendOption')
-	interface BillboardCollectionOptions
-	{
-		modelMatrix?: Matrix4;
-		debugShowBoundingVolume?: boolean;
-		scene?: Scene;
-		blendOption?: BlendOption;
-	}
-	export = BillboardCollectionOptions
-
-}
-declare module 'cesium/Source/Scene/BillboardCollection' {
-	import BillboardCollectionOptions = require('cesium/Source/Scene/BillboardCollectionOptions')
-	import BlendOption = require('cesium/Source/Scene/BlendOption')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Billboard = require('cesium/Source/Scene/Billboard')
-	class BillboardCollection 
-	{
-		constructor(options? : BillboardCollectionOptions);
-		//Members
-		blendOption: BlendOption
-		debugShowBoundingVolume: boolean
-		length: number
-		modelMatrix: Matrix4
-
-
-		//Methods
-		add(billboard : any) : Billboard
-		contains(billboard : Billboard) : boolean
-		destroy() : void
-		get(index? : number) : Billboard
-		isDestroyed() : boolean
-		remove(billboard? : Billboard) : boolean
-		removeAll() : void
-		update() : void
-
-	}
-	export = BillboardCollection
-
-}
-declare module 'cesium/Source/Scene/BingMapsImageryProviderOptions' {
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	interface BingMapsImageryProviderOptions
-	{
-		url: string;
-		key?: string;
-		tileProtocol?: string;
-		mapStyle?: string;
-		culture?: string;
-		ellipsoid?: Ellipsoid;
-		tileDiscardPolicy?: TileDiscardPolicy;
-		proxy?: DefaultProxy;
-	}
-	export = BingMapsImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/BingMapsStyle' {
-	class BingMapsStyle 
-	{
-		constructor();
-		//Members
-		static AERIAL: string
-		static AERIAL_WITH_LABELS: string
-		static COLLINS_BART: string
-		static ORDNANCE_SURVEY: string
-		static ROAD: string
-
-
-		//Methods
-
-	}
-	export = BingMapsStyle
-
-}
-declare module 'cesium/Source/Scene/BingMapsImageryProvider' {
-	import BingMapsImageryProviderOptions = require('cesium/Source/Scene/BingMapsImageryProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import BingMapsStyle = require('cesium/Source/Scene/BingMapsStyle')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class BingMapsImageryProvider 
-	{
-		constructor(options? : BingMapsImageryProviderOptions);
-		//Members
-		credit: Credit
-		culture: string
-		defaultGamma: number
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		key: string
-		mapStyle: BingMapsStyle
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		url: string
-
-
-		//Methods
-		static quadKeyToTileXY(quadkey? : string) : void
-		static tileXYToQuadKey(x? : number, y? : number, level? : number) : void
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = BingMapsImageryProvider
-
-}
-declare module 'cesium/Source/Scene/BlendEquation' {
-	class BlendEquation 
-	{
-		constructor();
-		//Members
-		static ADD: number
-		static MAX: number
-		static MIN: number
-		static REVERSE_SUBTRACT: number
-		static SUBTRACT: number
-
-
-		//Methods
-
-	}
-	export = BlendEquation
-
-}
-declare module 'cesium/Source/Scene/BlendFunction' {
-	class BlendFunction 
-	{
-		constructor();
-		//Members
-		static CONSTANT_ALPHA: number
-		static CONSTANT_COLOR: number
-		static DESTINATION_ALPHA: number
-		static DESTINATION_COLOR: number
-		static ONE: number
-		static ONE_MINUS_CONSTANT_ALPHA: number
-		static ONE_MINUS_CONSTANT_COLOR: number
-		static ONE_MINUS_DESTINATION_ALPHA: number
-		static ONE_MINUS_DESTINATION_COLOR: number
-		static ONE_MINUS_SOURCE_ALPHA: number
-		static ONE_MINUS_SOURCE_COLOR: number
-		static SOURCE_ALPHA: number
-		static SOURCE_ALPHA_SATURATE: number
-		static SOURCE_COLOR: number
-		static ZERO: number
-
-
-		//Methods
-
-	}
-	export = BlendFunction
-
-}
-declare module 'cesium/Source/Scene/BlendingState' {
-	class BlendingState 
-	{
-		constructor();
-		//Members
-		static ADDITIVE_BLEND: Object
-		static ALPHA_BLEND: Object
-		static DISABLED: Object
-		static PRE_MULTIPLIED_ALPHA_BLEND: Object
-
-
-		//Methods
-
-	}
-	export = BlendingState
-
-}
-declare module 'cesium/Source/Scene/BoxEmitter' {
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	class BoxEmitter 
-	{
-		constructor(dimensions : Cartesian3);
-		//Members
-		dimensions: Cartesian3
-
-
-		//Methods
-
-	}
-	export = BoxEmitter
-
-}
-declare module 'cesium/Source/Scene/CameraEventAggregator' {
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import CameraEventType = require('cesium/Source/Scene/CameraEventType')
-	import KeyboardEventModifier = require('cesium/Source/Core/KeyboardEventModifier')
-	class CameraEventAggregator 
-	{
-		constructor(canvas? : HTMLCanvasElement);
-		//Members
-		anyButtonDown: boolean
-		currentMousePosition: Cartesian2
-
-
-		//Methods
-		destroy() : void
-		getButtonPressTime(type? : CameraEventType, modifier? : KeyboardEventModifier) : Date
-		getButtonReleaseTime(type? : CameraEventType, modifier? : KeyboardEventModifier) : Date
-		getLastMovement(type? : CameraEventType, modifier? : KeyboardEventModifier) : Object|void
-		getMovement(type? : CameraEventType, modifier? : KeyboardEventModifier) : Object
-		getStartMousePosition(type? : CameraEventType, modifier? : KeyboardEventModifier) : Cartesian2
-		isButtonDown(type? : CameraEventType, modifier? : KeyboardEventModifier) : boolean
-		isDestroyed() : boolean
-		isMoving(type? : CameraEventType, modifier? : KeyboardEventModifier) : boolean
-		reset() : void
-
-	}
-	export = CameraEventAggregator
-
-}
-declare module 'cesium/Source/Scene/Cesium3DTilesetOptions' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
-	interface Cesium3DTilesetOptions
-	{
-		url: string;
-		show?: boolean;
-		modelMatrix?: Matrix4;
-		shadows?: ShadowMode;
-		maximumScreenSpaceError?: number;
-		maximumMemoryUsage?: number;
-		cullWithChildrenBounds?: boolean;
-		dynamicScreenSpaceError?: boolean;
-		dynamicScreenSpaceErrorDensity?: number;
-		dynamicScreenSpaceErrorFactor?: number;
-		dynamicScreenSpaceErrorHeightFalloff?: number;
-		skipLevelOfDetail?: boolean;
-		baseScreenSpaceError?: number;
-		skipScreenSpaceErrorFactor?: number;
-		skipLevels?: number;
-		immediatelyLoadDesiredLevelOfDetail?: boolean;
-		loadSiblings?: boolean;
-		debugFreezeFrame?: boolean;
-		debugColorizeTiles?: boolean;
-		debugWireframe?: boolean;
-		debugShowBoundingVolume?: boolean;
-		debugShowContentBoundingVolume?: boolean;
-		debugShowViewerRequestVolume?: boolean;
-		debugShowGeometricError?: boolean;
-		debugShowRenderingStatistics?: boolean;
-		debugShowMemoryUsage?: boolean;
-		debugShowUrl?: boolean;
-	}
-	export = Cesium3DTilesetOptions
-
-}
-declare module 'cesium/Source/Scene/Cesium3DTileColorBlendMode' {
-	class Cesium3DTileColorBlendMode 
-	{
-		constructor();
-		//Members
-		static HIGHLIGHT: number
-		static MIX: number
-		static REPLACE: number
-
-
-		//Methods
-
-	}
-	export = Cesium3DTileColorBlendMode
-
-}
-declare module 'cesium/Source/Scene/FrameState' {
-	class FrameState
-	{
-	constructor();
-	}
-	export = FrameState
-
-}
-declare module 'cesium/Source/Scene/StyleExpression' {
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
-	import Color = require('cesium/Source/Core/Color')
-	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
-	import FrameState = require('cesium/Source/Scene/FrameState')
-	class StyleExpression 
-	{
-		constructor();
-		//Members
-
-
-		//Methods
-		evaluate(frameState? : any, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
-		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
-
-	}
-	export = StyleExpression
-
-}
-declare module 'cesium/Source/Scene/Cesium3DTileStyle' {
-	import StyleExpression = require('cesium/Source/Scene/StyleExpression')
-	class Cesium3DTileStyle 
-	{
-		constructor(style? : string|any);
-		//Members
-		color: StyleExpression
-		meta: StyleExpression
-		pointSize: StyleExpression
-		ready: boolean
-		readyPromise: Promise<Cesium3DTileStyle>
-		show: StyleExpression
-		style: Object
-
-
-		//Methods
-
-	}
-	export = Cesium3DTileStyle
-
-}
-declare module 'cesium/Source/Scene/Cesium3DTileset' {
-	import Cesium3DTilesetOptions = require('cesium/Source/Scene/Cesium3DTilesetOptions')
-	import Event = require('cesium/Source/Core/Event')
-	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
-	import Cesium3DTileColorBlendMode = require('cesium/Source/Scene/Cesium3DTileColorBlendMode')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
-	import Cesium3DTileStyle = require('cesium/Source/Scene/Cesium3DTileStyle')
-	class Cesium3DTileset 
-	{
-		constructor(options? : Cesium3DTilesetOptions);
-		//Members
-		allTilesLoaded: Event
-		asset: Object
-		basePath: string
-		baseScreenSpaceError: number
-		boundingSphere: BoundingSphere
-		colorBlendAmount: number
-		colorBlendMode: Cesium3DTileColorBlendMode
-		debugColorizeTiles: boolean
-		debugFreezeFrame: boolean
-		debugShowBoundingVolume: boolean
-		debugShowContentBoundingVolume: boolean
-		debugShowGeometricError: boolean
-		debugShowMemoryUsage: boolean
-		debugShowRenderingStatistics: boolean
-		debugShowUrl: boolean
-		debugShowViewerRequestVolume: boolean
-		debugWireframe: boolean
-		dynamicScreenSpaceError: boolean
-		dynamicScreenSpaceErrorDensity: number
-		dynamicScreenSpaceErrorFactor: number
-		dynamicScreenSpaceErrorHeightFalloff: number
-		immediatelyLoadDesiredLevelOfDetail: boolean
-		loadProgress: Event
-		loadSiblings: boolean
-		maximumMemoryUsage: number
-		maximumScreenSpaceError: number
-		modelMatrix: Matrix4
-		properties: Object
-		ready: boolean
-		readyPromise: Promise<Cesium3DTileset>
-		shadows: ShadowMode
-		show: boolean
-		skipLevelOfDetail: boolean
-		skipLevels: number
-		skipScreenSpaceErrorFactor: number
-		style: Cesium3DTileStyle
-		tileLoad: Event
-		tilesLoaded: boolean
-		tileUnload: Event
-		tileVisible: Event
-		timeSinceLoad: number
-		totalMemoryUsageInBytes: number
-		url: string
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-		makeStyleDirty() : void
-		trimLoadedTiles() : void
-		update() : void
-
-	}
-	export = Cesium3DTileset
-
-}
-declare module 'cesium/Source/Scene/Cesium3DTileFeature' {
-	import Color = require('cesium/Source/Core/Color')
-	import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
-	class Cesium3DTileFeature 
-	{
-		constructor();
-		//Members
-		color: Color
-		primitive: Cesium3DTileset
-		show: boolean
-		tileset: Cesium3DTileset
-
-
-		//Methods
-		getProperty(name? : string) : any
-		getPropertyNames(results? : Array<string>) : Array<string>
-		hasProperty(name? : string) : boolean
-		setProperty(name? : string, value? : any) : void
-
-	}
-	export = Cesium3DTileFeature
-
-}
-declare module 'cesium/Source/Scene/Cesium3DTileContent' {
-	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
-	class Cesium3DTileContent 
-	{
-		constructor();
-		//Members
-		batchTableByteLength: number
-		featuresLength: number
-		geometryByteLength: number
-		innerContents: Array<any>
-		pointsLength: number
-		readyPromise: Promise<Cesium3DTileContent>
-		texturesByteLength: number
-		trianglesLength: number
-		url: string
-
-
-		//Methods
-		getFeature(batchId? : number) : Cesium3DTileFeature
-		hasProperty(batchId? : number, name? : string) : boolean
-
-	}
-	export = Cesium3DTileContent
-
-}
-declare module 'cesium/Source/Scene/Cesium3DTile' {
-	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Cesium3DTileContent = require('cesium/Source/Scene/Cesium3DTileContent')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
-	class Cesium3DTile 
-	{
-		constructor();
-		//Members
-		boundingSphere: BoundingSphere
-		children: Array<Cesium3DTile>
-		computedTransform: Matrix4
-		content: Cesium3DTileContent
-		expireDate: JulianDate
-		expireDuration: number
-		geometricError: number
-		parent: Cesium3DTile
-		tileset: Cesium3DTileset
-		transform: Matrix4
-
-
-		//Methods
-
-	}
-	export = Cesium3DTile
-
-}
-declare module 'cesium/Source/Scene/CircleEmitter' {
-	class CircleEmitter 
-	{
-		constructor(radius? : number);
-		//Members
-		angle: number
-		radius: number
-
-
-		//Methods
-
-	}
-	export = CircleEmitter
-
-}
-declare module 'cesium/Source/Scene/ClassificationPrimitiveOptions' {
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	interface ClassificationPrimitiveOptions
-	{
-		geometryInstances?: Array<any>|GeometryInstance;
-		show?: boolean;
-		vertexCacheOptimize?: boolean;
-		interleave?: boolean;
-		compressVertices?: boolean;
-		releaseGeometryInstances?: boolean;
-		allowPicking?: boolean;
-		asynchronous?: boolean;
-		debugShowBoundingVolume?: boolean;
-		debugShowShadowVolume?: boolean;
-	}
-	export = ClassificationPrimitiveOptions
-
-}
-declare module 'cesium/Source/Scene/ClassificationPrimitive' {
-	import ClassificationPrimitiveOptions = require('cesium/Source/Scene/ClassificationPrimitiveOptions')
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import Scene = require('cesium/Source/Scene/Scene')
-	class ClassificationPrimitive 
-	{
-		constructor(options? : ClassificationPrimitiveOptions);
-		//Members
-		allowPicking: boolean
-		asynchronous: boolean
-		compressVertices: boolean
-		debugShowBoundingVolume: boolean
-		debugShowShadowVolume: boolean
-		geometryInstances: Array<any>|GeometryInstance
-		interleave: boolean
-		ready: boolean
-		readyPromise: Promise<ClassificationPrimitive>
-		releaseGeometryInstances: boolean
-		show: boolean
-		vertexCacheOptimize: boolean
-
-
-		//Methods
-		static isSupported(scene? : Scene) : boolean
-		destroy() : void
-		getGeometryInstanceAttributes(id? : any) : Object
-		isDestroyed() : boolean
-		update() : void
-
-	}
-	export = ClassificationPrimitive
-
-}
-declare module 'cesium/Source/Scene/ColorBlendMode' {
-	class ColorBlendMode 
-	{
-		constructor();
-		//Members
-
-
-		//Methods
-
-	}
-	export = ColorBlendMode
-
-}
-declare module 'cesium/Source/Scene/ConditionsExpression' {
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
-	import Color = require('cesium/Source/Core/Color')
-	import FrameState = require('cesium/Source/Scene/FrameState')
-	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
-	class ConditionsExpression 
-	{
-		constructor(conditionsExpression? : any, defines? : any);
-		//Members
-		conditionsExpression: Object
-
-
-		//Methods
-		evaluate(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
-		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
-
-	}
-	export = ConditionsExpression
-
-}
-declare module 'cesium/Source/Scene/ConeEmitter' {
-	class ConeEmitter 
-	{
-		constructor(angle? : number);
-		//Members
-
-
-		//Methods
-
-	}
-	export = ConeEmitter
-
-}
-declare module 'cesium/Source/Scene/CreditDisplay' {
-	import Credit = require('cesium/Source/Core/Credit')
-	class CreditDisplay 
-	{
-		constructor(container : HTMLElement, delimiter? : string);
-		//Members
-		container: HTMLElement
-
-
-		//Methods
-		addCredit(credit? : Credit) : void
-		addDefaultCredit(credit? : Credit) : void
-		beginFrame() : void
-		destroy() : void
-		endFrame() : void
-		isDestroyed() : boolean
-		removeDefaultCredit(credit? : Credit) : void
-
-	}
-	export = CreditDisplay
-
-}
-declare module 'cesium/Source/Scene/CullFace' {
-	class CullFace 
-	{
-		constructor();
-		//Members
-		static BACK: number
-		static FRONT: number
-		static FRONT_AND_BACK: number
-
-
-		//Methods
-
-	}
-	export = CullFace
-
-}
-declare module 'cesium/Source/Scene/DebugAppearanceOptions' {
-	interface DebugAppearanceOptions
-	{
-		attributeName: string;
-		perInstanceAttribute?: boolean;
-		glslDatatype?: string;
-		vertexShaderSource?: string;
-		fragmentShaderSource?: string;
-		renderState?: RenderState;
-	}
-	export = DebugAppearanceOptions
-
-}
-declare module 'cesium/Source/Scene/DebugAppearance' {
-	import DebugAppearanceOptions = require('cesium/Source/Scene/DebugAppearanceOptions')
-	import Material = require('cesium/Source/Scene/Material')
-	class DebugAppearance 
-	{
-		constructor(options? : DebugAppearanceOptions);
-		//Members
-		attributeName: string
-		closed: boolean
-		fragmentShaderSource: string
-		glslDatatype: string
-		material: Material
-		renderState: Object
-		translucent: boolean
-		vertexShaderSource: string
-
-
-		//Methods
-		getFragmentShaderSource() : string
-		getRenderState() : Object
-		isTranslucent() : boolean
-
-	}
-	export = DebugAppearance
-
-}
-declare module 'cesium/Source/Scene/DebugCameraPrimitiveOptions' {
-	import Camera = require('cesium/Source/Scene/Camera')
-	import Color = require('cesium/Source/Core/Color')
-	interface DebugCameraPrimitiveOptions
-	{
-		camera: Camera;
-		color?: Color;
-		updateOnChange?: boolean;
-		show?: boolean;
-		id?: Object;
-	}
-	export = DebugCameraPrimitiveOptions
-
-}
-declare module 'cesium/Source/Scene/DebugCameraPrimitive' {
-	import DebugCameraPrimitiveOptions = require('cesium/Source/Scene/DebugCameraPrimitiveOptions')
-	class DebugCameraPrimitive 
-	{
-		constructor(options? : DebugCameraPrimitiveOptions);
-		//Members
-		id: Object
-		show: boolean
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-
-	}
-	export = DebugCameraPrimitive
-
-}
-declare module 'cesium/Source/Scene/DebugModelMatrixPrimitiveOptions' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	interface DebugModelMatrixPrimitiveOptions
-	{
-		length?: number;
-		width?: number;
-		modelMatrix?: Matrix4;
-		show?: boolean;
-		id?: Object;
-	}
-	export = DebugModelMatrixPrimitiveOptions
-
-}
-declare module 'cesium/Source/Scene/DebugModelMatrixPrimitive' {
-	import DebugModelMatrixPrimitiveOptions = require('cesium/Source/Scene/DebugModelMatrixPrimitiveOptions')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	class DebugModelMatrixPrimitive 
-	{
-		constructor(options? : DebugModelMatrixPrimitiveOptions);
-		//Members
-		id: Object
-		length: number
-		modelMatrix: Matrix4
-		show: boolean
-		width: number
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-
-	}
-	export = DebugModelMatrixPrimitive
-
-}
-declare module 'cesium/Source/Scene/DepthFunction' {
-	class DepthFunction 
-	{
-		constructor();
-		//Members
-		static ALWAYS: number
-		static EQUAL: number
-		static GREATER: number
-		static GREATER_OR_EQUAL: number
-		static LESS: number
-		static LESS_OR_EQUAL: number
-		static NEVER: number
-		static NOT_EQUAL: number
-
-
-		//Methods
-
-	}
-	export = DepthFunction
-
-}
-declare module 'cesium/Source/Scene/DiscardMissingTileImagePolicyOptions' {
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	interface DiscardMissingTileImagePolicyOptions
-	{
-		missingImageUrl: string;
-		pixelsToCheck: Array<Cartesian2>;
-		disableCheckIfAllPixelsAreTransparent?: boolean;
-	}
-	export = DiscardMissingTileImagePolicyOptions
-
-}
-declare module 'cesium/Source/Scene/DiscardMissingTileImagePolicy' {
-	import DiscardMissingTileImagePolicyOptions = require('cesium/Source/Scene/DiscardMissingTileImagePolicyOptions')
-	class DiscardMissingTileImagePolicy 
-	{
-		constructor(options? : DiscardMissingTileImagePolicyOptions);
-		//Members
-
-
-		//Methods
-		isReady() : boolean
-		shouldDiscardImage(image? : HTMLImageElement) : boolean
-
-	}
-	export = DiscardMissingTileImagePolicy
-
-}
-declare module 'cesium/Source/Scene/EllipsoidSurfaceAppearanceOptions' {
-	import Material = require('cesium/Source/Scene/Material')
-	interface EllipsoidSurfaceAppearanceOptions
-	{
-		flat?: boolean;
-		faceForward?: boolean;
-		translucent?: boolean;
-		aboveGround?: boolean;
-		material?: Material;
-		vertexShaderSource?: string;
-		fragmentShaderSource?: string;
-		renderState?: RenderState;
-	}
-	export = EllipsoidSurfaceAppearanceOptions
-
-}
-declare module 'cesium/Source/Scene/EllipsoidSurfaceAppearance' {
-	import EllipsoidSurfaceAppearanceOptions = require('cesium/Source/Scene/EllipsoidSurfaceAppearanceOptions')
-	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	import Material = require('cesium/Source/Scene/Material')
-	class EllipsoidSurfaceAppearance 
-	{
-		constructor(options? : EllipsoidSurfaceAppearanceOptions);
-		//Members
-		static VERTEX_FORMAT: VertexFormat
-		aboveGround: boolean
-		closed: boolean
-		faceForward: boolean
-		flat: boolean
-		fragmentShaderSource: string
-		material: Material
-		renderState: Object
-		translucent: boolean
-		vertexFormat: VertexFormat
-		vertexShaderSource: string
-
-
-		//Methods
-		getFragmentShaderSource() : string
-		getRenderState() : Object
-		isTranslucent() : boolean
-
-	}
-	export = EllipsoidSurfaceAppearance
-
-}
-declare module 'cesium/Source/Scene/Expression' {
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
-	import Color = require('cesium/Source/Core/Color')
-	import FrameState = require('cesium/Source/Scene/FrameState')
-	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
-	class Expression 
-	{
-		constructor(expression? : string, defines? : any);
-		//Members
-		expression: string
-
-
-		//Methods
-		evaluate(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
-		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
-
-	}
-	export = Expression
-
-}
-declare module 'cesium/Source/Scene/FrameRateMonitorOptions' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	interface FrameRateMonitorOptions
-	{
-		scene: Scene;
-		samplingWindow?: number;
-		quietPeriod?: number;
-		warmupPeriod?: number;
-		minimumFrameRateDuringWarmup?: number;
-		minimumFrameRateAfterWarmup?: number;
-	}
-	export = FrameRateMonitorOptions
-
-}
-declare module 'cesium/Source/Scene/FrameRateMonitor' {
-	import FrameRateMonitorOptions = require('cesium/Source/Scene/FrameRateMonitorOptions')
-	import Event = require('cesium/Source/Core/Event')
-	import Scene = require('cesium/Source/Scene/Scene')
-	class FrameRateMonitor 
-	{
-		constructor(options? : FrameRateMonitorOptions);
-		//Members
-		static defaultSettings: Object
-		lastFramesPerSecond: number
-		lowFrameRate: Event
-		minimumFrameRateAfterWarmup: number
-		minimumFrameRateDuringWarmup: number
-		nominalFrameRate: Event
-		quietPeriod: number
-		samplingWindow: number
-		scene: Scene
-		warmupPeriod: number
-
-
-		//Methods
-		static fromScene(scene? : Scene) : FrameRateMonitor
-		destroy() : void
-		isDestroyed() : boolean
-		pause() : void
-		unpause() : void
-
-	}
-	export = FrameRateMonitor
-
-}
-declare module 'cesium/Source/Scene/GetFeatureInfoFormat' {
-	class GetFeatureInfoFormat 
-	{
-		constructor(type : string, format? : string, callback? : (()=>void));
-		//Members
-
-
-		//Methods
-
-	}
-	export = GetFeatureInfoFormat
-
-}
-declare module 'cesium/Source/Scene/GoogleEarthEnterpriseImageryProviderOptions' {
-	import GoogleEarthEnterpriseMetadata = require('cesium/Source/Core/GoogleEarthEnterpriseMetadata')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import Credit = require('cesium/Source/Core/Credit')
-	interface GoogleEarthEnterpriseImageryProviderOptions
-	{
-		url: string;
-		metadata: GoogleEarthEnterpriseMetadata;
-		proxy?: DefaultProxy;
-		ellipsoid?: Ellipsoid;
-		tileDiscardPolicy?: TileDiscardPolicy;
-		credit?: Credit|string;
-	}
-	export = GoogleEarthEnterpriseImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/GoogleEarthEnterpriseImageryProvider' {
-	import GoogleEarthEnterpriseImageryProviderOptions = require('cesium/Source/Scene/GoogleEarthEnterpriseImageryProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class GoogleEarthEnterpriseImageryProvider 
-	{
-		constructor(options? : GoogleEarthEnterpriseImageryProviderOptions);
-		//Members
-		credit: Credit
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		url: string
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = GoogleEarthEnterpriseImageryProvider
-
-}
-declare module 'cesium/Source/Scene/GoogleEarthEnterpriseMapsProviderOptions' {
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	interface GoogleEarthEnterpriseMapsProviderOptions
-	{
-		url: string;
-		channel: number;
-		path?: string;
-		maximumLevel?: number;
-		tileDiscardPolicy?: TileDiscardPolicy;
-		ellipsoid?: Ellipsoid;
-		proxy?: DefaultProxy;
-	}
-	export = GoogleEarthEnterpriseMapsProviderOptions
-
-}
-declare module 'cesium/Source/Scene/GoogleEarthEnterpriseMapsProvider' {
-	import GoogleEarthEnterpriseMapsProviderOptions = require('cesium/Source/Scene/GoogleEarthEnterpriseMapsProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class GoogleEarthEnterpriseMapsProvider 
-	{
-		constructor(options? : GoogleEarthEnterpriseMapsProviderOptions);
-		//Members
-		channel: number
-		credit: Credit
-		defaultGamma: number
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		maximumLevel: number
-		minimumLevel: number
-		path: string
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		requestType: string
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		url: string
-		version: number
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = GoogleEarthEnterpriseMapsProvider
-
-}
-declare module 'cesium/Source/Scene/GoogleEarthImageryProvider' {
-	class GoogleEarthImageryProvider 
-	{
-		constructor();
-		//Members
-
-
-		//Methods
-
-	}
-	export = GoogleEarthImageryProvider
-
-}
-declare module 'cesium/Source/Scene/GridImageryProviderOptions' {
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import Color = require('cesium/Source/Core/Color')
-	interface GridImageryProviderOptions
-	{
-		tilingScheme?: TilingScheme;
-		ellipsoid?: Ellipsoid;
-		cells?: number;
-		color?: Color;
-		glowColor?: Color;
-		glowWidth?: number;
-		backgroundColor?: Color;
-		tileWidth?: number;
-		tileHeight?: number;
-		canvasSize?: number;
-	}
-	export = GridImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/GridImageryProvider' {
-	import GridImageryProviderOptions = require('cesium/Source/Scene/GridImageryProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class GridImageryProvider 
-	{
-		constructor(options? : GridImageryProviderOptions);
-		//Members
-		credit: Credit
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-
-
-		//Methods
-		_createGridCanvas() : void
-		_drawGrid() : void
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = GridImageryProvider
-
-}
-declare module 'cesium/Source/Scene/GroundPrimitiveOptions' {
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	interface GroundPrimitiveOptions
-	{
-		geometryInstances?: Array<any>|GeometryInstance;
-		show?: boolean;
-		vertexCacheOptimize?: boolean;
-		interleave?: boolean;
-		compressVertices?: boolean;
-		releaseGeometryInstances?: boolean;
-		allowPicking?: boolean;
-		asynchronous?: boolean;
-		debugShowBoundingVolume?: boolean;
-		debugShowShadowVolume?: boolean;
-	}
-	export = GroundPrimitiveOptions
-
-}
-declare module 'cesium/Source/Scene/GroundPrimitive' {
-	import GroundPrimitiveOptions = require('cesium/Source/Scene/GroundPrimitiveOptions')
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	class GroundPrimitive 
-	{
-		constructor(options? : GroundPrimitiveOptions);
-		//Members
-		static isSupported: any
-		allowPicking: boolean
-		asynchronous: boolean
-		compressVertices: boolean
-		debugShowBoundingVolume: boolean
-		debugShowShadowVolume: boolean
-		geometryInstances: Array<any>|GeometryInstance
-		interleave: boolean
-		ready: boolean
-		readyPromise: Promise<GroundPrimitive>
-		releaseGeometryInstances: boolean
-		show: boolean
-		vertexCacheOptimize: boolean
-
-
-		//Methods
-		static initializeTerrainHeights() : Promise<any>
-		destroy() : void
-		getGeometryInstanceAttributes(id? : any) : Object
-		isDestroyed() : boolean
-		update() : void
-
-	}
-	export = GroundPrimitive
-
-}
-declare module 'cesium/Source/Scene/LabelStyle' {
-	class LabelStyle 
-	{
-		constructor();
-		//Members
-		static FILL: number
-		static FILL_AND_OUTLINE: number
-		static OUTLINE: number
-
-
-		//Methods
-
-	}
-	export = LabelStyle
-
-}
-declare module 'cesium/Source/Scene/Label' {
-	import Color = require('cesium/Source/Core/Color')
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import HeightReference = require('cesium/Source/Scene/HeightReference')
-	import HorizontalOrigin = require('cesium/Source/Scene/HorizontalOrigin')
-	import NearFarScalar = require('cesium/Source/Core/NearFarScalar')
-	import LabelStyle = require('cesium/Source/Scene/LabelStyle')
-	import VerticalOrigin = require('cesium/Source/Scene/VerticalOrigin')
-	import Scene = require('cesium/Source/Scene/Scene')
-	class Label 
-	{
-		constructor();
-		//Members
-		backgroundColor: Color
-		backgroundPadding: Cartesian2
-		disableDepthTestDistance: number
-		distanceDisplayCondition: DistanceDisplayCondition
-		eyeOffset: Cartesian3
-		fillColor: Color
-		font: string
-		heightReference: HeightReference
-		horizontalOrigin: HorizontalOrigin
-		id: Object
-		outlineColor: Color
-		outlineWidth: number
-		pixelOffset: Cartesian2
-		pixelOffsetScaleByDistance: NearFarScalar
-		position: Cartesian3
-		scale: number
-		scaleByDistance: NearFarScalar
-		show: boolean
-		showBackground: boolean
-		style: LabelStyle
-		text: string
-		translucencyByDistance: NearFarScalar
-		verticalOrigin: VerticalOrigin
-
-
-		//Methods
-		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
-		equals(other? : Label) : boolean
-		isDestroyed() : boolean
-
-	}
-	export = Label
-
-}
-declare module 'cesium/Source/Scene/LabelCollectionOptions' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import BlendOption = require('cesium/Source/Scene/BlendOption')
-	interface LabelCollectionOptions
-	{
-		modelMatrix?: Matrix4;
-		debugShowBoundingVolume?: boolean;
-		scene?: Scene;
-		blendOption?: BlendOption;
-	}
-	export = LabelCollectionOptions
-
-}
-declare module 'cesium/Source/Scene/LabelCollection' {
-	import LabelCollectionOptions = require('cesium/Source/Scene/LabelCollectionOptions')
-	import BlendOption = require('cesium/Source/Scene/BlendOption')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Label = require('cesium/Source/Scene/Label')
-	class LabelCollection 
-	{
-		constructor(options? : LabelCollectionOptions);
-		//Members
-		blendOption: BlendOption
-		debugShowBoundingVolume: boolean
-		length: number
-		modelMatrix: Matrix4
-
-
-		//Methods
-		add(options : any) : Label
-		contains(label? : Label) : boolean
-		destroy() : void
-		get(index? : number) : Label
-		isDestroyed() : boolean
-		remove(label? : Label) : boolean
-		removeAll() : void
-
-	}
-	export = LabelCollection
-
-}
-declare module 'cesium/Source/Scene/MapboxImageryProviderOptions' {
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import Credit = require('cesium/Source/Core/Credit')
-	interface MapboxImageryProviderOptions
-	{
-		url?: string;
-		mapId: string;
-		accessToken?: string;
-		format?: string;
-		proxy?: Object;
-		ellipsoid?: Ellipsoid;
-		minimumLevel?: number;
-		maximumLevel?: number;
-		rectangle?: Rectangle;
-		credit?: Credit|string;
-	}
-	export = MapboxImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/MapboxImageryProvider' {
-	import MapboxImageryProviderOptions = require('cesium/Source/Scene/MapboxImageryProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class MapboxImageryProvider 
-	{
-		constructor(options? : MapboxImageryProviderOptions);
-		//Members
-		credit: Credit
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		url: string
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = MapboxImageryProvider
-
-}
-declare module 'cesium/Source/Scene/MaterialAppearanceOptions' {
-	import Material = require('cesium/Source/Scene/Material')
-	interface MaterialAppearanceOptions
-	{
-		flat?: boolean;
-		faceForward?: boolean;
-		translucent?: boolean;
-		closed?: boolean;
-		materialSupport?: any;
-		material?: Material;
-		vertexShaderSource?: string;
-		fragmentShaderSource?: string;
-		renderState?: RenderState;
-	}
-	export = MaterialAppearanceOptions
-
-}
-declare module 'cesium/Source/Scene/MaterialAppearance' {
-	import MaterialAppearanceOptions = require('cesium/Source/Scene/MaterialAppearanceOptions')
-	import Material = require('cesium/Source/Scene/Material')
-	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	class MaterialAppearance 
-	{
-		constructor(options? : MaterialAppearanceOptions);
-		//Members
-		static MaterialSupport: any
-		closed: boolean
-		faceForward: boolean
-		flat: boolean
-		fragmentShaderSource: string
-		material: Material
-		materialSupport: any
-		renderState: Object
-		translucent: boolean
-		vertexFormat: VertexFormat
-		vertexShaderSource: string
-
-
-		//Methods
-		getFragmentShaderSource() : string
-		getRenderState() : Object
-		isTranslucent() : boolean
-
-	}
-	export = MaterialAppearance
-
-}
-declare module 'cesium/Source/Scene/ModelOptions' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
-	import HeightReference = require('cesium/Source/Scene/HeightReference')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
-	import Color = require('cesium/Source/Core/Color')
-	import ColorBlendMode = require('cesium/Source/Scene/ColorBlendMode')
-	interface ModelOptions
-	{
-		gltf?: Object|ArrayBuffer|Uint8Array;
-		basePath?: string;
-		show?: boolean;
-		modelMatrix?: Matrix4;
-		scale?: number;
-		minimumPixelSize?: number;
-		maximumScale?: number;
-		id?: Object;
-		allowPicking?: boolean;
-		incrementallyLoadTextures?: boolean;
-		asynchronous?: boolean;
-		shadows?: ShadowMode;
-		debugShowBoundingVolume?: boolean;
-		debugWireframe?: boolean;
-		heightReference?: HeightReference;
-		scene?: Scene;
-		distanceDisplayCondition?: DistanceDisplayCondition;
-		color?: Color;
-		colorBlendMode?: ColorBlendMode;
-		colorBlendAmount?: number;
-		silhouetteColor?: Color;
-		silhouetteSize?: number;
-	}
-	export = ModelOptions
-
-}
-declare module 'cesium/Source/Scene/ModelAnimationLoop' {
-	class ModelAnimationLoop 
-	{
-		constructor();
-		//Members
-		static MIRRORED_REPEAT: number
-		static NONE: number
-		static REPEAT: number
-
-
-		//Methods
-
-	}
-	export = ModelAnimationLoop
-
-}
-declare module 'cesium/Source/Scene/ModelAnimation' {
-	import ModelAnimationLoop = require('cesium/Source/Scene/ModelAnimationLoop')
-	import Event = require('cesium/Source/Core/Event')
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	class ModelAnimation 
-	{
-		constructor();
-		//Members
-		delay: number
-		loop: ModelAnimationLoop
-		name: string
-		removeOnStop: boolean
-		reverse: boolean
-		speedup: number
-		start: Event
-		startTime: JulianDate
-		stop: Event
-		stopTime: JulianDate
-		update: Event
-
-
-		//Methods
-
-	}
-	export = ModelAnimation
-
-}
-declare module 'cesium/Source/Scene/addOptions' {
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import ModelAnimationLoop = require('cesium/Source/Scene/ModelAnimationLoop')
-	interface addOptions
-	{
-		name: string;
-		startTime?: JulianDate;
-		delay?: number;
-		stopTime?: JulianDate;
-		removeOnStop?: boolean;
-		speedup?: number;
-		reverse?: boolean;
-		loop?: ModelAnimationLoop;
-	}
-	export = addOptions
-
-}
-declare module 'cesium/Source/Scene/addAllOptions' {
-	import JulianDate = require('cesium/Source/Core/JulianDate')
-	import ModelAnimationLoop = require('cesium/Source/Scene/ModelAnimationLoop')
-	interface addAllOptions
-	{
-		startTime?: JulianDate;
-		delay?: number;
-		stopTime?: JulianDate;
-		removeOnStop?: boolean;
-		speedup?: number;
-		reverse?: boolean;
-		loop?: ModelAnimationLoop;
-	}
-	export = addAllOptions
-
-}
-declare module 'cesium/Source/Scene/ModelAnimationCollection' {
-	import Event = require('cesium/Source/Core/Event')
-	import ModelAnimation = require('cesium/Source/Scene/ModelAnimation')
-	import addOptions = require('cesium/Source/Scene/addOptions')
-	import addAllOptions = require('cesium/Source/Scene/addAllOptions')
-	class ModelAnimationCollection 
-	{
-		constructor();
-		//Members
-		animationAdded: Event
-		animationRemoved: Event
-		length: number
-
-
-		//Methods
-		add(options : addOptions) : ModelAnimation
-		addAll(options : addAllOptions) : Array<ModelAnimation>
-		contains(animation? : ModelAnimation) : boolean
-		get(index? : number) : ModelAnimation
-		remove(animation? : ModelAnimation) : boolean
-		removeAll() : void
-
-	}
-	export = ModelAnimationCollection
-
-}
-declare module 'cesium/Source/Scene/fromGltfOptions' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
-	interface fromGltfOptions
-	{
-		url: string;
-		headers?: Object;
-		basePath?: string;
-		show?: boolean;
-		modelMatrix?: Matrix4;
-		scale?: number;
-		minimumPixelSize?: number;
-		maximumScale?: number;
-		id?: Object;
-		allowPicking?: boolean;
-		incrementallyLoadTextures?: boolean;
-		asynchronous?: boolean;
-		shadows?: ShadowMode;
-		debugShowBoundingVolume?: boolean;
-		debugWireframe?: boolean;
-	}
-	export = fromGltfOptions
-
-}
-declare module 'cesium/Source/Scene/ModelMaterial' {
-	class ModelMaterial 
-	{
-		constructor();
-		//Members
-		id: string
-		name: string
-
-
-		//Methods
-		getValue(name? : string) : Object
-		setValue(name? : string, value? : any) : void
-
-	}
-	export = ModelMaterial
-
-}
-declare module 'cesium/Source/Scene/ModelMesh' {
-	import ModelMaterial = require('cesium/Source/Scene/ModelMaterial')
-	class ModelMesh 
-	{
-		constructor();
-		//Members
-		id: string
-		materials: Array<ModelMaterial>
-		name: string
-
-
-		//Methods
-
-	}
-	export = ModelMesh
-
-}
-declare module 'cesium/Source/Scene/ModelNode' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	class ModelNode 
-	{
-		constructor();
-		//Members
-		id: string
-		matrix: Matrix4
-		name: string
-		show: boolean
-
-
-		//Methods
-
-	}
-	export = ModelNode
-
-}
-declare module 'cesium/Source/Scene/Model' {
-	import ModelOptions = require('cesium/Source/Scene/ModelOptions')
-	import ModelAnimationCollection = require('cesium/Source/Scene/ModelAnimationCollection')
-	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
-	import Color = require('cesium/Source/Core/Color')
-	import ColorBlendMode = require('cesium/Source/Scene/ColorBlendMode')
-	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
-	import fromGltfOptions = require('cesium/Source/Scene/fromGltfOptions')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import ModelMaterial = require('cesium/Source/Scene/ModelMaterial')
-	import ModelMesh = require('cesium/Source/Scene/ModelMesh')
-	import ModelNode = require('cesium/Source/Scene/ModelNode')
-	class Model 
-	{
-		constructor(options? : ModelOptions);
-		//Members
-		activeAnimations: ModelAnimationCollection
-		allowPicking: boolean
-		asynchronous: boolean
-		basePath: string
-		boundingSphere: BoundingSphere
-		color: Color
-		colorBlendAmount: number
-		colorBlendMode: ColorBlendMode
-		debugShowBoundingVolume: boolean
-		debugWireframe: boolean
-		distanceDisplayCondition: DistanceDisplayCondition
-		gltf: Object
-		id: Object
-		incrementallyLoadTextures: boolean
-		maximumScale: number
-		minimumPixelSize: number
-		modelMatrix: Matrix4
-		pendingTextureLoads: number
-		ready: boolean
-		readyPromise: Promise<Model>
-		scale: number
-		shadows: ShadowMode
-		show: boolean
-		silhouetteColor: Color
-		silhouetteSize: number
-
-
-		//Methods
-		static fromGltf(options : fromGltfOptions) : Model
-		static silhouetteSupported(scene? : Scene) : boolean
-		destroy() : void
-		getMaterial(name? : string) : ModelMaterial
-		getMesh(name? : string) : ModelMesh
-		getNode(name? : string) : ModelNode
-		isDestroyed() : boolean
-		update() : void
-
-	}
-	export = Model
-
-}
-declare module 'cesium/Source/Scene/NeverTileDiscardPolicy' {
-	class NeverTileDiscardPolicy 
-	{
-		constructor();
-		//Members
-
-
-		//Methods
-		isReady() : boolean
-		shouldDiscardImage(image? : HTMLImageElement) : boolean
-
-	}
-	export = NeverTileDiscardPolicy
-
-}
-declare module 'cesium/Source/Scene/ParticleOptions' {
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import Color = require('cesium/Source/Core/Color')
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	interface ParticleOptions
-	{
-		mass?: number;
-		position?: Cartesian3;
-		velocity?: Cartesian3;
-		life?: number;
-		image?: Object;
-		startColor?: Color;
-		endColor?: Color;
-		startScale?: number;
-		endScale?: number;
-		size?: Cartesian2;
-	}
-	export = ParticleOptions
-
-}
-declare module 'cesium/Source/Scene/Particle' {
-	import ParticleOptions = require('cesium/Source/Scene/ParticleOptions')
-	import Color = require('cesium/Source/Core/Color')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	class Particle 
-	{
-		constructor(options? : ParticleOptions);
-		//Members
-		age: number
-		endColor: Color
-		endScale: number
-		image: Object
-		life: number
-		mass: number
-		normalizedAge: number
-		position: Cartesian3
-		size: Cartesian2
-		startColor: Color
-		startScale: number
-		velocity: Cartesian3
-
-
-		//Methods
-
-	}
-	export = Particle
-
-}
-declare module 'cesium/Source/Scene/ParticleBurstOptions' {
-	interface ParticleBurstOptions
-	{
-		time?: number;
-		minimum?: number;
-		maximum?: number;
-	}
-	export = ParticleBurstOptions
-
-}
-declare module 'cesium/Source/Scene/ParticleBurst' {
-	import ParticleBurstOptions = require('cesium/Source/Scene/ParticleBurstOptions')
-	class ParticleBurst 
-	{
-		constructor(options? : ParticleBurstOptions);
-		//Members
-		complete: boolean
-		maximum: number
-		minimum: number
-		time: number
-
-
-		//Methods
-
-	}
-	export = ParticleBurst
-
-}
-declare module 'cesium/Source/Scene/ParticleEmitter' {
-	class ParticleEmitter 
-	{
-		constructor();
-		//Members
-
-
-		//Methods
-
-	}
-	export = ParticleEmitter
-
-}
-declare module 'cesium/Source/Scene/ParticleSystemOptions' {
-	import ParticleEmitter = require('cesium/Source/Scene/ParticleEmitter')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Color = require('cesium/Source/Core/Color')
-	import ParticleBurst = require('cesium/Source/Scene/ParticleBurst')
-	interface ParticleSystemOptions
-	{
-		show?: boolean;
-		forces?: any;
-		emitter?: ParticleEmitter;
-		modelMatrix?: Matrix4;
-		emitterModelMatrix?: Matrix4;
-		startColor?: Color;
-		endColor?: Color;
-		startScale?: number;
-		endScale?: number;
-		rate?: number;
-		bursts?: Array<ParticleBurst>;
-		loop?: boolean;
-		speed?: number;
-		minimumSpeed?: number;
-		maximumSpeed?: number;
-		life?: number;
-		minimumLife?: number;
-		maximumLife?: number;
-		mass?: number;
-		minimumMass?: number;
-		maximumMass?: number;
-		image?: Object;
-		width?: number;
-		minimumWidth?: number;
-		maximumWidth?: number;
-		height?: number;
-		minimumHeight?: number;
-		maximumHeight?: number;
-		lifeTime?: number;
-	}
-	export = ParticleSystemOptions
-
-}
-declare module 'cesium/Source/Scene/ParticleSystem' {
-	import ParticleSystemOptions = require('cesium/Source/Scene/ParticleSystemOptions')
-	import Event = require('cesium/Source/Core/Event')
-	import ParticleEmitter = require('cesium/Source/Scene/ParticleEmitter')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Color = require('cesium/Source/Core/Color')
-	class ParticleSystem 
-	{
-		constructor(options? : ParticleSystemOptions);
-		//Members
-		complete: Event
-		emitter: ParticleEmitter
-		emitterModelMatrix: Matrix4
-		endColor: Color
-		endScale: number
-		forces: any
-		image: Object
-		isComplete: boolean
-		lifeTime: number
-		loop: boolean
-		maximumHeight: number
-		maximumLife: number
-		maximumMass: number
-		maximumSpeed: number
-		maximumWidth: number
-		minimumHeight: number
-		minimumLife: number
-		minimumMass: number
-		minimumSpeed: number
-		minimumWidth: number
-		modelMatrix: Matrix4
-		rate: number
-		show: boolean
-		startColor: Color
-		startScale: number
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-
-	}
-	export = ParticleSystem
-
-}
-declare module 'cesium/Source/Scene/PerInstanceColorAppearanceOptions' {
-	interface PerInstanceColorAppearanceOptions
-	{
-		flat?: boolean;
-		faceForward?: boolean;
-		translucent?: boolean;
-		closed?: boolean;
-		vertexShaderSource?: string;
-		fragmentShaderSource?: string;
-		renderState?: RenderState;
-	}
-	export = PerInstanceColorAppearanceOptions
-
-}
-declare module 'cesium/Source/Scene/PerInstanceColorAppearance' {
-	import PerInstanceColorAppearanceOptions = require('cesium/Source/Scene/PerInstanceColorAppearanceOptions')
-	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	import Material = require('cesium/Source/Scene/Material')
-	class PerInstanceColorAppearance 
-	{
-		constructor(options? : PerInstanceColorAppearanceOptions);
-		//Members
-		static FLAT_VERTEX_FORMAT: VertexFormat
-		static VERTEX_FORMAT: VertexFormat
-		closed: boolean
-		faceForward: boolean
-		flat: boolean
-		fragmentShaderSource: string
-		material: Material
-		renderState: Object
-		translucent: boolean
-		vertexFormat: VertexFormat
-		vertexShaderSource: string
-
-
-		//Methods
-		getFragmentShaderSource() : string
-		getRenderState() : Object
-		isTranslucent() : boolean
-
-	}
-	export = PerInstanceColorAppearance
-
-}
-declare module 'cesium/Source/Scene/PointPrimitive' {
-	import Color = require('cesium/Source/Core/Color')
-	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import NearFarScalar = require('cesium/Source/Core/NearFarScalar')
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import Scene = require('cesium/Source/Scene/Scene')
-	class PointPrimitive 
-	{
-		constructor();
-		//Members
-		color: Color
-		disableDepthTestDistance: number
-		distanceDisplayCondition: DistanceDisplayCondition
-		id: Object
-		outlineColor: Color
-		outlineWidth: number
-		pixelSize: number
-		position: Cartesian3
-		scaleByDistance: NearFarScalar
-		show: boolean
-		translucencyByDistance: NearFarScalar
-
-
-		//Methods
-		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
-		equals(other? : PointPrimitive) : boolean
-
-	}
-	export = PointPrimitive
-
-}
-declare module 'cesium/Source/Scene/PointPrimitiveCollectionOptions' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import BlendOption = require('cesium/Source/Scene/BlendOption')
-	interface PointPrimitiveCollectionOptions
-	{
-		modelMatrix?: Matrix4;
-		debugShowBoundingVolume?: boolean;
-		blendOption?: BlendOption;
-	}
-	export = PointPrimitiveCollectionOptions
-
-}
-declare module 'cesium/Source/Scene/PointPrimitiveCollection' {
-	import PointPrimitiveCollectionOptions = require('cesium/Source/Scene/PointPrimitiveCollectionOptions')
-	import BlendOption = require('cesium/Source/Scene/BlendOption')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import PointPrimitive = require('cesium/Source/Scene/PointPrimitive')
-	class PointPrimitiveCollection 
-	{
-		constructor(options? : PointPrimitiveCollectionOptions);
-		//Members
-		blendOption: BlendOption
-		debugShowBoundingVolume: boolean
-		length: number
-		modelMatrix: Matrix4
-
-
-		//Methods
-		add(pointPrimitive : any) : PointPrimitive
-		contains(pointPrimitive : PointPrimitive) : boolean
-		destroy() : void
-		get(index? : number) : PointPrimitive
-		isDestroyed() : boolean
-		remove(pointPrimitive? : PointPrimitive) : boolean
-		removeAll() : void
-
-	}
-	export = PointPrimitiveCollection
-
-}
-declare module 'cesium/Source/Scene/PolylineOptions' {
-	import Material = require('cesium/Source/Scene/Material')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
-	interface PolylineOptions
-	{
-		show?: boolean;
-		width?: number;
-		loop?: boolean;
-		material?: Material;
-		positions?: Array<Cartesian3>;
-		id?: Object;
-		distanceDisplayCondition?: DistanceDisplayCondition;
-	}
-	export = PolylineOptions
-
-}
-declare module 'cesium/Source/Scene/PolylineCollectionOptions' {
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	interface PolylineCollectionOptions
-	{
-		modelMatrix?: Matrix4;
-		debugShowBoundingVolume?: boolean;
-	}
-	export = PolylineCollectionOptions
-
-}
-declare module 'cesium/Source/Scene/PolylineCollection' {
-	import PolylineCollectionOptions = require('cesium/Source/Scene/PolylineCollectionOptions')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import Polyline = require('cesium/Source/Scene/Polyline')
-	class PolylineCollection 
-	{
-		constructor(options? : PolylineCollectionOptions);
-		//Members
-		debugShowBoundingVolume: boolean
-		length: number
-		modelMatrix: Matrix4
-
-
-		//Methods
-		add(polyline : any) : Polyline
-		contains(polyline? : Polyline) : boolean
-		destroy() : void
-		get(index? : number) : Polyline
-		isDestroyed() : boolean
-		remove(polyline? : Polyline) : boolean
-		removeAll() : void
-		update() : void
-
-	}
-	export = PolylineCollection
-
-}
-declare module 'cesium/Source/Scene/Polyline' {
-	import PolylineOptions = require('cesium/Source/Scene/PolylineOptions')
-	import PolylineCollection = require('cesium/Source/Scene/PolylineCollection')
-	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
-	import Material = require('cesium/Source/Scene/Material')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	class Polyline 
-	{
-		constructor(options? : PolylineOptions, polylineCollection? : PolylineCollection);
-		//Members
-		distanceDisplayCondition: DistanceDisplayCondition
-		id: Object
-		loop: boolean
-		material: Material
-		positions: Array<Cartesian3>
-		show: boolean
-		width: number
-
-
-		//Methods
-
-	}
-	export = Polyline
-
-}
-declare module 'cesium/Source/Scene/PolylineColorAppearanceOptions' {
-	interface PolylineColorAppearanceOptions
-	{
-		translucent?: boolean;
-		vertexShaderSource?: string;
-		fragmentShaderSource?: string;
-		renderState?: RenderState;
-	}
-	export = PolylineColorAppearanceOptions
-
-}
-declare module 'cesium/Source/Scene/PolylineColorAppearance' {
-	import PolylineColorAppearanceOptions = require('cesium/Source/Scene/PolylineColorAppearanceOptions')
-	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	import Material = require('cesium/Source/Scene/Material')
-	class PolylineColorAppearance 
-	{
-		constructor(options? : PolylineColorAppearanceOptions);
-		//Members
-		static VERTEX_FORMAT: VertexFormat
-		closed: boolean
-		fragmentShaderSource: string
-		material: Material
-		renderState: Object
-		translucent: boolean
-		vertexFormat: VertexFormat
-		vertexShaderSource: string
-
-
-		//Methods
-		getFragmentShaderSource() : string
-		getRenderState() : Object
-		isTranslucent() : boolean
-
-	}
-	export = PolylineColorAppearance
-
-}
-declare module 'cesium/Source/Scene/PolylineMaterialAppearanceOptions' {
-	import Material = require('cesium/Source/Scene/Material')
-	interface PolylineMaterialAppearanceOptions
-	{
-		translucent?: boolean;
-		material?: Material;
-		vertexShaderSource?: string;
-		fragmentShaderSource?: string;
-		renderState?: RenderState;
-	}
-	export = PolylineMaterialAppearanceOptions
-
-}
-declare module 'cesium/Source/Scene/PolylineMaterialAppearance' {
-	import PolylineMaterialAppearanceOptions = require('cesium/Source/Scene/PolylineMaterialAppearanceOptions')
-	import VertexFormat = require('cesium/Source/Core/VertexFormat')
-	import Material = require('cesium/Source/Scene/Material')
-	class PolylineMaterialAppearance 
-	{
-		constructor(options? : PolylineMaterialAppearanceOptions);
-		//Members
-		static VERTEX_FORMAT: VertexFormat
-		closed: boolean
-		fragmentShaderSource: string
-		material: Material
-		renderState: Object
-		translucent: boolean
-		vertexFormat: VertexFormat
-		vertexShaderSource: string
-
-
-		//Methods
-		getFragmentShaderSource() : string
-		getRenderState() : Object
-		isTranslucent() : boolean
-
-	}
-	export = PolylineMaterialAppearance
-
-}
-declare module 'cesium/Source/Scene/PrimitiveOptions' {
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import Appearance = require('cesium/Source/Scene/Appearance')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
-	interface PrimitiveOptions
-	{
-		geometryInstances?: Array<GeometryInstance>|GeometryInstance;
-		appearance?: Appearance;
-		show?: boolean;
-		modelMatrix?: Matrix4;
-		vertexCacheOptimize?: boolean;
-		interleave?: boolean;
-		compressVertices?: boolean;
-		releaseGeometryInstances?: boolean;
-		allowPicking?: boolean;
-		cull?: boolean;
-		asynchronous?: boolean;
-		debugShowBoundingVolume?: boolean;
-		shadows?: ShadowMode;
-	}
-	export = PrimitiveOptions
-
-}
-declare module 'cesium/Source/Scene/Primitive' {
-	import PrimitiveOptions = require('cesium/Source/Scene/PrimitiveOptions')
-	import Appearance = require('cesium/Source/Scene/Appearance')
-	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
-	class Primitive 
-	{
-		constructor(options? : PrimitiveOptions);
-		//Members
-		allowPicking: boolean
-		appearance: Appearance
-		asynchronous: boolean
-		compressVertices: boolean
-		cull: boolean
-		debugShowBoundingVolume: boolean
-		depthFailAppearance: Appearance
-		geometryInstances: Array<GeometryInstance>|GeometryInstance
-		interleave: boolean
-		modelMatrix: Matrix4
-		ready: boolean
-		readyPromise: Promise<Primitive>
-		releaseGeometryInstances: boolean
-		shadows: ShadowMode
-		show: boolean
-		vertexCacheOptimize: boolean
-
-
-		//Methods
-		destroy() : void
-		getGeometryInstanceAttributes(id? : any) : Object
-		isDestroyed() : boolean
-		update() : void
-
-	}
-	export = Primitive
-
-}
-declare module 'cesium/Source/Scene/SceneTransforms' {
-	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
-	class SceneTransforms 
-	{
-		constructor();
-		//Members
-
-
-		//Methods
-		static wgs84ToDrawingBufferCoordinates(scene? : Scene, position? : Cartesian3, result? : Cartesian2) : Cartesian2
-		static wgs84ToWindowCoordinates(scene? : Scene, position? : Cartesian3, result? : Cartesian2) : Cartesian2
-
-	}
-	export = SceneTransforms
-
-}
-declare module 'cesium/Source/Scene/SingleTileImageryProviderOptions' {
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface SingleTileImageryProviderOptions
-	{
-		url: string;
-		rectangle?: Rectangle;
-		credit?: Credit|string;
-		ellipsoid?: Ellipsoid;
-		proxy?: Object;
-	}
-	export = SingleTileImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/SingleTileImageryProvider' {
-	import SingleTileImageryProviderOptions = require('cesium/Source/Scene/SingleTileImageryProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class SingleTileImageryProvider 
-	{
-		constructor(options? : SingleTileImageryProviderOptions);
-		//Members
-		credit: Credit
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		url: string
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = SingleTileImageryProvider
-
-}
-declare module 'cesium/Source/Scene/SphereEmitter' {
-	class SphereEmitter 
-	{
-		constructor(radius? : number);
-		//Members
-		radius: number
-
-
-		//Methods
-
-	}
-	export = SphereEmitter
-
-}
-declare module 'cesium/Source/Scene/StencilFunction' {
-	class StencilFunction 
-	{
-		constructor();
-		//Members
-		static ALWAYS: number
-		static EQUAL: number
-		static GREATER: number
-		static GREATER_OR_EQUAL: number
-		static LESS: number
-		static LESS_OR_EQUAL: number
-		static NEVER: number
-		static NOT_EQUAL: number
-
-
-		//Methods
-
-	}
-	export = StencilFunction
-
-}
-declare module 'cesium/Source/Scene/StencilOperation' {
-	class StencilOperation 
-	{
-		constructor();
-		//Members
-		static DECREMENT: number
-		static DECREMENT_WRAP: number
-		static INCREMENT: number
-		static INCREMENT_WRAP: number
-		static INVERT: number
-		static KEEP: number
-		static REPLACE: number
-		static ZERO: number
-
-
-		//Methods
-
-	}
-	export = StencilOperation
-
-}
-declare module 'cesium/Source/Scene/TileCoordinatesImageryProviderOptions' {
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import Color = require('cesium/Source/Core/Color')
-	interface TileCoordinatesImageryProviderOptions
-	{
-		tilingScheme?: TilingScheme;
-		ellipsoid?: Ellipsoid;
-		color?: Color;
-		tileWidth?: number;
-		tileHeight?: number;
-	}
-	export = TileCoordinatesImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/TileCoordinatesImageryProvider' {
-	import TileCoordinatesImageryProviderOptions = require('cesium/Source/Scene/TileCoordinatesImageryProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class TileCoordinatesImageryProvider 
-	{
-		constructor(options? : TileCoordinatesImageryProviderOptions);
-		//Members
-		credit: Credit
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = TileCoordinatesImageryProvider
-
-}
-declare module 'cesium/Source/Scene/TimeDynamicImageryOptions' {
-	import Clock = require('cesium/Source/Core/Clock')
-	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
-	interface TimeDynamicImageryOptions
-	{
-		clock: Clock;
-		times: TimeIntervalCollection;
-		requestImageFunction: (()=>void);
-		reloadFunction: (()=>void);
-	}
-	export = TimeDynamicImageryOptions
-
-}
-declare module 'cesium/Source/Scene/TimeDynamicImagery' {
-	import TimeDynamicImageryOptions = require('cesium/Source/Scene/TimeDynamicImageryOptions')
-	import Clock = require('cesium/Source/Core/Clock')
-	import TimeInterval = require('cesium/Source/Core/TimeInterval')
-	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
-	import Request = require('cesium/Source/Core/Request')
-	class TimeDynamicImagery 
-	{
-		constructor(options : TimeDynamicImageryOptions);
-		//Members
-		clock: Clock
-		currentInterval: TimeInterval
-		times: TimeIntervalCollection
-
-
-		//Methods
-		checkApproachingInterval(x? : number, y? : number, level? : number, request? : Request) : void
-		getFromCache(x? : number, y? : number, level? : number, request? : Request) : Promise<HTMLImageElement>|void
-
-	}
-	export = TimeDynamicImagery
-
-}
-declare module 'cesium/Source/Scene/UrlTemplateImageryProvider' {
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class UrlTemplateImageryProvider 
-	{
-		constructor(options? : Promise<any>|any);
-		//Members
-		credit: Credit
-		enablePickFeatures: boolean
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		maximumLevel: number
-		minimumLevel: number
-		pickFeaturesUrl: string
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		url: string
-		urlSchemeZeroPadding: Object
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		reinitialize(options? : Promise<any>|any) : void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = UrlTemplateImageryProvider
-
-}
-declare module 'cesium/Source/Scene/ViewportQuad' {
-	import BoundingRectangle = require('cesium/Source/Core/BoundingRectangle')
-	import Material = require('cesium/Source/Scene/Material')
-	class ViewportQuad 
-	{
-		constructor(rectangle? : BoundingRectangle, material? : Material);
-		//Members
-		material: Material
-		rectangle: BoundingRectangle
-		show: boolean
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-		update() : void
-
-	}
-	export = ViewportQuad
-
-}
-declare module 'cesium/Source/Scene/WebMapServiceImageryProviderOptions' {
-	import GetFeatureInfoFormat = require('cesium/Source/Scene/GetFeatureInfoFormat')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import Credit = require('cesium/Source/Core/Credit')
-	interface WebMapServiceImageryProviderOptions
-	{
-		url: string;
-		layers: string;
-		parameters?: Object;
-		getFeatureInfoParameters?: Object;
-		enablePickFeatures?: boolean;
-		getFeatureInfoFormats?: Array<GetFeatureInfoFormat>;
-		rectangle?: Rectangle;
-		tilingScheme?: TilingScheme;
-		ellipsoid?: Ellipsoid;
-		tileWidth?: number;
-		tileHeight?: number;
-		minimumLevel?: number;
-		maximumLevel?: number;
-		credit?: Credit|string;
-		proxy?: Object;
-		subdomains?: string|Array<string>;
-	}
-	export = WebMapServiceImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/WebMapServiceImageryProvider' {
-	import WebMapServiceImageryProviderOptions = require('cesium/Source/Scene/WebMapServiceImageryProviderOptions')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class WebMapServiceImageryProvider 
-	{
-		constructor(options? : WebMapServiceImageryProviderOptions);
-		//Members
-		static DefaultParameters: any
-		static GetFeatureInfoDefaultParameters: any
-		credit: Credit
-		enablePickFeatures: boolean
-		errorEvent: Event
-		hasAlphaChannel: boolean
-		layers: string
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		url: string
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = WebMapServiceImageryProvider
-
-}
-declare module 'cesium/Source/Scene/WebMapTileServiceImageryProviderOptions' {
-	import Clock = require('cesium/Source/Core/Clock')
-	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import Credit = require('cesium/Source/Core/Credit')
-	interface WebMapTileServiceImageryProviderOptions
-	{
-		url: string;
-		format?: string;
-		layer: string;
-		style: string;
-		tileMatrixSetID: string;
-		tileMatrixLabels?: Array<any>;
-		clock?: Clock;
-		times?: TimeIntervalCollection;
-		dimensions?: Object;
-		tileWidth?: number;
-		tileHeight?: number;
-		tilingScheme?: TilingScheme;
-		proxy?: Object;
-		rectangle?: Rectangle;
-		minimumLevel?: number;
-		maximumLevel?: number;
-		ellipsoid?: Ellipsoid;
-		credit?: Credit|string;
-		subdomains?: string|Array<string>;
-	}
-	export = WebMapTileServiceImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/WebMapTileServiceImageryProvider' {
-	import WebMapTileServiceImageryProviderOptions = require('cesium/Source/Scene/WebMapTileServiceImageryProviderOptions')
-	import Clock = require('cesium/Source/Core/Clock')
-	import Credit = require('cesium/Source/Core/Credit')
-	import Event = require('cesium/Source/Core/Event')
-	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
-	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
-	import Request = require('cesium/Source/Core/Request')
-	class WebMapTileServiceImageryProvider 
-	{
-		constructor(options? : WebMapTileServiceImageryProviderOptions);
-		//Members
-		clock: Clock
-		credit: Credit
-		dimensions: Object
-		errorEvent: Event
-		format: string
-		hasAlphaChannel: boolean
-		maximumLevel: number
-		minimumLevel: number
-		proxy: DefaultProxy
-		ready: boolean
-		readyPromise: Promise<boolean>
-		rectangle: Rectangle
-		tileDiscardPolicy: TileDiscardPolicy
-		tileHeight: number
-		tileWidth: number
-		tilingScheme: TilingScheme
-		times: TimeIntervalCollection
-		url: string
-
-
-		//Methods
-		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
-		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
-		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
-
-	}
-	export = WebMapTileServiceImageryProvider
-
-}
-declare module 'cesium/Source/Scene/createOpenStreetMapImageryProviderOptions' {
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	import Credit = require('cesium/Source/Core/Credit')
-	interface createOpenStreetMapImageryProviderOptions
-	{
-		url?: string;
-		fileExtension?: string;
-		proxy?: Object;
-		rectangle?: Rectangle;
-		minimumLevel?: number;
-		maximumLevel?: number;
-		ellipsoid?: Ellipsoid;
-		credit?: Credit|string;
-	}
-	export = createOpenStreetMapImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/createOpenStreetMapImageryProvider' {
-	import UrlTemplateImageryProvider = require('cesium/Source/Scene/UrlTemplateImageryProvider')
-	import createOpenStreetMapImageryProviderOptions = require('cesium/Source/Scene/createOpenStreetMapImageryProviderOptions')
-	function createOpenStreetMapImageryProvider(options? : createOpenStreetMapImageryProviderOptions) : UrlTemplateImageryProvider;
-	export = createOpenStreetMapImageryProvider
-
-}
-declare module 'cesium/Source/Scene/createTangentSpaceDebugPrimitiveOptions' {
-	import Geometry = require('cesium/Source/Core/Geometry')
-	import Matrix4 = require('cesium/Source/Core/Matrix4')
-	interface createTangentSpaceDebugPrimitiveOptions
-	{
-		geometry: Geometry;
-		length?: number;
-		modelMatrix?: Matrix4;
-	}
-	export = createTangentSpaceDebugPrimitiveOptions
-
-}
-declare module 'cesium/Source/Scene/createTangentSpaceDebugPrimitive' {
-	import Primitive = require('cesium/Source/Scene/Primitive')
-	import createTangentSpaceDebugPrimitiveOptions = require('cesium/Source/Scene/createTangentSpaceDebugPrimitiveOptions')
-	function createTangentSpaceDebugPrimitive(options? : createTangentSpaceDebugPrimitiveOptions) : Primitive;
-	export = createTangentSpaceDebugPrimitive
-
-}
-declare module 'cesium/Source/Scene/createTileMapServiceImageryProviderOptions' {
-	import Credit = require('cesium/Source/Core/Credit')
-	import Rectangle = require('cesium/Source/Core/Rectangle')
-	import TilingScheme = require('cesium/Source/Core/TilingScheme')
-	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
-	interface createTileMapServiceImageryProviderOptions
-	{
-		url?: string;
-		fileExtension?: string;
-		proxy?: Object;
-		credit?: Credit|string;
-		minimumLevel?: number;
-		maximumLevel?: number;
-		rectangle?: Rectangle;
-		tilingScheme?: TilingScheme;
-		ellipsoid?: Ellipsoid;
-		tileWidth?: number;
-		tileHeight?: number;
-		flipXY?: boolean;
-	}
-	export = createTileMapServiceImageryProviderOptions
-
-}
-declare module 'cesium/Source/Scene/createTileMapServiceImageryProvider' {
-	import UrlTemplateImageryProvider = require('cesium/Source/Scene/UrlTemplateImageryProvider')
-	import createTileMapServiceImageryProviderOptions = require('cesium/Source/Scene/createTileMapServiceImageryProviderOptions')
-	function createTileMapServiceImageryProvider(options? : createTileMapServiceImageryProviderOptions) : UrlTemplateImageryProvider;
-	export = createTileMapServiceImageryProvider
-
-}
-declare module 'cesium/Source/Scene/global' {
-	import ParticleBurst = require('cesium/Source/Scene/ParticleBurst')
-	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
-	import PixelFormat = require('cesium/Source/Core/PixelFormat')
-	import Cesium3DTile = require('cesium/Source/Scene/Cesium3DTile')
-	import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
-	function global() : void;
-	export = global
+	export = KmlTourWait
 
 }
 declare module 'cesium/Source/Widgets/ClockViewModel' {
@@ -11786,34 +8249,110 @@ declare module 'cesium/Source/Widgets/Command' {
 	export = Command
 
 }
-declare module 'cesium/Source/Widgets/SvgPathBindingHandler' {
-	class SvgPathBindingHandler 
+declare module 'cesium/Source/Widgets/BaseLayerPicker/HASH_10194_ProviderViewModelOptions' {
+	import Command = require('cesium/Source/Widgets/Command')
+	interface HASH_10194_ProviderViewModelOptions
 	{
-		constructor();
+		name: string;
+		tooltip: string;
+		iconUrl: string;
+		creationFunction: any|Command;
+	}
+	export = HASH_10194_ProviderViewModelOptions
+
+}
+declare module 'cesium/Source/Widgets/BaseLayerPicker/ProviderViewModel' {
+	import HASH_10194_ProviderViewModelOptions = require('cesium/Source/Widgets/BaseLayerPicker/HASH_10194_ProviderViewModelOptions')
+	import Command = require('cesium/Source/Widgets/Command')
+	class ProviderViewModel 
+	{
+		constructor(options : HASH_10194_ProviderViewModelOptions);
 		//Members
+		creationCommand: Command
+		iconUrl: string
+		name: string
+		tooltip: string
 
 
 		//Methods
 
 	}
-	export = SvgPathBindingHandler
+	export = ProviderViewModel
 
 }
-declare module 'cesium/Source/Widgets/ToggleButtonViewModelOptions' {
-	interface ToggleButtonViewModelOptions
+declare module 'cesium/Source/Widgets/Viewer/HASH_33110_ViewerOptions' {
+	import ClockViewModel = require('cesium/Source/Widgets/ClockViewModel')
+	import ProviderViewModel = require('cesium/Source/Widgets/BaseLayerPicker/ProviderViewModel')
+	import ImageryProvider = require('cesium/Source/Scene/ImageryProvider')
+	import TerrainProvider = require('cesium/Source/Core/TerrainProvider')
+	import SkyBox = require('cesium/Source/Scene/SkyBox')
+	import SkyAtmosphere = require('cesium/Source/Scene/SkyAtmosphere')
+	import SceneMode = require('cesium/Source/Scene/SceneMode')
+	import MapProjection = require('cesium/Source/Core/MapProjection')
+	import Globe = require('cesium/Source/Scene/Globe')
+	import DataSourceCollection = require('cesium/Source/DataSources/DataSourceCollection')
+	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
+	import MapMode2D = require('cesium/Source/Scene/MapMode2D')
+	interface HASH_33110_ViewerOptions
+	{
+		animation?: boolean;
+		baseLayerPicker?: boolean;
+		fullscreenButton?: boolean;
+		vrButton?: boolean;
+		geocoder?: boolean;
+		homeButton?: boolean;
+		infoBox?: boolean;
+		sceneModePicker?: boolean;
+		selectionIndicator?: boolean;
+		timeline?: boolean;
+		navigationHelpButton?: boolean;
+		navigationInstructionsInitiallyVisible?: boolean;
+		scene3DOnly?: boolean;
+		clockViewModel?: ClockViewModel;
+		selectedImageryProviderViewModel?: ProviderViewModel;
+		imageryProviderViewModels?: Array<ProviderViewModel>;
+		selectedTerrainProviderViewModel?: ProviderViewModel;
+		terrainProviderViewModels?: Array<ProviderViewModel>;
+		imageryProvider?: ImageryProvider;
+		terrainProvider?: TerrainProvider;
+		skyBox?: SkyBox;
+		skyAtmosphere?: SkyAtmosphere;
+		fullscreenElement?: Element|string;
+		useDefaultRenderLoop?: boolean;
+		targetFrameRate?: number;
+		showRenderLoopErrors?: boolean;
+		automaticallyTrackDataSourceClocks?: boolean;
+		contextOptions?: Object;
+		sceneMode?: SceneMode;
+		mapProjection?: MapProjection;
+		globe?: Globe;
+		orderIndependentTranslucency?: boolean;
+		creditContainer?: Element|string;
+		dataSources?: DataSourceCollection;
+		terrainExaggeration?: number;
+		shadows?: boolean;
+		terrainShadows?: ShadowMode;
+		mapMode2D?: MapMode2D;
+		projectionPicker?: boolean;
+	}
+	export = HASH_33110_ViewerOptions
+
+}
+declare module 'cesium/Source/Widgets/HASH_05452_ToggleButtonViewModelOptions' {
+	interface HASH_05452_ToggleButtonViewModelOptions
 	{
 		toggled?: boolean;
 		tooltip?: string;
 	}
-	export = ToggleButtonViewModelOptions
+	export = HASH_05452_ToggleButtonViewModelOptions
 
 }
 declare module 'cesium/Source/Widgets/ToggleButtonViewModel' {
 	import Command = require('cesium/Source/Widgets/Command')
-	import ToggleButtonViewModelOptions = require('cesium/Source/Widgets/ToggleButtonViewModelOptions')
+	import HASH_05452_ToggleButtonViewModelOptions = require('cesium/Source/Widgets/HASH_05452_ToggleButtonViewModelOptions')
 	class ToggleButtonViewModel 
 	{
-		constructor(command : Command, options? : ToggleButtonViewModelOptions);
+		constructor(command : Command, options? : HASH_05452_ToggleButtonViewModelOptions);
 		//Members
 		command: Command
 		toggled: boolean
@@ -11824,11 +8363,6 @@ declare module 'cesium/Source/Widgets/ToggleButtonViewModel' {
 
 	}
 	export = ToggleButtonViewModel
-
-}
-declare module 'cesium/Source/Widgets/createCommand' {
-	function createCommand(func : (()=>void), canExecute? : boolean) : void;
-	export = createCommand
 
 }
 declare module 'cesium/Source/Widgets/Animation/AnimationViewModel' {
@@ -11887,41 +8421,10 @@ declare module 'cesium/Source/Widgets/Animation/Animation' {
 	export = Animation
 
 }
-declare module 'cesium/Source/Widgets/BaseLayerPicker/ProviderViewModelOptions' {
-	import Command = require('cesium/Source/Widgets/Command')
-	interface ProviderViewModelOptions
-	{
-		name: string;
-		tooltip: string;
-		iconUrl: string;
-		creationFunction: any|Command;
-	}
-	export = ProviderViewModelOptions
-
-}
-declare module 'cesium/Source/Widgets/BaseLayerPicker/ProviderViewModel' {
-	import ProviderViewModelOptions = require('cesium/Source/Widgets/BaseLayerPicker/ProviderViewModelOptions')
-	import Command = require('cesium/Source/Widgets/Command')
-	class ProviderViewModel 
-	{
-		constructor(options : ProviderViewModelOptions);
-		//Members
-		creationCommand: Command
-		iconUrl: string
-		name: string
-		tooltip: string
-
-
-		//Methods
-
-	}
-	export = ProviderViewModel
-
-}
-declare module 'cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerOptions' {
+declare module 'cesium/Source/Widgets/BaseLayerPicker/HASH_59688_BaseLayerPickerOptions' {
 	import Globe = require('cesium/Source/Scene/Globe')
 	import ProviderViewModel = require('cesium/Source/Widgets/BaseLayerPicker/ProviderViewModel')
-	interface BaseLayerPickerOptions
+	interface HASH_59688_BaseLayerPickerOptions
 	{
 		globe: Globe;
 		imageryProviderViewModels?: Array<ProviderViewModel>;
@@ -11929,13 +8432,13 @@ declare module 'cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerOptions' {
 		terrainProviderViewModels?: Array<ProviderViewModel>;
 		selectedTerrainProviderViewModel?: ProviderViewModel;
 	}
-	export = BaseLayerPickerOptions
+	export = HASH_59688_BaseLayerPickerOptions
 
 }
-declare module 'cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerViewModelOptions' {
+declare module 'cesium/Source/Widgets/BaseLayerPicker/HASH_59688_BaseLayerPickerViewModelOptions' {
 	import Globe = require('cesium/Source/Scene/Globe')
 	import ProviderViewModel = require('cesium/Source/Widgets/BaseLayerPicker/ProviderViewModel')
-	interface BaseLayerPickerViewModelOptions
+	interface HASH_59688_BaseLayerPickerViewModelOptions
 	{
 		globe: Globe;
 		imageryProviderViewModels?: Array<ProviderViewModel>;
@@ -11943,17 +8446,17 @@ declare module 'cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerViewModelOp
 		terrainProviderViewModels?: Array<ProviderViewModel>;
 		selectedTerrainProviderViewModel?: ProviderViewModel;
 	}
-	export = BaseLayerPickerViewModelOptions
+	export = HASH_59688_BaseLayerPickerViewModelOptions
 
 }
 declare module 'cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerViewModel' {
-	import BaseLayerPickerViewModelOptions = require('cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerViewModelOptions')
+	import HASH_59688_BaseLayerPickerViewModelOptions = require('cesium/Source/Widgets/BaseLayerPicker/HASH_59688_BaseLayerPickerViewModelOptions')
 	import Globe = require('cesium/Source/Scene/Globe')
 	import ProviderViewModel = require('cesium/Source/Widgets/BaseLayerPicker/ProviderViewModel')
 	import Command = require('cesium/Source/Widgets/Command')
 	class BaseLayerPickerViewModel 
 	{
-		constructor(options? : BaseLayerPickerViewModelOptions);
+		constructor(options? : HASH_59688_BaseLayerPickerViewModelOptions);
 		//Members
 		buttonImageUrl: string
 		buttonTooltip: string
@@ -11973,11 +8476,11 @@ declare module 'cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerViewModel' 
 
 }
 declare module 'cesium/Source/Widgets/BaseLayerPicker/BaseLayerPicker' {
-	import BaseLayerPickerOptions = require('cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerOptions')
+	import HASH_59688_BaseLayerPickerOptions = require('cesium/Source/Widgets/BaseLayerPicker/HASH_59688_BaseLayerPickerOptions')
 	import BaseLayerPickerViewModel = require('cesium/Source/Widgets/BaseLayerPicker/BaseLayerPickerViewModel')
 	class BaseLayerPicker 
 	{
-		constructor(container : Element|string, options? : BaseLayerPickerOptions);
+		constructor(container : Element|string, options? : HASH_59688_BaseLayerPickerOptions);
 		//Members
 		container: Element
 		viewModel: BaseLayerPickerViewModel
@@ -11991,194 +8494,7 @@ declare module 'cesium/Source/Widgets/BaseLayerPicker/BaseLayerPicker' {
 	export = BaseLayerPicker
 
 }
-declare module 'cesium/Source/Widgets/Cesium3DTilesInspector/Cesium3DTilesInspectorViewModel' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Cesium3DTileColorBlendMode = require('cesium/Source/Scene/Cesium3DTileColorBlendMode')
-	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
-	import Cesium3DTile = require('cesium/Source/Scene/Cesium3DTile')
-	import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
-	class Cesium3DTilesInspectorViewModel 
-	{
-		constructor(scene : Scene, performanceContainer : HTMLElement);
-		//Members
-		baseScreenSpaceError: number
-		colorBlendMode: Cesium3DTileColorBlendMode
-		colorBlendModes: Array<Object>
-		colorize: boolean
-		displayVisible: boolean
-		dynamicScreenSpaceError: boolean
-		dynamicScreenSpaceErrorDensity: number
-		dynamicScreenSpaceErrorDensitySliderValue: number
-		dynamicScreenSpaceErrorFactor: number
-		editorError: string
-		feature: Cesium3DTileFeature
-		freezeFrame: boolean
-		immediatelyLoadDesiredLevelOfDetail: boolean
-		inspectorVisible: boolean
-		loadSiblings: boolean
-		loggingVisible: boolean
-		maximumScreenSpaceError: number
-		optimizationVisible: boolean
-		performance: boolean
-		performanceContainer: HTMLElement
-		pickActive: boolean
-		picking: boolean
-		pickStatisticsText: string
-		properties: Array<string>
-		scene: Scene
-		showBoundingVolumes: boolean
-		showContentBoundingVolumes: boolean
-		showGeometricError: boolean
-		showMemoryUsage: boolean
-		showOnlyPickedTileDebugLabel: boolean
-		showPickStatistics: boolean
-		showRenderingStatistics: boolean
-		showRequestVolumes: boolean
-		showStatistics: boolean
-		showUrl: boolean
-		skipLevelOfDetail: boolean
-		skipLevels: number
-		skipScreenSpaceErrorFactor: number
-		statisticsText: string
-		styleString: string
-		styleVisible: boolean
-		tile: Cesium3DTile
-		tileDebugLabelsVisible: boolean
-		tileset: Cesium3DTileset
-		tilesetVisible: boolean
-		updateVisible: boolean
-		wireframe: boolean
-
-
-		//Methods
-		static getStatistics(tileset? : Cesium3DTileset, isPick? : boolean) : string
-		compileStyle() : void
-		destroy() : void
-		isDestroyed() : boolean
-		styleEditorKeyPress() : void
-		toggleDisplay() : void
-		toggleInspector() : void
-		toggleLogging() : void
-		toggleOptimization() : void
-		togglePickTileset() : void
-		toggleStyle() : void
-		toggleTileDebugLabels() : void
-		toggleTileset() : void
-		toggleUpdate() : void
-		trimTilesCache() : void
-
-	}
-	export = Cesium3DTilesInspectorViewModel
-
-}
-declare module 'cesium/Source/Widgets/Cesium3DTilesInspector/Cesium3DTilesInspector' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Cesium3DTilesInspectorViewModel = require('cesium/Source/Widgets/Cesium3DTilesInspector/Cesium3DTilesInspectorViewModel')
-	class Cesium3DTilesInspector 
-	{
-		constructor(container : Element|string, scene : Scene);
-		//Members
-		container: Element
-		viewModel: Cesium3DTilesInspectorViewModel
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-
-	}
-	export = Cesium3DTilesInspector
-
-}
-declare module 'cesium/Source/Widgets/CesiumInspector/CesiumInspectorViewModel' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	import Command = require('cesium/Source/Widgets/Command')
-	class CesiumInspectorViewModel 
-	{
-		constructor(scene : Scene, performanceContainer : PerformanceContainer);
-		//Members
-		decrementDepthFrustum: Command
-		depthFrustum: number
-		depthFrustumText: string
-		doFilterPrimitive: Command
-		doFilterTile: Command
-		dropDownVisible: boolean
-		filterPrimitive: boolean
-		filterTile: boolean
-		frustumPlanes: boolean
-		frustums: boolean
-		frustumStatisticText: string
-		generalSwitchText: string
-		generalVisible: boolean
-		globeDepth: boolean
-		hasPickedPrimitive: boolean
-		hasPickedTile: boolean
-		incrementDepthFrustum: Command
-		performance: boolean
-		performanceContainer: Element
-		pickDepth: boolean
-		pickPrimitive: Command
-		pickPrimitiveActive: boolean
-		pickTile: Command
-		pickTileActive: boolean
-		primitive: Command
-		primitiveBoundingSphere: boolean
-		primitiveReferenceFrame: boolean
-		primitivesSwitchText: string
-		primitivesVisible: boolean
-		scene: Scene
-		selectNE: Command
-		selectNW: Command
-		selectParent: Command
-		selectSE: Command
-		selectSW: Command
-		shaderCacheText: string
-		showPrimitiveBoundingSphere: Command
-		showPrimitiveReferenceFrame: Command
-		showTileBoundingSphere: Command
-		showTileCoordinates: Command
-		suspendUpdates: boolean
-		terrainSwitchText: string
-		terrainVisible: boolean
-		tile: Command
-		tileBoundingSphere: boolean
-		tileCoordinates: boolean
-		tileText: string
-		toggleDropDown: Command
-		toggleGeneral: Command
-		togglePrimitives: Command
-		toggleTerrain: Command
-		wireframe: boolean
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-
-	}
-	export = CesiumInspectorViewModel
-
-}
-declare module 'cesium/Source/Widgets/CesiumInspector/CesiumInspector' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	import CesiumInspectorViewModel = require('cesium/Source/Widgets/CesiumInspector/CesiumInspectorViewModel')
-	class CesiumInspector 
-	{
-		constructor(container : Element|string, scene : Scene);
-		//Members
-		container: Element
-		viewModel: CesiumInspectorViewModel
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-
-	}
-	export = CesiumInspector
-
-}
-declare module 'cesium/Source/Widgets/CesiumWidget/CesiumWidgetOptions' {
+declare module 'cesium/Source/Widgets/CesiumWidget/HASH_68495_CesiumWidgetOptions' {
 	import Clock = require('cesium/Source/Core/Clock')
 	import ImageryProvider = require('cesium/Source/Scene/ImageryProvider')
 	import TerrainProvider = require('cesium/Source/Core/TerrainProvider')
@@ -12189,7 +8505,7 @@ declare module 'cesium/Source/Widgets/CesiumWidget/CesiumWidgetOptions' {
 	import Globe = require('cesium/Source/Scene/Globe')
 	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
 	import MapMode2D = require('cesium/Source/Scene/MapMode2D')
-	interface CesiumWidgetOptions
+	interface HASH_68495_CesiumWidgetOptions
 	{
 		clock?: Clock;
 		imageryProvider?: ImageryProvider;
@@ -12211,11 +8527,11 @@ declare module 'cesium/Source/Widgets/CesiumWidget/CesiumWidgetOptions' {
 		terrainShadows?: ShadowMode;
 		mapMode2D?: MapMode2D;
 	}
-	export = CesiumWidgetOptions
+	export = HASH_68495_CesiumWidgetOptions
 
 }
 declare module 'cesium/Source/Widgets/CesiumWidget/CesiumWidget' {
-	import CesiumWidgetOptions = require('cesium/Source/Widgets/CesiumWidget/CesiumWidgetOptions')
+	import HASH_68495_CesiumWidgetOptions = require('cesium/Source/Widgets/CesiumWidget/HASH_68495_CesiumWidgetOptions')
 	import Camera = require('cesium/Source/Scene/Camera')
 	import Clock = require('cesium/Source/Core/Clock')
 	import ImageryLayerCollection = require('cesium/Source/Scene/ImageryLayerCollection')
@@ -12224,7 +8540,7 @@ declare module 'cesium/Source/Widgets/CesiumWidget/CesiumWidget' {
 	import TerrainProvider = require('cesium/Source/Core/TerrainProvider')
 	class CesiumWidget 
 	{
-		constructor(container : Element|string, options? : CesiumWidgetOptions);
+		constructor(container : Element|string, options? : HASH_68495_CesiumWidgetOptions);
 		//Members
 		camera: Camera
 		canvas: HTMLCanvasElement
@@ -12290,10 +8606,10 @@ declare module 'cesium/Source/Widgets/FullscreenButton/FullscreenButton' {
 	export = FullscreenButton
 
 }
-declare module 'cesium/Source/Widgets/Geocoder/GeocoderOptions' {
+declare module 'cesium/Source/Widgets/Geocoder/HASH_76659_GeocoderOptions' {
 	import Scene = require('cesium/Source/Scene/Scene')
 	import GeocoderService = require('cesium/Source/Core/GeocoderService')
-	interface GeocoderOptions
+	interface HASH_76659_GeocoderOptions
 	{
 		container: Element|string;
 		scene: Scene;
@@ -12301,29 +8617,29 @@ declare module 'cesium/Source/Widgets/Geocoder/GeocoderOptions' {
 		autoComplete?: boolean;
 		flightDuration?: number;
 	}
-	export = GeocoderOptions
+	export = HASH_76659_GeocoderOptions
 
 }
-declare module 'cesium/Source/Widgets/Geocoder/GeocoderViewModelOptions' {
+declare module 'cesium/Source/Widgets/Geocoder/HASH_96788_GeocoderViewModelOptions' {
 	import Scene = require('cesium/Source/Scene/Scene')
 	import GeocoderService = require('cesium/Source/Core/GeocoderService')
-	interface GeocoderViewModelOptions
+	interface HASH_96788_GeocoderViewModelOptions
 	{
 		scene: Scene;
 		geocoderServices?: Array<GeocoderService>;
 		flightDuration?: number;
 	}
-	export = GeocoderViewModelOptions
+	export = HASH_96788_GeocoderViewModelOptions
 
 }
 declare module 'cesium/Source/Widgets/Geocoder/GeocoderViewModel' {
-	import GeocoderViewModelOptions = require('cesium/Source/Widgets/Geocoder/GeocoderViewModelOptions')
+	import HASH_96788_GeocoderViewModelOptions = require('cesium/Source/Widgets/Geocoder/HASH_96788_GeocoderViewModelOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import Scene = require('cesium/Source/Scene/Scene')
 	import Command = require('cesium/Source/Widgets/Command')
 	class GeocoderViewModel 
 	{
-		constructor(options? : GeocoderViewModelOptions);
+		constructor(options? : HASH_96788_GeocoderViewModelOptions);
 		//Members
 		autoComplete: boolean
 		complete: Event
@@ -12345,11 +8661,11 @@ declare module 'cesium/Source/Widgets/Geocoder/GeocoderViewModel' {
 
 }
 declare module 'cesium/Source/Widgets/Geocoder/Geocoder' {
-	import GeocoderOptions = require('cesium/Source/Widgets/Geocoder/GeocoderOptions')
+	import HASH_76659_GeocoderOptions = require('cesium/Source/Widgets/Geocoder/HASH_76659_GeocoderOptions')
 	import GeocoderViewModel = require('cesium/Source/Widgets/Geocoder/GeocoderViewModel')
 	class Geocoder 
 	{
-		constructor(options? : GeocoderOptions);
+		constructor(options? : HASH_76659_GeocoderOptions);
 		//Members
 		container: Element
 		searchSuggestionsContainer: Element
@@ -12445,13 +8761,13 @@ declare module 'cesium/Source/Widgets/InfoBox/InfoBox' {
 	export = InfoBox
 
 }
-declare module 'cesium/Source/Widgets/NavigationHelpButton/NavigationHelpButtonOptions' {
-	interface NavigationHelpButtonOptions
+declare module 'cesium/Source/Widgets/NavigationHelpButton/HASH_18727_NavigationHelpButtonOptions' {
+	interface HASH_18727_NavigationHelpButtonOptions
 	{
 		container: Element|string;
 		instructionsInitiallyVisible?: boolean;
 	}
-	export = NavigationHelpButtonOptions
+	export = HASH_18727_NavigationHelpButtonOptions
 
 }
 declare module 'cesium/Source/Widgets/NavigationHelpButton/NavigationHelpButtonViewModel' {
@@ -12474,11 +8790,11 @@ declare module 'cesium/Source/Widgets/NavigationHelpButton/NavigationHelpButtonV
 
 }
 declare module 'cesium/Source/Widgets/NavigationHelpButton/NavigationHelpButton' {
-	import NavigationHelpButtonOptions = require('cesium/Source/Widgets/NavigationHelpButton/NavigationHelpButtonOptions')
+	import HASH_18727_NavigationHelpButtonOptions = require('cesium/Source/Widgets/NavigationHelpButton/HASH_18727_NavigationHelpButtonOptions')
 	import NavigationHelpButtonViewModel = require('cesium/Source/Widgets/NavigationHelpButton/NavigationHelpButtonViewModel')
 	class NavigationHelpButton 
 	{
-		constructor(options? : NavigationHelpButtonOptions);
+		constructor(options? : HASH_18727_NavigationHelpButtonOptions);
 		//Members
 		container: Element
 		viewModel: NavigationHelpButtonViewModel
@@ -12490,67 +8806,6 @@ declare module 'cesium/Source/Widgets/NavigationHelpButton/NavigationHelpButton'
 
 	}
 	export = NavigationHelpButton
-
-}
-declare module 'cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdogOptions' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	interface PerformanceWatchdogOptions
-	{
-		container: Element|string;
-		scene: Scene;
-		lowFrameRateMessage?: string;
-	}
-	export = PerformanceWatchdogOptions
-
-}
-declare module 'cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdogViewModelOptions' {
-	import Scene = require('cesium/Source/Scene/Scene')
-	interface PerformanceWatchdogViewModelOptions
-	{
-		scene: Scene;
-		lowFrameRateMessage?: string;
-	}
-	export = PerformanceWatchdogViewModelOptions
-
-}
-declare module 'cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdogViewModel' {
-	import PerformanceWatchdogViewModelOptions = require('cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdogViewModelOptions')
-	import Command = require('cesium/Source/Widgets/Command')
-	import Scene = require('cesium/Source/Scene/Scene')
-	class PerformanceWatchdogViewModel 
-	{
-		constructor(options? : PerformanceWatchdogViewModelOptions);
-		//Members
-		dismissMessage: Command
-		lowFrameRateMessage: string
-		lowFrameRateMessageDismissed: boolean
-		scene: Scene
-		showingLowFrameRateMessage: boolean
-
-
-		//Methods
-
-	}
-	export = PerformanceWatchdogViewModel
-
-}
-declare module 'cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdog' {
-	import PerformanceWatchdogOptions = require('cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdogOptions')
-	import PerformanceWatchdogViewModel = require('cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdogViewModel')
-	class PerformanceWatchdog 
-	{
-		constructor(options? : PerformanceWatchdogOptions);
-		//Members
-		container: Element
-		viewModel: PerformanceWatchdogViewModel
-
-
-		//Methods
-		destroy() : void
-		isDestroyed() : boolean
-
-	}
-	export = PerformanceWatchdog
 
 }
 declare module 'cesium/Source/Widgets/ProjectionPicker/ProjectionPickerViewModel' {
@@ -12754,77 +9009,19 @@ declare module 'cesium/Source/Widgets/VRButton/VRButton' {
 	export = VRButton
 
 }
-declare module 'cesium/Source/Widgets/Viewer/ViewerOptions' {
-	import ClockViewModel = require('cesium/Source/Widgets/ClockViewModel')
-	import ProviderViewModel = require('cesium/Source/Widgets/BaseLayerPicker/ProviderViewModel')
-	import ImageryProvider = require('cesium/Source/Scene/ImageryProvider')
-	import TerrainProvider = require('cesium/Source/Core/TerrainProvider')
-	import SkyBox = require('cesium/Source/Scene/SkyBox')
-	import SkyAtmosphere = require('cesium/Source/Scene/SkyAtmosphere')
-	import SceneMode = require('cesium/Source/Scene/SceneMode')
-	import MapProjection = require('cesium/Source/Core/MapProjection')
-	import Globe = require('cesium/Source/Scene/Globe')
-	import DataSourceCollection = require('cesium/Source/DataSources/DataSourceCollection')
-	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
-	import MapMode2D = require('cesium/Source/Scene/MapMode2D')
-	interface ViewerOptions
-	{
-		animation?: boolean;
-		baseLayerPicker?: boolean;
-		fullscreenButton?: boolean;
-		vrButton?: boolean;
-		geocoder?: boolean;
-		homeButton?: boolean;
-		infoBox?: boolean;
-		sceneModePicker?: boolean;
-		selectionIndicator?: boolean;
-		timeline?: boolean;
-		navigationHelpButton?: boolean;
-		navigationInstructionsInitiallyVisible?: boolean;
-		scene3DOnly?: boolean;
-		clockViewModel?: ClockViewModel;
-		selectedImageryProviderViewModel?: ProviderViewModel;
-		imageryProviderViewModels?: Array<ProviderViewModel>;
-		selectedTerrainProviderViewModel?: ProviderViewModel;
-		terrainProviderViewModels?: Array<ProviderViewModel>;
-		imageryProvider?: ImageryProvider;
-		terrainProvider?: TerrainProvider;
-		skyBox?: SkyBox;
-		skyAtmosphere?: SkyAtmosphere;
-		fullscreenElement?: Element|string;
-		useDefaultRenderLoop?: boolean;
-		targetFrameRate?: number;
-		showRenderLoopErrors?: boolean;
-		automaticallyTrackDataSourceClocks?: boolean;
-		contextOptions?: Object;
-		sceneMode?: SceneMode;
-		mapProjection?: MapProjection;
-		globe?: Globe;
-		orderIndependentTranslucency?: boolean;
-		creditContainer?: Element|string;
-		dataSources?: DataSourceCollection;
-		terrainExaggeration?: number;
-		shadows?: boolean;
-		terrainShadows?: ShadowMode;
-		mapMode2D?: MapMode2D;
-		projectionPicker?: boolean;
-	}
-	export = ViewerOptions
-
-}
-declare module 'cesium/Source/Widgets/Viewer/flyToOptions' {
+declare module 'cesium/Source/Widgets/Viewer/HASH_97427_flyToOptions' {
 	import HeadingPitchRange = require('cesium/Source/Core/HeadingPitchRange')
-	interface flyToOptions
+	interface HASH_97427_flyToOptions
 	{
 		duration?: number;
 		maximumHeight?: number;
 		offset?: HeadingPitchRange;
 	}
-	export = flyToOptions
+	export = HASH_97427_flyToOptions
 
 }
 declare module 'cesium/Source/Widgets/Viewer/Viewer' {
-	import ViewerOptions = require('cesium/Source/Widgets/Viewer/ViewerOptions')
+	import HASH_33110_ViewerOptions = require('cesium/Source/Widgets/Viewer/HASH_33110_ViewerOptions')
 	import Animation = require('cesium/Source/Widgets/Animation/Animation')
 	import BaseLayerPicker = require('cesium/Source/Widgets/BaseLayerPicker/BaseLayerPicker')
 	import Camera = require('cesium/Source/Scene/Camera')
@@ -12854,11 +9051,11 @@ declare module 'cesium/Source/Widgets/Viewer/Viewer' {
 	import Timeline = require('cesium/Source/Widgets/Timeline/Timeline')
 	import VRButton = require('cesium/Source/Widgets/VRButton/VRButton')
 	import ImageryLayer = require('cesium/Source/Scene/ImageryLayer')
-	import flyToOptions = require('cesium/Source/Widgets/Viewer/flyToOptions')
+	import HASH_97427_flyToOptions = require('cesium/Source/Widgets/Viewer/HASH_97427_flyToOptions')
 	import HeadingPitchRange = require('cesium/Source/Core/HeadingPitchRange')
 	class Viewer 
 	{
-		constructor(container : Element|string, options? : ViewerOptions);
+		constructor(container : Element|string, options? : HASH_33110_ViewerOptions);
 		//Members
 		allowDataSourcesToSuspendAnimation: boolean
 		animation: Animation
@@ -12904,7 +9101,7 @@ declare module 'cesium/Source/Widgets/Viewer/Viewer' {
 		//Methods
 		destroy() : void
 		extend(mixin? : any, options? : any) : void
-		flyTo(target? : Entity|Array<Entity>|EntityCollection|DataSource|ImageryLayer|Promise<Entity | Array<Entity> | EntityCollection | DataSource | ImageryLayer>, options? : flyToOptions) : Promise<boolean>
+		flyTo(target? : Entity|Array<Entity>|EntityCollection|DataSource|ImageryLayer|Promise<Entity | Array<Entity> | EntityCollection | DataSource | ImageryLayer>, options? : HASH_97427_flyToOptions) : Promise<boolean>
 		forceResize() : void
 		isDestroyed() : boolean
 		render() : void
@@ -12913,6 +9110,4039 @@ declare module 'cesium/Source/Widgets/Viewer/Viewer' {
 
 	}
 	export = Viewer
+
+}
+declare module 'cesium/Source/DataSources/KMLTour' {
+	import Event = require('cesium/Source/Core/Event')
+	import KmlTourFlyTo = require('cesium/Source/DataSources/KmlTourFlyTo')
+	import KmlTourWait = require('cesium/Source/DataSources/KmlTourWait')
+	import Viewer = require('cesium/Source/Widgets/Viewer/Viewer')
+	class KMLTour 
+	{
+		constructor(name : string, id : string, playlist : Array<any>);
+		//Members
+		entryEnd: Event
+		entryStart: Event
+		id: any
+		name: any
+		playlist: Array<any>
+		playlistIndex: number
+		tourEnd: Event
+		tourStart: Event
+
+
+		//Methods
+		addPlaylistEntry(entry? : KmlTourFlyTo|KmlTourWait) : void
+		play(viewer? : Viewer, cameraOptions? : any) : void
+		stop() : void
+
+	}
+	export = KMLTour
+
+}
+declare module 'cesium/Source/DataSources/HASH_35569_loadOptions' {
+	import Camera = require('cesium/Source/Scene/Camera')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	interface HASH_35569_loadOptions
+	{
+		camera: Camera;
+		canvas: HTMLCanvasElement;
+		proxy?: DefaultProxy;
+		sourceUri?: string;
+		clampToGround?: boolean;
+		query?: Object;
+	}
+	export = HASH_35569_loadOptions
+
+}
+declare module 'cesium/Source/DataSources/HASH_10124_loadOptions' {
+	interface HASH_10124_loadOptions
+	{
+		sourceUri?: number;
+		clampToGround?: boolean;
+		query?: Object;
+	}
+	export = HASH_10124_loadOptions
+
+}
+declare module 'cesium/Source/DataSources/KmlDataSource' {
+	import Camera = require('cesium/Source/Scene/Camera')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import DataSource = require('cesium/Source/DataSources/DataSource')
+	import Event = require('cesium/Source/Core/Event')
+	import DataSourceClock = require('cesium/Source/DataSources/DataSourceClock')
+	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
+	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
+	import HASH_35569_loadOptions = require('cesium/Source/DataSources/HASH_35569_loadOptions')
+	import HASH_10124_loadOptions = require('cesium/Source/DataSources/HASH_10124_loadOptions')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class KmlDataSource extends DataSource
+	{
+		constructor();
+		//Members
+		changedEvent: Event
+		clock: DataSourceClock
+		clustering: EntityCluster
+		entities: EntityCollection
+		errorEvent: Event
+		isLoading: boolean
+		loadingEvent: Event
+		name: string
+		refreshEvent: Event
+		show: boolean
+		unsupportedNodeEvent: Event
+
+
+		//Methods
+		static load(data? : string|Document|Blob, options? : HASH_35569_loadOptions) : Promise<KmlDataSource>
+		load(data? : string|Document|Blob, options? : HASH_10124_loadOptions) : Promise<KmlDataSource>
+		update(time? : JulianDate) : boolean
+
+	}
+	export = KmlDataSource
+
+}
+declare module 'cesium/Source/DataSources/LabelVisualizer' {
+	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
+	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class LabelVisualizer 
+	{
+		constructor(entityCluster : EntityCluster, entityCollection : EntityCollection);
+		//Members
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+		update(time? : JulianDate) : boolean
+
+	}
+	export = LabelVisualizer
+
+}
+declare module 'cesium/Source/DataSources/ModelVisualizer' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class ModelVisualizer 
+	{
+		constructor(scene : Scene, entityCollection : EntityCollection);
+		//Members
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+		update(time? : JulianDate) : boolean
+
+	}
+	export = ModelVisualizer
+
+}
+declare module 'cesium/Source/DataSources/HASH_88437_NodeTransformationPropertyOptions' {
+	import Property = require('cesium/Source/DataSources/Property')
+	interface HASH_88437_NodeTransformationPropertyOptions
+	{
+		translation?: Property|string|any;
+		rotation?: Property|string|any;
+		scale?: Property|string|any;
+	}
+	export = HASH_88437_NodeTransformationPropertyOptions
+
+}
+declare module 'cesium/Source/DataSources/NodeTransformationProperty' {
+	import HASH_88437_NodeTransformationPropertyOptions = require('cesium/Source/DataSources/HASH_88437_NodeTransformationPropertyOptions')
+	import Event = require('cesium/Source/Core/Event')
+	import Property = require('cesium/Source/DataSources/Property')
+	import TranslationRotationScale = require('cesium/Source/Core/TranslationRotationScale')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class NodeTransformationProperty 
+	{
+		constructor(options? : HASH_88437_NodeTransformationPropertyOptions);
+		//Members
+		definitionChanged: Event
+		isConstant: boolean
+		rotation: Property|string|any
+		scale: Property|string|any
+		translation: Property|string|any
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getValue(time? : JulianDate, result? : TranslationRotationScale) : TranslationRotationScale
+
+	}
+	export = NodeTransformationProperty
+
+}
+declare module 'cesium/Source/DataSources/PathVisualizer' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PathVisualizer 
+	{
+		constructor(scene : Scene, entityCollection : EntityCollection);
+		//Members
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+		update(time? : JulianDate) : boolean
+
+	}
+	export = PathVisualizer
+
+}
+declare module 'cesium/Source/DataSources/PointVisualizer' {
+	import EntityCluster = require('cesium/Source/DataSources/EntityCluster')
+	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PointVisualizer 
+	{
+		constructor(entityCluster : EntityCluster, entityCollection : EntityCollection);
+		//Members
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+		update(time? : JulianDate) : boolean
+
+	}
+	export = PointVisualizer
+
+}
+declare module 'cesium/Source/DataSources/PolygonGeometryUpdater' {
+	import Entity = require('cesium/Source/DataSources/Entity')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Appearance = require('cesium/Source/Scene/Appearance')
+	import Property = require('cesium/Source/DataSources/Property')
+	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
+	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
+	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PolygonGeometryUpdater 
+	{
+		constructor(entity : Entity, scene : Scene);
+		//Members
+		static materialAppearanceType: Appearance
+		static perInstanceColorAppearanceType: Appearance
+		distanceDisplayConditionProperty: Property|string|any
+		entity: Entity
+		fillEnabled: boolean
+		fillMaterialProperty: MaterialProperty
+		geometryChanged: boolean
+		hasConstantFill: boolean
+		hasConstantOutline: boolean
+		isClosed: boolean
+		isDynamic: boolean
+		onTerrain: boolean
+		outlineColorProperty: Property|string|any
+		outlineEnabled: boolean
+		outlineWidth: number
+		shadowsProperty: Property|string|any
+
+
+		//Methods
+		createDynamicUpdater(primitives? : PrimitiveCollection, groundPrimitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
+		destroy() : void
+		isDestroyed() : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
+
+	}
+	export = PolygonGeometryUpdater
+
+}
+declare module 'cesium/Source/DataSources/PolylineArrowMaterialProperty' {
+	import Property = require('cesium/Source/DataSources/Property')
+	import Event = require('cesium/Source/Core/Event')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PolylineArrowMaterialProperty 
+	{
+		constructor(color? : Property|string|any);
+		//Members
+		color: Property|string|any
+		definitionChanged: Event
+		isConstant: boolean
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
+
+	}
+	export = PolylineArrowMaterialProperty
+
+}
+declare module 'cesium/Source/DataSources/HASH_55158_PolylineDashMaterialPropertyOptions' {
+	import Property = require('cesium/Source/DataSources/Property')
+	interface HASH_55158_PolylineDashMaterialPropertyOptions
+	{
+		color?: Property|string|any;
+		gapColor?: Property|string|any;
+		dashLength?: Property|string|any;
+		dashPattern?: Property|string|any;
+	}
+	export = HASH_55158_PolylineDashMaterialPropertyOptions
+
+}
+declare module 'cesium/Source/DataSources/PolylineDashMaterialProperty' {
+	import HASH_55158_PolylineDashMaterialPropertyOptions = require('cesium/Source/DataSources/HASH_55158_PolylineDashMaterialPropertyOptions')
+	import Property = require('cesium/Source/DataSources/Property')
+	import Event = require('cesium/Source/Core/Event')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PolylineDashMaterialProperty 
+	{
+		constructor(options? : HASH_55158_PolylineDashMaterialPropertyOptions);
+		//Members
+		color: Property|string|any
+		dashLength: Property|string|any
+		dashPattern: Property|string|any
+		definitionChanged: Event
+		gapColor: Property|string|any
+		isConstant: boolean
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
+
+	}
+	export = PolylineDashMaterialProperty
+
+}
+declare module 'cesium/Source/DataSources/PolylineGeometryUpdater' {
+	import Entity = require('cesium/Source/DataSources/Entity')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Appearance = require('cesium/Source/Scene/Appearance')
+	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
+	import Property = require('cesium/Source/DataSources/Property')
+	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
+	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PolylineGeometryUpdater 
+	{
+		constructor(entity : Entity, scene : Scene);
+		//Members
+		static materialAppearanceType: Appearance
+		static perInstanceColorAppearanceType: Appearance
+		depthFailMaterialProperty: MaterialProperty
+		distanceDisplayConditionProperty: Property|string|any
+		entity: Entity
+		fillEnabled: boolean
+		fillMaterialProperty: MaterialProperty
+		geometryChanged: boolean
+		hasConstantFill: boolean
+		hasConstantOutline: boolean
+		isClosed: boolean
+		isDynamic: boolean
+		outlineColorProperty: Property|string|any
+		outlineEnabled: boolean
+		shadowsProperty: Property|string|any
+
+
+		//Methods
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
+		destroy() : void
+		isDestroyed() : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
+
+	}
+	export = PolylineGeometryUpdater
+
+}
+declare module 'cesium/Source/DataSources/HASH_07128_PolylineGlowMaterialPropertyOptions' {
+	import Property = require('cesium/Source/DataSources/Property')
+	interface HASH_07128_PolylineGlowMaterialPropertyOptions
+	{
+		color?: Property|string|any;
+		glowPower?: Property|string|any;
+	}
+	export = HASH_07128_PolylineGlowMaterialPropertyOptions
+
+}
+declare module 'cesium/Source/DataSources/PolylineGlowMaterialProperty' {
+	import HASH_07128_PolylineGlowMaterialPropertyOptions = require('cesium/Source/DataSources/HASH_07128_PolylineGlowMaterialPropertyOptions')
+	import Property = require('cesium/Source/DataSources/Property')
+	import Event = require('cesium/Source/Core/Event')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PolylineGlowMaterialProperty 
+	{
+		constructor(options? : HASH_07128_PolylineGlowMaterialPropertyOptions);
+		//Members
+		color: Property|string|any
+		definitionChanged: Event
+		glowPower: Property|string|any
+		isConstant: boolean
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
+
+	}
+	export = PolylineGlowMaterialProperty
+
+}
+declare module 'cesium/Source/DataSources/HASH_16057_PolylineOutlineMaterialPropertyOptions' {
+	import Property = require('cesium/Source/DataSources/Property')
+	interface HASH_16057_PolylineOutlineMaterialPropertyOptions
+	{
+		color?: Property|string|any;
+		outlineColor?: Property|string|any;
+		outlineWidth?: Property|string|any;
+	}
+	export = HASH_16057_PolylineOutlineMaterialPropertyOptions
+
+}
+declare module 'cesium/Source/DataSources/PolylineOutlineMaterialProperty' {
+	import HASH_16057_PolylineOutlineMaterialPropertyOptions = require('cesium/Source/DataSources/HASH_16057_PolylineOutlineMaterialPropertyOptions')
+	import Property = require('cesium/Source/DataSources/Property')
+	import Event = require('cesium/Source/Core/Event')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PolylineOutlineMaterialProperty 
+	{
+		constructor(options? : HASH_16057_PolylineOutlineMaterialPropertyOptions);
+		//Members
+		color: Property|string|any
+		definitionChanged: Event
+		isConstant: boolean
+		outlineColor: Property|string|any
+		outlineWidth: Property|string|any
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
+
+	}
+	export = PolylineOutlineMaterialProperty
+
+}
+declare module 'cesium/Source/DataSources/PolylineVolumeGeometryUpdater' {
+	import Entity = require('cesium/Source/DataSources/Entity')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Appearance = require('cesium/Source/Scene/Appearance')
+	import Property = require('cesium/Source/DataSources/Property')
+	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
+	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
+	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PolylineVolumeGeometryUpdater 
+	{
+		constructor(entity : Entity, scene : Scene);
+		//Members
+		static materialAppearanceType: Appearance
+		static perInstanceColorAppearanceType: Appearance
+		distanceDisplayConditionProperty: Property|string|any
+		entity: Entity
+		fillEnabled: boolean
+		fillMaterialProperty: MaterialProperty
+		geometryChanged: boolean
+		hasConstantFill: boolean
+		hasConstantOutline: boolean
+		isClosed: boolean
+		isDynamic: boolean
+		outlineColorProperty: Property|string|any
+		outlineEnabled: boolean
+		outlineWidth: number
+		shadowsProperty: Property|string|any
+
+
+		//Methods
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
+		destroy() : void
+		isDestroyed() : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
+
+	}
+	export = PolylineVolumeGeometryUpdater
+
+}
+declare module 'cesium/Source/DataSources/PositionPropertyArray' {
+	import Property = require('cesium/Source/DataSources/Property')
+	import ReferenceFrame = require('cesium/Source/Core/ReferenceFrame')
+	import Event = require('cesium/Source/Core/Event')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PositionPropertyArray 
+	{
+		constructor(value? : Array<Property>, referenceFrame? : ReferenceFrame);
+		//Members
+		definitionChanged: Event
+		isConstant: boolean
+		referenceFrame: ReferenceFrame
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getValue(time : JulianDate, result : Array<Cartesian3>) : Array<Cartesian3>
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
+		setValue(value? : Array<Property>) : void
+
+	}
+	export = PositionPropertyArray
+
+}
+declare module 'cesium/Source/DataSources/PropertyArray' {
+	import Property = require('cesium/Source/DataSources/Property')
+	import Event = require('cesium/Source/Core/Event')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class PropertyArray 
+	{
+		constructor(value? : Array<Property>);
+		//Members
+		definitionChanged: Event
+		isConstant: boolean
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getValue(time? : JulianDate, result? : Array<any>) : Array<Object>
+		setValue(value? : Array<Property>) : void
+
+	}
+	export = PropertyArray
+
+}
+declare module 'cesium/Source/DataSources/RectangleGeometryUpdater' {
+	import Entity = require('cesium/Source/DataSources/Entity')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Appearance = require('cesium/Source/Scene/Appearance')
+	import Property = require('cesium/Source/DataSources/Property')
+	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
+	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
+	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class RectangleGeometryUpdater 
+	{
+		constructor(entity : Entity, scene : Scene);
+		//Members
+		static materialAppearanceType: Appearance
+		static perInstanceColorAppearanceType: Appearance
+		distanceDisplayConditionProperty: Property|string|any
+		entity: Entity
+		fillEnabled: boolean
+		fillMaterialProperty: MaterialProperty
+		geometryChanged: boolean
+		hasConstantFill: boolean
+		hasConstantOutline: boolean
+		isClosed: boolean
+		isDynamic: boolean
+		onTerrain: boolean
+		outlineColorProperty: Property|string|any
+		outlineEnabled: boolean
+		outlineWidth: number
+		shadowsProperty: Property|string|any
+
+
+		//Methods
+		createDynamicUpdater(primitives? : PrimitiveCollection, groundPrimitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
+		destroy() : void
+		isDestroyed() : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
+
+	}
+	export = RectangleGeometryUpdater
+
+}
+declare module 'cesium/Source/DataSources/ReferenceProperty' {
+	import EntityCollection = require('cesium/Source/DataSources/EntityCollection')
+	import Event = require('cesium/Source/Core/Event')
+	import ReferenceFrame = require('cesium/Source/Core/ReferenceFrame')
+	import Property = require('cesium/Source/DataSources/Property')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	class ReferenceProperty 
+	{
+		constructor(targetCollection : EntityCollection, targetId : string, targetPropertyNames : Array<string>);
+		//Members
+		definitionChanged: Event
+		isConstant: boolean
+		referenceFrame: ReferenceFrame
+		resolvedProperty: Property|string|any
+		targetCollection: EntityCollection
+		targetId: string
+		targetPropertyNames: Array<string>
+
+
+		//Methods
+		static fromString(targetCollection? : EntityCollection, referenceString? : string) : ReferenceProperty
+		equals(other : Property|string|any) : boolean
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
+
+	}
+	export = ReferenceProperty
+
+}
+declare module 'cesium/Source/DataSources/Rotation' {
+	class Rotation 
+	{
+		constructor();
+		//Members
+		static packedLength: number
+
+
+		//Methods
+		static convertPackedArrayForInterpolation(packedArray? : Array<number>, startingIndex? : number, lastIndex? : number, result? : Array<number>) : void
+		static pack(value? : Rotation, array? : Array<number>, startingIndex? : number) : Array<number>
+		static unpack(array? : Array<number>, startingIndex? : number, result? : Rotation) : Rotation
+		static unpackInterpolationResult(array? : Array<number>, sourceArray? : Array<number>, firstIndex? : number, lastIndex? : number, result? : Rotation) : Rotation
+
+	}
+	export = Rotation
+
+}
+declare module 'cesium/Source/DataSources/HASH_78190_setInterpolationOptionsOptions' {
+	import InterpolationAlgorithm = require('cesium/Source/Core/InterpolationAlgorithm')
+	interface HASH_78190_setInterpolationOptionsOptions
+	{
+		interpolationAlgorithm?: InterpolationAlgorithm;
+		interpolationDegree?: number;
+	}
+	export = HASH_78190_setInterpolationOptionsOptions
+
+}
+declare module 'cesium/Source/DataSources/SampledPositionProperty' {
+	import ReferenceFrame = require('cesium/Source/Core/ReferenceFrame')
+	import ExtrapolationType = require('cesium/Source/Core/ExtrapolationType')
+	import Event = require('cesium/Source/Core/Event')
+	import InterpolationAlgorithm = require('cesium/Source/Core/InterpolationAlgorithm')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Property = require('cesium/Source/DataSources/Property')
+	import HASH_78190_setInterpolationOptionsOptions = require('cesium/Source/DataSources/HASH_78190_setInterpolationOptionsOptions')
+	class SampledPositionProperty 
+	{
+		constructor(referenceFrame? : ReferenceFrame, numberOfDerivatives? : number);
+		//Members
+		backwardExtrapolationDuration: number
+		backwardExtrapolationType: ExtrapolationType
+		definitionChanged: Event
+		forwardExtrapolationDuration: number
+		forwardExtrapolationType: ExtrapolationType
+		interpolationAlgorithm: InterpolationAlgorithm
+		interpolationDegree: number
+		isConstant: boolean
+		numberOfDerivatives: boolean
+		referenceFrame: ReferenceFrame
+
+
+		//Methods
+		addSample(time? : JulianDate, position? : Cartesian3, derivatives? : Array<Cartesian3>) : void
+		addSamples(times? : Array<JulianDate>, positions? : Array<Cartesian3>, derivatives? : Array<Array<any>>) : void
+		addSamplesPackedArray(packedSamples? : Array<number>, epoch? : JulianDate) : void
+		equals(other : Property|string|any) : boolean
+		getValue(time? : JulianDate, result? : Cartesian3) : Cartesian3
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
+		setInterpolationOptions(options : HASH_78190_setInterpolationOptionsOptions) : void
+
+	}
+	export = SampledPositionProperty
+
+}
+declare module 'cesium/Source/DataSources/SampledProperty' {
+	import Packable = require('cesium/Source/Core/Packable')
+	import ExtrapolationType = require('cesium/Source/Core/ExtrapolationType')
+	import Event = require('cesium/Source/Core/Event')
+	import InterpolationAlgorithm = require('cesium/Source/Core/InterpolationAlgorithm')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	import Property = require('cesium/Source/DataSources/Property')
+	import HASH_78190_setInterpolationOptionsOptions = require('cesium/Source/DataSources/HASH_78190_setInterpolationOptionsOptions')
+	class SampledProperty 
+	{
+		constructor(type : number|Packable, derivativeTypes? : Array<Packable>);
+		//Members
+		backwardExtrapolationDuration: number
+		backwardExtrapolationType: ExtrapolationType
+		definitionChanged: Event
+		derivativeTypes: Array<Packable>
+		forwardExtrapolationDuration: number
+		forwardExtrapolationType: ExtrapolationType
+		interpolationAlgorithm: InterpolationAlgorithm
+		interpolationDegree: number
+		isConstant: boolean
+		type: Object
+
+
+		//Methods
+		addSample(time? : JulianDate, value? : Packable, derivatives? : Array<Packable>) : void
+		addSamples(times? : Array<JulianDate>, values? : Array<Packable>, derivativeValues? : Array<Array<any>>) : void
+		addSamplesPackedArray(packedSamples? : Array<number>, epoch? : JulianDate) : void
+		equals(other : Property|string|any) : boolean
+		getValue(time? : JulianDate, result? : any) : Object
+		setInterpolationOptions(options : HASH_78190_setInterpolationOptionsOptions) : void
+
+	}
+	export = SampledProperty
+
+}
+declare module 'cesium/Source/DataSources/HASH_64588_StripeMaterialPropertyOptions' {
+	import Property = require('cesium/Source/DataSources/Property')
+	interface HASH_64588_StripeMaterialPropertyOptions
+	{
+		evenColor?: Property|string|any;
+		oddColor?: Property|string|any;
+		repeat?: Property|string|any;
+		offset?: Property|string|any;
+		orientation?: Property|string|any;
+	}
+	export = HASH_64588_StripeMaterialPropertyOptions
+
+}
+declare module 'cesium/Source/DataSources/StripeMaterialProperty' {
+	import HASH_64588_StripeMaterialPropertyOptions = require('cesium/Source/DataSources/HASH_64588_StripeMaterialPropertyOptions')
+	import Event = require('cesium/Source/Core/Event')
+	import Property = require('cesium/Source/DataSources/Property')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class StripeMaterialProperty 
+	{
+		constructor(options? : HASH_64588_StripeMaterialPropertyOptions);
+		//Members
+		definitionChanged: Event
+		evenColor: Property|string|any
+		isConstant: boolean
+		oddColor: Property|string|any
+		offset: Property|string|any
+		orientation: Property|string|any
+		repeat: Property|string|any
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getType(time? : JulianDate) : string
+		getValue(time? : JulianDate, result? : any) : Object
+
+	}
+	export = StripeMaterialProperty
+
+}
+declare module 'cesium/Source/DataSources/StripeOrientation' {
+	class StripeOrientation 
+	{
+		constructor();
+		//Members
+		static HORIZONTAL: number
+		static VERTICAL: number
+
+
+		//Methods
+
+	}
+	export = StripeOrientation
+
+}
+declare module 'cesium/Source/DataSources/TimeIntervalCollectionPositionProperty' {
+	import ReferenceFrame = require('cesium/Source/Core/ReferenceFrame')
+	import Event = require('cesium/Source/Core/Event')
+	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
+	import Property = require('cesium/Source/DataSources/Property')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	class TimeIntervalCollectionPositionProperty 
+	{
+		constructor(referenceFrame? : ReferenceFrame);
+		//Members
+		definitionChanged: Event
+		intervals: TimeIntervalCollection
+		isConstant: boolean
+		referenceFrame: ReferenceFrame
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getValue(time? : JulianDate, result? : any) : Object
+		getValueInReferenceFrame(time? : JulianDate, referenceFrame? : ReferenceFrame, result? : Cartesian3) : Cartesian3
+
+	}
+	export = TimeIntervalCollectionPositionProperty
+
+}
+declare module 'cesium/Source/DataSources/TimeIntervalCollectionProperty' {
+	import Event = require('cesium/Source/Core/Event')
+	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
+	import Property = require('cesium/Source/DataSources/Property')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class TimeIntervalCollectionProperty extends Property
+	{
+		constructor();
+		//Members
+		definitionChanged: Event
+		intervals: TimeIntervalCollection
+		isConstant: boolean
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getValue(time? : JulianDate, result? : any) : Object
+
+	}
+	export = TimeIntervalCollectionProperty
+
+}
+declare module 'cesium/Source/DataSources/VelocityOrientationProperty' {
+	import Property = require('cesium/Source/DataSources/Property')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import Event = require('cesium/Source/Core/Event')
+	import Quaternion = require('cesium/Source/Core/Quaternion')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class VelocityOrientationProperty extends Property
+	{
+		constructor(position? : Property|string|any, ellipsoid? : Ellipsoid);
+		//Members
+		definitionChanged: Event
+		ellipsoid: Property|string|any
+		isConstant: boolean
+		position: Property|string|any
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getValue(time : JulianDate, result : Quaternion) : Quaternion
+
+	}
+	export = VelocityOrientationProperty
+
+}
+declare module 'cesium/Source/DataSources/VelocityVectorProperty' {
+	import Property = require('cesium/Source/DataSources/Property')
+	import Event = require('cesium/Source/Core/Event')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class VelocityVectorProperty 
+	{
+		constructor(position? : Property|string|any, normalize? : boolean);
+		//Members
+		definitionChanged: Event
+		isConstant: boolean
+		normalize: boolean
+		position: Property|string|any
+
+
+		//Methods
+		equals(other : Property|string|any) : boolean
+		getValue(time : JulianDate, result : Cartesian3) : Cartesian3
+
+	}
+	export = VelocityVectorProperty
+
+}
+declare module 'cesium/Source/DataSources/Visualizer' {
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class Visualizer 
+	{
+		constructor();
+		//Members
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+		update(time? : JulianDate) : boolean
+
+	}
+	export = Visualizer
+
+}
+declare module 'cesium/Source/DataSources/WallGeometryUpdater' {
+	import Entity = require('cesium/Source/DataSources/Entity')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Appearance = require('cesium/Source/Scene/Appearance')
+	import Property = require('cesium/Source/DataSources/Property')
+	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
+	import DynamicGeometryUpdater = require('cesium/Source/DataSources/DynamicGeometryUpdater')
+	import PrimitiveCollection = require('cesium/Source/Scene/PrimitiveCollection')
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class WallGeometryUpdater 
+	{
+		constructor(entity : Entity, scene : Scene);
+		//Members
+		static materialAppearanceType: Appearance
+		static perInstanceColorAppearanceType: Appearance
+		distanceDisplayConditionProperty: Property|string|any
+		entity: Entity
+		fillEnabled: boolean
+		fillMaterialProperty: MaterialProperty
+		geometryChanged: boolean
+		hasConstantFill: boolean
+		hasConstantOutline: boolean
+		isClosed: boolean
+		isDynamic: boolean
+		outlineColorProperty: Property|string|any
+		outlineEnabled: boolean
+		outlineWidth: number
+		shadowsProperty: Property|string|any
+
+
+		//Methods
+		createDynamicUpdater(primitives? : PrimitiveCollection) : DynamicGeometryUpdater
+		createFillGeometryInstance(time? : JulianDate) : GeometryInstance
+		createOutlineGeometryInstance(time? : JulianDate) : GeometryInstance
+		destroy() : void
+		isDestroyed() : boolean
+		isFilled(time? : JulianDate) : boolean
+		isOutlineVisible(time? : JulianDate) : boolean
+
+	}
+	export = WallGeometryUpdater
+
+}
+declare module 'cesium/Source/Scene/HASH_78996_ArcGisMapServerImageryProviderOptions' {
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	interface HASH_78996_ArcGisMapServerImageryProviderOptions
+	{
+		url: string;
+		token?: string;
+		tileDiscardPolicy?: TileDiscardPolicy;
+		proxy?: DefaultProxy;
+		usePreCachedTilesIfAvailable?: boolean;
+		layers?: string;
+		enablePickFeatures?: boolean;
+		rectangle?: Rectangle;
+		tilingScheme?: TilingScheme;
+		ellipsoid?: Ellipsoid;
+		tileWidth?: number;
+		tileHeight?: number;
+		maximumLevel?: number;
+	}
+	export = HASH_78996_ArcGisMapServerImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/ArcGisMapServerImageryProvider' {
+	import HASH_78996_ArcGisMapServerImageryProviderOptions = require('cesium/Source/Scene/HASH_78996_ArcGisMapServerImageryProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class ArcGisMapServerImageryProvider 
+	{
+		constructor(options? : HASH_78996_ArcGisMapServerImageryProviderOptions);
+		//Members
+		credit: Credit
+		enablePickFeatures: boolean
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		layers: string
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		token: string
+		url: string
+		usingPrecachedTiles: boolean
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = ArcGisMapServerImageryProvider
+
+}
+declare module 'cesium/Source/Scene/HeightReference' {
+	class HeightReference 
+	{
+		constructor();
+		//Members
+		static CLAMP_TO_GROUND: number
+		static NONE: number
+		static RELATIVE_TO_GROUND: number
+
+
+		//Methods
+
+	}
+	export = HeightReference
+
+}
+declare module 'cesium/Source/Scene/HorizontalOrigin' {
+	class HorizontalOrigin 
+	{
+		constructor();
+		//Members
+		static CENTER: number
+		static LEFT: number
+		static RIGHT: number
+
+
+		//Methods
+
+	}
+	export = HorizontalOrigin
+
+}
+declare module 'cesium/Source/Scene/VerticalOrigin' {
+	class VerticalOrigin 
+	{
+		constructor();
+		//Members
+		static BASELINE: number
+		static BOTTOM: number
+		static CENTER: number
+		static TOP: number
+
+
+		//Methods
+
+	}
+	export = VerticalOrigin
+
+}
+declare module 'cesium/Source/Scene/Billboard' {
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Color = require('cesium/Source/Core/Color')
+	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
+	import HeightReference = require('cesium/Source/Scene/HeightReference')
+	import HorizontalOrigin = require('cesium/Source/Scene/HorizontalOrigin')
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	import NearFarScalar = require('cesium/Source/Core/NearFarScalar')
+	import VerticalOrigin = require('cesium/Source/Scene/VerticalOrigin')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import BoundingRectangle = require('cesium/Source/Core/BoundingRectangle')
+	class Billboard 
+	{
+		constructor();
+		//Members
+		alignedAxis: Cartesian3
+		color: Color
+		disableDepthTestDistance: number
+		distanceDisplayCondition: DistanceDisplayCondition
+		eyeOffset: Cartesian3
+		height: number
+		heightReference: HeightReference
+		horizontalOrigin: HorizontalOrigin
+		id: Object
+		image: string
+		pixelOffset: Cartesian2
+		pixelOffsetScaleByDistance: NearFarScalar
+		position: Cartesian3
+		ready: boolean
+		rotation: number
+		scale: number
+		scaleByDistance: NearFarScalar
+		show: boolean
+		sizeInMeters: boolean
+		translucencyByDistance: NearFarScalar
+		verticalOrigin: VerticalOrigin
+		width: number
+
+
+		//Methods
+		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
+		equals(other? : Billboard) : boolean
+		setImage(id? : string, image? : HTMLImageElement|HTMLCanvasElement|string|any) : void
+		setImageSubRegion(id? : string, subRegion? : BoundingRectangle) : void
+
+	}
+	export = Billboard
+
+}
+declare module 'cesium/Source/Scene/BlendOption' {
+	class BlendOption 
+	{
+		constructor();
+		//Members
+		static OPAQUE: number
+		static OPAQUE_AND_TRANSLUCENT: number
+		static TRANSLUCENT: number
+
+
+		//Methods
+
+	}
+	export = BlendOption
+
+}
+declare module 'cesium/Source/Scene/HASH_47802_BillboardCollectionOptions' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import BlendOption = require('cesium/Source/Scene/BlendOption')
+	interface HASH_47802_BillboardCollectionOptions
+	{
+		modelMatrix?: Matrix4;
+		debugShowBoundingVolume?: boolean;
+		scene?: Scene;
+		blendOption?: BlendOption;
+	}
+	export = HASH_47802_BillboardCollectionOptions
+
+}
+declare module 'cesium/Source/Scene/BillboardCollection' {
+	import HASH_47802_BillboardCollectionOptions = require('cesium/Source/Scene/HASH_47802_BillboardCollectionOptions')
+	import BlendOption = require('cesium/Source/Scene/BlendOption')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import Billboard = require('cesium/Source/Scene/Billboard')
+	class BillboardCollection 
+	{
+		constructor(options? : HASH_47802_BillboardCollectionOptions);
+		//Members
+		blendOption: BlendOption
+		debugShowBoundingVolume: boolean
+		length: number
+		modelMatrix: Matrix4
+
+
+		//Methods
+		add(billboard : any) : Billboard
+		contains(billboard : Billboard) : boolean
+		destroy() : void
+		get(index? : number) : Billboard
+		isDestroyed() : boolean
+		remove(billboard? : Billboard) : boolean
+		removeAll() : void
+		update() : void
+
+	}
+	export = BillboardCollection
+
+}
+declare module 'cesium/Source/Scene/HASH_34956_BingMapsImageryProviderOptions' {
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	interface HASH_34956_BingMapsImageryProviderOptions
+	{
+		url: string;
+		key?: string;
+		tileProtocol?: string;
+		mapStyle?: string;
+		culture?: string;
+		ellipsoid?: Ellipsoid;
+		tileDiscardPolicy?: TileDiscardPolicy;
+		proxy?: DefaultProxy;
+	}
+	export = HASH_34956_BingMapsImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/BingMapsStyle' {
+	class BingMapsStyle 
+	{
+		constructor();
+		//Members
+		static AERIAL: string
+		static AERIAL_WITH_LABELS: string
+		static CANVAS_DARK: string
+		static CANVAS_GRAY: string
+		static CANVAS_LIGHT: string
+		static COLLINS_BART: string
+		static ORDNANCE_SURVEY: string
+		static ROAD: string
+
+
+		//Methods
+
+	}
+	export = BingMapsStyle
+
+}
+declare module 'cesium/Source/Scene/BingMapsImageryProvider' {
+	import HASH_34956_BingMapsImageryProviderOptions = require('cesium/Source/Scene/HASH_34956_BingMapsImageryProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import BingMapsStyle = require('cesium/Source/Scene/BingMapsStyle')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class BingMapsImageryProvider 
+	{
+		constructor(options? : HASH_34956_BingMapsImageryProviderOptions);
+		//Members
+		credit: Credit
+		culture: string
+		defaultGamma: number
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		key: string
+		mapStyle: BingMapsStyle
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		url: string
+
+
+		//Methods
+		static quadKeyToTileXY(quadkey? : string) : void
+		static tileXYToQuadKey(x? : number, y? : number, level? : number) : void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = BingMapsImageryProvider
+
+}
+declare module 'cesium/Source/Scene/BlendEquation' {
+	class BlendEquation 
+	{
+		constructor();
+		//Members
+		static ADD: number
+		static MAX: number
+		static MIN: number
+		static REVERSE_SUBTRACT: number
+		static SUBTRACT: number
+
+
+		//Methods
+
+	}
+	export = BlendEquation
+
+}
+declare module 'cesium/Source/Scene/BlendFunction' {
+	class BlendFunction 
+	{
+		constructor();
+		//Members
+		static CONSTANT_ALPHA: number
+		static CONSTANT_COLOR: number
+		static DESTINATION_ALPHA: number
+		static DESTINATION_COLOR: number
+		static ONE: number
+		static ONE_MINUS_CONSTANT_ALPHA: number
+		static ONE_MINUS_CONSTANT_COLOR: number
+		static ONE_MINUS_DESTINATION_ALPHA: number
+		static ONE_MINUS_DESTINATION_COLOR: number
+		static ONE_MINUS_SOURCE_ALPHA: number
+		static ONE_MINUS_SOURCE_COLOR: number
+		static SOURCE_ALPHA: number
+		static SOURCE_ALPHA_SATURATE: number
+		static SOURCE_COLOR: number
+		static ZERO: number
+
+
+		//Methods
+
+	}
+	export = BlendFunction
+
+}
+declare module 'cesium/Source/Scene/BlendingState' {
+	class BlendingState 
+	{
+		constructor();
+		//Members
+		static ADDITIVE_BLEND: Object
+		static ALPHA_BLEND: Object
+		static DISABLED: Object
+		static PRE_MULTIPLIED_ALPHA_BLEND: Object
+
+
+		//Methods
+
+	}
+	export = BlendingState
+
+}
+declare module 'cesium/Source/Scene/BoxEmitter' {
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	class BoxEmitter 
+	{
+		constructor(dimensions : Cartesian3);
+		//Members
+		dimensions: Cartesian3
+
+
+		//Methods
+
+	}
+	export = BoxEmitter
+
+}
+declare module 'cesium/Source/Scene/CameraEventAggregator' {
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	import CameraEventType = require('cesium/Source/Scene/CameraEventType')
+	import KeyboardEventModifier = require('cesium/Source/Core/KeyboardEventModifier')
+	class CameraEventAggregator 
+	{
+		constructor(canvas? : HTMLCanvasElement);
+		//Members
+		anyButtonDown: boolean
+		currentMousePosition: Cartesian2
+
+
+		//Methods
+		destroy() : void
+		getButtonPressTime(type? : CameraEventType, modifier? : KeyboardEventModifier) : Date
+		getButtonReleaseTime(type? : CameraEventType, modifier? : KeyboardEventModifier) : Date
+		getLastMovement(type? : CameraEventType, modifier? : KeyboardEventModifier) : Object|void
+		getMovement(type? : CameraEventType, modifier? : KeyboardEventModifier) : Object
+		getStartMousePosition(type? : CameraEventType, modifier? : KeyboardEventModifier) : Cartesian2
+		isButtonDown(type? : CameraEventType, modifier? : KeyboardEventModifier) : boolean
+		isDestroyed() : boolean
+		isMoving(type? : CameraEventType, modifier? : KeyboardEventModifier) : boolean
+		reset() : void
+
+	}
+	export = CameraEventAggregator
+
+}
+declare module 'cesium/Source/Scene/HASH_74468_Cesium3DTilesetOptions' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
+	interface HASH_74468_Cesium3DTilesetOptions
+	{
+		url: string;
+		show?: boolean;
+		modelMatrix?: Matrix4;
+		shadows?: ShadowMode;
+		maximumScreenSpaceError?: number;
+		maximumMemoryUsage?: number;
+		cullWithChildrenBounds?: boolean;
+		dynamicScreenSpaceError?: boolean;
+		dynamicScreenSpaceErrorDensity?: number;
+		dynamicScreenSpaceErrorFactor?: number;
+		dynamicScreenSpaceErrorHeightFalloff?: number;
+		skipLevelOfDetail?: boolean;
+		baseScreenSpaceError?: number;
+		skipScreenSpaceErrorFactor?: number;
+		skipLevels?: number;
+		immediatelyLoadDesiredLevelOfDetail?: boolean;
+		loadSiblings?: boolean;
+		debugFreezeFrame?: boolean;
+		debugColorizeTiles?: boolean;
+		debugWireframe?: boolean;
+		debugShowBoundingVolume?: boolean;
+		debugShowContentBoundingVolume?: boolean;
+		debugShowViewerRequestVolume?: boolean;
+		debugShowGeometricError?: boolean;
+		debugShowRenderingStatistics?: boolean;
+		debugShowMemoryUsage?: boolean;
+		debugShowUrl?: boolean;
+	}
+	export = HASH_74468_Cesium3DTilesetOptions
+
+}
+declare module 'cesium/Source/Scene/Cesium3DTileColorBlendMode' {
+	class Cesium3DTileColorBlendMode 
+	{
+		constructor();
+		//Members
+		static HIGHLIGHT: number
+		static MIX: number
+		static REPLACE: number
+
+
+		//Methods
+
+	}
+	export = Cesium3DTileColorBlendMode
+
+}
+declare module 'cesium/Source/Scene/FrameState' {
+	class FrameState
+	{
+	constructor();
+	}
+	export = FrameState
+
+}
+declare module 'cesium/Source/Scene/StyleExpression' {
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
+	import Color = require('cesium/Source/Core/Color')
+	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
+	import FrameState = require('cesium/Source/Scene/FrameState')
+	class StyleExpression 
+	{
+		constructor();
+		//Members
+
+
+		//Methods
+		evaluate(frameState? : any, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
+		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
+
+	}
+	export = StyleExpression
+
+}
+declare module 'cesium/Source/Scene/Cesium3DTileStyle' {
+	import StyleExpression = require('cesium/Source/Scene/StyleExpression')
+	class Cesium3DTileStyle 
+	{
+		constructor(style? : string|any);
+		//Members
+		color: StyleExpression
+		meta: StyleExpression
+		pointSize: StyleExpression
+		ready: boolean
+		readyPromise: Promise<Cesium3DTileStyle>
+		show: StyleExpression
+		style: Object
+
+
+		//Methods
+
+	}
+	export = Cesium3DTileStyle
+
+}
+declare module 'cesium/Source/Scene/Cesium3DTileset' {
+	import HASH_74468_Cesium3DTilesetOptions = require('cesium/Source/Scene/HASH_74468_Cesium3DTilesetOptions')
+	import Event = require('cesium/Source/Core/Event')
+	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
+	import Cesium3DTileColorBlendMode = require('cesium/Source/Scene/Cesium3DTileColorBlendMode')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
+	import Cesium3DTileStyle = require('cesium/Source/Scene/Cesium3DTileStyle')
+	class Cesium3DTileset 
+	{
+		constructor(options? : HASH_74468_Cesium3DTilesetOptions);
+		//Members
+		allTilesLoaded: Event
+		asset: Object
+		basePath: string
+		baseScreenSpaceError: number
+		boundingSphere: BoundingSphere
+		colorBlendAmount: number
+		colorBlendMode: Cesium3DTileColorBlendMode
+		debugColorizeTiles: boolean
+		debugFreezeFrame: boolean
+		debugShowBoundingVolume: boolean
+		debugShowContentBoundingVolume: boolean
+		debugShowGeometricError: boolean
+		debugShowMemoryUsage: boolean
+		debugShowRenderingStatistics: boolean
+		debugShowUrl: boolean
+		debugShowViewerRequestVolume: boolean
+		debugWireframe: boolean
+		dynamicScreenSpaceError: boolean
+		dynamicScreenSpaceErrorDensity: number
+		dynamicScreenSpaceErrorFactor: number
+		dynamicScreenSpaceErrorHeightFalloff: number
+		immediatelyLoadDesiredLevelOfDetail: boolean
+		loadProgress: Event
+		loadSiblings: boolean
+		maximumMemoryUsage: number
+		maximumScreenSpaceError: number
+		modelMatrix: Matrix4
+		properties: Object
+		ready: boolean
+		readyPromise: Promise<Cesium3DTileset>
+		shadows: ShadowMode
+		show: boolean
+		skipLevelOfDetail: boolean
+		skipLevels: number
+		skipScreenSpaceErrorFactor: number
+		style: Cesium3DTileStyle
+		tileLoad: Event
+		tilesLoaded: boolean
+		tileUnload: Event
+		tileVisible: Event
+		timeSinceLoad: number
+		totalMemoryUsageInBytes: number
+		url: string
+
+
+		//Methods
+		static loadJson(tilesetUrl? : string) : Promise<Object>
+		destroy() : void
+		isDestroyed() : boolean
+		makeStyleDirty() : void
+		trimLoadedTiles() : void
+		update() : void
+
+	}
+	export = Cesium3DTileset
+
+}
+declare module 'cesium/Source/Scene/Cesium3DTileFeature' {
+	import Color = require('cesium/Source/Core/Color')
+	import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
+	class Cesium3DTileFeature 
+	{
+		constructor();
+		//Members
+		color: Color
+		primitive: Cesium3DTileset
+		show: boolean
+		tileset: Cesium3DTileset
+
+
+		//Methods
+		getProperty(name? : string) : any
+		getPropertyNames(results? : Array<string>) : Array<string>
+		hasProperty(name? : string) : boolean
+		setProperty(name? : string, value? : any) : void
+
+	}
+	export = Cesium3DTileFeature
+
+}
+declare module 'cesium/Source/Scene/Cesium3DTileContent' {
+	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
+	class Cesium3DTileContent 
+	{
+		constructor();
+		//Members
+		batchTableByteLength: number
+		featuresLength: number
+		geometryByteLength: number
+		innerContents: Array<any>
+		pointsLength: number
+		readyPromise: Promise<Cesium3DTileContent>
+		texturesByteLength: number
+		trianglesLength: number
+		url: string
+
+
+		//Methods
+		getFeature(batchId? : number) : Cesium3DTileFeature
+		hasProperty(batchId? : number, name? : string) : boolean
+
+	}
+	export = Cesium3DTileContent
+
+}
+declare module 'cesium/Source/Scene/Cesium3DTile' {
+	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import Cesium3DTileContent = require('cesium/Source/Scene/Cesium3DTileContent')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
+	class Cesium3DTile 
+	{
+		constructor();
+		//Members
+		boundingSphere: BoundingSphere
+		children: Array<Cesium3DTile>
+		computedTransform: Matrix4
+		content: Cesium3DTileContent
+		expireDate: JulianDate
+		expireDuration: number
+		geometricError: number
+		parent: Cesium3DTile
+		tileset: Cesium3DTileset
+		transform: Matrix4
+
+
+		//Methods
+
+	}
+	export = Cesium3DTile
+
+}
+declare module 'cesium/Source/Scene/CircleEmitter' {
+	class CircleEmitter 
+	{
+		constructor(radius? : number);
+		//Members
+		angle: number
+		radius: number
+
+
+		//Methods
+
+	}
+	export = CircleEmitter
+
+}
+declare module 'cesium/Source/Scene/ClassificationOption' {
+	class ClassificationOption 
+	{
+		constructor();
+		//Members
+		static BOTH: number
+		static CESIUM_3D_TILE: number
+		static TERRAIN: number
+
+
+		//Methods
+
+	}
+	export = ClassificationOption
+
+}
+declare module 'cesium/Source/Scene/HASH_17430_ClassificationPrimitiveOptions' {
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	interface HASH_17430_ClassificationPrimitiveOptions
+	{
+		geometryInstances?: Array<any>|GeometryInstance;
+		show?: boolean;
+		vertexCacheOptimize?: boolean;
+		interleave?: boolean;
+		compressVertices?: boolean;
+		releaseGeometryInstances?: boolean;
+		allowPicking?: boolean;
+		asynchronous?: boolean;
+		classificationType?: ClassificationType;
+		debugShowBoundingVolume?: boolean;
+		debugShowShadowVolume?: boolean;
+	}
+	export = HASH_17430_ClassificationPrimitiveOptions
+
+}
+declare module 'cesium/Source/Scene/ClassificationPrimitive' {
+	import HASH_17430_ClassificationPrimitiveOptions = require('cesium/Source/Scene/HASH_17430_ClassificationPrimitiveOptions')
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	import Scene = require('cesium/Source/Scene/Scene')
+	class ClassificationPrimitive 
+	{
+		constructor(options? : HASH_17430_ClassificationPrimitiveOptions);
+		//Members
+		allowPicking: boolean
+		asynchronous: boolean
+		classificationType: ClassificationType
+		compressVertices: boolean
+		debugShowBoundingVolume: boolean
+		debugShowShadowVolume: boolean
+		geometryInstances: Array<any>|GeometryInstance
+		interleave: boolean
+		ready: boolean
+		readyPromise: Promise<ClassificationPrimitive>
+		releaseGeometryInstances: boolean
+		show: boolean
+		vertexCacheOptimize: boolean
+
+
+		//Methods
+		static isSupported(scene? : Scene) : boolean
+		destroy() : void
+		getGeometryInstanceAttributes(id? : any) : Object
+		isDestroyed() : boolean
+		update() : void
+
+	}
+	export = ClassificationPrimitive
+
+}
+declare module 'cesium/Source/Scene/ColorBlendMode' {
+	class ColorBlendMode 
+	{
+		constructor();
+		//Members
+
+
+		//Methods
+
+	}
+	export = ColorBlendMode
+
+}
+declare module 'cesium/Source/Scene/ConditionsExpression' {
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
+	import Color = require('cesium/Source/Core/Color')
+	import FrameState = require('cesium/Source/Scene/FrameState')
+	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
+	class ConditionsExpression 
+	{
+		constructor(conditionsExpression? : any, defines? : any);
+		//Members
+		conditionsExpression: Object
+
+
+		//Methods
+		evaluate(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
+		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
+
+	}
+	export = ConditionsExpression
+
+}
+declare module 'cesium/Source/Scene/ConeEmitter' {
+	class ConeEmitter 
+	{
+		constructor(angle? : number);
+		//Members
+
+
+		//Methods
+
+	}
+	export = ConeEmitter
+
+}
+declare module 'cesium/Source/Scene/CreditDisplay' {
+	import Credit = require('cesium/Source/Core/Credit')
+	class CreditDisplay 
+	{
+		constructor(container : HTMLElement, delimiter? : string);
+		//Members
+		container: HTMLElement
+
+
+		//Methods
+		addCredit(credit? : Credit) : void
+		addDefaultCredit(credit? : Credit) : void
+		beginFrame() : void
+		destroy() : void
+		endFrame() : void
+		isDestroyed() : boolean
+		removeDefaultCredit(credit? : Credit) : void
+
+	}
+	export = CreditDisplay
+
+}
+declare module 'cesium/Source/Scene/CullFace' {
+	class CullFace 
+	{
+		constructor();
+		//Members
+		static BACK: number
+		static FRONT: number
+		static FRONT_AND_BACK: number
+
+
+		//Methods
+
+	}
+	export = CullFace
+
+}
+declare module 'cesium/Source/Scene/HASH_19429_DebugAppearanceOptions' {
+	interface HASH_19429_DebugAppearanceOptions
+	{
+		attributeName: string;
+		perInstanceAttribute?: boolean;
+		glslDatatype?: string;
+		vertexShaderSource?: string;
+		fragmentShaderSource?: string;
+		renderState?: RenderState;
+	}
+	export = HASH_19429_DebugAppearanceOptions
+
+}
+declare module 'cesium/Source/Scene/DebugAppearance' {
+	import HASH_19429_DebugAppearanceOptions = require('cesium/Source/Scene/HASH_19429_DebugAppearanceOptions')
+	import Material = require('cesium/Source/Scene/Material')
+	class DebugAppearance 
+	{
+		constructor(options? : HASH_19429_DebugAppearanceOptions);
+		//Members
+		attributeName: string
+		closed: boolean
+		fragmentShaderSource: string
+		glslDatatype: string
+		material: Material
+		renderState: Object
+		translucent: boolean
+		vertexShaderSource: string
+
+
+		//Methods
+		getFragmentShaderSource() : string
+		getRenderState() : Object
+		isTranslucent() : boolean
+
+	}
+	export = DebugAppearance
+
+}
+declare module 'cesium/Source/Scene/HASH_11011_DebugCameraPrimitiveOptions' {
+	import Camera = require('cesium/Source/Scene/Camera')
+	import Color = require('cesium/Source/Core/Color')
+	interface HASH_11011_DebugCameraPrimitiveOptions
+	{
+		camera: Camera;
+		color?: Color;
+		updateOnChange?: boolean;
+		show?: boolean;
+		id?: Object;
+	}
+	export = HASH_11011_DebugCameraPrimitiveOptions
+
+}
+declare module 'cesium/Source/Scene/DebugCameraPrimitive' {
+	import HASH_11011_DebugCameraPrimitiveOptions = require('cesium/Source/Scene/HASH_11011_DebugCameraPrimitiveOptions')
+	class DebugCameraPrimitive 
+	{
+		constructor(options? : HASH_11011_DebugCameraPrimitiveOptions);
+		//Members
+		id: Object
+		show: boolean
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+
+	}
+	export = DebugCameraPrimitive
+
+}
+declare module 'cesium/Source/Scene/HASH_47307_DebugModelMatrixPrimitiveOptions' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	interface HASH_47307_DebugModelMatrixPrimitiveOptions
+	{
+		length?: number;
+		width?: number;
+		modelMatrix?: Matrix4;
+		show?: boolean;
+		id?: Object;
+	}
+	export = HASH_47307_DebugModelMatrixPrimitiveOptions
+
+}
+declare module 'cesium/Source/Scene/DebugModelMatrixPrimitive' {
+	import HASH_47307_DebugModelMatrixPrimitiveOptions = require('cesium/Source/Scene/HASH_47307_DebugModelMatrixPrimitiveOptions')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	class DebugModelMatrixPrimitive 
+	{
+		constructor(options? : HASH_47307_DebugModelMatrixPrimitiveOptions);
+		//Members
+		id: Object
+		length: number
+		modelMatrix: Matrix4
+		show: boolean
+		width: number
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+
+	}
+	export = DebugModelMatrixPrimitive
+
+}
+declare module 'cesium/Source/Scene/DepthFunction' {
+	class DepthFunction 
+	{
+		constructor();
+		//Members
+		static ALWAYS: number
+		static EQUAL: number
+		static GREATER: number
+		static GREATER_OR_EQUAL: number
+		static LESS: number
+		static LESS_OR_EQUAL: number
+		static NEVER: number
+		static NOT_EQUAL: number
+
+
+		//Methods
+
+	}
+	export = DepthFunction
+
+}
+declare module 'cesium/Source/Scene/HASH_09809_DiscardMissingTileImagePolicyOptions' {
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	interface HASH_09809_DiscardMissingTileImagePolicyOptions
+	{
+		missingImageUrl: string;
+		pixelsToCheck: Array<Cartesian2>;
+		disableCheckIfAllPixelsAreTransparent?: boolean;
+	}
+	export = HASH_09809_DiscardMissingTileImagePolicyOptions
+
+}
+declare module 'cesium/Source/Scene/DiscardMissingTileImagePolicy' {
+	import HASH_09809_DiscardMissingTileImagePolicyOptions = require('cesium/Source/Scene/HASH_09809_DiscardMissingTileImagePolicyOptions')
+	class DiscardMissingTileImagePolicy 
+	{
+		constructor(options? : HASH_09809_DiscardMissingTileImagePolicyOptions);
+		//Members
+
+
+		//Methods
+		isReady() : boolean
+		shouldDiscardImage(image? : HTMLImageElement) : boolean
+
+	}
+	export = DiscardMissingTileImagePolicy
+
+}
+declare module 'cesium/Source/Scene/HASH_57656_EllipsoidSurfaceAppearanceOptions' {
+	import Material = require('cesium/Source/Scene/Material')
+	interface HASH_57656_EllipsoidSurfaceAppearanceOptions
+	{
+		flat?: boolean;
+		faceForward?: boolean;
+		translucent?: boolean;
+		aboveGround?: boolean;
+		material?: Material;
+		vertexShaderSource?: string;
+		fragmentShaderSource?: string;
+		renderState?: RenderState;
+	}
+	export = HASH_57656_EllipsoidSurfaceAppearanceOptions
+
+}
+declare module 'cesium/Source/Scene/EllipsoidSurfaceAppearance' {
+	import HASH_57656_EllipsoidSurfaceAppearanceOptions = require('cesium/Source/Scene/HASH_57656_EllipsoidSurfaceAppearanceOptions')
+	import VertexFormat = require('cesium/Source/Core/VertexFormat')
+	import Material = require('cesium/Source/Scene/Material')
+	class EllipsoidSurfaceAppearance 
+	{
+		constructor(options? : HASH_57656_EllipsoidSurfaceAppearanceOptions);
+		//Members
+		static VERTEX_FORMAT: VertexFormat
+		aboveGround: boolean
+		closed: boolean
+		faceForward: boolean
+		flat: boolean
+		fragmentShaderSource: string
+		material: Material
+		renderState: Object
+		translucent: boolean
+		vertexFormat: VertexFormat
+		vertexShaderSource: string
+
+
+		//Methods
+		getFragmentShaderSource() : string
+		getRenderState() : Object
+		isTranslucent() : boolean
+
+	}
+	export = EllipsoidSurfaceAppearance
+
+}
+declare module 'cesium/Source/Scene/Expression' {
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Cartesian4 = require('cesium/Source/Core/Cartesian4')
+	import Color = require('cesium/Source/Core/Color')
+	import FrameState = require('cesium/Source/Scene/FrameState')
+	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
+	class Expression 
+	{
+		constructor(expression? : string, defines? : any);
+		//Members
+		expression: string
+
+
+		//Methods
+		evaluate(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : any) : boolean|number|string|RegExp|Cartesian2|Cartesian3|Cartesian4|Color
+		evaluateColor(frameState? : FrameState, feature? : Cesium3DTileFeature, result? : Color) : Color
+
+	}
+	export = Expression
+
+}
+declare module 'cesium/Source/Scene/HASH_21310_FrameRateMonitorOptions' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	interface HASH_21310_FrameRateMonitorOptions
+	{
+		scene: Scene;
+		samplingWindow?: number;
+		quietPeriod?: number;
+		warmupPeriod?: number;
+		minimumFrameRateDuringWarmup?: number;
+		minimumFrameRateAfterWarmup?: number;
+	}
+	export = HASH_21310_FrameRateMonitorOptions
+
+}
+declare module 'cesium/Source/Scene/FrameRateMonitor' {
+	import HASH_21310_FrameRateMonitorOptions = require('cesium/Source/Scene/HASH_21310_FrameRateMonitorOptions')
+	import Event = require('cesium/Source/Core/Event')
+	import Scene = require('cesium/Source/Scene/Scene')
+	class FrameRateMonitor 
+	{
+		constructor(options? : HASH_21310_FrameRateMonitorOptions);
+		//Members
+		static defaultSettings: Object
+		lastFramesPerSecond: number
+		lowFrameRate: Event
+		minimumFrameRateAfterWarmup: number
+		minimumFrameRateDuringWarmup: number
+		nominalFrameRate: Event
+		quietPeriod: number
+		samplingWindow: number
+		scene: Scene
+		warmupPeriod: number
+
+
+		//Methods
+		static fromScene(scene? : Scene) : FrameRateMonitor
+		destroy() : void
+		isDestroyed() : boolean
+		pause() : void
+		unpause() : void
+
+	}
+	export = FrameRateMonitor
+
+}
+declare module 'cesium/Source/Scene/GetFeatureInfoFormat' {
+	class GetFeatureInfoFormat 
+	{
+		constructor(type : string, format? : string, callback? : (()=>void));
+		//Members
+
+
+		//Methods
+
+	}
+	export = GetFeatureInfoFormat
+
+}
+declare module 'cesium/Source/Scene/HASH_31040_GoogleEarthEnterpriseImageryProviderOptions' {
+	import GoogleEarthEnterpriseMetadata = require('cesium/Source/Core/GoogleEarthEnterpriseMetadata')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import Credit = require('cesium/Source/Core/Credit')
+	interface HASH_31040_GoogleEarthEnterpriseImageryProviderOptions
+	{
+		url: string;
+		metadata: GoogleEarthEnterpriseMetadata;
+		proxy?: DefaultProxy;
+		ellipsoid?: Ellipsoid;
+		tileDiscardPolicy?: TileDiscardPolicy;
+		credit?: Credit|string;
+	}
+	export = HASH_31040_GoogleEarthEnterpriseImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/GoogleEarthEnterpriseImageryProvider' {
+	import HASH_31040_GoogleEarthEnterpriseImageryProviderOptions = require('cesium/Source/Scene/HASH_31040_GoogleEarthEnterpriseImageryProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class GoogleEarthEnterpriseImageryProvider 
+	{
+		constructor(options? : HASH_31040_GoogleEarthEnterpriseImageryProviderOptions);
+		//Members
+		credit: Credit
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		url: string
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = GoogleEarthEnterpriseImageryProvider
+
+}
+declare module 'cesium/Source/Scene/HASH_75679_GoogleEarthEnterpriseMapsProviderOptions' {
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	interface HASH_75679_GoogleEarthEnterpriseMapsProviderOptions
+	{
+		url: string;
+		channel: number;
+		path?: string;
+		maximumLevel?: number;
+		tileDiscardPolicy?: TileDiscardPolicy;
+		ellipsoid?: Ellipsoid;
+		proxy?: DefaultProxy;
+	}
+	export = HASH_75679_GoogleEarthEnterpriseMapsProviderOptions
+
+}
+declare module 'cesium/Source/Scene/GoogleEarthEnterpriseMapsProvider' {
+	import HASH_75679_GoogleEarthEnterpriseMapsProviderOptions = require('cesium/Source/Scene/HASH_75679_GoogleEarthEnterpriseMapsProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class GoogleEarthEnterpriseMapsProvider 
+	{
+		constructor(options? : HASH_75679_GoogleEarthEnterpriseMapsProviderOptions);
+		//Members
+		channel: number
+		credit: Credit
+		defaultGamma: number
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		maximumLevel: number
+		minimumLevel: number
+		path: string
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		requestType: string
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		url: string
+		version: number
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = GoogleEarthEnterpriseMapsProvider
+
+}
+declare module 'cesium/Source/Scene/HASH_39786_GridImageryProviderOptions' {
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import Color = require('cesium/Source/Core/Color')
+	interface HASH_39786_GridImageryProviderOptions
+	{
+		tilingScheme?: TilingScheme;
+		ellipsoid?: Ellipsoid;
+		cells?: number;
+		color?: Color;
+		glowColor?: Color;
+		glowWidth?: number;
+		backgroundColor?: Color;
+		tileWidth?: number;
+		tileHeight?: number;
+		canvasSize?: number;
+	}
+	export = HASH_39786_GridImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/GridImageryProvider' {
+	import HASH_39786_GridImageryProviderOptions = require('cesium/Source/Scene/HASH_39786_GridImageryProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class GridImageryProvider 
+	{
+		constructor(options? : HASH_39786_GridImageryProviderOptions);
+		//Members
+		credit: Credit
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+
+
+		//Methods
+		_createGridCanvas() : void
+		_drawGrid() : void
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = GridImageryProvider
+
+}
+declare module 'cesium/Source/Scene/HASH_17430_GroundPrimitiveOptions' {
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	interface HASH_17430_GroundPrimitiveOptions
+	{
+		geometryInstances?: Array<any>|GeometryInstance;
+		show?: boolean;
+		vertexCacheOptimize?: boolean;
+		interleave?: boolean;
+		compressVertices?: boolean;
+		releaseGeometryInstances?: boolean;
+		allowPicking?: boolean;
+		asynchronous?: boolean;
+		classificationType?: ClassificationType;
+		debugShowBoundingVolume?: boolean;
+		debugShowShadowVolume?: boolean;
+	}
+	export = HASH_17430_GroundPrimitiveOptions
+
+}
+declare module 'cesium/Source/Scene/GroundPrimitive' {
+	import HASH_17430_GroundPrimitiveOptions = require('cesium/Source/Scene/HASH_17430_GroundPrimitiveOptions')
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	class GroundPrimitive 
+	{
+		constructor(options? : HASH_17430_GroundPrimitiveOptions);
+		//Members
+		static isSupported: any
+		allowPicking: boolean
+		asynchronous: boolean
+		classificationType: ClassificationType
+		compressVertices: boolean
+		debugShowBoundingVolume: boolean
+		debugShowShadowVolume: boolean
+		geometryInstances: Array<any>|GeometryInstance
+		interleave: boolean
+		ready: boolean
+		readyPromise: Promise<GroundPrimitive>
+		releaseGeometryInstances: boolean
+		show: boolean
+		vertexCacheOptimize: boolean
+
+
+		//Methods
+		static initializeTerrainHeights() : Promise<any>
+		destroy() : void
+		getGeometryInstanceAttributes(id? : any) : Object
+		isDestroyed() : boolean
+		update() : void
+
+	}
+	export = GroundPrimitive
+
+}
+declare module 'cesium/Source/Scene/LabelStyle' {
+	class LabelStyle 
+	{
+		constructor();
+		//Members
+		static FILL: number
+		static FILL_AND_OUTLINE: number
+		static OUTLINE: number
+
+
+		//Methods
+
+	}
+	export = LabelStyle
+
+}
+declare module 'cesium/Source/Scene/Label' {
+	import Color = require('cesium/Source/Core/Color')
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import HeightReference = require('cesium/Source/Scene/HeightReference')
+	import HorizontalOrigin = require('cesium/Source/Scene/HorizontalOrigin')
+	import NearFarScalar = require('cesium/Source/Core/NearFarScalar')
+	import LabelStyle = require('cesium/Source/Scene/LabelStyle')
+	import VerticalOrigin = require('cesium/Source/Scene/VerticalOrigin')
+	import Scene = require('cesium/Source/Scene/Scene')
+	class Label 
+	{
+		constructor();
+		//Members
+		backgroundColor: Color
+		backgroundPadding: Cartesian2
+		disableDepthTestDistance: number
+		distanceDisplayCondition: DistanceDisplayCondition
+		eyeOffset: Cartesian3
+		fillColor: Color
+		font: string
+		heightReference: HeightReference
+		horizontalOrigin: HorizontalOrigin
+		id: Object
+		outlineColor: Color
+		outlineWidth: number
+		pixelOffset: Cartesian2
+		pixelOffsetScaleByDistance: NearFarScalar
+		position: Cartesian3
+		scale: number
+		scaleByDistance: NearFarScalar
+		show: boolean
+		showBackground: boolean
+		style: LabelStyle
+		text: string
+		translucencyByDistance: NearFarScalar
+		verticalOrigin: VerticalOrigin
+
+
+		//Methods
+		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
+		equals(other? : Label) : boolean
+		isDestroyed() : boolean
+
+	}
+	export = Label
+
+}
+declare module 'cesium/Source/Scene/HASH_47802_LabelCollectionOptions' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import BlendOption = require('cesium/Source/Scene/BlendOption')
+	interface HASH_47802_LabelCollectionOptions
+	{
+		modelMatrix?: Matrix4;
+		debugShowBoundingVolume?: boolean;
+		scene?: Scene;
+		blendOption?: BlendOption;
+	}
+	export = HASH_47802_LabelCollectionOptions
+
+}
+declare module 'cesium/Source/Scene/LabelCollection' {
+	import HASH_47802_LabelCollectionOptions = require('cesium/Source/Scene/HASH_47802_LabelCollectionOptions')
+	import BlendOption = require('cesium/Source/Scene/BlendOption')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import Label = require('cesium/Source/Scene/Label')
+	class LabelCollection 
+	{
+		constructor(options? : HASH_47802_LabelCollectionOptions);
+		//Members
+		blendOption: BlendOption
+		debugShowBoundingVolume: boolean
+		length: number
+		modelMatrix: Matrix4
+
+
+		//Methods
+		add(options : any) : Label
+		contains(label? : Label) : boolean
+		destroy() : void
+		get(index? : number) : Label
+		isDestroyed() : boolean
+		remove(label? : Label) : boolean
+		removeAll() : void
+
+	}
+	export = LabelCollection
+
+}
+declare module 'cesium/Source/Scene/HASH_05225_MapboxImageryProviderOptions' {
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import Credit = require('cesium/Source/Core/Credit')
+	interface HASH_05225_MapboxImageryProviderOptions
+	{
+		url?: string;
+		mapId: string;
+		accessToken?: string;
+		format?: string;
+		proxy?: Object;
+		ellipsoid?: Ellipsoid;
+		minimumLevel?: number;
+		maximumLevel?: number;
+		rectangle?: Rectangle;
+		credit?: Credit|string;
+	}
+	export = HASH_05225_MapboxImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/MapboxImageryProvider' {
+	import HASH_05225_MapboxImageryProviderOptions = require('cesium/Source/Scene/HASH_05225_MapboxImageryProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class MapboxImageryProvider 
+	{
+		constructor(options? : HASH_05225_MapboxImageryProviderOptions);
+		//Members
+		credit: Credit
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		url: string
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = MapboxImageryProvider
+
+}
+declare module 'cesium/Source/Scene/HASH_21243_MaterialAppearanceOptions' {
+	import Material = require('cesium/Source/Scene/Material')
+	interface HASH_21243_MaterialAppearanceOptions
+	{
+		flat?: boolean;
+		faceForward?: boolean;
+		translucent?: boolean;
+		closed?: boolean;
+		materialSupport?: any;
+		material?: Material;
+		vertexShaderSource?: string;
+		fragmentShaderSource?: string;
+		renderState?: RenderState;
+	}
+	export = HASH_21243_MaterialAppearanceOptions
+
+}
+declare module 'cesium/Source/Scene/MaterialAppearance' {
+	import HASH_21243_MaterialAppearanceOptions = require('cesium/Source/Scene/HASH_21243_MaterialAppearanceOptions')
+	import Material = require('cesium/Source/Scene/Material')
+	import VertexFormat = require('cesium/Source/Core/VertexFormat')
+	class MaterialAppearance 
+	{
+		constructor(options? : HASH_21243_MaterialAppearanceOptions);
+		//Members
+		static MaterialSupport: any
+		closed: boolean
+		faceForward: boolean
+		flat: boolean
+		fragmentShaderSource: string
+		material: Material
+		materialSupport: any
+		renderState: Object
+		translucent: boolean
+		vertexFormat: VertexFormat
+		vertexShaderSource: string
+
+
+		//Methods
+		getFragmentShaderSource() : string
+		getRenderState() : Object
+		isTranslucent() : boolean
+
+	}
+	export = MaterialAppearance
+
+}
+declare module 'cesium/Source/Scene/HASH_29197_ModelOptions' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
+	import HeightReference = require('cesium/Source/Scene/HeightReference')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
+	import Color = require('cesium/Source/Core/Color')
+	import ColorBlendMode = require('cesium/Source/Scene/ColorBlendMode')
+	interface HASH_29197_ModelOptions
+	{
+		gltf?: Object|ArrayBuffer|Uint8Array;
+		basePath?: string;
+		show?: boolean;
+		modelMatrix?: Matrix4;
+		scale?: number;
+		minimumPixelSize?: number;
+		maximumScale?: number;
+		id?: Object;
+		allowPicking?: boolean;
+		incrementallyLoadTextures?: boolean;
+		asynchronous?: boolean;
+		shadows?: ShadowMode;
+		debugShowBoundingVolume?: boolean;
+		debugWireframe?: boolean;
+		heightReference?: HeightReference;
+		scene?: Scene;
+		distanceDisplayCondition?: DistanceDisplayCondition;
+		color?: Color;
+		colorBlendMode?: ColorBlendMode;
+		colorBlendAmount?: number;
+		silhouetteColor?: Color;
+		silhouetteSize?: number;
+	}
+	export = HASH_29197_ModelOptions
+
+}
+declare module 'cesium/Source/Scene/ModelAnimationLoop' {
+	class ModelAnimationLoop 
+	{
+		constructor();
+		//Members
+		static MIRRORED_REPEAT: number
+		static NONE: number
+		static REPEAT: number
+
+
+		//Methods
+
+	}
+	export = ModelAnimationLoop
+
+}
+declare module 'cesium/Source/Scene/ModelAnimation' {
+	import ModelAnimationLoop = require('cesium/Source/Scene/ModelAnimationLoop')
+	import Event = require('cesium/Source/Core/Event')
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	class ModelAnimation 
+	{
+		constructor();
+		//Members
+		delay: number
+		loop: ModelAnimationLoop
+		name: string
+		removeOnStop: boolean
+		reverse: boolean
+		speedup: number
+		start: Event
+		startTime: JulianDate
+		stop: Event
+		stopTime: JulianDate
+		update: Event
+
+
+		//Methods
+
+	}
+	export = ModelAnimation
+
+}
+declare module 'cesium/Source/Scene/HASH_16783_addOptions' {
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	import ModelAnimationLoop = require('cesium/Source/Scene/ModelAnimationLoop')
+	interface HASH_16783_addOptions
+	{
+		name: string;
+		startTime?: JulianDate;
+		delay?: number;
+		stopTime?: JulianDate;
+		removeOnStop?: boolean;
+		speedup?: number;
+		reverse?: boolean;
+		loop?: ModelAnimationLoop;
+	}
+	export = HASH_16783_addOptions
+
+}
+declare module 'cesium/Source/Scene/HASH_94757_addAllOptions' {
+	import JulianDate = require('cesium/Source/Core/JulianDate')
+	import ModelAnimationLoop = require('cesium/Source/Scene/ModelAnimationLoop')
+	interface HASH_94757_addAllOptions
+	{
+		startTime?: JulianDate;
+		delay?: number;
+		stopTime?: JulianDate;
+		removeOnStop?: boolean;
+		speedup?: number;
+		reverse?: boolean;
+		loop?: ModelAnimationLoop;
+	}
+	export = HASH_94757_addAllOptions
+
+}
+declare module 'cesium/Source/Scene/ModelAnimationCollection' {
+	import Event = require('cesium/Source/Core/Event')
+	import ModelAnimation = require('cesium/Source/Scene/ModelAnimation')
+	import HASH_16783_addOptions = require('cesium/Source/Scene/HASH_16783_addOptions')
+	import HASH_94757_addAllOptions = require('cesium/Source/Scene/HASH_94757_addAllOptions')
+	class ModelAnimationCollection 
+	{
+		constructor();
+		//Members
+		animationAdded: Event
+		animationRemoved: Event
+		length: number
+
+
+		//Methods
+		add(options : HASH_16783_addOptions) : ModelAnimation
+		addAll(options : HASH_94757_addAllOptions) : Array<ModelAnimation>
+		contains(animation? : ModelAnimation) : boolean
+		get(index? : number) : ModelAnimation
+		remove(animation? : ModelAnimation) : boolean
+		removeAll() : void
+
+	}
+	export = ModelAnimationCollection
+
+}
+declare module 'cesium/Source/Scene/HASH_53232_fromGltfOptions' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
+	interface HASH_53232_fromGltfOptions
+	{
+		url: string;
+		headers?: Object;
+		basePath?: string;
+		show?: boolean;
+		modelMatrix?: Matrix4;
+		scale?: number;
+		minimumPixelSize?: number;
+		maximumScale?: number;
+		id?: Object;
+		allowPicking?: boolean;
+		incrementallyLoadTextures?: boolean;
+		asynchronous?: boolean;
+		shadows?: ShadowMode;
+		debugShowBoundingVolume?: boolean;
+		debugWireframe?: boolean;
+	}
+	export = HASH_53232_fromGltfOptions
+
+}
+declare module 'cesium/Source/Scene/ModelMaterial' {
+	class ModelMaterial 
+	{
+		constructor();
+		//Members
+		id: string
+		name: string
+
+
+		//Methods
+		getValue(name? : string) : Object
+		setValue(name? : string, value? : any) : void
+
+	}
+	export = ModelMaterial
+
+}
+declare module 'cesium/Source/Scene/ModelMesh' {
+	import ModelMaterial = require('cesium/Source/Scene/ModelMaterial')
+	class ModelMesh 
+	{
+		constructor();
+		//Members
+		id: string
+		materials: Array<ModelMaterial>
+		name: string
+
+
+		//Methods
+
+	}
+	export = ModelMesh
+
+}
+declare module 'cesium/Source/Scene/ModelNode' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	class ModelNode 
+	{
+		constructor();
+		//Members
+		id: string
+		matrix: Matrix4
+		name: string
+		show: boolean
+
+
+		//Methods
+
+	}
+	export = ModelNode
+
+}
+declare module 'cesium/Source/Scene/Model' {
+	import HASH_29197_ModelOptions = require('cesium/Source/Scene/HASH_29197_ModelOptions')
+	import ModelAnimationCollection = require('cesium/Source/Scene/ModelAnimationCollection')
+	import BoundingSphere = require('cesium/Source/Core/BoundingSphere')
+	import Color = require('cesium/Source/Core/Color')
+	import ColorBlendMode = require('cesium/Source/Scene/ColorBlendMode')
+	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
+	import HASH_53232_fromGltfOptions = require('cesium/Source/Scene/HASH_53232_fromGltfOptions')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import ModelMaterial = require('cesium/Source/Scene/ModelMaterial')
+	import ModelMesh = require('cesium/Source/Scene/ModelMesh')
+	import ModelNode = require('cesium/Source/Scene/ModelNode')
+	class Model 
+	{
+		constructor(options? : HASH_29197_ModelOptions);
+		//Members
+		activeAnimations: ModelAnimationCollection
+		allowPicking: boolean
+		asynchronous: boolean
+		basePath: string
+		boundingSphere: BoundingSphere
+		color: Color
+		colorBlendAmount: number
+		colorBlendMode: ColorBlendMode
+		debugShowBoundingVolume: boolean
+		debugWireframe: boolean
+		distanceDisplayCondition: DistanceDisplayCondition
+		gltf: Object
+		id: Object
+		incrementallyLoadTextures: boolean
+		maximumScale: number
+		minimumPixelSize: number
+		modelMatrix: Matrix4
+		pendingTextureLoads: number
+		ready: boolean
+		readyPromise: Promise<Model>
+		scale: number
+		shadows: ShadowMode
+		show: boolean
+		silhouetteColor: Color
+		silhouetteSize: number
+
+
+		//Methods
+		static fromGltf(options : HASH_53232_fromGltfOptions) : Model
+		static silhouetteSupported(scene? : Scene) : boolean
+		destroy() : void
+		getMaterial(name? : string) : ModelMaterial
+		getMesh(name? : string) : ModelMesh
+		getNode(name? : string) : ModelNode
+		isDestroyed() : boolean
+		update() : void
+
+	}
+	export = Model
+
+}
+declare module 'cesium/Source/Scene/NeverTileDiscardPolicy' {
+	class NeverTileDiscardPolicy 
+	{
+		constructor();
+		//Members
+
+
+		//Methods
+		isReady() : boolean
+		shouldDiscardImage(image? : HTMLImageElement) : boolean
+
+	}
+	export = NeverTileDiscardPolicy
+
+}
+declare module 'cesium/Source/Scene/HASH_08462_ParticleOptions' {
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Color = require('cesium/Source/Core/Color')
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	interface HASH_08462_ParticleOptions
+	{
+		mass?: number;
+		position?: Cartesian3;
+		velocity?: Cartesian3;
+		life?: number;
+		image?: Object;
+		startColor?: Color;
+		endColor?: Color;
+		startScale?: number;
+		endScale?: number;
+		size?: Cartesian2;
+	}
+	export = HASH_08462_ParticleOptions
+
+}
+declare module 'cesium/Source/Scene/Particle' {
+	import HASH_08462_ParticleOptions = require('cesium/Source/Scene/HASH_08462_ParticleOptions')
+	import Color = require('cesium/Source/Core/Color')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	class Particle 
+	{
+		constructor(options? : HASH_08462_ParticleOptions);
+		//Members
+		age: number
+		endColor: Color
+		endScale: number
+		image: Object
+		life: number
+		mass: number
+		normalizedAge: number
+		position: Cartesian3
+		size: Cartesian2
+		startColor: Color
+		startScale: number
+		velocity: Cartesian3
+
+
+		//Methods
+
+	}
+	export = Particle
+
+}
+declare module 'cesium/Source/Scene/HASH_83506_ParticleBurstOptions' {
+	interface HASH_83506_ParticleBurstOptions
+	{
+		time?: number;
+		minimum?: number;
+		maximum?: number;
+	}
+	export = HASH_83506_ParticleBurstOptions
+
+}
+declare module 'cesium/Source/Scene/ParticleBurst' {
+	import HASH_83506_ParticleBurstOptions = require('cesium/Source/Scene/HASH_83506_ParticleBurstOptions')
+	class ParticleBurst 
+	{
+		constructor(options? : HASH_83506_ParticleBurstOptions);
+		//Members
+		complete: boolean
+		maximum: number
+		minimum: number
+		time: number
+
+
+		//Methods
+
+	}
+	export = ParticleBurst
+
+}
+declare module 'cesium/Source/Scene/ParticleEmitter' {
+	class ParticleEmitter 
+	{
+		constructor();
+		//Members
+
+
+		//Methods
+
+	}
+	export = ParticleEmitter
+
+}
+declare module 'cesium/Source/Scene/HASH_18907_ParticleSystemOptions' {
+	import ParticleEmitter = require('cesium/Source/Scene/ParticleEmitter')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import Color = require('cesium/Source/Core/Color')
+	import ParticleBurst = require('cesium/Source/Scene/ParticleBurst')
+	interface HASH_18907_ParticleSystemOptions
+	{
+		show?: boolean;
+		forces?: any;
+		emitter?: ParticleEmitter;
+		modelMatrix?: Matrix4;
+		emitterModelMatrix?: Matrix4;
+		startColor?: Color;
+		endColor?: Color;
+		startScale?: number;
+		endScale?: number;
+		rate?: number;
+		bursts?: Array<ParticleBurst>;
+		loop?: boolean;
+		speed?: number;
+		minimumSpeed?: number;
+		maximumSpeed?: number;
+		life?: number;
+		minimumLife?: number;
+		maximumLife?: number;
+		mass?: number;
+		minimumMass?: number;
+		maximumMass?: number;
+		image?: Object;
+		width?: number;
+		minimumWidth?: number;
+		maximumWidth?: number;
+		height?: number;
+		minimumHeight?: number;
+		maximumHeight?: number;
+		lifeTime?: number;
+	}
+	export = HASH_18907_ParticleSystemOptions
+
+}
+declare module 'cesium/Source/Scene/ParticleSystem' {
+	import HASH_18907_ParticleSystemOptions = require('cesium/Source/Scene/HASH_18907_ParticleSystemOptions')
+	import Event = require('cesium/Source/Core/Event')
+	import ParticleEmitter = require('cesium/Source/Scene/ParticleEmitter')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import Color = require('cesium/Source/Core/Color')
+	class ParticleSystem 
+	{
+		constructor(options? : HASH_18907_ParticleSystemOptions);
+		//Members
+		complete: Event
+		emitter: ParticleEmitter
+		emitterModelMatrix: Matrix4
+		endColor: Color
+		endScale: number
+		forces: any
+		image: Object
+		isComplete: boolean
+		lifeTime: number
+		loop: boolean
+		maximumHeight: number
+		maximumLife: number
+		maximumMass: number
+		maximumSpeed: number
+		maximumWidth: number
+		minimumHeight: number
+		minimumLife: number
+		minimumMass: number
+		minimumSpeed: number
+		minimumWidth: number
+		modelMatrix: Matrix4
+		rate: number
+		show: boolean
+		startColor: Color
+		startScale: number
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+
+	}
+	export = ParticleSystem
+
+}
+declare module 'cesium/Source/Scene/HASH_82923_PerInstanceColorAppearanceOptions' {
+	interface HASH_82923_PerInstanceColorAppearanceOptions
+	{
+		flat?: boolean;
+		faceForward?: boolean;
+		translucent?: boolean;
+		closed?: boolean;
+		vertexShaderSource?: string;
+		fragmentShaderSource?: string;
+		renderState?: RenderState;
+	}
+	export = HASH_82923_PerInstanceColorAppearanceOptions
+
+}
+declare module 'cesium/Source/Scene/PerInstanceColorAppearance' {
+	import HASH_82923_PerInstanceColorAppearanceOptions = require('cesium/Source/Scene/HASH_82923_PerInstanceColorAppearanceOptions')
+	import VertexFormat = require('cesium/Source/Core/VertexFormat')
+	import Material = require('cesium/Source/Scene/Material')
+	class PerInstanceColorAppearance 
+	{
+		constructor(options? : HASH_82923_PerInstanceColorAppearanceOptions);
+		//Members
+		static FLAT_VERTEX_FORMAT: VertexFormat
+		static VERTEX_FORMAT: VertexFormat
+		closed: boolean
+		faceForward: boolean
+		flat: boolean
+		fragmentShaderSource: string
+		material: Material
+		renderState: Object
+		translucent: boolean
+		vertexFormat: VertexFormat
+		vertexShaderSource: string
+
+
+		//Methods
+		getFragmentShaderSource() : string
+		getRenderState() : Object
+		isTranslucent() : boolean
+
+	}
+	export = PerInstanceColorAppearance
+
+}
+declare module 'cesium/Source/Scene/PointPrimitive' {
+	import Color = require('cesium/Source/Core/Color')
+	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import NearFarScalar = require('cesium/Source/Core/NearFarScalar')
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	import Scene = require('cesium/Source/Scene/Scene')
+	class PointPrimitive 
+	{
+		constructor();
+		//Members
+		color: Color
+		disableDepthTestDistance: number
+		distanceDisplayCondition: DistanceDisplayCondition
+		id: Object
+		outlineColor: Color
+		outlineWidth: number
+		pixelSize: number
+		position: Cartesian3
+		scaleByDistance: NearFarScalar
+		show: boolean
+		translucencyByDistance: NearFarScalar
+
+
+		//Methods
+		computeScreenSpacePosition(scene? : Scene, result? : Cartesian2) : Cartesian2
+		equals(other? : PointPrimitive) : boolean
+
+	}
+	export = PointPrimitive
+
+}
+declare module 'cesium/Source/Scene/HASH_07160_PointPrimitiveCollectionOptions' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import BlendOption = require('cesium/Source/Scene/BlendOption')
+	interface HASH_07160_PointPrimitiveCollectionOptions
+	{
+		modelMatrix?: Matrix4;
+		debugShowBoundingVolume?: boolean;
+		blendOption?: BlendOption;
+	}
+	export = HASH_07160_PointPrimitiveCollectionOptions
+
+}
+declare module 'cesium/Source/Scene/PointPrimitiveCollection' {
+	import HASH_07160_PointPrimitiveCollectionOptions = require('cesium/Source/Scene/HASH_07160_PointPrimitiveCollectionOptions')
+	import BlendOption = require('cesium/Source/Scene/BlendOption')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import PointPrimitive = require('cesium/Source/Scene/PointPrimitive')
+	class PointPrimitiveCollection 
+	{
+		constructor(options? : HASH_07160_PointPrimitiveCollectionOptions);
+		//Members
+		blendOption: BlendOption
+		debugShowBoundingVolume: boolean
+		length: number
+		modelMatrix: Matrix4
+
+
+		//Methods
+		add(pointPrimitive : any) : PointPrimitive
+		contains(pointPrimitive : PointPrimitive) : boolean
+		destroy() : void
+		get(index? : number) : PointPrimitive
+		isDestroyed() : boolean
+		remove(pointPrimitive? : PointPrimitive) : boolean
+		removeAll() : void
+
+	}
+	export = PointPrimitiveCollection
+
+}
+declare module 'cesium/Source/Scene/HASH_14219_PolylineOptions' {
+	import Material = require('cesium/Source/Scene/Material')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
+	interface HASH_14219_PolylineOptions
+	{
+		show?: boolean;
+		width?: number;
+		loop?: boolean;
+		material?: Material;
+		positions?: Array<Cartesian3>;
+		id?: Object;
+		distanceDisplayCondition?: DistanceDisplayCondition;
+	}
+	export = HASH_14219_PolylineOptions
+
+}
+declare module 'cesium/Source/Scene/HASH_16992_PolylineCollectionOptions' {
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	interface HASH_16992_PolylineCollectionOptions
+	{
+		modelMatrix?: Matrix4;
+		debugShowBoundingVolume?: boolean;
+	}
+	export = HASH_16992_PolylineCollectionOptions
+
+}
+declare module 'cesium/Source/Scene/PolylineCollection' {
+	import HASH_16992_PolylineCollectionOptions = require('cesium/Source/Scene/HASH_16992_PolylineCollectionOptions')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import Polyline = require('cesium/Source/Scene/Polyline')
+	class PolylineCollection 
+	{
+		constructor(options? : HASH_16992_PolylineCollectionOptions);
+		//Members
+		debugShowBoundingVolume: boolean
+		length: number
+		modelMatrix: Matrix4
+
+
+		//Methods
+		add(polyline : any) : Polyline
+		contains(polyline? : Polyline) : boolean
+		destroy() : void
+		get(index? : number) : Polyline
+		isDestroyed() : boolean
+		remove(polyline? : Polyline) : boolean
+		removeAll() : void
+		update() : void
+
+	}
+	export = PolylineCollection
+
+}
+declare module 'cesium/Source/Scene/Polyline' {
+	import HASH_14219_PolylineOptions = require('cesium/Source/Scene/HASH_14219_PolylineOptions')
+	import PolylineCollection = require('cesium/Source/Scene/PolylineCollection')
+	import DistanceDisplayCondition = require('cesium/Source/Core/DistanceDisplayCondition')
+	import Material = require('cesium/Source/Scene/Material')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	class Polyline 
+	{
+		constructor(options? : HASH_14219_PolylineOptions, polylineCollection? : PolylineCollection);
+		//Members
+		distanceDisplayCondition: DistanceDisplayCondition
+		id: Object
+		loop: boolean
+		material: Material
+		positions: Array<Cartesian3>
+		show: boolean
+		width: number
+
+
+		//Methods
+
+	}
+	export = Polyline
+
+}
+declare module 'cesium/Source/Scene/HASH_77166_PolylineColorAppearanceOptions' {
+	interface HASH_77166_PolylineColorAppearanceOptions
+	{
+		translucent?: boolean;
+		vertexShaderSource?: string;
+		fragmentShaderSource?: string;
+		renderState?: RenderState;
+	}
+	export = HASH_77166_PolylineColorAppearanceOptions
+
+}
+declare module 'cesium/Source/Scene/PolylineColorAppearance' {
+	import HASH_77166_PolylineColorAppearanceOptions = require('cesium/Source/Scene/HASH_77166_PolylineColorAppearanceOptions')
+	import VertexFormat = require('cesium/Source/Core/VertexFormat')
+	import Material = require('cesium/Source/Scene/Material')
+	class PolylineColorAppearance 
+	{
+		constructor(options? : HASH_77166_PolylineColorAppearanceOptions);
+		//Members
+		static VERTEX_FORMAT: VertexFormat
+		closed: boolean
+		fragmentShaderSource: string
+		material: Material
+		renderState: Object
+		translucent: boolean
+		vertexFormat: VertexFormat
+		vertexShaderSource: string
+
+
+		//Methods
+		getFragmentShaderSource() : string
+		getRenderState() : Object
+		isTranslucent() : boolean
+
+	}
+	export = PolylineColorAppearance
+
+}
+declare module 'cesium/Source/Scene/HASH_14205_PolylineMaterialAppearanceOptions' {
+	import Material = require('cesium/Source/Scene/Material')
+	interface HASH_14205_PolylineMaterialAppearanceOptions
+	{
+		translucent?: boolean;
+		material?: Material;
+		vertexShaderSource?: string;
+		fragmentShaderSource?: string;
+		renderState?: RenderState;
+	}
+	export = HASH_14205_PolylineMaterialAppearanceOptions
+
+}
+declare module 'cesium/Source/Scene/PolylineMaterialAppearance' {
+	import HASH_14205_PolylineMaterialAppearanceOptions = require('cesium/Source/Scene/HASH_14205_PolylineMaterialAppearanceOptions')
+	import VertexFormat = require('cesium/Source/Core/VertexFormat')
+	import Material = require('cesium/Source/Scene/Material')
+	class PolylineMaterialAppearance 
+	{
+		constructor(options? : HASH_14205_PolylineMaterialAppearanceOptions);
+		//Members
+		static VERTEX_FORMAT: VertexFormat
+		closed: boolean
+		fragmentShaderSource: string
+		material: Material
+		renderState: Object
+		translucent: boolean
+		vertexFormat: VertexFormat
+		vertexShaderSource: string
+
+
+		//Methods
+		getFragmentShaderSource() : string
+		getRenderState() : Object
+		isTranslucent() : boolean
+
+	}
+	export = PolylineMaterialAppearance
+
+}
+declare module 'cesium/Source/Scene/HASH_42775_PrimitiveOptions' {
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	import Appearance = require('cesium/Source/Scene/Appearance')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
+	interface HASH_42775_PrimitiveOptions
+	{
+		geometryInstances?: Array<GeometryInstance>|GeometryInstance;
+		appearance?: Appearance;
+		show?: boolean;
+		modelMatrix?: Matrix4;
+		vertexCacheOptimize?: boolean;
+		interleave?: boolean;
+		compressVertices?: boolean;
+		releaseGeometryInstances?: boolean;
+		allowPicking?: boolean;
+		cull?: boolean;
+		asynchronous?: boolean;
+		debugShowBoundingVolume?: boolean;
+		shadows?: ShadowMode;
+	}
+	export = HASH_42775_PrimitiveOptions
+
+}
+declare module 'cesium/Source/Scene/Primitive' {
+	import HASH_42775_PrimitiveOptions = require('cesium/Source/Scene/HASH_42775_PrimitiveOptions')
+	import Appearance = require('cesium/Source/Scene/Appearance')
+	import GeometryInstance = require('cesium/Source/Core/GeometryInstance')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	import ShadowMode = require('cesium/Source/Scene/ShadowMode')
+	class Primitive 
+	{
+		constructor(options? : HASH_42775_PrimitiveOptions);
+		//Members
+		allowPicking: boolean
+		appearance: Appearance
+		asynchronous: boolean
+		compressVertices: boolean
+		cull: boolean
+		debugShowBoundingVolume: boolean
+		depthFailAppearance: Appearance
+		geometryInstances: Array<GeometryInstance>|GeometryInstance
+		interleave: boolean
+		modelMatrix: Matrix4
+		ready: boolean
+		readyPromise: Promise<Primitive>
+		releaseGeometryInstances: boolean
+		shadows: ShadowMode
+		show: boolean
+		vertexCacheOptimize: boolean
+
+
+		//Methods
+		destroy() : void
+		getGeometryInstanceAttributes(id? : any) : Object
+		isDestroyed() : boolean
+		update() : void
+
+	}
+	export = Primitive
+
+}
+declare module 'cesium/Source/Scene/SceneTransforms' {
+	import Cartesian2 = require('cesium/Source/Core/Cartesian2')
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Cartesian3 = require('cesium/Source/Core/Cartesian3')
+	class SceneTransforms 
+	{
+		constructor();
+		//Members
+
+
+		//Methods
+		static wgs84ToDrawingBufferCoordinates(scene? : Scene, position? : Cartesian3, result? : Cartesian2) : Cartesian2
+		static wgs84ToWindowCoordinates(scene? : Scene, position? : Cartesian3, result? : Cartesian2) : Cartesian2
+
+	}
+	export = SceneTransforms
+
+}
+declare module 'cesium/Source/Scene/HASH_59616_SingleTileImageryProviderOptions' {
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	interface HASH_59616_SingleTileImageryProviderOptions
+	{
+		url: string;
+		rectangle?: Rectangle;
+		credit?: Credit|string;
+		ellipsoid?: Ellipsoid;
+		proxy?: Object;
+	}
+	export = HASH_59616_SingleTileImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/SingleTileImageryProvider' {
+	import HASH_59616_SingleTileImageryProviderOptions = require('cesium/Source/Scene/HASH_59616_SingleTileImageryProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class SingleTileImageryProvider 
+	{
+		constructor(options? : HASH_59616_SingleTileImageryProviderOptions);
+		//Members
+		credit: Credit
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		url: string
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = SingleTileImageryProvider
+
+}
+declare module 'cesium/Source/Scene/SphereEmitter' {
+	class SphereEmitter 
+	{
+		constructor(radius? : number);
+		//Members
+		radius: number
+
+
+		//Methods
+
+	}
+	export = SphereEmitter
+
+}
+declare module 'cesium/Source/Scene/StencilFunction' {
+	class StencilFunction 
+	{
+		constructor();
+		//Members
+		static ALWAYS: number
+		static EQUAL: number
+		static GREATER: number
+		static GREATER_OR_EQUAL: number
+		static LESS: number
+		static LESS_OR_EQUAL: number
+		static NEVER: number
+		static NOT_EQUAL: number
+
+
+		//Methods
+
+	}
+	export = StencilFunction
+
+}
+declare module 'cesium/Source/Scene/StencilOperation' {
+	class StencilOperation 
+	{
+		constructor();
+		//Members
+		static DECREMENT: number
+		static DECREMENT_WRAP: number
+		static INCREMENT: number
+		static INCREMENT_WRAP: number
+		static INVERT: number
+		static KEEP: number
+		static REPLACE: number
+		static ZERO: number
+
+
+		//Methods
+
+	}
+	export = StencilOperation
+
+}
+declare module 'cesium/Source/Scene/HASH_18064_TileCoordinatesImageryProviderOptions' {
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import Color = require('cesium/Source/Core/Color')
+	interface HASH_18064_TileCoordinatesImageryProviderOptions
+	{
+		tilingScheme?: TilingScheme;
+		ellipsoid?: Ellipsoid;
+		color?: Color;
+		tileWidth?: number;
+		tileHeight?: number;
+	}
+	export = HASH_18064_TileCoordinatesImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/TileCoordinatesImageryProvider' {
+	import HASH_18064_TileCoordinatesImageryProviderOptions = require('cesium/Source/Scene/HASH_18064_TileCoordinatesImageryProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class TileCoordinatesImageryProvider 
+	{
+		constructor(options? : HASH_18064_TileCoordinatesImageryProviderOptions);
+		//Members
+		credit: Credit
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = TileCoordinatesImageryProvider
+
+}
+declare module 'cesium/Source/Scene/HASH_21472_TimeDynamicImageryOptions' {
+	import Clock = require('cesium/Source/Core/Clock')
+	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
+	interface HASH_21472_TimeDynamicImageryOptions
+	{
+		clock: Clock;
+		times: TimeIntervalCollection;
+		requestImageFunction: (()=>void);
+		reloadFunction: (()=>void);
+	}
+	export = HASH_21472_TimeDynamicImageryOptions
+
+}
+declare module 'cesium/Source/Scene/TimeDynamicImagery' {
+	import HASH_21472_TimeDynamicImageryOptions = require('cesium/Source/Scene/HASH_21472_TimeDynamicImageryOptions')
+	import Clock = require('cesium/Source/Core/Clock')
+	import TimeInterval = require('cesium/Source/Core/TimeInterval')
+	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
+	import Request = require('cesium/Source/Core/Request')
+	class TimeDynamicImagery 
+	{
+		constructor(options : HASH_21472_TimeDynamicImageryOptions);
+		//Members
+		clock: Clock
+		currentInterval: TimeInterval
+		times: TimeIntervalCollection
+
+
+		//Methods
+		checkApproachingInterval(x? : number, y? : number, level? : number, request? : Request) : void
+		getFromCache(x? : number, y? : number, level? : number, request? : Request) : Promise<HTMLImageElement>|void
+
+	}
+	export = TimeDynamicImagery
+
+}
+declare module 'cesium/Source/Scene/UrlTemplateImageryProvider' {
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class UrlTemplateImageryProvider 
+	{
+		constructor(options? : Promise<any>|any);
+		//Members
+		credit: Credit
+		enablePickFeatures: boolean
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		maximumLevel: number
+		minimumLevel: number
+		pickFeaturesUrl: string
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		url: string
+		urlSchemeZeroPadding: Object
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		reinitialize(options? : Promise<any>|any) : void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = UrlTemplateImageryProvider
+
+}
+declare module 'cesium/Source/Scene/ViewportQuad' {
+	import BoundingRectangle = require('cesium/Source/Core/BoundingRectangle')
+	import Material = require('cesium/Source/Scene/Material')
+	class ViewportQuad 
+	{
+		constructor(rectangle? : BoundingRectangle, material? : Material);
+		//Members
+		material: Material
+		rectangle: BoundingRectangle
+		show: boolean
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+		update() : void
+
+	}
+	export = ViewportQuad
+
+}
+declare module 'cesium/Source/Scene/HASH_19052_WebMapServiceImageryProviderOptions' {
+	import GetFeatureInfoFormat = require('cesium/Source/Scene/GetFeatureInfoFormat')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import Credit = require('cesium/Source/Core/Credit')
+	interface HASH_19052_WebMapServiceImageryProviderOptions
+	{
+		url: string;
+		layers: string;
+		parameters?: Object;
+		getFeatureInfoParameters?: Object;
+		enablePickFeatures?: boolean;
+		getFeatureInfoFormats?: Array<GetFeatureInfoFormat>;
+		rectangle?: Rectangle;
+		tilingScheme?: TilingScheme;
+		ellipsoid?: Ellipsoid;
+		tileWidth?: number;
+		tileHeight?: number;
+		minimumLevel?: number;
+		maximumLevel?: number;
+		credit?: Credit|string;
+		proxy?: Object;
+		subdomains?: string|Array<string>;
+	}
+	export = HASH_19052_WebMapServiceImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/WebMapServiceImageryProvider' {
+	import HASH_19052_WebMapServiceImageryProviderOptions = require('cesium/Source/Scene/HASH_19052_WebMapServiceImageryProviderOptions')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class WebMapServiceImageryProvider 
+	{
+		constructor(options? : HASH_19052_WebMapServiceImageryProviderOptions);
+		//Members
+		static DefaultParameters: any
+		static GetFeatureInfoDefaultParameters: any
+		credit: Credit
+		enablePickFeatures: boolean
+		errorEvent: Event
+		hasAlphaChannel: boolean
+		layers: string
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		url: string
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = WebMapServiceImageryProvider
+
+}
+declare module 'cesium/Source/Scene/HASH_10686_WebMapTileServiceImageryProviderOptions' {
+	import Clock = require('cesium/Source/Core/Clock')
+	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import Credit = require('cesium/Source/Core/Credit')
+	interface HASH_10686_WebMapTileServiceImageryProviderOptions
+	{
+		url: string;
+		format?: string;
+		layer: string;
+		style: string;
+		tileMatrixSetID: string;
+		tileMatrixLabels?: Array<any>;
+		clock?: Clock;
+		times?: TimeIntervalCollection;
+		dimensions?: Object;
+		tileWidth?: number;
+		tileHeight?: number;
+		tilingScheme?: TilingScheme;
+		proxy?: Object;
+		rectangle?: Rectangle;
+		minimumLevel?: number;
+		maximumLevel?: number;
+		ellipsoid?: Ellipsoid;
+		credit?: Credit|string;
+		subdomains?: string|Array<string>;
+	}
+	export = HASH_10686_WebMapTileServiceImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/WebMapTileServiceImageryProvider' {
+	import HASH_10686_WebMapTileServiceImageryProviderOptions = require('cesium/Source/Scene/HASH_10686_WebMapTileServiceImageryProviderOptions')
+	import Clock = require('cesium/Source/Core/Clock')
+	import Credit = require('cesium/Source/Core/Credit')
+	import Event = require('cesium/Source/Core/Event')
+	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TileDiscardPolicy = require('cesium/Source/Scene/TileDiscardPolicy')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import TimeIntervalCollection = require('cesium/Source/Core/TimeIntervalCollection')
+	import ImageryLayerFeatureInfo = require('cesium/Source/Scene/ImageryLayerFeatureInfo')
+	import Request = require('cesium/Source/Core/Request')
+	class WebMapTileServiceImageryProvider 
+	{
+		constructor(options? : HASH_10686_WebMapTileServiceImageryProviderOptions);
+		//Members
+		clock: Clock
+		credit: Credit
+		dimensions: Object
+		errorEvent: Event
+		format: string
+		hasAlphaChannel: boolean
+		maximumLevel: number
+		minimumLevel: number
+		proxy: DefaultProxy
+		ready: boolean
+		readyPromise: Promise<boolean>
+		rectangle: Rectangle
+		tileDiscardPolicy: TileDiscardPolicy
+		tileHeight: number
+		tileWidth: number
+		tilingScheme: TilingScheme
+		times: TimeIntervalCollection
+		url: string
+
+
+		//Methods
+		getTileCredits(x? : number, y? : number, level? : number) : Array<Credit>
+		pickFeatures(x? : number, y? : number, level? : number, longitude? : number, latitude? : number) : Promise<Array<ImageryLayerFeatureInfo>>|void
+		requestImage(x? : number, y? : number, level? : number, request? : Request) : Promise<Image | Canvas>|void
+
+	}
+	export = WebMapTileServiceImageryProvider
+
+}
+declare module 'cesium/Source/Scene/HASH_18275_createOpenStreetMapImageryProviderOptions' {
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	import Credit = require('cesium/Source/Core/Credit')
+	interface HASH_18275_createOpenStreetMapImageryProviderOptions
+	{
+		url?: string;
+		fileExtension?: string;
+		proxy?: Object;
+		rectangle?: Rectangle;
+		minimumLevel?: number;
+		maximumLevel?: number;
+		ellipsoid?: Ellipsoid;
+		credit?: Credit|string;
+	}
+	export = HASH_18275_createOpenStreetMapImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/createOpenStreetMapImageryProvider' {
+	import UrlTemplateImageryProvider = require('cesium/Source/Scene/UrlTemplateImageryProvider')
+	import HASH_18275_createOpenStreetMapImageryProviderOptions = require('cesium/Source/Scene/HASH_18275_createOpenStreetMapImageryProviderOptions')
+	function createOpenStreetMapImageryProvider(options? : HASH_18275_createOpenStreetMapImageryProviderOptions) : UrlTemplateImageryProvider;
+	export = createOpenStreetMapImageryProvider
+
+}
+declare module 'cesium/Source/Scene/HASH_19370_createTangentSpaceDebugPrimitiveOptions' {
+	import Geometry = require('cesium/Source/Core/Geometry')
+	import Matrix4 = require('cesium/Source/Core/Matrix4')
+	interface HASH_19370_createTangentSpaceDebugPrimitiveOptions
+	{
+		geometry: Geometry;
+		length?: number;
+		modelMatrix?: Matrix4;
+	}
+	export = HASH_19370_createTangentSpaceDebugPrimitiveOptions
+
+}
+declare module 'cesium/Source/Scene/createTangentSpaceDebugPrimitive' {
+	import Primitive = require('cesium/Source/Scene/Primitive')
+	import HASH_19370_createTangentSpaceDebugPrimitiveOptions = require('cesium/Source/Scene/HASH_19370_createTangentSpaceDebugPrimitiveOptions')
+	function createTangentSpaceDebugPrimitive(options? : HASH_19370_createTangentSpaceDebugPrimitiveOptions) : Primitive;
+	export = createTangentSpaceDebugPrimitive
+
+}
+declare module 'cesium/Source/Scene/HASH_22857_createTileMapServiceImageryProviderOptions' {
+	import Credit = require('cesium/Source/Core/Credit')
+	import Rectangle = require('cesium/Source/Core/Rectangle')
+	import TilingScheme = require('cesium/Source/Core/TilingScheme')
+	import Ellipsoid = require('cesium/Source/Core/Ellipsoid')
+	interface HASH_22857_createTileMapServiceImageryProviderOptions
+	{
+		url?: string;
+		fileExtension?: string;
+		proxy?: Object;
+		credit?: Credit|string;
+		minimumLevel?: number;
+		maximumLevel?: number;
+		rectangle?: Rectangle;
+		tilingScheme?: TilingScheme;
+		ellipsoid?: Ellipsoid;
+		tileWidth?: number;
+		tileHeight?: number;
+		flipXY?: boolean;
+	}
+	export = HASH_22857_createTileMapServiceImageryProviderOptions
+
+}
+declare module 'cesium/Source/Scene/createTileMapServiceImageryProvider' {
+	import UrlTemplateImageryProvider = require('cesium/Source/Scene/UrlTemplateImageryProvider')
+	import HASH_22857_createTileMapServiceImageryProviderOptions = require('cesium/Source/Scene/HASH_22857_createTileMapServiceImageryProviderOptions')
+	function createTileMapServiceImageryProvider(options? : HASH_22857_createTileMapServiceImageryProviderOptions) : UrlTemplateImageryProvider;
+	export = createTileMapServiceImageryProvider
+
+}
+declare module 'cesium/Source/Scene/global' {
+	import ParticleBurst = require('cesium/Source/Scene/ParticleBurst')
+	import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
+	import PixelFormat = require('cesium/Source/Core/PixelFormat')
+	import Cesium3DTile = require('cesium/Source/Scene/Cesium3DTile')
+	import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
+	function global() : void;
+	export = global
+
+}
+declare module 'cesium/Source/Widgets/SvgPathBindingHandler' {
+	class SvgPathBindingHandler 
+	{
+		constructor();
+		//Members
+
+
+		//Methods
+
+	}
+	export = SvgPathBindingHandler
+
+}
+declare module 'cesium/Source/Widgets/createCommand' {
+	function createCommand(func : (()=>void), canExecute? : boolean) : void;
+	export = createCommand
+
+}
+declare module 'cesium/Source/Widgets/Cesium3DTilesInspector/Cesium3DTilesInspectorViewModel' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Cesium3DTileColorBlendMode = require('cesium/Source/Scene/Cesium3DTileColorBlendMode')
+	import Cesium3DTileFeature = require('cesium/Source/Scene/Cesium3DTileFeature')
+	import Cesium3DTile = require('cesium/Source/Scene/Cesium3DTile')
+	import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
+	class Cesium3DTilesInspectorViewModel 
+	{
+		constructor(scene : Scene, performanceContainer : HTMLElement);
+		//Members
+		baseScreenSpaceError: number
+		colorBlendMode: Cesium3DTileColorBlendMode
+		colorBlendModes: Array<Object>
+		colorize: boolean
+		displayVisible: boolean
+		dynamicScreenSpaceError: boolean
+		dynamicScreenSpaceErrorDensity: number
+		dynamicScreenSpaceErrorDensitySliderValue: number
+		dynamicScreenSpaceErrorFactor: number
+		editorError: string
+		feature: Cesium3DTileFeature
+		freezeFrame: boolean
+		immediatelyLoadDesiredLevelOfDetail: boolean
+		inspectorVisible: boolean
+		loadSiblings: boolean
+		loggingVisible: boolean
+		maximumScreenSpaceError: number
+		optimizationVisible: boolean
+		performance: boolean
+		performanceContainer: HTMLElement
+		pickActive: boolean
+		picking: boolean
+		pickStatisticsText: string
+		properties: Array<string>
+		scene: Scene
+		showBoundingVolumes: boolean
+		showContentBoundingVolumes: boolean
+		showGeometricError: boolean
+		showMemoryUsage: boolean
+		showOnlyPickedTileDebugLabel: boolean
+		showPickStatistics: boolean
+		showRenderingStatistics: boolean
+		showRequestVolumes: boolean
+		showStatistics: boolean
+		showUrl: boolean
+		skipLevelOfDetail: boolean
+		skipLevels: number
+		skipScreenSpaceErrorFactor: number
+		statisticsText: string
+		styleString: string
+		styleVisible: boolean
+		tile: Cesium3DTile
+		tileDebugLabelsVisible: boolean
+		tileset: Cesium3DTileset
+		tilesetVisible: boolean
+		updateVisible: boolean
+		wireframe: boolean
+
+
+		//Methods
+		static getStatistics(tileset? : Cesium3DTileset, isPick? : boolean) : string
+		compileStyle() : void
+		destroy() : void
+		isDestroyed() : boolean
+		styleEditorKeyPress() : void
+		toggleDisplay() : void
+		toggleInspector() : void
+		toggleLogging() : void
+		toggleOptimization() : void
+		togglePickTileset() : void
+		toggleStyle() : void
+		toggleTileDebugLabels() : void
+		toggleTileset() : void
+		toggleUpdate() : void
+		trimTilesCache() : void
+
+	}
+	export = Cesium3DTilesInspectorViewModel
+
+}
+declare module 'cesium/Source/Widgets/Cesium3DTilesInspector/Cesium3DTilesInspector' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Cesium3DTilesInspectorViewModel = require('cesium/Source/Widgets/Cesium3DTilesInspector/Cesium3DTilesInspectorViewModel')
+	class Cesium3DTilesInspector 
+	{
+		constructor(container : Element|string, scene : Scene);
+		//Members
+		container: Element
+		viewModel: Cesium3DTilesInspectorViewModel
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+
+	}
+	export = Cesium3DTilesInspector
+
+}
+declare module 'cesium/Source/Widgets/CesiumInspector/CesiumInspectorViewModel' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	import Command = require('cesium/Source/Widgets/Command')
+	class CesiumInspectorViewModel 
+	{
+		constructor(scene : Scene, performanceContainer : PerformanceContainer);
+		//Members
+		decrementDepthFrustum: Command
+		depthFrustum: number
+		depthFrustumText: string
+		doFilterPrimitive: Command
+		doFilterTile: Command
+		dropDownVisible: boolean
+		filterPrimitive: boolean
+		filterTile: boolean
+		frustumPlanes: boolean
+		frustums: boolean
+		frustumStatisticText: string
+		generalSwitchText: string
+		generalVisible: boolean
+		globeDepth: boolean
+		hasPickedPrimitive: boolean
+		hasPickedTile: boolean
+		incrementDepthFrustum: Command
+		performance: boolean
+		performanceContainer: Element
+		pickDepth: boolean
+		pickPrimitive: Command
+		pickPrimitiveActive: boolean
+		pickTile: Command
+		pickTileActive: boolean
+		primitive: Command
+		primitiveBoundingSphere: boolean
+		primitiveReferenceFrame: boolean
+		primitivesSwitchText: string
+		primitivesVisible: boolean
+		scene: Scene
+		selectNE: Command
+		selectNW: Command
+		selectParent: Command
+		selectSE: Command
+		selectSW: Command
+		shaderCacheText: string
+		showPrimitiveBoundingSphere: Command
+		showPrimitiveReferenceFrame: Command
+		showTileBoundingSphere: Command
+		showTileCoordinates: Command
+		suspendUpdates: boolean
+		terrainSwitchText: string
+		terrainVisible: boolean
+		tile: Command
+		tileBoundingSphere: boolean
+		tileCoordinates: boolean
+		tileText: string
+		toggleDropDown: Command
+		toggleGeneral: Command
+		togglePrimitives: Command
+		toggleTerrain: Command
+		wireframe: boolean
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+
+	}
+	export = CesiumInspectorViewModel
+
+}
+declare module 'cesium/Source/Widgets/CesiumInspector/CesiumInspector' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	import CesiumInspectorViewModel = require('cesium/Source/Widgets/CesiumInspector/CesiumInspectorViewModel')
+	class CesiumInspector 
+	{
+		constructor(container : Element|string, scene : Scene);
+		//Members
+		container: Element
+		viewModel: CesiumInspectorViewModel
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+
+	}
+	export = CesiumInspector
+
+}
+declare module 'cesium/Source/Widgets/PerformanceWatchdog/HASH_30917_PerformanceWatchdogOptions' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	interface HASH_30917_PerformanceWatchdogOptions
+	{
+		container: Element|string;
+		scene: Scene;
+		lowFrameRateMessage?: string;
+	}
+	export = HASH_30917_PerformanceWatchdogOptions
+
+}
+declare module 'cesium/Source/Widgets/PerformanceWatchdog/HASH_57217_PerformanceWatchdogViewModelOptions' {
+	import Scene = require('cesium/Source/Scene/Scene')
+	interface HASH_57217_PerformanceWatchdogViewModelOptions
+	{
+		scene: Scene;
+		lowFrameRateMessage?: string;
+	}
+	export = HASH_57217_PerformanceWatchdogViewModelOptions
+
+}
+declare module 'cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdogViewModel' {
+	import HASH_57217_PerformanceWatchdogViewModelOptions = require('cesium/Source/Widgets/PerformanceWatchdog/HASH_57217_PerformanceWatchdogViewModelOptions')
+	import Command = require('cesium/Source/Widgets/Command')
+	import Scene = require('cesium/Source/Scene/Scene')
+	class PerformanceWatchdogViewModel 
+	{
+		constructor(options? : HASH_57217_PerformanceWatchdogViewModelOptions);
+		//Members
+		dismissMessage: Command
+		lowFrameRateMessage: string
+		lowFrameRateMessageDismissed: boolean
+		scene: Scene
+		showingLowFrameRateMessage: boolean
+
+
+		//Methods
+
+	}
+	export = PerformanceWatchdogViewModel
+
+}
+declare module 'cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdog' {
+	import HASH_30917_PerformanceWatchdogOptions = require('cesium/Source/Widgets/PerformanceWatchdog/HASH_30917_PerformanceWatchdogOptions')
+	import PerformanceWatchdogViewModel = require('cesium/Source/Widgets/PerformanceWatchdog/PerformanceWatchdogViewModel')
+	class PerformanceWatchdog 
+	{
+		constructor(options? : HASH_30917_PerformanceWatchdogOptions);
+		//Members
+		container: Element
+		viewModel: PerformanceWatchdogViewModel
+
+
+		//Methods
+		destroy() : void
+		isDestroyed() : boolean
+
+	}
+	export = PerformanceWatchdog
 
 }
 declare module 'cesium/Source/Widgets/Viewer/viewerCesium3DTilesInspectorMixin' {
@@ -12927,9 +13157,9 @@ declare module 'cesium/Source/Widgets/Viewer/viewerCesiumInspectorMixin' {
 	export = viewerCesiumInspectorMixin
 
 }
-declare module 'cesium/Source/Widgets/Viewer/viewerDragDropMixinOptions' {
+declare module 'cesium/Source/Widgets/Viewer/HASH_67204_viewerDragDropMixinOptions' {
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	interface viewerDragDropMixinOptions
+	interface HASH_67204_viewerDragDropMixinOptions
 	{
 		dropTarget?: Element|string;
 		clearOnDrop?: boolean;
@@ -12937,30 +13167,30 @@ declare module 'cesium/Source/Widgets/Viewer/viewerDragDropMixinOptions' {
 		clampToGround?: boolean;
 		proxy?: DefaultProxy;
 	}
-	export = viewerDragDropMixinOptions
+	export = HASH_67204_viewerDragDropMixinOptions
 
 }
 declare module 'cesium/Source/Widgets/Viewer/viewerDragDropMixin' {
 	import Viewer = require('cesium/Source/Widgets/Viewer/Viewer')
-	import viewerDragDropMixinOptions = require('cesium/Source/Widgets/Viewer/viewerDragDropMixinOptions')
+	import HASH_67204_viewerDragDropMixinOptions = require('cesium/Source/Widgets/Viewer/HASH_67204_viewerDragDropMixinOptions')
 	import Event = require('cesium/Source/Core/Event')
 	import DefaultProxy = require('cesium/Source/Core/DefaultProxy')
-	function viewerDragDropMixin(viewer : Viewer, options? : viewerDragDropMixinOptions) : void;
+	function viewerDragDropMixin(viewer : Viewer, options? : HASH_67204_viewerDragDropMixinOptions) : void;
 	export = viewerDragDropMixin
 
 }
-declare module 'cesium/Source/Widgets/Viewer/viewerPerformanceWatchdogMixinOptions' {
-	interface viewerPerformanceWatchdogMixinOptions
+declare module 'cesium/Source/Widgets/Viewer/HASH_00053_viewerPerformanceWatchdogMixinOptions' {
+	interface HASH_00053_viewerPerformanceWatchdogMixinOptions
 	{
 		lowFrameRateMessage?: string;
 	}
-	export = viewerPerformanceWatchdogMixinOptions
+	export = HASH_00053_viewerPerformanceWatchdogMixinOptions
 
 }
 declare module 'cesium/Source/Widgets/Viewer/viewerPerformanceWatchdogMixin' {
 	import Viewer = require('cesium/Source/Widgets/Viewer/Viewer')
-	import viewerPerformanceWatchdogMixinOptions = require('cesium/Source/Widgets/Viewer/viewerPerformanceWatchdogMixinOptions')
-	function viewerPerformanceWatchdogMixin(viewer : Viewer, options? : viewerPerformanceWatchdogMixinOptions) : void;
+	import HASH_00053_viewerPerformanceWatchdogMixinOptions = require('cesium/Source/Widgets/Viewer/HASH_00053_viewerPerformanceWatchdogMixinOptions')
+	function viewerPerformanceWatchdogMixin(viewer : Viewer, options? : HASH_00053_viewerPerformanceWatchdogMixinOptions) : void;
 	export = viewerPerformanceWatchdogMixin
 
 }
@@ -13199,7 +13429,12 @@ declare module 'cesium/Source/Cesium' {
 	export import GeometryVisualizer = require('cesium/Source/DataSources/GeometryVisualizer')
 	export import GridMaterialProperty = require('cesium/Source/DataSources/GridMaterialProperty')
 	export import ImageMaterialProperty = require('cesium/Source/DataSources/ImageMaterialProperty')
+	export import KMLTour = require('cesium/Source/DataSources/KMLTour')
+	export import KmlCamera = require('cesium/Source/DataSources/KmlCamera')
 	export import KmlDataSource = require('cesium/Source/DataSources/KmlDataSource')
+	export import KmlLookAt = require('cesium/Source/DataSources/KmlLookAt')
+	export import KmlTourFlyTo = require('cesium/Source/DataSources/KmlTourFlyTo')
+	export import KmlTourWait = require('cesium/Source/DataSources/KmlTourWait')
 	export import LabelGraphics = require('cesium/Source/DataSources/LabelGraphics')
 	export import LabelVisualizer = require('cesium/Source/DataSources/LabelVisualizer')
 	export import MaterialProperty = require('cesium/Source/DataSources/MaterialProperty')
@@ -13261,6 +13496,7 @@ declare module 'cesium/Source/Cesium' {
 	export import Cesium3DTileStyle = require('cesium/Source/Scene/Cesium3DTileStyle')
 	export import Cesium3DTileset = require('cesium/Source/Scene/Cesium3DTileset')
 	export import CircleEmitter = require('cesium/Source/Scene/CircleEmitter')
+	export import ClassificationOption = require('cesium/Source/Scene/ClassificationOption')
 	export import ClassificationPrimitive = require('cesium/Source/Scene/ClassificationPrimitive')
 	export import ColorBlendMode = require('cesium/Source/Scene/ColorBlendMode')
 	export import ConditionsExpression = require('cesium/Source/Scene/ConditionsExpression')
@@ -13281,7 +13517,6 @@ declare module 'cesium/Source/Cesium' {
 	export import Globe = require('cesium/Source/Scene/Globe')
 	export import GoogleEarthEnterpriseImageryProvider = require('cesium/Source/Scene/GoogleEarthEnterpriseImageryProvider')
 	export import GoogleEarthEnterpriseMapsProvider = require('cesium/Source/Scene/GoogleEarthEnterpriseMapsProvider')
-	export import GoogleEarthImageryProvider = require('cesium/Source/Scene/GoogleEarthImageryProvider')
 	export import GridImageryProvider = require('cesium/Source/Scene/GridImageryProvider')
 	export import GroundPrimitive = require('cesium/Source/Scene/GroundPrimitive')
 	export import HeightReference = require('cesium/Source/Scene/HeightReference')

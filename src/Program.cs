@@ -65,18 +65,13 @@ namespace SInnovations.Cesium.TypescriptGenerator
 
             if (!types.Skip(1).Any() && types.First() == "Object")
             {
-
-
                 var props = GetSignatureTypes(row.SelectSingleNode(@".//td[contains(@class,'description')]"));
-
-                
-                
 
                 if (props.Keys.Any())
                 {
-                    
-                    //   var type = "opt_" + Program.CalculateMD5Hash(string.Join("", props.Keys.OrderBy(k => k)));
-                    var type = this._name + "Options";
+                    var hash = string.Join("", props.Keys.OrderBy(k => k)).GetHashCode().ToString().Substring(1, 5);
+
+                    var type = "HASH_" + hash + "_" + this._name + "Options";
                     var dependencies = new List<string>();
 
                     var writer = Program.GetWriter(type,_source);
@@ -116,9 +111,13 @@ namespace SInnovations.Cesium.TypescriptGenerator
         static Dictionary<string, StreamWriter> files = new Dictionary<string, StreamWriter>();
         static Dictionary<string, string> classExtents = new Dictionary<string, string>
         {
-            { "CzmlDataSource", "extends Cesium.DataSource" },
-            {"TimeIntervalCollectionProperty", "extends Property" },
-            {"VelocityOrientationProperty" , "extends Property" }
+            {"CzmlDataSource", "extends Cesium.DataSource"},
+            {"CustomDataSource", "extends Cesium.DataSource"},
+            {"GeoJsonDataSource", "extends Cesium.DataSource"},
+            {"KmlDataSource", "extends Cesium.DataSource"},
+
+            {"TimeIntervalCollectionProperty", "extends Property"},
+            {"VelocityOrientationProperty" , "extends Property"},
 
         };
         static Dictionary<string, string> signatureOverrides = new Dictionary<string, string>
@@ -241,6 +240,10 @@ namespace SInnovations.Cesium.TypescriptGenerator
             var classdt = doc.DocumentNode.SelectSingleNode(@"//*[@id=""main""]/section/article/div/dt");
             var signatureName = Path.GetFileNameWithoutExtension(url);
 
+            // if(signatureName != "GeoJsonDataSource") {
+            //     return null;
+            // }
+
             Console.WriteLine("CLASSNAME: " + signatureName);
 
             var signature = "()";
@@ -340,8 +343,7 @@ namespace SInnovations.Cesium.TypescriptGenerator
                 writer.WriteLine($"export = {signatureName}");
             }
             else
-            {
-
+            {                
                 var members = ParseAndWriteMembers(doc, false);
                 var extends = classExtents.ContainsKey(signatureName) ? classExtents[signatureName] : "";
                 extends = extractDependencies(dependencies, extends);
@@ -466,7 +468,6 @@ namespace SInnovations.Cesium.TypescriptGenerator
             {
                 var memberName = member.Id.Trim(' ', '.');
                 var staticMember = member.SelectSingleNode(".//span[@class='type-signature attribute-static']");
-
                 var types = TypeReader(member.SelectSingleNode(".//span[@class='type-signature']"));
                 types = extractDependencies(dependencies, types);
 
